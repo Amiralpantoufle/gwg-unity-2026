@@ -99,7 +99,7 @@ public class AuthManager : MonoBehaviour
         verificationEmail = email;
 
         string json = JsonUtility.ToJson(data);
-        StartCoroutine(API_Client.Instance.Post("/auth/login/forgot-password/request", json, OnForgotResponse));
+        StartCoroutine(API_Client.Instance.Post("/auth/forgot-password/request", json, OnForgotResponse));
     }
     private void OnForgotResponse(string json)
     {
@@ -119,7 +119,7 @@ public class AuthManager : MonoBehaviour
         }
         else
         {
-            ToastManager.Instance.GenerateToast(verificationEmail+" invalid adress", 0, 10f);
+            ToastManager.Instance.GenerateToast(verificationEmail+"Something went wrong", 0, 10f);
         }
     }
     public void ResetPassword(Auth_ResetPasswordData data)
@@ -133,7 +133,7 @@ public class AuthManager : MonoBehaviour
         };
 
         string json = JsonUtility.ToJson(data);
-        StartCoroutine(API_Client.Instance.Post("/auth/login/forgot-password/reset", json, OnResetResponse));
+        StartCoroutine(API_Client.Instance.Post("/auth/forgot-password/reset", json, OnResetResponse));
     }
     private void OnResetResponse(string json)
     {
@@ -148,6 +148,8 @@ public class AuthManager : MonoBehaviour
         else
         {
             ToastManager.Instance.GenerateToast(verificationEmail + " invalid credentials", 0, 10f);
+            verificationEmail = null;
+
         }
     }
 
@@ -197,5 +199,14 @@ public class AuthManager : MonoBehaviour
             message = response,
             duration = time
         });
+    }
+    public void Force_PopupResetPass()
+    {
+        //Open Popup Reset Password A METTRE Après la confirmation
+        EventBus.Publish(new ShowPopupEvent
+        {
+            popup = popup_ForgotPassword
+        });
+        popup_ForgotPassword.Init_ResetPassword_Process("visodoigt@gmail.com");
     }
 }

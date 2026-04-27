@@ -56,10 +56,7 @@ public class Authentification_Screen : UIScreen
     }
     public void Try_ForgotPassword()
     {
-        string email = PlayerPrefs.GetString(ACCESS_KEY, "");
-        if (email.Length <= 0)
-            email = userEmail.text.ToString();
-
+        string email = userEmail.text.ToString();
         if (email.Length <= 0)
         {
             ToastManager.Instance.GenerateToast("Add a functional email adress", 0, 10f);
