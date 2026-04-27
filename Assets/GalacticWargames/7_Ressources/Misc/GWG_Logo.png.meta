@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 34ab9952876682a41b0ed40a17f0b3d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2722282611310202897
+    second: GWG_Logo_0
+  - first:
+      213: -649494600132396798
+    second: GWG_Logo_1
+  - first:
+      213: -4593941679479984417
+    second: GWG_Logo_2
+  - first:
+      213: -2467475285500159909
+    second: GWG_Logo_3
+  - first:
+      213: -2652460411494679990
+    second: GWG_Logo_4
+  - first:
+      213: -1914097340520767751
+    second: GWG_Logo_5
+  - first:
+      213: -7102899455348030334
+    second: GWG_Logo_6
+  - first:
+      213: -1589235020402827603
+    second: GWG_Logo_7
+  - first:
+      213: 2490547385035488235
+    second: GWG_Logo_8
+  - first:
+      213: 3410421185833191867
+    second: GWG_Logo_9
+  - first:
+      213: 6050701179917047559
+    second: GWG_Logo_10
+  - first:
+      213: 9018804854036247574
+    second: GWG_Logo_11
+  - first:
+      213: -8798225938838975623
+    second: GWG_Logo_12
+  - first:
+      213: -4113798399864294898
+    second: GWG_Logo_13
+  - first:
+      213: -6247039428913945188
+    second: GWG_Logo_14
+  - first:
+      213: -8829676626357362005
+    second: GWG_Logo_15
+  - first:
+      213: 8014496184526873282
+    second: GWG_Logo_16
+  - first:
+      213: 8746057545149927488
+    second: GWG_Logo_17
+  - first:
+      213: 9172174568094587457
+    second: GWG_Logo_18
+  - first:
+      213: 9220236624331949676
+    second: GWG_Logo_19
+  - first:
+      213: -2815531395466360987
+    second: GWG_Logo_20
+  - first:
+      213: 3335835086277967475
+    second: GWG_Logo_21
+  - first:
+      213: 2876462093020230096
+    second: GWG_Logo_22
+  - first:
+      213: 3695318954979138974
+    second: GWG_Logo_23
+  - first:
+      213: 7190932515508542870
+    second: GWG_Logo_24
+  - first:
+      213: 6405869421167782302
+    second: GWG_Logo_25
+  - first:
+      213: -2823754685157191146
+    second: GWG_Logo_26
+  - first:
+      213: -6790208371625905724
+    second: GWG_Logo_27
+  - first:
+      213: 1338838366268146251
+    second: GWG_Logo_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GWG_Logo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 863
+        width: 640
+        height: 916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1101e599c9d77c520800000000000000
+      internalID: 2722282611310202897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_1
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 1451
+        width: 173
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 209f2933a188cf6f0800000000000000
+      internalID: -649494600132396798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_2
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 1428
+        width: 457
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdeebbbd16a0f30c0800000000000000
+      internalID: -4593941679479984417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_3
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 481
+        width: 1412
+        height: 1083
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5815b31d44c1cdd0800000000000000
+      internalID: -2467475285500159909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_4
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 900
+        width: 121
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ab2102f41903bd0800000000000000
+      internalID: -2652460411494679990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_5
+      rect:
+        serializedVersion: 2
+        x: 2164
+        y: 900
+        width: 121
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fe5db03c92cf65e0800000000000000
+      internalID: -1914097340520767751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_6
+      rect:
+        serializedVersion: 2
+        x: 2649
+        y: 1439
+        width: 102
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2844aa0049e6d6d90800000000000000
+      internalID: -7102899455348030334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_7
+      rect:
+        serializedVersion: 2
+        x: 2809
+        y: 875
+        width: 831
+        height: 916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dae57484b27e1f9e0800000000000000
+      internalID: -1589235020402827603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_8
+      rect:
+        serializedVersion: 2
+        x: 2822
+        y: 1394
+        width: 471
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beb7155b6a3309220800000000000000
+      internalID: 2490547385035488235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_9
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 262
+        width: 759
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9cd04dfff345f20800000000000000
+      internalID: 3410421185833191867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_10
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 481
+        width: 698
+        height: 884
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7071ef64aa868f350800000000000000
+      internalID: 6050701179917047559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_11
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 481
+        width: 665
+        height: 884
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61436672b3b392d70800000000000000
+      internalID: 9018804854036247574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_12
+      rect:
+        serializedVersion: 2
+        x: 2822
+        y: 259
+        width: 759
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97b00e5af1c66e580800000000000000
+      internalID: -8798225938838975623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_13
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 336
+        width: 1976
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e02b482b62ad8e6c0800000000000000
+      internalID: -4113798399864294898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_14
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 40
+        width: 201
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c95a9b5dcbe0e49a0800000000000000
+      internalID: -6247039428913945188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_15
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 40
+        width: 41
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba26664d3efa67580800000000000000
+      internalID: -8829676626357362005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_16
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 40
+        width: 298
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c2a27431d5393f60800000000000000
+      internalID: 8014496184526873282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_17
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 183
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04059cbaffc306970800000000000000
+      internalID: 8746057545149927488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_18
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 36
+        width: 334
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14a56256c2c1a4f70800000000000000
+      internalID: 9172174568094587457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_19
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 40
+        width: 187
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c664a52eb5cd4ff70800000000000000
+      internalID: 9220236624331949676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_20
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 40
+        width: 187
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5678447fc193de8d0800000000000000
+      internalID: -2815531395466360987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_21
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 40
+        width: 166
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37ef1e246544b4e20800000000000000
+      internalID: 3335835086277967475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_22
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 40
+        width: 187
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d1f850980f3be720800000000000000
+      internalID: 2876462093020230096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_23
+      rect:
+        serializedVersion: 2
+        x: 2201
+        y: 40
+        width: 91
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9d9c4bc209684330800000000000000
+      internalID: 3695318954979138974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_24
+      rect:
+        serializedVersion: 2
+        x: 2289
+        y: 0
+        width: 181
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d51be06035bc360800000000000000
+      internalID: 7190932515508542870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_25
+      rect:
+        serializedVersion: 2
+        x: 2472
+        y: 40
+        width: 187
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e992e3e7c4836e850800000000000000
+      internalID: 6405869421167782302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_26
+      rect:
+        serializedVersion: 2
+        x: 2665
+        y: 40
+        width: 253
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6125c52231200d8d0800000000000000
+      internalID: -2823754685157191146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_27
+      rect:
+        serializedVersion: 2
+        x: 2922
+        y: 40
+        width: 179
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c1ba5a467554c1a0800000000000000
+      internalID: -6790208371625905724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Logo_28
+      rect:
+        serializedVersion: 2
+        x: 3102
+        y: 40
+        width: 165
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b42c3119662849210800000000000000
+      internalID: 1338838366268146251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GWG_Logo_0: 2722282611310202897
+      GWG_Logo_1: -649494600132396798
+      GWG_Logo_10: 6050701179917047559
+      GWG_Logo_11: 9018804854036247574
+      GWG_Logo_12: -8798225938838975623
+      GWG_Logo_13: -4113798399864294898
+      GWG_Logo_14: -6247039428913945188
+      GWG_Logo_15: -8829676626357362005
+      GWG_Logo_16: 8014496184526873282
+      GWG_Logo_17: 8746057545149927488
+      GWG_Logo_18: 9172174568094587457
+      GWG_Logo_19: 9220236624331949676
+      GWG_Logo_2: -4593941679479984417
+      GWG_Logo_20: -2815531395466360987
+      GWG_Logo_21: 3335835086277967475
+      GWG_Logo_22: 2876462093020230096
+      GWG_Logo_23: 3695318954979138974
+      GWG_Logo_24: 7190932515508542870
+      GWG_Logo_25: 6405869421167782302
+      GWG_Logo_26: -2823754685157191146
+      GWG_Logo_27: -6790208371625905724
+      GWG_Logo_28: 1338838366268146251
+      GWG_Logo_3: -2467475285500159909
+      GWG_Logo_4: -2652460411494679990
+      GWG_Logo_5: -1914097340520767751
+      GWG_Logo_6: -7102899455348030334
+      GWG_Logo_7: -1589235020402827603
+      GWG_Logo_8: 2490547385035488235
+      GWG_Logo_9: 3410421185833191867
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

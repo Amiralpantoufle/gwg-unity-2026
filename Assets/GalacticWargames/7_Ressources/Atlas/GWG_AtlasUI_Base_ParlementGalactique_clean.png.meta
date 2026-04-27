@@ -1,0 +1,550 @@
+fileFormatVersion: 2
+guid: fe1232d829a7dd042bb684e2c609de28
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 392
+        width: 1080
+        height: 632
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f65db06f687f55428a0c645dc11179f
+      internalID: -1869817570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_1
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 847
+        width: 706
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045b5826f229179449b438c8a224c2c6
+      internalID: 1714772705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_2
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 402
+        width: 148
+        height: 609
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d85b65dfc1c8a45a3fad760b2fe310
+      internalID: -953512879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_3
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 680
+        width: 634
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a43bea3bdb3fd346b831d9791acf62c
+      internalID: 1003933032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_4
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 578
+        width: 473
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb5299db5e53d445a1f455298d6ab02
+      internalID: 402506877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_5
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 480
+        width: 473
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497351ab511737040ae2301397276162
+      internalID: 935041696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_6
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 388
+        width: 473
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b34f7983c91ccc429044291e0f17bed
+      internalID: -1826279345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_7
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 369
+        width: 1900
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f86ca6e1ee9a76541833dfeb6529c6de
+      internalID: -501696002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 242
+        width: 883
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b745aec8c804904381395ef365ec189
+      internalID: 1792393104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_9
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 242
+        width: 883
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0fdbc961372c604984d1995ca98fe27
+      internalID: -1442412847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_10
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 199
+        width: 163
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a2b93708a748974ba5242f19d255897
+      internalID: -1772675617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_21
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 138
+        width: 843
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4979c284edba5841bf4bd67f3eec5e6
+      internalID: 1501119421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_22
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 149
+        width: 379
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811bf6a5673e9ab4fa366bdc5ef74e37
+      internalID: 915539936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_23
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 125
+        width: 395
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71d37124d94ef74398e09304d9fa0ae
+      internalID: 1748569165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_32
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 37
+        width: 860
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb11cb46032a554e90894d1ace216d5
+      internalID: -1822418899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_ParlementGalactique_clean_33
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 37
+        width: 860
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2761ce77708c9c41a03e1f7f273d29e
+      internalID: -1377041101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GWG_AtlasUI_Base_ParlementGalactique_clean_0: -1869817570
+      GWG_AtlasUI_Base_ParlementGalactique_clean_1: 1714772705
+      GWG_AtlasUI_Base_ParlementGalactique_clean_10: -1772675617
+      GWG_AtlasUI_Base_ParlementGalactique_clean_11: -973500287
+      GWG_AtlasUI_Base_ParlementGalactique_clean_12: -1033599936
+      GWG_AtlasUI_Base_ParlementGalactique_clean_13: -2103545266
+      GWG_AtlasUI_Base_ParlementGalactique_clean_14: 11571990
+      GWG_AtlasUI_Base_ParlementGalactique_clean_15: -1772084690
+      GWG_AtlasUI_Base_ParlementGalactique_clean_16: -1486235497
+      GWG_AtlasUI_Base_ParlementGalactique_clean_17: -1150270834
+      GWG_AtlasUI_Base_ParlementGalactique_clean_18: -997750024
+      GWG_AtlasUI_Base_ParlementGalactique_clean_19: -1022731205
+      GWG_AtlasUI_Base_ParlementGalactique_clean_2: -953512879
+      GWG_AtlasUI_Base_ParlementGalactique_clean_20: 1723871035
+      GWG_AtlasUI_Base_ParlementGalactique_clean_21: 1501119421
+      GWG_AtlasUI_Base_ParlementGalactique_clean_22: 915539936
+      GWG_AtlasUI_Base_ParlementGalactique_clean_23: 1748569165
+      GWG_AtlasUI_Base_ParlementGalactique_clean_24: -72747572
+      GWG_AtlasUI_Base_ParlementGalactique_clean_25: -1488215182
+      GWG_AtlasUI_Base_ParlementGalactique_clean_26: 2111252097
+      GWG_AtlasUI_Base_ParlementGalactique_clean_27: 1601499357
+      GWG_AtlasUI_Base_ParlementGalactique_clean_28: -147662676
+      GWG_AtlasUI_Base_ParlementGalactique_clean_29: -953245144
+      GWG_AtlasUI_Base_ParlementGalactique_clean_3: 1003933032
+      GWG_AtlasUI_Base_ParlementGalactique_clean_30: -285204489
+      GWG_AtlasUI_Base_ParlementGalactique_clean_31: -980246724
+      GWG_AtlasUI_Base_ParlementGalactique_clean_32: -1822418899
+      GWG_AtlasUI_Base_ParlementGalactique_clean_33: -1377041101
+      GWG_AtlasUI_Base_ParlementGalactique_clean_34: 1781426243
+      GWG_AtlasUI_Base_ParlementGalactique_clean_35: 903361842
+      GWG_AtlasUI_Base_ParlementGalactique_clean_36: 1546437960
+      GWG_AtlasUI_Base_ParlementGalactique_clean_37: -1959543211
+      GWG_AtlasUI_Base_ParlementGalactique_clean_38: 347325098
+      GWG_AtlasUI_Base_ParlementGalactique_clean_39: -617052848
+      GWG_AtlasUI_Base_ParlementGalactique_clean_4: 402506877
+      GWG_AtlasUI_Base_ParlementGalactique_clean_40: 726630427
+      GWG_AtlasUI_Base_ParlementGalactique_clean_41: 1751175838
+      GWG_AtlasUI_Base_ParlementGalactique_clean_5: 935041696
+      GWG_AtlasUI_Base_ParlementGalactique_clean_6: -1826279345
+      GWG_AtlasUI_Base_ParlementGalactique_clean_7: -501696002
+      GWG_AtlasUI_Base_ParlementGalactique_clean_8: 1792393104
+      GWG_AtlasUI_Base_ParlementGalactique_clean_9: -1442412847
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

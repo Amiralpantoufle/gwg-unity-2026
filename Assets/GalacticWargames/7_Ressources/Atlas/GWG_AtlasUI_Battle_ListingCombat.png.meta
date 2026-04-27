@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: 52cbe84a610b4da4986a3b883a54b2e2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_ListingCombat_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1051
+        width: 2048
+        height: 996
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e23c3c4a63dda43a248e7bc2fb4fd2
+      internalID: -1616174621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_ListingCombat_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 797
+        width: 2048
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eca0e1896ee63749aa1d1624f75cc5e
+      internalID: 2114265796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_ListingCombat_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 543
+        width: 2048
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c326d03f3b7b74ea68b16b382e5f2f
+      internalID: -150046221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_ListingCombat_3
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 304
+        width: 357
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de5a0310064adae43ae14ce183cd4496
+      internalID: 361457734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_ListingCombat_8
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 66
+        width: 411
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e708dca2ed5d82c4da008b9c6cb8d958
+      internalID: -1854541513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_ListingCombat_9
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 66
+        width: 412
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b70c46c2643204fb03929031d1ac5f
+      internalID: 187290705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_ListingCombat_22
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 246
+        width: 225
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daae581faa2022d4fbb7545b0bb2d4e4
+      internalID: -1596935192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_ListingCombat_23
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 8
+        width: 357
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b552392a2a1947248b5e3050febefb65
+      internalID: -2041464510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_ListingCombat_26
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 118
+        width: 248
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c807f90c3679fa44b554b70f4229d86
+      internalID: -1061776099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_ListingCombat_35
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 8
+        width: 372
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322641e803f1cfc4186a371a7df2d911
+      internalID: -613578923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GWG_AtlasUI_Battle_ListingCombat_0: -1616174621
+      GWG_AtlasUI_Battle_ListingCombat_1: 2114265796
+      GWG_AtlasUI_Battle_ListingCombat_10: -1187678110
+      GWG_AtlasUI_Battle_ListingCombat_11: -1442799134
+      GWG_AtlasUI_Battle_ListingCombat_12: -939366200
+      GWG_AtlasUI_Battle_ListingCombat_13: 36995000
+      GWG_AtlasUI_Battle_ListingCombat_14: -257869981
+      GWG_AtlasUI_Battle_ListingCombat_15: 918298276
+      GWG_AtlasUI_Battle_ListingCombat_16: -1940319532
+      GWG_AtlasUI_Battle_ListingCombat_17: 925285877
+      GWG_AtlasUI_Battle_ListingCombat_18: 2062429402
+      GWG_AtlasUI_Battle_ListingCombat_19: 808174286
+      GWG_AtlasUI_Battle_ListingCombat_2: -150046221
+      GWG_AtlasUI_Battle_ListingCombat_20: -1288425957
+      GWG_AtlasUI_Battle_ListingCombat_21: 1963180426
+      GWG_AtlasUI_Battle_ListingCombat_22: -1596935192
+      GWG_AtlasUI_Battle_ListingCombat_23: -2041464510
+      GWG_AtlasUI_Battle_ListingCombat_24: 638884563
+      GWG_AtlasUI_Battle_ListingCombat_25: -219092309
+      GWG_AtlasUI_Battle_ListingCombat_26: -1061776099
+      GWG_AtlasUI_Battle_ListingCombat_27: -739417006
+      GWG_AtlasUI_Battle_ListingCombat_28: -1514457726
+      GWG_AtlasUI_Battle_ListingCombat_29: -939105443
+      GWG_AtlasUI_Battle_ListingCombat_3: 361457734
+      GWG_AtlasUI_Battle_ListingCombat_30: 933752789
+      GWG_AtlasUI_Battle_ListingCombat_31: -1441597781
+      GWG_AtlasUI_Battle_ListingCombat_32: 1078851838
+      GWG_AtlasUI_Battle_ListingCombat_33: 1685911379
+      GWG_AtlasUI_Battle_ListingCombat_34: -1918539679
+      GWG_AtlasUI_Battle_ListingCombat_35: -613578923
+      GWG_AtlasUI_Battle_ListingCombat_36: 957311956
+      GWG_AtlasUI_Battle_ListingCombat_37: 819148549
+      GWG_AtlasUI_Battle_ListingCombat_38: -985618360
+      GWG_AtlasUI_Battle_ListingCombat_4: 931824019
+      GWG_AtlasUI_Battle_ListingCombat_5: 1977193420
+      GWG_AtlasUI_Battle_ListingCombat_6: 1010685212
+      GWG_AtlasUI_Battle_ListingCombat_7: 1991608348
+      GWG_AtlasUI_Battle_ListingCombat_8: -1854541513
+      GWG_AtlasUI_Battle_ListingCombat_9: 187290705
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

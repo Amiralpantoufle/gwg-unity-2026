@@ -1,0 +1,820 @@
+fileFormatVersion: 2
+guid: 52d498b2ce5e7c84bbb27bd868ccf76f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1899
+        width: 706
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5558fd4387bbcb488edfcf469bf3420
+      internalID: 1333635202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_1
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1908
+        width: 110
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34161255034dc0049917218d21a3441f
+      internalID: -633816744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_3
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 1941
+        width: 182
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeacb9f008deef848b296b7efa0abe9e
+      internalID: 284181749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_4
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 1924
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9174b1f79630e64da94a08fec30a987
+      internalID: 739254411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_5
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 1933
+        width: 779
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367b7b8b6ffa75d4b8d865a73e98c83f
+      internalID: 534673629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1790
+        width: 706
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 866a96a1a284c0040be98aec6cd6baed
+      internalID: 294568708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_7
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1854
+        width: 182
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3446f1104a034e54c8f607a9b8210b55
+      internalID: 527382628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_31
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 1878
+        width: 749
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7ceef5b2b40e444a3e79a7dba8dba4
+      internalID: 710151773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_35
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 1767
+        width: 88
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e57e53a3361c5446a9fe54a2aac518a
+      internalID: 1719124991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_37
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 1769
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449c76aef6fb3614b887040ccd83ccdb
+      internalID: -674275176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_38
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 1774
+        width: 62
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a01996b28e8a384f99421365de106d9
+      internalID: 848429390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_39
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 1780
+        width: 78
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f638a4805bf304489366373b6d13e0
+      internalID: -712399017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_41
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 1705
+        width: 243
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a625e0c80483d234aa3101d31af313a8
+      internalID: 1290533489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_42
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 1705
+        width: 248
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f8fec2144a4d6a43a38801a703f095b
+      internalID: 1240159089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_43
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 1740
+        width: 64
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd44b104c47ed704b977414ad4994a39
+      internalID: -104616206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_44
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 1740
+        width: 64
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90e72e7b4a459e4abca41fed02b0e68
+      internalID: 816678526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_46
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1361
+        width: 749
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c31ea19d1371249a34df966521a179
+      internalID: 648834800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_47
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 1677
+        width: 170
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ae79378f8e2a24b9254729e3789e34
+      internalID: 1505088537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_58
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 1327
+        width: 323
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfddd6061becc8b4caf15d693d45e0a3
+      internalID: -876400383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_59
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 1575
+        width: 110
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d80f38e813e5fa44c886b8ec232118fb
+      internalID: 776632726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_60
+      rect:
+        serializedVersion: 2
+        x: 1786
+        y: 1575
+        width: 110
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d82d2e9ebb7ae42a83f7a405701cb5
+      internalID: 1409075617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_61
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 1575
+        width: 110
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1383240bf4e797144a6c9c933ace7b0c
+      internalID: 1715433589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_65
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 28
+        width: 464
+        height: 1534
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff7cac9618f3784fb69035e24031058
+      internalID: 981707528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_66
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 26
+        width: 464
+        height: 1534
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f492c7a2b87f148a6cac698ef438ca
+      internalID: 579128451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_67
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 597
+        width: 945
+        height: 698
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87799ea8abf01a488c4a1d58c319d03
+      internalID: 1803172979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_68
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 26
+        width: 796
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a54acb5f67ea5d4bb3f96fa4aa30876
+      internalID: -760211588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_69
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2048
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12bc3550ae4cc34e9d079a1574ddd23
+      internalID: 1457555242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_0: 1333635202
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_1: -633816744
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_10: -189210286
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_11: 1950267605
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_12: -747801317
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_13: 1705608315
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_14: 66760575
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_15: -1881833713
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_16: 1672613325
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_17: 1577498449
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_18: 1164876025
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_19: 1943944640
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_2: -710885914
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_20: 1101775307
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_21: 2085912048
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_22: 1689150721
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_23: 1325062578
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_24: 457884877
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_25: -2000488009
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_26: 1246705089
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_27: -215575196
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_28: -2045821968
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_29: -1692101927
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_3: 284181749
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_30: 1452826122
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_31: 710151773
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_32: 1558743228
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_33: 957839896
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_34: 1993301248
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_35: 1719124991
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_36: -563430120
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_37: -674275176
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_38: 848429390
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_39: -712399017
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_4: 739254411
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_40: 1997737988
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_41: 1290533489
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_42: 1240159089
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_43: -104616206
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_44: 816678526
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_45: 190222480
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_46: 648834800
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_47: 1505088537
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_48: -1975662561
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_49: 2135462884
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_5: 534673629
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_50: 974970074
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_51: -1486283717
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_52: 1995056406
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_53: 1677458685
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_54: 1122778850
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_55: 725223428
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_56: -920048043
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_57: -141456493
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_58: -876400383
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_59: 776632726
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_6: 294568708
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_60: 1409075617
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_61: 1715433589
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_62: -1361309492
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_63: 1193200008
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_64: -604225115
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_65: 981707528
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_66: 579128451
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_67: 1803172979
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_68: -760211588
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_69: 1457555242
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_7: 527382628
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_8: -2093442145
+      GWG_AtlasUI_Battle_GestionFlotte+Punchline_clean_9: 1399929431
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

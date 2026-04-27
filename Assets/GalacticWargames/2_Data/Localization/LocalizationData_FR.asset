@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68d6619aa68d664392c301b96281e93, type: 3}
+  m_Name: LocalizationData_FR
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationData
+  languageCode: fr
+  entries:
+  - key: auth_button_login
+    value: Se Connecter
+  - key: auth_input_login
+    value: Nom d'utilisateur
+  - key: auth_input_password
+    value: Mot de passe
+  - key: auth_dropdown_cgu
+    value: CGUs
+  - key: auth_dropdown_conf
+    value: "Politique de confidentialit\xE9"
+  - key: auth_dropdown_account_forgot
+    value: "Mot de passe oubli\xE9"
+  - key: auth_dropdown_account_create
+    value: "Cr\xE9er un compte"

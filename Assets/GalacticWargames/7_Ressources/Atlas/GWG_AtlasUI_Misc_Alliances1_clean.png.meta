@@ -1,0 +1,616 @@
+fileFormatVersion: 2
+guid: 0808517df12ae284e9f398f96d6d9fd4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1870
+        width: 1584
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 052d8160782284e4baff8a2afcb7800b
+      internalID: 1433323599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_1
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 1306
+        width: 137
+        height: 738
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c0b8ea63d6edb418bdfb4773d1c99e
+      internalID: -1717445562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1689
+        width: 1584
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd7ac7ecaf8109439e384955692614f
+      internalID: 1294329099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1577
+        width: 1865
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b4edc91fa567f45b8a954281bbda6b
+      internalID: 1247976671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1468
+        width: 1865
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed293dab6eb8fb44bca0d1667d3163e
+      internalID: -1792445125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1356
+        width: 1618
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f898be47e36bf7439ea35f0a6ee2ba7
+      internalID: -1408382130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1249
+        width: 1586
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeca24184fa5d374bb5782fe3b03f691
+      internalID: -582211586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1141
+        width: 1586
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976be3e4bf65abf45820028c636d268b
+      internalID: -100125743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 847
+        width: 1940
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ccd1f8a8e803bb4f88ff5f7ecba7823
+      internalID: 1317913398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 739
+        width: 1865
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4147679c9640a31448f3ac2a52f4e900
+      internalID: -1105619316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_10
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 714
+        width: 1383
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9ebc89dfeef9a499be588ae2aa8484
+      internalID: -1470128164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_11
+      rect:
+        serializedVersion: 2
+        x: 1514
+        y: 628
+        width: 528
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba04e58bf1950e45968698f25a33161
+      internalID: -963891713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_12
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 593
+        width: 1251
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a94a5c52416e2949860fd88db1b5a85
+      internalID: -1116296801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_13
+      rect:
+        serializedVersion: 2
+        x: 1509
+        y: 535
+        width: 245
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f3ae8bdf2c6365429f47e51f77f938f
+      internalID: -1514521478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_14
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 531
+        width: 263
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f42af3f7c246e479d959a04cb7ab34
+      internalID: -262746089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_15
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 6
+        width: 1383
+        height: 579
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4000a005423ec7a48b9ba7d8823f9001
+      internalID: 2094518880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_16
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 448
+        width: 454
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35c619f7b80cc7498cd3681ace641ee
+      internalID: -844646002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_17
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 293
+        width: 527
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5164d88cdebbf8042a2f7a8544b66e5b
+      internalID: -1717284014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_18
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 207
+        width: 453
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ba0fedae0c2b044a945ea029b5cf6b
+      internalID: -990857106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Misc_Alliances1_clean_19
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 12
+        width: 520
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70869550a6465514db2795f7fb336a17
+      internalID: 341856383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GWG_AtlasUI_Misc_Alliances1_clean_0: 1433323599
+      GWG_AtlasUI_Misc_Alliances1_clean_1: -1717445562
+      GWG_AtlasUI_Misc_Alliances1_clean_10: -1470128164
+      GWG_AtlasUI_Misc_Alliances1_clean_11: -963891713
+      GWG_AtlasUI_Misc_Alliances1_clean_12: -1116296801
+      GWG_AtlasUI_Misc_Alliances1_clean_13: -1514521478
+      GWG_AtlasUI_Misc_Alliances1_clean_14: -262746089
+      GWG_AtlasUI_Misc_Alliances1_clean_15: 2094518880
+      GWG_AtlasUI_Misc_Alliances1_clean_16: -844646002
+      GWG_AtlasUI_Misc_Alliances1_clean_17: -1717284014
+      GWG_AtlasUI_Misc_Alliances1_clean_18: -990857106
+      GWG_AtlasUI_Misc_Alliances1_clean_19: 341856383
+      GWG_AtlasUI_Misc_Alliances1_clean_2: 1294329099
+      GWG_AtlasUI_Misc_Alliances1_clean_3: 1247976671
+      GWG_AtlasUI_Misc_Alliances1_clean_4: -1792445125
+      GWG_AtlasUI_Misc_Alliances1_clean_5: -1408382130
+      GWG_AtlasUI_Misc_Alliances1_clean_6: -582211586
+      GWG_AtlasUI_Misc_Alliances1_clean_7: -100125743
+      GWG_AtlasUI_Misc_Alliances1_clean_8: 1317913398
+      GWG_AtlasUI_Misc_Alliances1_clean_9: -1105619316
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

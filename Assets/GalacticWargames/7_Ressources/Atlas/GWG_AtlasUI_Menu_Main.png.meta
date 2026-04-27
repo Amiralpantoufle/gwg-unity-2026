@@ -1,0 +1,498 @@
+fileFormatVersion: 2
+guid: cdd917425621f2f47bb5aba084a6ebe8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8548068443425583243
+    second: GWG_AtlasUI_Menu_Main_0
+  - first:
+      213: -6522416267769386719
+    second: GWG_AtlasUI_Menu_Main_1
+  - first:
+      213: 3177671305938615488
+    second: GWG_AtlasUI_Menu_Main_2
+  - first:
+      213: -4992139041833221722
+    second: GWG_AtlasUI_Menu_Main_3
+  - first:
+      213: -2952281639901463545
+    second: GWG_AtlasUI_Menu_Main_4
+  - first:
+      213: 7700495367490465186
+    second: GWG_AtlasUI_Menu_Main_5
+  - first:
+      213: 5121035616858360878
+    second: GWG_AtlasUI_Menu_Main_6
+  - first:
+      213: 8350753082739734426
+    second: GWG_AtlasUI_Menu_Main_7
+  - first:
+      213: -6891139910359668782
+    second: GWG_AtlasUI_Menu_Main_8
+  - first:
+      213: -8031977933203498367
+    second: GWG_AtlasUI_Menu_Main_9
+  - first:
+      213: 8608443958304934269
+    second: GWG_AtlasUI_Menu_Main_10
+  - first:
+      213: -2851416331456567121
+    second: GWG_AtlasUI_Menu_Main_11
+  - first:
+      213: -2709305718703678364
+    second: GWG_AtlasUI_Menu_Main_12
+  - first:
+      213: 21389414142044697
+    second: GWG_AtlasUI_Menu_Main_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 85
+        width: 675
+        height: 922
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f44e15a092f5980800000000000000
+      internalID: -8548068443425583243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_1
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 405
+        width: 388
+        height: 601
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 129606236f8bb75a0800000000000000
+      internalID: -6522416267769386719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_2
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 881
+        width: 119
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc3c6b773b591c20800000000000000
+      internalID: 3177671305938615488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_3
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 881
+        width: 119
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a10c2eadfb58bab0800000000000000
+      internalID: -4992139041833221722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_4
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 909
+        width: 593
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70cf3c88d736707d0800000000000000
+      internalID: -2952281639901463545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_5
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 759
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ad6fcddcb7adda60800000000000000
+      internalID: 7700495367490465186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_7
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 753
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9733bf3fa5d3e370800000000000000
+      internalID: 8350753082739734426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_8
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 784
+        width: 593
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7ae7923c0cd50a0800000000000000
+      internalID: -6891139910359668782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_9
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 258
+        width: 184
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a11afff9ea88090800000000000000
+      internalID: -8031977933203498367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_10
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 253
+        width: 131
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d798f9bab26577770800000000000000
+      internalID: 8608443958304934269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_11
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 209
+        width: 675
+        height: 558
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa8a8c834fbbd68d0800000000000000
+      internalID: -2851416331456567121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_12
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 193
+        width: 539
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46c9bb8adcc966ad0800000000000000
+      internalID: -2709305718703678364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Menu_Main_13
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 147
+        width: 539
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91ae3ef0f8dfb4000800000000000000
+      internalID: 21389414142044697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 886dd865cd68d3a47b045f94bcacc8da
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GWG_AtlasUI_Menu_Main_0: -8548068443425583243
+      GWG_AtlasUI_Menu_Main_1: -6522416267769386719
+      GWG_AtlasUI_Menu_Main_10: 8608443958304934269
+      GWG_AtlasUI_Menu_Main_11: -2851416331456567121
+      GWG_AtlasUI_Menu_Main_12: -2709305718703678364
+      GWG_AtlasUI_Menu_Main_13: 21389414142044697
+      GWG_AtlasUI_Menu_Main_2: 3177671305938615488
+      GWG_AtlasUI_Menu_Main_3: -4992139041833221722
+      GWG_AtlasUI_Menu_Main_4: -2952281639901463545
+      GWG_AtlasUI_Menu_Main_5: 7700495367490465186
+      GWG_AtlasUI_Menu_Main_6: 5121035616858360878
+      GWG_AtlasUI_Menu_Main_7: 8350753082739734426
+      GWG_AtlasUI_Menu_Main_8: -6891139910359668782
+      GWG_AtlasUI_Menu_Main_9: -8031977933203498367
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

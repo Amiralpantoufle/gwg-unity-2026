@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68d6619aa68d664392c301b96281e93, type: 3}
+  m_Name: LocalizationData_EN
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationData
+  languageCode: en
+  entries:
+  - key: auth_button_login
+    value: Login
+  - key: auth_input_login
+    value: Username
+  - key: auth_input_email
+    value: Email
+  - key: auth_input_password
+    value: Password
+  - key: auth_input_newpassword
+    value: New password
+  - key: auth_input_currentpassword
+    value: Current password
+  - key: auth_dropdown_cgu
+    value: Terms and Conditions
+  - key: auth_dropdown_conf
+    value: Privacy Policy
+  - key: auth_dropdown_account_forgot
+    value: Forgot your password?
+  - key: auth_dropdown_account_create
+    value: Register Account
+  - key: auth_header_setpassword
+    value: Define a password
+  - key: ui_button_confirm
+    value: Confirm
+  - key: auth_resetpassword_code_header
+    value: Add your email verification code
+  - key: auth_resetpassword_code
+    value: confirmation code

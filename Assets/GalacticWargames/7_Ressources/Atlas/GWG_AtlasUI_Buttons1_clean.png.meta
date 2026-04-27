@@ -1,0 +1,2479 @@
+fileFormatVersion: 2
+guid: eb68ca330858745418663c5294a234df
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1912
+        width: 461
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c4f5af7fc17ce4eba226f3d1a7075c
+      internalID: 949855087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_1
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 1940
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec2e17fd9ab1eb438fa0818ddc8effb
+      internalID: -1725266810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_2
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1940
+        width: 107
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c34eda451fd933b499a25d17ec192d7b
+      internalID: -434770418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_3
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 1940
+        width: 107
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1bf39586ed8c9f4b99bde21b43de3b8
+      internalID: 1206449396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_4
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 1940
+        width: 107
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a785270a13b2b49aa241ae0ccb75db
+      internalID: 1542270903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_5
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 1940
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c91e3e5f2ad17498a098ee1acb446f
+      internalID: 1399727071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_6
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 1939
+        width: 106
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ebd315728cc114ba2956676171c1d6
+      internalID: 2004438768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_7
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 1941
+        width: 107
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e44ffeeac692e445be2750f1c62db42
+      internalID: -190325805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_8
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 1939
+        width: 107
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0197e41069d0644a2b71010090d47f
+      internalID: -177194964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_9
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 2002
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fe3036bd546ca4cb34828207c20ff5
+      internalID: 2092785433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_10
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 2002
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132b279a43c48ec499d9bda1df520ae1
+      internalID: -48458559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_11
+      rect:
+        serializedVersion: 2
+        x: 1505
+        y: 1999
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b3b1ecde76deb4ea1c3dac99609e5d
+      internalID: -1289079150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_12
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 1999
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7b1153661f67fa449031165e80b6444
+      internalID: 1778129027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_13
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 1940
+        width: 105
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a00dda7485b0744be6ff6f50c5b641
+      internalID: 1069606090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_14
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 1940
+        width: 105
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb07d62f8e26734ea304fc9a665384d
+      internalID: -631239048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_15
+      rect:
+        serializedVersion: 2
+        x: 1829
+        y: 1940
+        width: 105
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c961080193aca4c8577254b2b3b5bd
+      internalID: -298400317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_16
+      rect:
+        serializedVersion: 2
+        x: 1940
+        y: 1940
+        width: 105
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd399e00f2bed0d40a07389d4b9a1ec9
+      internalID: 884106351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_17
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 1955
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a1309a8f78a004eaa8062d035c5b00
+      internalID: 8236894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_18
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 1942
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2a82c25da7e0b4ab548b649bd24eb7
+      internalID: 126589226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1802
+        width: 481
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757835e4b50cd7b44aef3a2e415eb434
+      internalID: 1907821648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_20
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1815
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f61389d3a761941ab4c1a9a36fbd0b
+      internalID: -159534307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_21
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 1835
+        width: 80
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee8fa67823946064aa51165c7bf4c0ea
+      internalID: 388559569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_22
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 1835
+        width: 364
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cffe1264a40a1884daddd9b9a49d20b6
+      internalID: -1598617651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_23
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 1835
+        width: 80
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39476c4a4fcc0f242929fbe2d61daf9e
+      internalID: 1902546524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_24
+      rect:
+        serializedVersion: 2
+        x: 1426
+        y: 1823
+        width: 97
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e77a47357a65bd4ab907183ac1a197b
+      internalID: -418325040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_25
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 1823
+        width: 97
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf6e740582674c458ec837d7e13cdaf
+      internalID: 939937901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_26
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 1824
+        width: 98
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e6805978fc86d41927da7439469f44
+      internalID: 539678629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_27
+      rect:
+        serializedVersion: 2
+        x: 1735
+        y: 1824
+        width: 98
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc83f734d54fcfd46a3c20bc2bb07e70
+      internalID: -1761382616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_28
+      rect:
+        serializedVersion: 2
+        x: 1843
+        y: 1823
+        width: 98
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5eb8d97bd06c143bd0572bc8e99912
+      internalID: -1326785162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_29
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 1823
+        width: 98
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749dcc331a8aa394f8eee7d1d6299e41
+      internalID: -410634444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_30
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1621
+        width: 659
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be74aa98b63b9f24492bd41ba4b39a76
+      internalID: 1113459562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_31
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 1738
+        width: 80
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21502047c895700438b191ec77ae45b6
+      internalID: -230233538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_32
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 1738
+        width: 80
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1041a46ef3903947a762ba61e132067
+      internalID: -1217649747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_33
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 1745
+        width: 137
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d09daf7a63a6540ae1aabad7a49be8
+      internalID: -1477060244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_34
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 1745
+        width: 137
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea34b948c1e569d4d97ecc7ccaffdb9a
+      internalID: 244226687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_35
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 1742
+        width: 96
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604807ddabaa6494cb39a03634cbd43e
+      internalID: -2040975173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_36
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 1711
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0caabc06566c2f747a0143844c455033
+      internalID: -1665920950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_37
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 1711
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e028a4b3ff1f560439ee43605b991efe
+      internalID: 601628635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_38
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 1680
+        width: 97
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b2d46acfe081774b806307852ca1148
+      internalID: -437194617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_39
+      rect:
+        serializedVersion: 2
+        x: 1762
+        y: 1680
+        width: 97
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e0d952a4abfbd4d917f0105ef57449
+      internalID: -2059003640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_40
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 1620
+        width: 142
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2643f180a70c59d4b962a9b2c3735280
+      internalID: 1604208611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_41
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1470
+        width: 538
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e2312db99070b408fbe3fbba6ce5d7
+      internalID: 345150855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_42
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 1586
+        width: 538
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870e5cc74eed6c145b0f6b70331af83d
+      internalID: 1422597270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_43
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 1582
+        width: 141
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ecbefe60a66664a9a07e22d4d34281
+      internalID: 1187520579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_44
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 1583
+        width: 168
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85203e345520a1445b225c002061234f
+      internalID: 547736910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_45
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 1582
+        width: 168
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a5f8f4944a9b540941ac3872a38eab
+      internalID: 1568007843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_46
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 1487
+        width: 363
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87aa5382d1a1a94bb28e5cf357b4694
+      internalID: -916333111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_47
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1457
+        width: 251
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af597200aeb1f5c4195b2c1eb0a85616
+      internalID: -1611217570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_48
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1516
+        width: 158
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d6456fba861bb43aa3dc29346844b0
+      internalID: -1563658484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_49
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 1516
+        width: 158
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7b56e44d6f6f2f449669ebb00e8770a
+      internalID: -1793557722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_50
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 1508
+        width: 117
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aaa55e051ec18b4bbc687aeed46eb47
+      internalID: -556131418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_51
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 1371
+        width: 127
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e290e946f44d0634aadddebb7206454d
+      internalID: -1981177084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_52
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 1452
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12487df56c812454185320b637c35a29
+      internalID: 729444197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_53
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1452
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1100de9c21b1c64386bde8cbdeef44f
+      internalID: -763848847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_54
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 1452
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7266e4bfb6eacf84ebaca57aead5820a
+      internalID: 113632568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_55
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 1452
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91fa49f9407b01843a7d00fe1281e705
+      internalID: 516368183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_56
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 1438
+        width: 117
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8899e4e8eb1a173459f0e8f545e2765f
+      internalID: -176572261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_57
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 1344
+        width: 251
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57e75be3956e2049a4e4a44506d4754
+      internalID: 294572061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_58
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 1367
+        width: 117
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6506bd808f2503c46ba1c5333fb7671f
+      internalID: -65874165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_59
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 1336
+        width: 661
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d207fdc12ddadb44db500a6c9df94e86
+      internalID: 351237155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_60
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1234
+        width: 296
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0954c58ba9b7d3544a941c3c1e664e3b
+      internalID: -905189553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_61
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 1190
+        width: 206
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edb2e139bf6754a4f9153a4862724332
+      internalID: -1595162136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_62
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1109
+        width: 175
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f19ddc795a7005459cf73bf45207708
+      internalID: 663425241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_63
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 1109
+        width: 175
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288628f71f7369447ba34cf169f5aad2
+      internalID: 325173998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_64
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 1109
+        width: 169
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb8bba1e2ace4ba4ba4a97d15a7a622c
+      internalID: 327753014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_65
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 1109
+        width: 175
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0493e549939c40a41b49a054e00ff936
+      internalID: 327465738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_66
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 1226
+        width: 426
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 582f390b0e252ec4084f8e7e99b20776
+      internalID: 1924064080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_67
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 1139
+        width: 394
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6514695543935244dbe8f9afe74a6915
+      internalID: -508823891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_68
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 1092
+        width: 285
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624c155b052b29b448b54770e2a1be5d
+      internalID: 1695576980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_69
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 1093
+        width: 497
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd3a98cab85552842b389c9f8ae8f35f
+      internalID: 685038192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_70
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1025
+        width: 424
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e84aa95f7fb0a428c4a004ffb6b7ea
+      internalID: -1639400283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_71
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 1029
+        width: 296
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9def36a610f3f5498218f410035e84d
+      internalID: -186380760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_72
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 931
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0832bc616385bec46ade68e3129ef1a3
+      internalID: -1333342055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_73
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 997
+        width: 297
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5c62b6241268445b843b7192b1cbf9
+      internalID: 254659546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_74
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 930
+        width: 446
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ea1e188148d9340a4814b9746c4333
+      internalID: 571471877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_75
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 929
+        width: 394
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c924f261833b1884e8d45fabd1342994
+      internalID: -1468008225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_76
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 680
+        width: 995
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca244458121fb4549a6c33700b44c654
+      internalID: -2091821024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_77
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 763
+        width: 386
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49af39c7df0174849ae9cd4e59e92e69
+      internalID: 655254537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_78
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 633
+        width: 480
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b7e6f5a35eacf419b07a396eb2e9ec
+      internalID: -833140651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_79
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 674
+        width: 435
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0719c5183441054bbd6291f42b8e245
+      internalID: 627237767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_80
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 524
+        width: 394
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f368664fb1c0e2144b032659f0a86bf8
+      internalID: 51811843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_81
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 572
+        width: 390
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b9f7e7ca013cb42ac3f1888ec9ce38
+      internalID: 1900503292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_82
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 562
+        width: 464
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c627ed5324ccd6543897d539011b218a
+      internalID: 1471172337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_83
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 413
+        width: 271
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eaa5ebad51e83e4682e62fa76684141
+      internalID: 1497188707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_84
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 444
+        width: 386
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58feb4e62644464495fd193eec5ab72
+      internalID: -1764469366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_85
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 448
+        width: 461
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f6e152daac4f440aacd3fe713d52cb
+      internalID: 633164511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_86
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 303
+        width: 271
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361b4175485ec95449e6031600eff0ee
+      internalID: -1033109993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_87
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 340
+        width: 285
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d13baa0b1051b34ea77852a60be34d0
+      internalID: -1938205850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_88
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 338
+        width: 546
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc789fca938d779489b861f45fd3555b
+      internalID: 1127997840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_89
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 246
+        width: 383
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda7411e24d7d2e43bc1db7e7b1a0b28
+      internalID: 152525804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_90
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 254
+        width: 328
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c534bb4f91f0546b5451c352693e4d
+      internalID: -513446579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_91
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 237
+        width: 606
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b73d32d59beea49b6395a5caf1aa65
+      internalID: -189512903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_92
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 167
+        width: 681
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4150f52f1f0fc064088ba97841d4d7a3
+      internalID: -594621655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_93
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 138
+        width: 424
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766d5cf79d7518b478ff75103056b2a0
+      internalID: -1778111782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_94
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 135
+        width: 606
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7469464a2ebbbf47adbe9b64c339c01
+      internalID: 1647814782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_95
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 125
+        width: 681
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b02259de711e742ade0dd6ede44304
+      internalID: 1877565972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_96
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 22
+        width: 1020
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af19f0da503d5b3449796e0a83603a5b
+      internalID: 219869803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_97
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 83
+        width: 764
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b26d6cef5026a0243b2c617939c6b073
+      internalID: 694324686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_98
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 41
+        width: 764
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f811605fb2dece2418856361aa86bc3f
+      internalID: -277865569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_99
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 12
+        width: 866
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6bb458b648fafd4d92755751246209e
+      internalID: 303800999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Buttons1_clean_100
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 0
+        width: 299
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce2fff395de2a54d9543e39300bace3
+      internalID: 729509898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GWG_AtlasUI_Buttons1_clean_0: 949855087
+      GWG_AtlasUI_Buttons1_clean_1: -1725266810
+      GWG_AtlasUI_Buttons1_clean_10: -48458559
+      GWG_AtlasUI_Buttons1_clean_100: 729509898
+      GWG_AtlasUI_Buttons1_clean_11: -1289079150
+      GWG_AtlasUI_Buttons1_clean_12: 1778129027
+      GWG_AtlasUI_Buttons1_clean_13: 1069606090
+      GWG_AtlasUI_Buttons1_clean_14: -631239048
+      GWG_AtlasUI_Buttons1_clean_15: -298400317
+      GWG_AtlasUI_Buttons1_clean_16: 884106351
+      GWG_AtlasUI_Buttons1_clean_17: 8236894
+      GWG_AtlasUI_Buttons1_clean_18: 126589226
+      GWG_AtlasUI_Buttons1_clean_19: 1907821648
+      GWG_AtlasUI_Buttons1_clean_2: -434770418
+      GWG_AtlasUI_Buttons1_clean_20: -159534307
+      GWG_AtlasUI_Buttons1_clean_21: 388559569
+      GWG_AtlasUI_Buttons1_clean_22: -1598617651
+      GWG_AtlasUI_Buttons1_clean_23: 1902546524
+      GWG_AtlasUI_Buttons1_clean_24: -418325040
+      GWG_AtlasUI_Buttons1_clean_25: 939937901
+      GWG_AtlasUI_Buttons1_clean_26: 539678629
+      GWG_AtlasUI_Buttons1_clean_27: -1761382616
+      GWG_AtlasUI_Buttons1_clean_28: -1326785162
+      GWG_AtlasUI_Buttons1_clean_29: -410634444
+      GWG_AtlasUI_Buttons1_clean_3: 1206449396
+      GWG_AtlasUI_Buttons1_clean_30: 1113459562
+      GWG_AtlasUI_Buttons1_clean_31: -230233538
+      GWG_AtlasUI_Buttons1_clean_32: -1217649747
+      GWG_AtlasUI_Buttons1_clean_33: -1477060244
+      GWG_AtlasUI_Buttons1_clean_34: 244226687
+      GWG_AtlasUI_Buttons1_clean_35: -2040975173
+      GWG_AtlasUI_Buttons1_clean_36: -1665920950
+      GWG_AtlasUI_Buttons1_clean_37: 601628635
+      GWG_AtlasUI_Buttons1_clean_38: -437194617
+      GWG_AtlasUI_Buttons1_clean_39: -2059003640
+      GWG_AtlasUI_Buttons1_clean_4: 1542270903
+      GWG_AtlasUI_Buttons1_clean_40: 1604208611
+      GWG_AtlasUI_Buttons1_clean_41: 345150855
+      GWG_AtlasUI_Buttons1_clean_42: 1422597270
+      GWG_AtlasUI_Buttons1_clean_43: 1187520579
+      GWG_AtlasUI_Buttons1_clean_44: 547736910
+      GWG_AtlasUI_Buttons1_clean_45: 1568007843
+      GWG_AtlasUI_Buttons1_clean_46: -916333111
+      GWG_AtlasUI_Buttons1_clean_47: -1611217570
+      GWG_AtlasUI_Buttons1_clean_48: -1563658484
+      GWG_AtlasUI_Buttons1_clean_49: -1793557722
+      GWG_AtlasUI_Buttons1_clean_5: 1399727071
+      GWG_AtlasUI_Buttons1_clean_50: -556131418
+      GWG_AtlasUI_Buttons1_clean_51: -1981177084
+      GWG_AtlasUI_Buttons1_clean_52: 729444197
+      GWG_AtlasUI_Buttons1_clean_53: -763848847
+      GWG_AtlasUI_Buttons1_clean_54: 113632568
+      GWG_AtlasUI_Buttons1_clean_55: 516368183
+      GWG_AtlasUI_Buttons1_clean_56: -176572261
+      GWG_AtlasUI_Buttons1_clean_57: 294572061
+      GWG_AtlasUI_Buttons1_clean_58: -65874165
+      GWG_AtlasUI_Buttons1_clean_59: 351237155
+      GWG_AtlasUI_Buttons1_clean_6: 2004438768
+      GWG_AtlasUI_Buttons1_clean_60: -905189553
+      GWG_AtlasUI_Buttons1_clean_61: -1595162136
+      GWG_AtlasUI_Buttons1_clean_62: 663425241
+      GWG_AtlasUI_Buttons1_clean_63: 325173998
+      GWG_AtlasUI_Buttons1_clean_64: 327753014
+      GWG_AtlasUI_Buttons1_clean_65: 327465738
+      GWG_AtlasUI_Buttons1_clean_66: 1924064080
+      GWG_AtlasUI_Buttons1_clean_67: -508823891
+      GWG_AtlasUI_Buttons1_clean_68: 1695576980
+      GWG_AtlasUI_Buttons1_clean_69: 685038192
+      GWG_AtlasUI_Buttons1_clean_7: -190325805
+      GWG_AtlasUI_Buttons1_clean_70: -1639400283
+      GWG_AtlasUI_Buttons1_clean_71: -186380760
+      GWG_AtlasUI_Buttons1_clean_72: -1333342055
+      GWG_AtlasUI_Buttons1_clean_73: 254659546
+      GWG_AtlasUI_Buttons1_clean_74: 571471877
+      GWG_AtlasUI_Buttons1_clean_75: -1468008225
+      GWG_AtlasUI_Buttons1_clean_76: -2091821024
+      GWG_AtlasUI_Buttons1_clean_77: 655254537
+      GWG_AtlasUI_Buttons1_clean_78: -833140651
+      GWG_AtlasUI_Buttons1_clean_79: 627237767
+      GWG_AtlasUI_Buttons1_clean_8: -177194964
+      GWG_AtlasUI_Buttons1_clean_80: 51811843
+      GWG_AtlasUI_Buttons1_clean_81: 1900503292
+      GWG_AtlasUI_Buttons1_clean_82: 1471172337
+      GWG_AtlasUI_Buttons1_clean_83: 1497188707
+      GWG_AtlasUI_Buttons1_clean_84: -1764469366
+      GWG_AtlasUI_Buttons1_clean_85: 633164511
+      GWG_AtlasUI_Buttons1_clean_86: -1033109993
+      GWG_AtlasUI_Buttons1_clean_87: -1938205850
+      GWG_AtlasUI_Buttons1_clean_88: 1127997840
+      GWG_AtlasUI_Buttons1_clean_89: 152525804
+      GWG_AtlasUI_Buttons1_clean_9: 2092785433
+      GWG_AtlasUI_Buttons1_clean_90: -513446579
+      GWG_AtlasUI_Buttons1_clean_91: -189512903
+      GWG_AtlasUI_Buttons1_clean_92: -594621655
+      GWG_AtlasUI_Buttons1_clean_93: -1778111782
+      GWG_AtlasUI_Buttons1_clean_94: 1647814782
+      GWG_AtlasUI_Buttons1_clean_95: 1877565972
+      GWG_AtlasUI_Buttons1_clean_96: 219869803
+      GWG_AtlasUI_Buttons1_clean_97: 694324686
+      GWG_AtlasUI_Buttons1_clean_98: -277865569
+      GWG_AtlasUI_Buttons1_clean_99: 303800999
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

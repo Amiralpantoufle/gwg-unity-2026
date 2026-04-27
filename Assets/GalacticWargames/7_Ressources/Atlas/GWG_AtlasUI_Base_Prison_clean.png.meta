@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: 531b50b66f424dc4f8a19fc9272723b8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 460
+        width: 665
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9833be7c94402ab41ae5ecdeec324c30
+      internalID: 942403975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_1
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 820
+        width: 214
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f6c2539a88d91498e94f472529d3c7
+      internalID: 644182898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_2
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 809
+        width: 1044
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbaf0e0e9316ab74daf398ddbf232cee
+      internalID: -869408617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_5
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 731
+        width: 570
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a4bd4c83b41df45b372f98baa10c1e
+      internalID: -1906395046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_6
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 704
+        width: 419
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce5df94fa5101349a1328c1392b06da
+      internalID: 1605669081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_13
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 629
+        width: 569
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84abefb64821790429075a1868509e61
+      internalID: 1553267024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_14
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 547
+        width: 139
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e82107f3c6216c54cab3503cfe5762b2
+      internalID: 1628189129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_20
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 557
+        width: 95
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9faf2743253661749bc29b9451780ddc
+      internalID: -455108705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_25
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 526
+        width: 158
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a00e34b53fc9014497298dac3fc8987
+      internalID: 1108926101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_28
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 402
+        width: 569
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c22f73884135754490ab0dd5b346b09
+      internalID: 435520062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_31
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 249
+        width: 1737
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615f69984ad5fc245a4fe0797f966022
+      internalID: -723079524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_32
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 121
+        width: 699
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca8663e898be1242b2382ab204bb735
+      internalID: 1142734654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasUI_Base_Prison_clean_33
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 95
+        width: 1111
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31aa5ce83f9ca843babfdc466451fa6
+      internalID: 1312767451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GWG_AtlasUI_Base_Prison_clean_0: 942403975
+      GWG_AtlasUI_Base_Prison_clean_1: 644182898
+      GWG_AtlasUI_Base_Prison_clean_10: 376685463
+      GWG_AtlasUI_Base_Prison_clean_11: 1391493115
+      GWG_AtlasUI_Base_Prison_clean_12: -2048226279
+      GWG_AtlasUI_Base_Prison_clean_13: 1553267024
+      GWG_AtlasUI_Base_Prison_clean_14: 1628189129
+      GWG_AtlasUI_Base_Prison_clean_15: 2098086409
+      GWG_AtlasUI_Base_Prison_clean_16: -923785900
+      GWG_AtlasUI_Base_Prison_clean_17: -1525875685
+      GWG_AtlasUI_Base_Prison_clean_18: -238517751
+      GWG_AtlasUI_Base_Prison_clean_19: 1281207242
+      GWG_AtlasUI_Base_Prison_clean_2: -869408617
+      GWG_AtlasUI_Base_Prison_clean_20: -455108705
+      GWG_AtlasUI_Base_Prison_clean_21: 576929670
+      GWG_AtlasUI_Base_Prison_clean_22: 1077544569
+      GWG_AtlasUI_Base_Prison_clean_23: -996516387
+      GWG_AtlasUI_Base_Prison_clean_24: -252296472
+      GWG_AtlasUI_Base_Prison_clean_25: 1108926101
+      GWG_AtlasUI_Base_Prison_clean_26: -1078402966
+      GWG_AtlasUI_Base_Prison_clean_27: 540287302
+      GWG_AtlasUI_Base_Prison_clean_28: 435520062
+      GWG_AtlasUI_Base_Prison_clean_29: 755746182
+      GWG_AtlasUI_Base_Prison_clean_3: 326976276
+      GWG_AtlasUI_Base_Prison_clean_30: 1653042665
+      GWG_AtlasUI_Base_Prison_clean_31: -723079524
+      GWG_AtlasUI_Base_Prison_clean_32: 1142734654
+      GWG_AtlasUI_Base_Prison_clean_33: 1312767451
+      GWG_AtlasUI_Base_Prison_clean_4: -1295138960
+      GWG_AtlasUI_Base_Prison_clean_5: -1906395046
+      GWG_AtlasUI_Base_Prison_clean_6: 1605669081
+      GWG_AtlasUI_Base_Prison_clean_7: 316397083
+      GWG_AtlasUI_Base_Prison_clean_8: 279531743
+      GWG_AtlasUI_Base_Prison_clean_9: -1742958944
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
