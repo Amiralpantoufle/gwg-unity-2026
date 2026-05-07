@@ -31,7 +31,12 @@ public class Authentification_Screen : UIScreen
                 Debug.Log("UIState LoggedOut");
                 break;
             case UIState.Loggedin:
-                //Saver Username
+
+                EventBus.Publish(new ReplaceScreenEvent
+                {
+                    screenID = ScreenID.Main
+                });
+
                 Debug.Log("UIState LoggedIn");
                 break;
         }

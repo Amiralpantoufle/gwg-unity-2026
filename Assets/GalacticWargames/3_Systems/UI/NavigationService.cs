@@ -4,7 +4,7 @@ using UnityEngine;
 public enum ScreenID
 {
     Auth,
-    Home
+    Main
 }
 /// <summary>
 /// Centralise la navigation avec des IDs au lieu de références directes.
@@ -35,18 +35,47 @@ public class NavigationService : MonoBehaviour
         }
     }
 
-    public void Open(ScreenID id, object data = null)
+
+    //Listeners
+    private void OnEnable()
     {
-        if (!screenDict.ContainsKey(id))
+        EventBus.Subscribe<OpenScreenByIDEvent>(OnOpenScreen);
+        EventBus.Subscribe<ReplaceScreenEvent>(OnReplaceScreen);
+    }
+    private void OnDisable()
+    {
+        EventBus.Unsubscribe<OpenScreenByIDEvent>(OnOpenScreen);
+        EventBus.Unsubscribe<ReplaceScreenEvent>(OnReplaceScreen);
+    }
+    /// <summary>
+    /// Event => Ouverture d'un écran
+    /// </summary>
+    /// <param name="e"></param>
+    private void OnOpenScreen(OpenScreenByIDEvent e)
+    {
+        //Open(e.screenID, e.data);
+
+        if (!screenDict.ContainsKey(e.screenID))
         {
-            Debug.LogError($"Screen not found: {id}");
+            Debug.LogError($"Screen not found: {e.screenID}");
             return;
         }
 
-        var screen = screenDict[id];
-        screen.Init(data);
+        var screen = screenDict[e.screenID];
+        screen.Init(e.data);
 
         ScreenManager.Instance.Push(screen);
     }
+    private void OnReplaceScreen(ReplaceScreenEvent e)
+    {
+        if (!screenDict.ContainsKey(e.screenID))
+        {
+            Debug.LogError($"Screen not found: {e.screenID}");
+            return;
+        }
 
+        var screen = screenDict[e.screenID];
+
+        ScreenManager.Instance.Replace(screen);
+    }
 }

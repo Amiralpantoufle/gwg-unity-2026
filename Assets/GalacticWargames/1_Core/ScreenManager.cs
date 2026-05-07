@@ -15,6 +15,9 @@ public class ScreenManager : MonoBehaviour
         Instance = this;
     }
 
+    /// <summary>
+    /// Afficher un écran en cherchant dans screenStack le premier dernier élément sans modifier les données.
+    /// </summary>
     public void Push(UIScreen screen)
     {
         if (screenStack.Count > 0)
@@ -24,8 +27,9 @@ public class ScreenManager : MonoBehaviour
         screen.Show();
     }
     /// <summary>
-    /// Afficher un écran en cherchant dans screenStack le premier dernier élément sans modifier les données.
+    /// Retire l'écran au sommet de la pile ScreenStack pour le remplacer par nouvel écran
     /// </summary>
+    /// <param name="screen"></param>
     public void Pop()
     {
         if (screenStack.Count == 0) return;
@@ -37,9 +41,8 @@ public class ScreenManager : MonoBehaviour
             screenStack.Peek().Show();
     }
     /// <summary>
-    /// Retire l'écran au sommet de la pile ScreenStack pour le remplacer par nouvel écran
+    /// Retire le dernier élément de la pile screenStack et le désactive
     /// </summary>
-    /// <param name="screen"></param>
     public void Replace(UIScreen screen)
     {
         if (screenStack.Count > 0)
@@ -51,9 +54,6 @@ public class ScreenManager : MonoBehaviour
         screenStack.Push(screen);
         screen.Show();
     }
-    /// <summary>
-    /// Retire le dernier élément de la pile screenStack et le désactive
-    /// </summary>
     public void Clear()
     {
         while (screenStack.Count > 0)
@@ -62,7 +62,7 @@ public class ScreenManager : MonoBehaviour
         }
     }
 
-
+    /*
     //Listeners
     private void OnEnable()
     {
@@ -80,5 +80,5 @@ public class ScreenManager : MonoBehaviour
     {
         NavigationService.Instance.Open(e.screenID, e.data);
     }
-
+    */
 }

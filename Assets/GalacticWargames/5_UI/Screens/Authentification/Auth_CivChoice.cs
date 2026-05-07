@@ -31,4 +31,5 @@ public class Auth_CivChoice : MonoBehaviour
 
         DisplaySelectedCiv(index);
     }
+
 }

@@ -38,6 +38,8 @@ MonoBehaviour:
     value: Define a password
   - key: ui_button_confirm
     value: Confirm
+  - key: ui_button_choose
+    value: Choose
   - key: auth_resetpassword_code_header
     value: Add your email verification code
   - key: auth_resetpassword_code
