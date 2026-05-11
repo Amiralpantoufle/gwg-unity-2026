@@ -1,0 +1,8 @@
+D:/__CROPS__/1_AutoEntreprise/2_Production/_GalacticWargames/GalacticWargames/.utmp/Debug/2m705q1a/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/__CROPS__/1_AutoEntreprise/2_Production/_GalacticWargames/GalacticWargames/.utmp/Debug/2m705q1a/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/__CROPS__/1_AutoEntreprise/2_Production/_GalacticWargames/GalacticWargames/.utmp/Debug/2m705q1a/arm64-v8a/GameActivity/CMakeFiles/game.dir
+D:/__CROPS__/1_AutoEntreprise/2_Production/_GalacticWargames/GalacticWargames/.utmp/Debug/2m705q1a/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+D:/__CROPS__/1_AutoEntreprise/2_Production/_GalacticWargames/GalacticWargames/.utmp/Debug/2m705q1a/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+D:/__CROPS__/1_AutoEntreprise/2_Production/_GalacticWargames/GalacticWargames/.utmp/Debug/2m705q1a/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+D:/__CROPS__/1_AutoEntreprise/2_Production/_GalacticWargames/GalacticWargames/.utmp/Debug/2m705q1a/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+D:/__CROPS__/1_AutoEntreprise/2_Production/_GalacticWargames/GalacticWargames/.utmp/Debug/2m705q1a/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

@@ -1029,6 +1029,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &406716785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4426649673848122759, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
+  m_PrefabInstance: {fileID: 8009083431139473693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &414030488
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,11 +3403,11 @@ MonoBehaviour:
   cam: {fileID: 519420031}
   movableZone: {fileID: 433629088}
   panSpeed: 1
-  zoomSpeed: 0.1
-  minZoom: 3
-  maxZoom: 10
   mapMinBounds: {x: -100, y: -100}
   mapMaxBounds: {x: 100, y: 100}
+  zoomSpeed: 10
+  minZoom: 5
+  maxZoom: 1
 --- !u!114 &962511954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8156,6 +8161,22 @@ PrefabInstance:
     - target: {fileID: 5130112781138238350, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263778014648329447, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263778014648329447, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263778014648329447, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 406716785}
+    - target: {fileID: 5263778014648329447, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5955952673441405452, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
       propertyPath: m_Name

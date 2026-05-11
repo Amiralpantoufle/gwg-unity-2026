@@ -1,19 +1,21 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
+
 
 public class MapNavigationController : MonoBehaviour
 {
     public Camera cam;
     public Transform movableZone;
     public float panSpeed = 1f;
-    public float zoomSpeed = 0.1f;
-
-    public float minZoom = 3f;
-    public float maxZoom = 10f;
 
     public Vector2 mapMinBounds;
     public Vector2 mapMaxBounds;
 
+    public float zoomSpeed = 0.1f;
+    public float minZoom = 5f;
+    public float maxZoom = 1f;
 
     private GWG_InputAction inputActions;
 
@@ -26,19 +28,8 @@ public class MapNavigationController : MonoBehaviour
     }
     private void Update()
     {
-        if (!isPanning) return;
-
-        Vector2 currentPosition = inputActions.Player.TouchPosition.ReadValue<Vector2>();
-
-        Vector3 worldDelta =
-            cam.ScreenToWorldPoint(currentPosition) -
-            cam.ScreenToWorldPoint(lastTouchPosition);
-
-        Vector3 targetPos = movableZone.position - worldDelta * panSpeed;
-
-        movableZone.position = ClampPosition(targetPos);
-
-        lastTouchPosition = currentPosition;
+        HandlePan();
+        HandleZoom();
     }
 
     private void SetBoundariesFromMap()
@@ -53,7 +44,6 @@ public class MapNavigationController : MonoBehaviour
 
          */
     }
-
     Vector3 ClampPosition(Vector3 targetPos)
     {
         float camHeight = cam.orthographicSize;
@@ -71,20 +61,53 @@ public class MapNavigationController : MonoBehaviour
         return targetPos;
     }
 
+    //Navigation
+    private void HandlePan()
+    {
+        if (!isPanning) return;
+        Vector2 currentPosition = inputActions.Player.TouchPosition.ReadValue<Vector2>();
+
+        Vector3 worldDelta =
+            cam.ScreenToWorldPoint(currentPosition) -
+            cam.ScreenToWorldPoint(lastTouchPosition);
+
+        Vector3 targetPos = movableZone.position + worldDelta * panSpeed;
+
+        movableZone.position = ClampPosition(targetPos);
+
+        lastTouchPosition = currentPosition;
+    }
+    private void HandleZoom()
+    {
+        if (!isZooming) return;
+
+        Vector2 pinchValue = inputActions.Player.Pinch.ReadValue<Vector2>();
+
+        float zoomDelta = pinchValue.y;
+
+        //Zoom Camera Size
+        cam.orthographicSize -= zoomDelta * zoomSpeed * Time.deltaTime;
+        cam.orthographicSize = Mathf.Clamp(cam.orthographicSize,maxZoom,minZoom);
+    }
+
     //Inputs
     private void OnEnable()
     {
         inputActions.Player.Enable();
 
-        inputActions.Player.TouchPress.Enable();
         inputActions.Player.TouchPress.started += OnTouchStarted;
         inputActions.Player.TouchPress.canceled += OnTouchEnded;
+
+        inputActions.Player.Pinch.started += OnPinchStarted;
+        inputActions.Player.Pinch.canceled += OnPinchEnded;
     }
     private void OnDisable()
     {
-        inputActions.Player.TouchPress.Disable();
         inputActions.Player.TouchPress.started -= OnTouchStarted;
         inputActions.Player.TouchPress.canceled -= OnTouchEnded;
+
+        inputActions.Player.Pinch.started -= OnPinchStarted;
+        inputActions.Player.Pinch.canceled -= OnPinchEnded;
 
         inputActions.Player.Disable();
     }
@@ -95,10 +118,19 @@ public class MapNavigationController : MonoBehaviour
         isPanning = true;
         lastTouchPosition = inputActions.Player.TouchPosition.ReadValue<Vector2>();
     }
-
     private void OnTouchEnded(InputAction.CallbackContext ctx)
     {
         Debug.Log("Touch stop");
         isPanning = false;
+    }
+
+    private void OnPinchStarted(InputAction.CallbackContext context)
+    {
+        isZooming = true;
+    }
+
+    private void OnPinchEnded(InputAction.CallbackContext context)
+    {
+        isZooming = false;
     }
 }

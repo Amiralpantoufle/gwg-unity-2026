@@ -1,0 +1,12 @@
+# ninja log v5
+197	1359	7999463077608061	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	889dbcf6e3f3a6a1
+1363	2043	7999463083940639	D:/__CROPS__/1_AutoEntreprise/2_Production/_GalacticWargames/GalacticWargames/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/2m705q1a/obj/arm64-v8a/libswappywrapper.so	835ea28efcbf2d38
+61	4058	7999463104358964	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	c20cc75739632e0b
+115	4101	7999463104574934	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	b183c41da847337e
+2	4112	7999463104466744	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	d7737f10f53ec6dd
+136	4119	7999463105105529	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	bbdd3c77187db3b8
+23	4125	7999463105140756	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	eaaf1408b7866557
+95	4450	7999463108517654	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f9469b5e2386d779
+40	4563	7999463109645631	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	c56bd2087f1d6dca
+166	4589	7999463109885348	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	91b8dcc44dc38e1b
+4591	4811	7999463112193664	D:/__CROPS__/1_AutoEntreprise/2_Production/_GalacticWargames/GalacticWargames/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/2m705q1a/obj/arm64-v8a/libgame.so	845a9716e22c6c03

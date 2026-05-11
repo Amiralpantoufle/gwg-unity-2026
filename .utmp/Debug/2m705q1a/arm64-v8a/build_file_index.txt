@@ -1,0 +1,3 @@
+D:\__CROPS__\1_AutoEntreprise\2_Production\_GalacticWargames\GalacticWargames\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+D:\__CROPS__\1_AutoEntreprise\2_Production\_GalacticWargames\GalacticWargames\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\FramePacing\CMakeLists.txt
+D:\__CROPS__\1_AutoEntreprise\2_Production\_GalacticWargames\GalacticWargames\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

@@ -175,6 +175,17 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
                     ""action"": ""Pinch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""be56ff6e-b925-426a-951a-0a28830e620b"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pinch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }

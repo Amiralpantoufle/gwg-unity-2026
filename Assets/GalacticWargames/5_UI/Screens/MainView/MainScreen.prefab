@@ -1122,6 +1122,7 @@ GameObject:
   - component: {fileID: 7740274305687850567}
   - component: {fileID: 2525408806717435860}
   - component: {fileID: 5263778014648329447}
+  - component: {fileID: 6399169981897766154}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1230,6 +1231,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6399169981897766154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4426649673848122759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e912c8e0906939b4b98c2bb3283ab08e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Switch2DLevelButton
 --- !u!1 &4435985837488165631
 GameObject:
   m_ObjectHideFlags: 0
