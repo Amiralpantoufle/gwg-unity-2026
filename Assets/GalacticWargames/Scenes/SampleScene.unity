@@ -3387,7 +3387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &962511953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3405,7 +3405,7 @@ MonoBehaviour:
   panSpeed: 1
   mapMinBounds: {x: -100, y: -100}
   mapMaxBounds: {x: 100, y: 100}
-  zoomSpeed: 10
+  zoomSpeed: 1
   minZoom: 5
   maxZoom: 1
 --- !u!114 &962511954
@@ -5907,7 +5907,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1227092483}
   m_HandleRect: {fileID: 1227092482}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7953,7 +7953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3196936655211972735, guid: 5390d29dd1b832849b208651f33dee48, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3347634530533223172, guid: 5390d29dd1b832849b208651f33dee48, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -8044,11 +8044,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 785495205610741348, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.388
       objectReference: {fileID: 0}
     - target: {fileID: 785495205610741348, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1665833852524067716, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
       propertyPath: m_Color.a
@@ -8184,7 +8184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5955952673441405452, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6071183920209477603, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -8198,6 +8198,10 @@ PrefabInstance:
       propertyPath: title
       value: 
       objectReference: {fileID: 1760933084}
+    - target: {fileID: 8911504623388599790, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
+      propertyPath: gameView
+      value: 
+      objectReference: {fileID: 962511952}
     - target: {fileID: 8911504623388599790, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
       propertyPath: username
       value: 

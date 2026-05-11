@@ -1,0 +1,1 @@
+D:\GalacticWargames\Library\PramData\AndroidApplicationController\Cache\com.DefaultCompany.GalacticWargames\gradle-project\unityLibrary\build\intermediates\cxx\Debug\j2o1065e\obj\arm64-v8a

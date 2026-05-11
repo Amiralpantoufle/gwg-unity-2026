@@ -20,18 +20,19 @@ public class MapNavigationController : MonoBehaviour
     private GWG_InputAction inputActions;
 
     private Vector2 lastTouchPosition;
+    private float lastPinchDistance;
     private bool isPanning, isZooming;
 
     private void Awake()
     {
         inputActions = new GWG_InputAction();
+        EnhancedTouchSupport.Enable();
     }
     private void Update()
     {
         HandlePan();
         HandleZoom();
     }
-
     private void SetBoundariesFromMap()
     {
         /* mapMinBounds = new Vector2(0, 0);
@@ -58,6 +59,9 @@ public class MapNavigationController : MonoBehaviour
         targetPos.x = Mathf.Clamp(targetPos.x, minX, maxX);
         targetPos.y = Mathf.Clamp(targetPos.y, minY, maxY);
 
+
+        Debug.Log($"minX {minX} maxX {maxX}");
+        Debug.Log($"minY {minY} maxY {maxY}");
         return targetPos;
     }
 
@@ -65,15 +69,15 @@ public class MapNavigationController : MonoBehaviour
     private void HandlePan()
     {
         if (!isPanning) return;
+        if (UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count > 1) return;
         Vector2 currentPosition = inputActions.Player.TouchPosition.ReadValue<Vector2>();
 
-        Vector3 worldDelta =
-            cam.ScreenToWorldPoint(currentPosition) -
-            cam.ScreenToWorldPoint(lastTouchPosition);
+        Vector3 worldDelta = cam.ScreenToWorldPoint(currentPosition) - cam.ScreenToWorldPoint(lastTouchPosition);
 
-        Vector3 targetPos = movableZone.position + worldDelta * panSpeed;
+        Vector3 targetPos = movableZone.position + worldDelta*panSpeed;
 
-        movableZone.position = ClampPosition(targetPos);
+        //movableZone.position = ClampPosition(targetPos);
+        movableZone.position = targetPos;
 
         lastTouchPosition = currentPosition;
     }
@@ -81,13 +85,45 @@ public class MapNavigationController : MonoBehaviour
     {
         if (!isZooming) return;
 
-        Vector2 pinchValue = inputActions.Player.Pinch.ReadValue<Vector2>();
+        // PC Scroll
+        Vector2 scroll = inputActions.Player.Pinch.ReadValue<Vector2>();
 
-        float zoomDelta = pinchValue.y;
+        if (scroll.y != 0)
+        {
+            cam.orthographicSize -= scroll.y * zoomSpeed * Time.deltaTime * 100f;
+        }
 
-        //Zoom Camera Size
-        cam.orthographicSize -= zoomDelta * zoomSpeed * Time.deltaTime;
-        cam.orthographicSize = Mathf.Clamp(cam.orthographicSize,maxZoom,minZoom);
+        // Mobile Pinch
+        if (UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count >= 2)
+        {
+            var touch0 = UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches[0];
+            var touch1 = UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches[1];
+
+            float currentDistance =
+                Vector2.Distance(touch0.screenPosition, touch1.screenPosition);
+
+            if (lastPinchDistance == 0)
+            {
+                lastPinchDistance = currentDistance;
+                return;
+            }
+
+            float delta = currentDistance - lastPinchDistance;
+
+            cam.orthographicSize -= delta * zoomSpeed * Time.deltaTime;
+
+            lastPinchDistance = currentDistance;
+        }
+        else
+        {
+            lastPinchDistance = 0;
+        }
+
+        cam.orthographicSize = Mathf.Clamp(
+            cam.orthographicSize,
+            maxZoom,
+            minZoom
+        );
     }
 
     //Inputs
@@ -128,7 +164,6 @@ public class MapNavigationController : MonoBehaviour
     {
         isZooming = true;
     }
-
     private void OnPinchEnded(InputAction.CallbackContext context)
     {
         isZooming = false;

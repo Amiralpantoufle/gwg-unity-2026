@@ -61,4 +61,19 @@ public class GridManager : MonoBehaviour
 
         return map;
     }
+
+
+    //Inputs
+    private void OnEnable()
+    {
+        MainView_Screen.OnMainViewLoaded += HandleMainViewLoaded;
+    }
+    private void OnDisable()
+    {
+        MainView_Screen.OnMainViewLoaded -= HandleMainViewLoaded;
+    }
+    private void HandleMainViewLoaded()
+    {
+        Load(GridLevel.Galaxy, 0);
+    }
 }

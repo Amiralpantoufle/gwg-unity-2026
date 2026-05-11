@@ -1,9 +1,12 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class MainView_Screen : UIScreen
 {
+    //System
+    [SerializeField] private GameObject gameView;
     //Profile
     [SerializeField] private TextMeshProUGUI username;
     [SerializeField] private TextMeshProUGUI title;
@@ -14,4 +17,15 @@ public class MainView_Screen : UIScreen
     [SerializeField] private TextMeshProUGUI carbon_Quantity;
     [SerializeField] private TextMeshProUGUI hydrogen_Quantity;
     [SerializeField] private TextMeshProUGUI stockCapacity,stockCurrent;
+
+    public static event Action OnMainViewLoaded;
+    public override void Show()
+    {
+        base.Show();
+
+        gameView.SetActive(true);
+        OnMainViewLoaded?.Invoke();
+
+        //GridManager.Instance.Load(GridLevel.Galaxy, 0);
+    }
 }

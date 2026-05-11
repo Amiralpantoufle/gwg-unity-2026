@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
         UIStateManager.Instance.SetState(UIState.Loading);
 
         //STARTUP PROCESS
-        //Invoke(nameof(FinishInit), 1f);
-        GridManager.Instance.Load(GridLevel.Galaxy, 0);
+        Invoke(nameof(FinishInit), 1f);
+        //GridManager.Instance.Load(GridLevel.Galaxy, 0);
 
         DontDestroyOnLoad(transform);
     }
