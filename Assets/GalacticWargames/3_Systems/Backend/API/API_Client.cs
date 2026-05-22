@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 public class API_Client : MonoBehaviour
 {
     public static API_Client Instance;
+    public string deviceID;
 
     private string baseUrl = "https://admindev2.galacticwargames.com/api";
     private string accessToken;
@@ -24,6 +25,11 @@ public class API_Client : MonoBehaviour
         accessToken = token;
         TokenStorage.Save(token, TokenStorage.GetRefresh());
     }
+    public void SetTokens(string token, string refresh)
+    {
+        accessToken = token;
+        TokenStorage.Save(token, refresh);
+    }
 
     public IEnumerator Get(string endpoint, System.Action<string> callback)
     {
@@ -37,11 +43,49 @@ public class API_Client : MonoBehaviour
 
     private IEnumerator SendRequest(string method, string endpoint, string json, System.Action<string> callback)
     {
+        UnityWebRequest req = CreateRequest(method, endpoint, json);
+
+        yield return req.SendWebRequest();
+
+        if (req.responseCode == 401)
+        {
+            string body = req.downloadHandler.text;
+
+            Debug.Log("401 BODY: " + body);
+
+            if (body.Contains("token_expired"))
+            {
+                Debug.Log("TOKEN EXPIRED → refresh");
+
+                yield return AuthManager.Instance.RefreshTokenCoroutine();
+
+                req.Dispose();
+
+                req = CreateRequest(method, endpoint, json);
+                yield return req.SendWebRequest();
+            }
+            else if (body.Contains("DEVICE_MISMATCH"))
+            {
+                Debug.LogError("Device mismatch detected");
+            }
+        }
+
+        callback?.Invoke(req.downloadHandler.text);
+
+        req.Dispose();
+
+    }
+
+
+    //REQUEST MANAGEMENT
+    private UnityWebRequest CreateRequest(string method, string endpoint, string json)
+    {
         UnityWebRequest req;
 
         if (method == "POST")
         {
             req = new UnityWebRequest(baseUrl + endpoint, "POST");
+
             byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(json);
             req.uploadHandler = new UploadHandlerRaw(bodyRaw);
             req.downloadHandler = new DownloadHandlerBuffer();
@@ -53,24 +97,13 @@ public class API_Client : MonoBehaviour
 
         AddHeaders(req);
 
-        yield return req.SendWebRequest();
-
-        //Gestion auto expiration token
-        if (req.responseCode == 401)
-        {
-            Debug.Log("TOKEN EXPIRED → refresh");
-
-            yield return AuthManager.Instance.RefreshTokenCoroutine();
-
-            AddHeaders(req);
-            yield return req.SendWebRequest();
-        }
-
-        callback?.Invoke(req.downloadHandler.text);
+        return req;
     }
     private void AddHeaders(UnityWebRequest req)
     {
         req.SetRequestHeader("Content-Type", "application/json");
+
+        req.SetRequestHeader("X-Device-Id", deviceID);
 
         if (!string.IsNullOrEmpty(accessToken))
             req.SetRequestHeader("Authorization", "Bearer " + accessToken);

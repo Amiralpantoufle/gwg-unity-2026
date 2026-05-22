@@ -31,6 +31,12 @@ public class MapNavigationController : MonoBehaviour
     private void Update()
     {
         HandlePan();
+
+#if UNITY_EDITOR || UNITY_STANDALONE
+        HandlePCZoom();
+#else
+    HandleMobileZoom();
+#endif
         HandleZoom();
     }
     private void SetBoundariesFromMap()
@@ -76,12 +82,24 @@ public class MapNavigationController : MonoBehaviour
 
         Vector3 targetPos = movableZone.position + worldDelta*panSpeed;
 
-        //movableZone.position = ClampPosition(targetPos);
-        movableZone.position = targetPos;
+        movableZone.position = ClampPosition(targetPos);
+        //movableZone.position = targetPos;
 
         lastTouchPosition = currentPosition;
     }
     private void HandleZoom()
+    {
+        if (!isZooming) return;
+
+        // PC Scroll
+        Vector2 scroll = inputActions.Player.Pinch.ReadValue<Vector2>();
+
+        if (scroll.y != 0)
+        {
+            cam.orthographicSize -= scroll.y * zoomSpeed * Time.deltaTime * 100f;
+        }
+    }
+    private void HandlePCZoom()
     {
         if (!isZooming) return;
 

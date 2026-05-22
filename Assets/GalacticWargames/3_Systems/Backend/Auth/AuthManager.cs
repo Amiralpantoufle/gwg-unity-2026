@@ -37,22 +37,24 @@ public class AuthManager : MonoBehaviour
 
         LoginResponse response = JsonUtility.FromJson<LoginResponse>(json);
 
-        if (!response.error)
-        {
-            string token = response.output.token;
 
-            API_Client.Instance.SetToken(token);
-            UIStateManager.Instance.SetState(UIState.Loggedin);
+        //Connexion success
+        //if (!response.error)
+        //{
+        string token = response.output.token;
+        string refreshToken = response.output.refresh_token;
+        API_Client.Instance.SetTokens(token, refreshToken);
 
-            GenerateToast("LOGIN SUCCESS", 0, 3f);
-            Debug.Log("LOGIN SUCCESS");
-        }
+        UIStateManager.Instance.SetState(UIState.Loggedin);
+
+        ToastManager.Instance.GenerateToast("Logged in", 0, 10f);
+        /*}
         else
         {
             UIStateManager.Instance.SetState(UIState.Loggedout);
-            GenerateToast("LOGIN FAILED", 1, 3f);
-            Debug.Log("LOGIN FAILED: " + response.error_msg);
-        }
+
+            ToastManager.Instance.GenerateToast("Failed to log in : "+ response.error_msg, 1, 10f);
+        }*/
     }
 
     //Register
@@ -77,8 +79,10 @@ public class AuthManager : MonoBehaviour
 
         RegisterResponse response = JsonUtility.FromJson<RegisterResponse>(json);
 
+        //Enregistrement success 
         if (!response.error)
         {
+            //Défini que le token / ! \ pas le refreshToken
             API_Client.Instance.SetToken(response.output.token);
 
             ToastManager.Instance.GenerateToast("REGISTER SUCCESS",1,10f);
@@ -142,12 +146,12 @@ public class AuthManager : MonoBehaviour
 
         if (!response.error)
         {
-            ToastManager.Instance.GenerateToast("New password defined!", 1, 10f);
+            ToastManager.Instance.GenerateToast("New password defined!", 0, 10f);
             popup_ForgotPassword.ConfirmResetPassword();
         }
         else
         {
-            ToastManager.Instance.GenerateToast(verificationEmail + " invalid credentials", 0, 10f);
+            ToastManager.Instance.GenerateToast(verificationEmail + " invalid credentials", 1, 10f);
             verificationEmail = null;
 
         }
@@ -174,13 +178,14 @@ public class AuthManager : MonoBehaviour
             if (!response.error)
             {
                 TokenStorage.Save(response.output.accessToken, response.output.refreshToken);
-                API_Client.Instance.SetToken(response.output.accessToken);
+                //API_Client.Instance.SetToken(response.output.accessToken);
+                API_Client.Instance.SetTokens(response.output.accessToken, response.output.refreshToken);
 
                 Debug.Log("TOKEN REFRESHED");
             }
             else
             {
-                Debug.LogError("REFRESH FAILED → logout");
+                Debug.LogWarning("REFRESH FAILED → logout");
                 TokenStorage.Clear();
             }
 
@@ -191,15 +196,6 @@ public class AuthManager : MonoBehaviour
     }
 
     //_________Utility
-    private void GenerateToast(string response, int type, float time)
-    {
-        EventBus.Publish(new ShowToastEvent
-        {
-            toastType = type,
-            message = response,
-            duration = time
-        });
-    }
     public void Force_PopupResetPass()
     {
         //Open Popup Reset Password A METTRE Après la confirmation

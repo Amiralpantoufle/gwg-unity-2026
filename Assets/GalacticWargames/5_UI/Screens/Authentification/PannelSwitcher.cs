@@ -115,13 +115,13 @@ public class PanelSwitcher : MonoBehaviour
 
         if (relativeIndex == 0)
         {
-            canvas.sortingOrder = 2; // devant
+            canvas.sortingOrder = 112; // devant
             group.alpha= 1.0f;
             group.interactable = true;
         }
         else
         {
-            canvas.sortingOrder = 1; // derrière
+            canvas.sortingOrder = 111; // derrière
             group.alpha = 0.25f;
             group.interactable = false;
         }

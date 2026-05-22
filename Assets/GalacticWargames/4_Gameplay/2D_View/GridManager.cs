@@ -75,5 +75,6 @@ public class GridManager : MonoBehaviour
     private void HandleMainViewLoaded()
     {
         Load(GridLevel.Galaxy, 0);
+
     }
 }

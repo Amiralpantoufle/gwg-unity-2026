@@ -10,6 +10,7 @@ public class LoginRequest
 public class LoginOutput
 {
     public string token;
+    public string refresh_token;
 }
 
 [System.Serializable]

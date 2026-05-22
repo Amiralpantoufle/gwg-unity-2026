@@ -8,12 +8,22 @@ public class Authentification_Screen : UIScreen
     [SerializeField] private TMP_InputField userPassword;
     private const string ACCESS_KEY = "EMAIL";
 
+    [SerializeField] private GameObject popup;
+
     public override void Show()
     {
         base.Show();
 
         userEmail.text = PlayerPrefs.GetString(ACCESS_KEY, "");
+        popup.SetActive(true);
     }
+    public override void Hide()
+    {
+        base.Hide();
+
+        popup.SetActive(false);
+    }
+
     private void OnEnable()
     {
         EventBus.Subscribe<UIStateChangedEvent>(onStateChanged);
@@ -36,6 +46,9 @@ public class Authentification_Screen : UIScreen
                 {
                     screenID = ScreenID.Main
                 });
+
+                //Get Player and Global Data
+                BootStrapLoader.Instance.Init_BootStrap();
 
                 Debug.Log("UIState LoggedIn");
                 break;

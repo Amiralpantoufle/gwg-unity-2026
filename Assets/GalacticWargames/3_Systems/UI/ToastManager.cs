@@ -26,6 +26,12 @@ public class ToastManager : MonoBehaviour
     {
         EventBus.Unsubscribe<ShowToastEvent>(OnShowToast);
     }
+    /// <summary>
+    /// Types: 0=error | else=Default
+    /// </summary>
+    /// <param name="response"></param>
+    /// <param name="type"></param>
+    /// <param name="time"></param>
     public void GenerateToast(string response, int type, float time)
     {
         EventBus.Publish(new ShowToastEvent

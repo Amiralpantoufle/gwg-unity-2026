@@ -24,8 +24,13 @@ public class MainView_Screen : UIScreen
         base.Show();
 
         gameView.SetActive(true);
-        OnMainViewLoaded?.Invoke();
 
+
+        OnMainViewLoaded?.Invoke();
         //GridManager.Instance.Load(GridLevel.Galaxy, 0);
+    }
+    public override void Hide()
+    {
+        gameView.SetActive(false);
     }
 }
