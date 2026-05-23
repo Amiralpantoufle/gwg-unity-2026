@@ -47,9 +47,6 @@ public class Authentification_Screen : UIScreen
                     screenID = ScreenID.Main
                 });
 
-                //Get Player and Global Data
-                BootStrapLoader.Instance.Init_BootStrap();
-
                 Debug.Log("UIState LoggedIn");
                 break;
         }

@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 
-
+/*
 public class BootStrapLoader : MonoBehaviour
 {
     public static BootStrapLoader Instance;
@@ -24,9 +24,8 @@ public class BootStrapLoader : MonoBehaviour
     }
     private void OnBaseIndexResponse(string json)
     {
-        Debug.Log("BASE INDEX RESPONSE: " + json); 
+        //Debug.Log("BASE INDEX RESPONSE: " + json); 
 
-        //ApiResponse<BaseIndexOuput[]> response = JsonUtility.FromJson<ApiResponse<BaseIndexOuput[]>>(json);
         ApiResponse<List<BaseIndexOutput>> response = JsonConvert.DeserializeObject<ApiResponse<List<BaseIndexOutput>>>(json);
 
         //Errors management
@@ -46,7 +45,6 @@ public class BootStrapLoader : MonoBehaviour
         }
 
         GameDataStorage.Instance.SetBaseIndexData(response.output);
-
     }
     private void OnGlobalDataResponse(string json)
     {
@@ -91,4 +89,36 @@ public class BootStrapLoader : MonoBehaviour
             GameDataStorage.Instance.SetUserData(response.output);
 
     }
+
+    //Loading Map Process
+    public void TryLoadingPlanet()
+    {
+        StartCoroutine(API_Client.Instance.Get("/map/planet", OnPlanetResponse));
+    }
+
+    private void OnPlanetResponse(string json)
+    {
+        Debug.Log("Planet response: " + json); 
+
+        ApiResponse<List<BaseIndexOutput>> response = JsonConvert.DeserializeObject<ApiResponse<List<BaseIndexOutput>>>(json);
+
+        //Errors management
+        if (response == null)
+        {
+            Debug.LogError("Impossible de parser la réponse API");
+            return;
+        }
+        if (response.error)
+        {
+            Debug.LogError($"Erreur API : {response.error_code} - {response.error_msg}");
+            return;
+        }
+        if (response.output == null)
+        {
+            Debug.LogError("Output vide");
+        }
+
+        GameDataStorage.Instance.SetBaseIndexData(response.output);
+    }
 }
+*/

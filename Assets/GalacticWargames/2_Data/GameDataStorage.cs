@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static BaseIndexOutput;
 using static UnityEditor.Rendering.CameraUI;
@@ -16,9 +17,6 @@ public class GameDataStorage : MonoBehaviour
     /// Infos metier de BaseIndexOutput Response
     /// </summary>
     public PlayerBaseData CurrentBase { get; private set; }
-
-
-
 
     private void Awake()
     {
@@ -41,31 +39,58 @@ public class GameDataStorage : MonoBehaviour
     {
         UserData = data;
     }
-    public void SetBaseIndexData(List<BaseIndexOutput> data)
-    {
-            BaseIndexOutput firstData = data[0];
-            if (GetLastBaseId() < 0 && data[0] != null && data.Count > 0)
-            {
-                // chargement premiere base
-                CurrentBase = new PlayerBaseData
-                {
-                    BaseId = firstData.id_oes,
-                    TileId = firstData.idesp_oes,
-                    LocationEntityId = firstData.idesp_oes,
-                    PlanetId = firstData.planet_id,
-                    SystemId = firstData.id_parent_esp,
-                    PlanetX = firstData.x_p_esp,
-                    PlanetY = firstData.y_p_esp
-                };
 
-                SaveLastBaseId(CurrentBase.BaseId);
-                Debug.Log($"Base chargée :" + CurrentBase.BaseId);
+    //Launch Data Process
+    public void SetBaseIndexData(List<BaseIndexOutput> dataList)
+    {
+        //Protection
+        if (dataList[0] == null || dataList.Count <= 0)
+        {
+            Debug.Log("No data found in list");
+            return;
+        }
+
+        BaseIndexOutput firstData;
+
+        //Si le joueur à plusieur bases
+        if (dataList.Count > 1)
+        {
+            firstData = dataList.LastOrDefault();
         }
         else
-            {
-                // TODO
-            }
-        
+        {
+            firstData = dataList[0];
+        }
+        BaseDataLoader(firstData);
+    }
+    private void BaseDataLoader(BaseIndexOutput data)
+    {
+        if(data== null)
+        {
+            Debug.LogError("Empty Data received from BaseIndex");
+            return;
+        }
+
+        CurrentBase = new PlayerBaseData
+        {
+            BaseId = data.id_oes,
+            TileId = data.idesp_oes,
+            LocationEntityId = data.idesp_oes,
+            PlanetId = data.planet_id,
+            SystemId = data.id_parent_esp,
+            PlanetX = data.x_p_esp,
+            PlanetY = data.y_p_esp
+        };
+
+        //si base chargée
+        if (CurrentBase != null)
+        {
+           /* SaveLastBaseId(CurrentBase.BaseId);
+            Debug.Log($"Base chargée :" + CurrentBase.BaseId);
+
+            BootStrapLoader.Instance.TryLoadingPlanet();*/
+        }
+        else Debug.LogWarning("no base loaded");
     }
 
     /// <summary>

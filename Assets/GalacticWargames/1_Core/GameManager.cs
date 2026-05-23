@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
 
         //STARTUP PROCESS
         Invoke(nameof(FinishInit), 1f);
-        //GridManager.Instance.Load(GridLevel.Galaxy, 0);
-
         DontDestroyOnLoad(transform);
     }
 

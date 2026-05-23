@@ -1,4 +1,7 @@
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
@@ -17,12 +20,29 @@ public class GridManager : MonoBehaviour
     // ENTRY POINT
     // =========================
 
-    public void Load(GridLevel level, int id)
+    /* public void Load(GridLevel level, int id)
+     {
+         Debug.Log($"Load {level} ({id})");
+
+         // TEMP MOCK API
+         var map = FakeMap(level);
+
+
+         OnGridLoaded?.Invoke(level, map);
+     }*/
+    public async Task Load(GridLevel level, int id)
     {
         Debug.Log($"Load {level} ({id})");
 
+        GridMapResponse map = await LoadMapFromData(level, id);
         // TEMP MOCK API
-        var map = FakeMap(level);
+        //var map = FakeMap(level);
+
+        if (map == null)
+        {
+            Debug.LogError("Failed to load map");
+            return;
+        }
 
         OnGridLoaded?.Invoke(level, map);
     }
@@ -61,6 +81,51 @@ public class GridManager : MonoBehaviour
 
         return map;
     }
+    private async Task<GridMapResponse> LoadMapFromData(GridLevel level, int id)
+    {
+        string json = await API_Client.Instance.GetAsync($"/map/planet/{id}");
+
+        if (string.IsNullOrEmpty(json))
+            return null;
+
+        ApiResponse<GridAPIModels> response =
+            JsonConvert.DeserializeObject<ApiResponse<GridAPIModels>>(json);
+
+        if (response == null || response.error)
+        {
+            Debug.LogError("API ERROR");
+            return null;
+        }
+
+        return ConvertToGridMapResponse(level, response.output);
+    }
+    /// <summary>
+    /// Mapper API
+    /// </summary>
+    /// <param name="level"></param>
+    /// <param name="apiData"></param>
+    /// <returns></returns>
+    private GridMapResponse ConvertToGridMapResponse(GridLevel level, GridAPIModels apiData)
+    {
+        GridMapResponse map = new GridMapResponse();
+
+        map.level = level.ToString().ToLower();
+
+        map.tiles = new List<GridTileDto>();
+
+        foreach (var tile in apiData.tiles)
+        {
+            map.tiles.Add(new GridTileDto
+            {
+                x = tile.x,
+                y = tile.y,
+                entity_id = tile.entity_id,
+                entities = tile.entities
+            });
+        }
+
+        return map;
+    }
 
 
     //Inputs
@@ -74,7 +139,7 @@ public class GridManager : MonoBehaviour
     }
     private void HandleMainViewLoaded()
     {
-        Load(GridLevel.Galaxy, 0);
-
+        //Get Player and Global Data
+        BootStrap_Loader.Instance.Init_BootStrap();
     }
 }

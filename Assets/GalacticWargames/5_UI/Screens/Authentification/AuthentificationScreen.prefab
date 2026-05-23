@@ -126,8 +126,8 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
@@ -1284,6 +1284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Authentification_Screen
   userEmail: {fileID: 0}
   userPassword: {fileID: 0}
+  popup: {fileID: 0}
 --- !u!1 &3340469144682754361
 GameObject:
   m_ObjectHideFlags: 0

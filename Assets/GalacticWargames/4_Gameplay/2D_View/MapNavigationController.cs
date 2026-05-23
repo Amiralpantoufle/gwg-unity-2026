@@ -65,9 +65,6 @@ public class MapNavigationController : MonoBehaviour
         targetPos.x = Mathf.Clamp(targetPos.x, minX, maxX);
         targetPos.y = Mathf.Clamp(targetPos.y, minY, maxY);
 
-
-        Debug.Log($"minX {minX} maxX {maxX}");
-        Debug.Log($"minY {minY} maxY {maxY}");
         return targetPos;
     }
 

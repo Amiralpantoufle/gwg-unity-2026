@@ -39,8 +39,8 @@ public class AuthManager : MonoBehaviour
 
 
         //Connexion success
-        //if (!response.error)
-        //{
+        if (!response.error)
+        {
         string token = response.output.token;
         string refreshToken = response.output.refresh_token;
         API_Client.Instance.SetTokens(token, refreshToken);
@@ -48,13 +48,13 @@ public class AuthManager : MonoBehaviour
         UIStateManager.Instance.SetState(UIState.Loggedin);
 
         ToastManager.Instance.GenerateToast("Logged in", 0, 10f);
-        /*}
+        }
         else
         {
             UIStateManager.Instance.SetState(UIState.Loggedout);
 
             ToastManager.Instance.GenerateToast("Failed to log in : "+ response.error_msg, 1, 10f);
-        }*/
+        }
     }
 
     //Register

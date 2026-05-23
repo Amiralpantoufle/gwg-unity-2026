@@ -19,7 +19,7 @@ public class EventBus
             events[type] = delegate { };
 
         events[type] += (obj) => callback((T)obj);
-        Debug.Log("S'abonne à :" + callback);
+        //Debug.Log("S'abonne à :" + callback);
     }
 
     /// <summary>
@@ -34,7 +34,7 @@ public class EventBus
         if (events.ContainsKey(type))
             events[type] -= (obj) => callback((T)obj);
 
-        Debug.Log("Se désabonne de :" + callback);
+        //Debug.Log("Se désabonne de :" + callback);
     }
 
     /// <summary>
