@@ -14,7 +14,7 @@ public class TileView : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log($"Click {tile.entity_id}");
+        Debug.Log($"Click {tile.image_id}");
 
         //Navigue vers l'instance index
         //GridManager.Instance.Load(GridLevel.Planet, tile.entity_id);

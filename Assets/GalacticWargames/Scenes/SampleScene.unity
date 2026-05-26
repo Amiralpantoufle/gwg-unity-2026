@@ -3230,6 +3230,7 @@ GameObject:
   - component: {fileID: 962511955}
   - component: {fileID: 962511954}
   - component: {fileID: 962511953}
+  - component: {fileID: 962511957}
   m_Layer: 0
   m_Name: 2D_View
   m_TagString: Untagged
@@ -3271,6 +3272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GridRenderer
   gridRoot: {fileID: 433629088}
   defaultTileSprite: {fileID: -1578826583, guid: 648cb4324626bd142b87812a483b1eec, type: 3}
+  tilePrefab: {fileID: 4562061987265711563, guid: dc3c3ba244f640d479f0bb1082d2fc7f, type: 3}
   tileWidth: 5.6
   tileHeight: 2.7
 --- !u!114 &962511955
@@ -3303,6 +3305,18 @@ Transform:
   - {fileID: 433629088}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &962511957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962511952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7150d7c5e4005c745a2ae271aaf79871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridVisualService
 --- !u!1 &987525795
 GameObject:
   m_ObjectHideFlags: 0

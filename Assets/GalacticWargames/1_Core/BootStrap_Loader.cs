@@ -1,7 +1,8 @@
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using UnityEngine;
+using static UnityEngine.Audio.ProcessorInstance;
 
 public class BootStrap_Loader : MonoBehaviour
 {
@@ -21,7 +22,12 @@ public class BootStrap_Loader : MonoBehaviour
 
         if (GameDataStorage.Instance.CurrentBase != null)
         {
-            await LoadPlanet();
+            //await LoadPlanet();
+
+            int planetId = GameDataStorage.Instance.CurrentBase.PlanetId;
+            await GridManager.Instance.Load(GridLevel.Planet, planetId);
+
+            Debug.Log("Planet Loaded");
         }
         else
         {
@@ -82,8 +88,7 @@ public class BootStrap_Loader : MonoBehaviour
             return;
         }
 
-        PlanetMapResponse response =
-            JsonConvert.DeserializeObject<PlanetMapResponse>(json);
+        PlanetMapResponse response = JsonConvert.DeserializeObject<PlanetMapResponse>(json);
 
         if (response == null)
         {
@@ -103,9 +108,9 @@ public class BootStrap_Loader : MonoBehaviour
             return;
         }
 
-        Debug.Log("Planet data Stored");
-
         // Render map
-        GridManager.Instance.Load(GridLevel.Planet, planetId);
+        //await GridManager.Instance.Load(GridLevel.Planet, planetId);
+
+        Debug.Log("Planet Loaded");
     }
 }

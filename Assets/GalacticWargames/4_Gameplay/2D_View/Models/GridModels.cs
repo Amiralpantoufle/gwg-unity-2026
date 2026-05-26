@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 
-
 [System.Serializable]
 public class GridMapResponse
 {
@@ -15,7 +14,7 @@ public class GridTileDto
     public int x;
     public int y;
 
-    public int entity_id;
+    public int image_id;
 
     public List<EntityDto> entities;
 }
@@ -24,12 +23,6 @@ public class GridTileDto
 public class EntityDto
 {
     public int id;
-
     public string type;
-
     public string image_id;
-    public string image_name;
-    public string asset_path;
-
-    public float render_scale;
 }

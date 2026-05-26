@@ -20,23 +20,13 @@ public class GridManager : MonoBehaviour
     // ENTRY POINT
     // =========================
 
-    /* public void Load(GridLevel level, int id)
-     {
-         Debug.Log($"Load {level} ({id})");
-
-         // TEMP MOCK API
-         var map = FakeMap(level);
-
-
-         OnGridLoaded?.Invoke(level, map);
-     }*/
     public async Task Load(GridLevel level, int id)
     {
-        Debug.Log($"Load {level} ({id})");
+        //Charge les visuels si pas en cache
+        await GridVisualService.Instance.LoadVisuals();
 
+        //Charge la map
         GridMapResponse map = await LoadMapFromData(level, id);
-        // TEMP MOCK API
-        //var map = FakeMap(level);
 
         if (map == null)
         {
@@ -44,13 +34,78 @@ public class GridManager : MonoBehaviour
             return;
         }
 
+        //Render map
         OnGridLoaded?.Invoke(level, map);
     }
 
-    // =========================
-    // MOCK
-    // =========================
+    private async Task<GridMapResponse> LoadMapFromData(GridLevel level, int id)
+    {
+        string json = await API_Client.Instance.GetAsync($"/map/planet/{id}");
 
+        if (string.IsNullOrEmpty(json))
+            return null;
+
+        //API call & Security
+        ApiResponse<GridAPIModels> response = JsonConvert.DeserializeObject<ApiResponse<GridAPIModels>>(json);
+        if (response == null)
+        {
+            Debug.LogError("Impossible de parser PlanetMap");
+            return null;
+        }
+        if (response.error)
+        {
+            Debug.LogError($"Planet API ERROR : {response.error} - {response.error}");
+            return null;
+        }
+        if (response.output == null)
+        {
+            Debug.LogError("Planet output null");
+            return null;
+        }
+
+        Debug.Log("Finished Loading Map Data from API :" + response.output);
+        return ConvertToGridMapResponse(level, response.output);
+    }
+    private GridMapResponse ConvertToGridMapResponse(GridLevel level, GridAPIModels apiData)
+    {
+        GridMapResponse map = new GridMapResponse();
+
+        map.level = level.ToString().ToLower();
+
+        map.tiles = new List<GridTileDto>();
+
+        foreach (var tile in apiData.tiles)
+        {
+            map.tiles.Add(new GridTileDto
+            {
+                x = tile.x,
+                y = tile.y,
+                image_id = tile.entity_id,
+                entities = tile.entities
+            });
+        }
+
+        Debug.Log("Finished converting map Response");
+        return map;
+    }
+
+
+    //Inputs
+    private void OnEnable()
+    {
+        MainView_Screen.OnMainViewLoaded += HandleMainViewLoaded;
+    }
+    private void OnDisable()
+    {
+        MainView_Screen.OnMainViewLoaded -= HandleMainViewLoaded;
+    }
+    private void HandleMainViewLoaded()
+    {
+        //Get Player and Global Data
+        BootStrap_Loader.Instance.Init_BootStrap();
+    }
+
+    //Utility
     private GridMapResponse FakeMap(GridLevel level)
     {
         var map = new GridMapResponse();
@@ -73,73 +128,12 @@ public class GridManager : MonoBehaviour
                 {
                     x = x,
                     y = y,
-                    entity_id = x * 100 + y,
+                    image_id = x * 100 + y,
                     entities = new System.Collections.Generic.List<EntityDto>()
                 });
             }
         }
 
         return map;
-    }
-    private async Task<GridMapResponse> LoadMapFromData(GridLevel level, int id)
-    {
-        string json = await API_Client.Instance.GetAsync($"/map/planet/{id}");
-
-        if (string.IsNullOrEmpty(json))
-            return null;
-
-        ApiResponse<GridAPIModels> response =
-            JsonConvert.DeserializeObject<ApiResponse<GridAPIModels>>(json);
-
-        if (response == null || response.error)
-        {
-            Debug.LogError("API ERROR");
-            return null;
-        }
-
-        return ConvertToGridMapResponse(level, response.output);
-    }
-    /// <summary>
-    /// Mapper API
-    /// </summary>
-    /// <param name="level"></param>
-    /// <param name="apiData"></param>
-    /// <returns></returns>
-    private GridMapResponse ConvertToGridMapResponse(GridLevel level, GridAPIModels apiData)
-    {
-        GridMapResponse map = new GridMapResponse();
-
-        map.level = level.ToString().ToLower();
-
-        map.tiles = new List<GridTileDto>();
-
-        foreach (var tile in apiData.tiles)
-        {
-            map.tiles.Add(new GridTileDto
-            {
-                x = tile.x,
-                y = tile.y,
-                entity_id = tile.entity_id,
-                entities = tile.entities
-            });
-        }
-
-        return map;
-    }
-
-
-    //Inputs
-    private void OnEnable()
-    {
-        MainView_Screen.OnMainViewLoaded += HandleMainViewLoaded;
-    }
-    private void OnDisable()
-    {
-        MainView_Screen.OnMainViewLoaded -= HandleMainViewLoaded;
-    }
-    private void HandleMainViewLoaded()
-    {
-        //Get Player and Global Data
-        BootStrap_Loader.Instance.Init_BootStrap();
     }
 }
