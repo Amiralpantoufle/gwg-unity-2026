@@ -21,6 +21,7 @@ public class API_Client : MonoBehaviour
         accessToken = TokenStorage.GetAccess();
     }
 
+    //Token Management
     public void SetToken(string token)
     {
         accessToken = token;
@@ -80,7 +81,6 @@ public class API_Client : MonoBehaviour
     public async Task<string> GetAsync(string endpoint)
     {
         return await SendRequestAsync("GET", endpoint, null);
-
     }
     private async Task<string> SendRequestAsync(string method,string endpoint,string json)
     {

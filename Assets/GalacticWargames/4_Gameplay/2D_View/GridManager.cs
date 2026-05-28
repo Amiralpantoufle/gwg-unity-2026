@@ -23,7 +23,7 @@ public class GridManager : MonoBehaviour
     public async Task Load(GridLevel level, int id)
     {
         //Charge les visuels si pas en cache
-        await GridVisualService.Instance.LoadVisuals();
+        //await GridVisualService.Instance.LoadVisuals();
 
         //Charge la map
         GridMapResponse map = await LoadMapFromData(level, id);

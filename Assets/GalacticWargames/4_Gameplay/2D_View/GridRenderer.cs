@@ -61,14 +61,14 @@ public class GridRenderer : MonoBehaviour
         obj.transform.SetParent(gridRoot);
         obj.transform.position = IsoToWorld(tile.x, tile.y);
 
-        VisualDefinition visual = GridVisualService.Instance.Get(tile.image_id);
         SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
-        if (sr == null || visual == null) return;
+        //VisualDefinition visual = GridVisualService.Instance.Get(tile.image_id);
+        //if (sr == null || visual == null) return;
 
         sr.sortingOrder = 1000 - (tile.x + tile.y);
-        Sprite newSprite = Resources.Load<Sprite>(visual.assetPath);
-        sr.sprite = newSprite;
-        obj.transform.localScale = Vector3.one * visual.renderScale;
+        //Sprite newSprite = Resources.Load<Sprite>(visual.assetPath);
+        //sr.sprite = newSprite;
+        //obj.transform.localScale = Vector3.one * visual.renderScale;
 
         BoxCollider2D collider = obj.AddComponent<BoxCollider2D>();
         TileView tileView = obj.AddComponent<TileView>();

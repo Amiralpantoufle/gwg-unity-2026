@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TileView : MonoBehaviour
 {
-    private GridTileDto tile;
+    [SerializeField] private GridTileDto tile;
 
     public void Init(GridTileDto data)
     {

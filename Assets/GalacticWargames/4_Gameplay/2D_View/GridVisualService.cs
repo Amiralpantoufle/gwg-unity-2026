@@ -17,30 +17,12 @@ public class GridVisualService : MonoBehaviour
     {
         Instance = this;
         CreateFallback();
-
     }
 
     public async Task LoadVisuals()
     {
         if (loaded) return;
 
-        string json = await API_Client.Instance.GetAsync("/base/isometric/all");
-
-        if (string.IsNullOrEmpty(json))
-        {
-            Debug.LogError("Isometric visual json is null");
-            return;
-        }
-
-        var data = JsonConvert.DeserializeObject<List<VisualDefinition>>(json);
-
-        visualData = new Dictionary<int, VisualDefinition>();
-        foreach (VisualDefinition visual in data)
-        {
-            visualData.Add(visual.image_id, visual);
-        }
-
-        Debug.Log("Finished Loading API Visuals");
         loaded = true;
     }
 

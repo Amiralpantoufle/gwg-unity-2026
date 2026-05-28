@@ -48,8 +48,7 @@ public class BootStrap_Loader : MonoBehaviour
             return;
         }
 
-        ApiResponse<List<BaseIndexOutput>> response =
-            JsonConvert.DeserializeObject<ApiResponse<List<BaseIndexOutput>>>(json);
+        ApiResponse<List<BaseIndexOutput>> response = JsonConvert.DeserializeObject<ApiResponse<List<BaseIndexOutput>>>(json);
 
         if (response == null)
         {
