@@ -49,7 +49,7 @@ public class EventBus
         if (events.ContainsKey(type))
             events[type]?.Invoke(data);
         else
-            Debug.LogWarning("No Event linked Found");
+            Debug.LogWarning("No Event linked Found for :"+data);
     }
 
 }

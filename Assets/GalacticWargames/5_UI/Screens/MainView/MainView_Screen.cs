@@ -30,4 +30,9 @@ public class MainView_Screen : UIScreen
     {
         gameView.SetActive(false);
     }
+
+    public void SwitchLevel()
+    {
+        GridManager.Instance.SwitchLevel();
+    }
 }

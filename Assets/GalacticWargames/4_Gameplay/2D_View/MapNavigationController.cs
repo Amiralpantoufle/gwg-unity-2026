@@ -1,14 +1,21 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
 
-
 public class MapNavigationController : MonoBehaviour
 {
+    private GWG_InputAction inputActions;
+
+    //Camera settings
     public Camera cam;
     public Transform movableZone;
     public float panSpeed = 1f;
+    [SerializeField] private float centerSmoothTime = 1f;
+    private Vector3 targetPosition;
+    private Vector3 velocity;
+    private bool isCentering;
 
     public Vector2 mapMinBounds;
     public Vector2 mapMaxBounds;
@@ -17,11 +24,10 @@ public class MapNavigationController : MonoBehaviour
     public float minZoom = 5f;
     public float maxZoom = 1f;
 
-    private GWG_InputAction inputActions;
-
     private Vector2 lastTouchPosition;
     private float lastPinchDistance;
     private bool isPanning, isZooming;
+
 
     private void Awake()
     {
@@ -31,6 +37,7 @@ public class MapNavigationController : MonoBehaviour
     private void Update()
     {
         HandlePan();
+        HandleCentering();
 
 #if UNITY_EDITOR || UNITY_STANDALONE
         HandlePCZoom();
@@ -72,6 +79,10 @@ public class MapNavigationController : MonoBehaviour
     private void HandlePan()
     {
         if (!isPanning) return;
+
+        //Annuler le centrage quand panning detecte
+        isCentering = false;
+
         if (UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count > 1) return;
         Vector2 currentPosition = inputActions.Player.TouchPosition.ReadValue<Vector2>();
 
@@ -79,10 +90,27 @@ public class MapNavigationController : MonoBehaviour
 
         Vector3 targetPos = movableZone.position + worldDelta*panSpeed;
 
-        movableZone.position = ClampPosition(targetPos);
-        //movableZone.position = targetPos;
+        //movableZone.position = ClampPosition(targetPos);
+        movableZone.position = targetPos;
 
         lastTouchPosition = currentPosition;
+    }
+    private void HandleCentering()
+    {
+        if (!isCentering)
+            return;
+
+        movableZone.position = Vector3.SmoothDamp(
+            movableZone.position,
+            (-1)*targetPosition,//Multiplier par -1 pour obtenir valeurs transform Inverse et pan dans la bonne direction
+            ref velocity,
+            centerSmoothTime);
+
+        if (Vector3.Distance(movableZone.position, targetPosition) < 0.05f)
+        {
+            movableZone.position = targetPosition;
+            isCentering = false;
+        }
     }
     private void HandleZoom()
     {
@@ -141,6 +169,18 @@ public class MapNavigationController : MonoBehaviour
         );
     }
 
+    //Camera
+    public void CenterOnTile(Transform alignWith)
+    {
+        targetPosition = alignWith.position;
+
+        //Temp
+        alignWith.GetComponent<SpriteRenderer>().color = Color.black;
+
+        isCentering = true;
+    }
+
+
     //Inputs
     private void OnEnable()
     {
@@ -165,13 +205,11 @@ public class MapNavigationController : MonoBehaviour
 
     private void OnTouchStarted(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Touch start");
         isPanning = true;
         lastTouchPosition = inputActions.Player.TouchPosition.ReadValue<Vector2>();
     }
     private void OnTouchEnded(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Touch stop");
         isPanning = false;
     }
 

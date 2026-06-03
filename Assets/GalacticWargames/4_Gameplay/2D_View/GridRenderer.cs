@@ -1,6 +1,7 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Linq;
 
 public class GridRenderer : MonoBehaviour
 {
@@ -11,10 +12,9 @@ public class GridRenderer : MonoBehaviour
     [SerializeField] private float tileWidth = 100;
     [SerializeField] private float tileHeight = 50;
 
+    private Dictionary<Vector2Int, TileView> tileViews = new Dictionary<Vector2Int, TileView>();
     public void Init_GridRenderer()
     {
-        Debug.Log("Init GridRenderer");
-
         if (GridManager.Instance == null)
         {
             Debug.LogError("GridManager NULL");
@@ -25,8 +25,6 @@ public class GridRenderer : MonoBehaviour
     }
     private void Render(GridLevel level, GridMapResponse map)
     {
-        Debug.Log("Render map");
-
         Clear();
 
         var ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y);
@@ -34,7 +32,6 @@ public class GridRenderer : MonoBehaviour
         foreach (var tile in ordered)
         {
             CreateTile(tile);
-            //CreateTestTile(tile);
         }
     }
 
@@ -60,20 +57,49 @@ public class GridRenderer : MonoBehaviour
 
         obj.transform.SetParent(gridRoot);
         obj.transform.position = IsoToWorld(tile.x, tile.y);
+        obj.transform.name = tilePrefab.name + "_"+ tile.x+"x_" +tile.y + "y";
 
         SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
-        //VisualDefinition visual = GridVisualService.Instance.Get(tile.image_id);
-        //if (sr == null || visual == null) return;
+        VisualDefinition visual = GridVisualService.Instance.GetVisual(tile.image_id);
+        if (sr == null || visual == null)
+        {
+            Debug.LogError("Couldn't load sprite renderer or visual definition");
+            return;
+        }
 
-        sr.sortingOrder = 1000 - (tile.x + tile.y);
-        //Sprite newSprite = Resources.Load<Sprite>(visual.assetPath);
-        //sr.sprite = newSprite;
-        //obj.transform.localScale = Vector3.one * visual.renderScale;
+        //Define Tileview properties and offset
+        int autoOffset=0;
+        if(visual.renderScale > 1) autoOffset = 10;
+        sr.sortingOrder = (1000 - (tile.x + tile.y))+autoOffset;
+        sr.sprite = visual.imageSprite;
+        obj.transform.localScale = Vector3.one * visual.renderScale;
+        obj.transform.localPosition = new Vector2(obj.transform.localPosition.x + visual.offset.x, obj.transform.localPosition.y + visual.offset.y);
 
         BoxCollider2D collider = obj.AddComponent<BoxCollider2D>();
-        TileView tileView = obj.AddComponent<TileView>();
 
+        //Create Tileview
+        TileView tileView = obj.AddComponent<TileView>();
         tileView.Init(tile);
+
+        //Register Tileview
+        Vector2Int coords = new Vector2Int(tile.x, tile.y);
+        tileViews.Add(coords, tileView);
+    }
+
+    /// <summary>
+    /// Recupere une tileview depuis son ID de tuile
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <returns></returns>
+    public TileView GetTile(int x, int y)
+    {
+        Vector2Int coords = new Vector2Int(x, y);
+
+        if (tileViews.TryGetValue(coords, out TileView tile))
+            return tile;
+
+        return null;
     }
 
     private Vector3 IsoToWorld(int x, int y)
@@ -89,4 +115,5 @@ public class GridRenderer : MonoBehaviour
         foreach (Transform child in gridRoot)
             Destroy(child.gameObject);
     }
+
 }

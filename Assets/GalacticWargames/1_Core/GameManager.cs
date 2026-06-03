@@ -4,20 +4,21 @@ public class GameManager : MonoBehaviour
 {
     private void Start()
     {
+        DontDestroyOnLoad(transform);
         UIStateManager.Instance.SetState(UIState.Loading);
 
         //STARTUP PROCESS
-        Invoke(nameof(FinishInit), 1f);
-        DontDestroyOnLoad(transform);
+        Invoke(nameof(OnLaunchApp), 1f);
     }
 
-    private void FinishInit()
+    private async void OnLaunchApp()
     {
-        //Set Default State
-        UIStateManager.Instance.SetState(UIState.Loggedout);
-        EventBus.Publish(new OpenScreenByIDEvent
+        if (LoadingScreen.Instance != null)
         {
-            screenID = ScreenID.Auth
-        });
+            LoadingScreen.Instance.gameObject.SetActive(true);
+            await LoadingScreen.Instance.BootProcess();
+
+            Debug.Log("Boot Process Completed");
+        }
     }
 }

@@ -8,20 +8,15 @@ public class Authentification_Screen : UIScreen
     [SerializeField] private TMP_InputField userPassword;
     private const string ACCESS_KEY = "EMAIL";
 
-    [SerializeField] private GameObject popup;
-
     public override void Show()
     {
         base.Show();
 
         userEmail.text = PlayerPrefs.GetString(ACCESS_KEY, "");
-        popup.SetActive(true);
     }
     public override void Hide()
     {
         base.Hide();
-
-        popup.SetActive(false);
     }
 
     private void OnEnable()
@@ -37,9 +32,9 @@ public class Authentification_Screen : UIScreen
         switch (e.newState)
         {
             case UIState.Loggedout:
-                //loadingSpinner.SetActive(e.newState == UIState.Loading);
                 Debug.Log("UIState LoggedOut");
                 break;
+                 
             case UIState.Loggedin:
 
                 EventBus.Publish(new ReplaceScreenEvent

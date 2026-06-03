@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class UIScreen : MonoBehaviour
 {
+    [SerializeField] private GameObject popupMaster;
+
     /// <summary>
     /// Fonction d'initialisation du Gameobject UI
     /// </summary>
@@ -13,6 +15,9 @@ public class UIScreen : MonoBehaviour
     public virtual void Show()
     {
         gameObject.SetActive(true);
+
+        if(popupMaster != null )
+            popupMaster.SetActive(true);
     }
     /// <summary>
     /// Desactive le GameObject UI lié
@@ -20,6 +25,9 @@ public class UIScreen : MonoBehaviour
     public virtual void Hide()
     {
         gameObject.SetActive(false);
+
+        if (popupMaster != null)
+            popupMaster.SetActive(false);
     }
 
     public virtual void PostToken(string response, int type, float time)

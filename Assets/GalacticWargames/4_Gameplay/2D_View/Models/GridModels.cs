@@ -15,7 +15,6 @@ public class GridTileDto
     public int y;
 
     public int image_id;
-
     public List<EntityDto> entities;
 }
 
