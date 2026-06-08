@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Modèle de l'API avec struct et liste des tuiles
+/// </summary>
 [System.Serializable]
 public class GridAPIModels
 {
@@ -13,6 +16,9 @@ public class GridAPIModels
     public List<GridTileApiDto> tiles;
 }
 
+/// <summary>
+///  Modèle de l'API avec Construct Tuile
+/// </summary>
 [System.Serializable]
 public class GridTileApiDto
 {
@@ -36,3 +42,33 @@ public class GridTileApiDto
     //public VisibilityDto visibility;
     //public FogOverlayDto fog_overlay;
 }
+
+
+
+
+
+[System.Serializable]
+public class GridMapResponse
+{
+    public string level; // "galaxy", "solar_system", "planet"
+
+    public List<GridTileDto> tiles;
+}
+
+[System.Serializable]
+public class GridTileDto
+{
+    public int x;
+    public int y;
+
+    public int image_id;
+    public List<EntityDto> entities;
+}
+
+/*[System.Serializable]
+public class EntityDto
+{
+    public int id;
+    public string type;
+    public string image_id;
+}*/

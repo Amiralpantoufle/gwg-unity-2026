@@ -61,24 +61,4 @@ public class ScreenManager : MonoBehaviour
             screenStack.Pop().Hide();
         }
     }
-
-    /*
-    //Listeners
-    private void OnEnable()
-    {
-        EventBus.Subscribe<OpenScreenByIDEvent>(OnOpenScreen);
-    }
-    private void OnDisable()
-    {
-        EventBus.Unsubscribe<OpenScreenByIDEvent>(OnOpenScreen);
-    }
-    /// <summary>
-    /// Event => Ouverture d'un écran
-    /// </summary>
-    /// <param name="e"></param>
-    private void OnOpenScreen(OpenScreenByIDEvent e)
-    {
-        NavigationService.Instance.Open(e.screenID, e.data);
-    }
-    */
 }

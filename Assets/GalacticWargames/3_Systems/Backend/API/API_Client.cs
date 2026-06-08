@@ -82,6 +82,10 @@ public class API_Client : MonoBehaviour
     {
         return await SendRequestAsync("GET", endpoint, null);
     }
+    public async Task<string> PostAsync(string endpoint, string json = "")
+    {
+        return await SendRequestAsync("POST", endpoint, json);
+    }
     private async Task<string> SendRequestAsync(string method,string endpoint,string json)
     {
         UnityWebRequest req = CreateRequest(method, endpoint, json);
@@ -135,9 +139,6 @@ public class API_Client : MonoBehaviour
 
         if (req.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError($"HTTP ERROR : {req.responseCode}");
-            Debug.LogError(req.error);
-
             string errorBody = req.downloadHandler.text;
 
             Debug.LogError(errorBody);
@@ -178,7 +179,7 @@ public class API_Client : MonoBehaviour
     }
 
     //REQUEST MANAGEMENT
-    private UnityWebRequest CreateRequest(string method, string endpoint, string json)
+    private UnityWebRequest CreateRequest(string method, string endpoint, string json="")
     {
         UnityWebRequest req;
 

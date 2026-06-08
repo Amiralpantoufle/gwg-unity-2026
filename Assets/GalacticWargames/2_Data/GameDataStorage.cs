@@ -30,7 +30,7 @@ public class GameDataStorage : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+ 
     public void SetGlobalData(GlobalDataOutput data)
     {
         GlobalData = data;

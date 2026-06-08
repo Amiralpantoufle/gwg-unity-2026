@@ -18,34 +18,6 @@ public class Authentification_Screen : UIScreen
     {
         base.Hide();
     }
-
-    private void OnEnable()
-    {
-        EventBus.Subscribe<UIStateChangedEvent>(onStateChanged);
-    }
-    private void OnDisable()
-    {
-        EventBus.Unsubscribe<UIStateChangedEvent>(onStateChanged);
-    }
-    void onStateChanged(UIStateChangedEvent e)
-    {
-        switch (e.newState)
-        {
-            case UIState.Loggedout:
-                Debug.Log("UIState LoggedOut");
-                break;
-                 
-            case UIState.Loggedin:
-
-                EventBus.Publish(new ReplaceScreenEvent
-                {
-                    screenID = ScreenID.Main
-                });
-
-                Debug.Log("UIState LoggedIn");
-                break;
-        }
-    }
     public void Try_Loggin()
     {
         string email = userEmail.text.ToString();

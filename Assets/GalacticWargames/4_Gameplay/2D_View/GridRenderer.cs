@@ -13,16 +13,7 @@ public class GridRenderer : MonoBehaviour
     [SerializeField] private float tileHeight = 50;
 
     private Dictionary<Vector2Int, TileView> tileViews = new Dictionary<Vector2Int, TileView>();
-    public void Init_GridRenderer()
-    {
-        if (GridManager.Instance == null)
-        {
-            Debug.LogError("GridManager NULL");
-            return;
-        }
 
-        GridManager.Instance.OnGridLoaded += Render;
-    }
     private void Render(GridLevel level, GridMapResponse map)
     {
         Clear();
@@ -31,7 +22,40 @@ public class GridRenderer : MonoBehaviour
 
         foreach (var tile in ordered)
         {
+            //CreateTile(tile);
+        }
+    }
+    public void RenderPlanet(GridPlanetModel map)
+    {
+        Clear();
+
+        var ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y);
+
+        foreach (var tile in ordered)
+        {
             CreateTile(tile);
+        }
+    }
+    public void RenderSystem(GridSystemModel map)
+    {
+        Clear();
+
+        var ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y);
+
+        foreach (var tile in ordered)
+        {
+            CreateTile(tile);
+        }
+    }
+    public void RenderGalaxy(GridGalaxyModel map)
+    {
+        Clear();
+
+        var ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y);
+
+        foreach (var tile in ordered)
+        {
+            //CreateTile(tile);
         }
     }
 
@@ -49,9 +73,9 @@ public class GridRenderer : MonoBehaviour
         BoxCollider2D collider = go.AddComponent<BoxCollider2D>();
         TileView tileView = go.AddComponent<TileView>();
 
-        tileView.Init(tile);
+        //tileView.Init(tile);
     }
-    private void CreateTile(GridTileDto tile)
+    private void CreateTile(GridTile tile)
     {
         GameObject obj = Instantiate(tilePrefab);
 
@@ -60,12 +84,9 @@ public class GridRenderer : MonoBehaviour
         obj.transform.name = tilePrefab.name + "_"+ tile.x+"x_" +tile.y + "y";
 
         SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
+        if (sr == null) Debug.LogError("Couldn't load sprite renderer");
+
         VisualDefinition visual = GridVisualService.Instance.GetVisual(tile.image_id);
-        if (sr == null || visual == null)
-        {
-            Debug.LogError("Couldn't load sprite renderer or visual definition");
-            return;
-        }
 
         //Define Tileview properties and offset
         int autoOffset=0;

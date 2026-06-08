@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public class GridManager : MonoBehaviour
 {
     public static GridManager Instance;
-
-    public event Action<GridLevel, GridMapResponse> OnGridLoaded;
     private MapNavigationController nav;
 
     private GridLevel currentLevel;
@@ -19,7 +18,6 @@ public class GridManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        GetComponent<GridRenderer>().Init_GridRenderer();
 
         nav = GetComponent<MapNavigationController>();
         if (nav == null) Debug.LogError("Couldn't get MapNavigationController. Script is missing");
@@ -28,105 +26,131 @@ public class GridManager : MonoBehaviour
     private void Start()
     {
         LaunchProcess();
-        
     }
     //Map Loading Process
     private async void LaunchProcess()
     {
         //Load Planete depuis id de la base
+        if (GameDataStorage.Instance.CurrentBase == null)
+        {
+            Debug.LogError("GameDataStorage hasn't stored any base");
+            //return;
+        }
         int planetId = GameDataStorage.Instance.CurrentBase.PlanetId;
         await Load(GridLevel.Planet, planetId);
 
         //Centrer sur la base
         CenterOnBase();
     }
-    /// <summary>
-    /// Load la map a partir du niveau et ID selectionnes
-    /// </summary>
-    /// <param name="level"></param>
-    /// <param name="id"></param>
+    
     public async Task Load(GridLevel level, int id)
     {
+
+        if (level == GridLevel.Planet)
+        {
+            GridPlanetModel planet = await LoadPlanetFromData(id);
+            if(planet==null) Debug.LogError("Failed to load planet");
+
+            GetComponent<GridRenderer>().RenderPlanet(planet);
+        }
+        else if (level == GridLevel.SolarSystem)
+        {
+            GridSystemModel system = await LoadSystemFromData(id);
+            if (system == null) Debug.LogError("Failed to load system");
+
+            GetComponent<GridRenderer>().RenderSystem(system);
+        }
+        else if (level == GridLevel.Galaxy)
+        {
+            GridGalaxyModel galaxy = await LoadGalaxyFromData(id);
+            if (galaxy == null) Debug.LogError("Failed to load system");
+
+            GetComponent<GridRenderer>().RenderGalaxy(galaxy);
+        }
+
         currentLevel = level;
-        GridMapResponse map = await LoadmapFromData(level, id);
-
-        if (map == null)
-        {
-            Debug.LogError("Failed to load map");
-            return;
-        }
-
-        //Render map
-        OnGridLoaded?.Invoke(level, map);
     }
-    private async Task<GridMapResponse> LoadmapFromData(GridLevel level, int id)
+    private async Task<GridPlanetModel> LoadPlanetFromData(int id)
     {
-        string json = null;
+        var response = await LoadApiResponse<GridPlanetModel>($"/map/planet/{id}");
+        return response.output;
+    }
+    private async Task<GridSystemModel> LoadSystemFromData(int id)
+    {
+        var response = await LoadApiResponse<GridSystemModel>($"/map/system/{id}");
+        return response.output;
+    }
+    private async Task<GridGalaxyModel> LoadGalaxyFromData(int id)
+    {
+        var response = await LoadApiResponse<GridGalaxyModel>($"/map/system/{id}");
+        return response.output;
+    }
 
-        //Charge la map
-        switch (level)
-        {
-            case GridLevel.Planet:
-                json = await API_Client.Instance.GetAsync($"/map/planet/{id}");
-                break;
-            case GridLevel.SolarSystem:
-                json = await API_Client.Instance.GetAsync($"/map/system/{id}");
-                break;
-            case GridLevel.Galaxy:
-                json = await API_Client.Instance.GetAsync($"/map/galaxy/{id}");
-                break;
-        }
+    private async Task<ApiResponse<T>> LoadApiResponse<T>(string endpoint)
+    {
+        string json = await API_Client.Instance.GetAsync(endpoint);
 
         if (string.IsNullOrEmpty(json))
             return null;
 
-        //API call & Security
-        ApiResponse<GridAPIModels> response = JsonConvert.DeserializeObject<ApiResponse<GridAPIModels>>(json);
+        var response = JsonConvert.DeserializeObject<ApiResponse<T>>(json);
         if (response == null)
         {
-            Debug.LogError("Impossible de parser PlanetMap");
+            Debug.LogError($"Impossible de parser {typeof(T).Name}");
             return null;
         }
         if (response.error)
         {
-            Debug.LogError($"Planet API ERROR : {response.error} - {response.error}");
+            Debug.LogError($"API Error : {response.error}");
             return null;
         }
         if (response.output == null)
         {
-            Debug.LogError("Planet output null");
+            Debug.LogError("Output null");
             return null;
         }
 
-        return ConvertToGridMapResponse(level, response.output);
+        return response;
     }
-    private GridMapResponse ConvertToGridMapResponse(GridLevel level, GridAPIModels apiData)
+    private GridMapResponse ConvertModelToMap(GridLevel level, GridApiModel data)
     {
         GridMapResponse map = new GridMapResponse();
 
-
-        map.level = level.ToString().ToLower();
-
-        map.tiles = new List<GridTileDto>();
-
-        foreach (var tile in apiData.tiles)
+        switch (data)
         {
-            map.tiles.Add(new GridTileDto
-            {
-                x = tile.x,
-                y = tile.y,
-                image_id = tile.image_id,
-                entities = tile.entities,
-            });
+            case GridPlanetModel planet:
+
+                break;
+
+            case GridSystemModel system:
+
+                break;
+
+            case GridGalaxyModel galaxy:
+
+                break;
         }
 
         return map;
     }
 
-    //UI Inputs
+    //Inputs
+    private void OnEnable()
+    {
+        MainView_Screen.OnMainViewLoaded += HandleMainViewLoaded;
+    }
+    private void OnDisable()
+    {
+        MainView_Screen.OnMainViewLoaded -= HandleMainViewLoaded;
+    }
+    private void HandleMainViewLoaded()
+    {
+        //Get Player and Global Data
+        //BootStrap_Loader.Instance.Init_BootStrap();
+    }
     public async void SwitchLevel()
     {
-        GridLevel level;
+        GridLevel level=GridLevel.Planet;
         int id = 0;
         string json = null;
 
@@ -158,26 +182,24 @@ public class GridManager : MonoBehaviour
 
         Debug.Log(json);
 
-        /*ApiResponse<GridAPIModels> response = JsonConvert.DeserializeObject<ApiResponse<GridAPIModels>>(json);
+        ApiResponse<EntityModelOuput> response = JsonConvert.DeserializeObject<ApiResponse<EntityModelOuput>>(json);
         if (response == null)
         {
-            Debug.LogError("Impossible de parser PlanetMap");
+            Debug.LogError("Impossible de parser EntityModelOuput");
             return;
         }
         if (response.error)
         {
-            Debug.LogError($"Planet API ERROR : {response.error} - {response.error}");
+            Debug.LogError($"EntityModelOuput API ERROR : {response.error} - {response.error}");
             return;
         }
         if (response.output == null)
         {
-            Debug.LogError("Planet output null");
+            Debug.LogError("EntityModelOuput output null");
             return;
         }
 
-        GetLevelParentInfos(response);
-
-        await Load(level, id);*/
+        await Load(level, response.output.id_parent_esp);
     }
     private void CenterOnBase()
     {
@@ -197,27 +219,7 @@ public class GridManager : MonoBehaviour
             nav.CenterOnTile(tView.transform);
         }
     }
-
-    //Inputs
-    private void OnEnable()
-    {
-        MainView_Screen.OnMainViewLoaded += HandleMainViewLoaded;
-    }
-    private void OnDisable()
-    {
-        MainView_Screen.OnMainViewLoaded -= HandleMainViewLoaded;
-    }
-    private void HandleMainViewLoaded()
-    {
-        //Get Player and Global Data
-        //BootStrap_Loader.Instance.Init_BootStrap();
-    }
-
     //Utility
-    private void GetLevelParentInfos(ApiResponse<GridAPIModels> levelResponse)
-    {
-        Debug.Log(levelResponse.ToString());
-    }
     private GridMapResponse FakeMap(GridLevel level)
     {
         var map = new GridMapResponse();

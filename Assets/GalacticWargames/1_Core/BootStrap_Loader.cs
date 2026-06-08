@@ -17,7 +17,7 @@ public class BootStrap_Loader : MonoBehaviour
     /// <summary>
     /// Initialise le chargement auto a l'affichage de l'écran MainView
     /// </summary>
-    public async Task Init_BootStrap()
+    public async void Init_BootStrap()
     {
         await LoadBaseIndex();
 
@@ -28,9 +28,7 @@ public class BootStrap_Loader : MonoBehaviour
         else
         {
             isLoaded = false;
-            Debug.LogError("No current base found");
-
-            //DECONEXION ?
+            Debug.Log("Couldn't Init BootStrap Process");
         }
     }
     private async Task LoadBaseIndex()
@@ -38,7 +36,6 @@ public class BootStrap_Loader : MonoBehaviour
         string json = await API_Client.Instance.GetAsync("/base/index");
         if (string.IsNullOrEmpty(json))
         {
-            Debug.LogError("BaseIndex json is null");
             return;
         }
 
@@ -56,7 +53,7 @@ public class BootStrap_Loader : MonoBehaviour
         }
         if (response.output == null)
         {
-            Debug.LogError("BaseIndex output null");
+            Debug.Log("BaseIndex output null");
             return;
         }
 

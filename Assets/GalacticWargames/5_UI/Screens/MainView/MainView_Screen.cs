@@ -28,6 +28,7 @@ public class MainView_Screen : UIScreen
     }
     public override void Hide()
     {
+        base.Hide();
         gameView.SetActive(false);
     }
 
