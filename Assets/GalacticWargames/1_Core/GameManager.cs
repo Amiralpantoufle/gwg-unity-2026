@@ -13,13 +13,9 @@ public class GameManager : MonoBehaviour
         UIStateManager.Instance.SetState(UIState.Loading);
 
         //STARTUP PROCESS
-        Invoke(nameof(OnLaunchApp), 1f);
+        Invoke(nameof(Boot), 1f);
     }
 
-    private void OnLaunchApp()
-    {
-        Boot();
-    }
     private async void Boot()
     {
         if (LoadingScreen.Instance != null)
@@ -71,7 +67,7 @@ public class GameManager : MonoBehaviour
 
             case UIState.Loggedin:
 
-                BootStrap_Loader.Instance.Init_BootStrap();
+                //BootStrap_Loader.Instance.Init_BootStrap();
 
                 EventBus.Publish(new ReplaceScreenEvent
                 {

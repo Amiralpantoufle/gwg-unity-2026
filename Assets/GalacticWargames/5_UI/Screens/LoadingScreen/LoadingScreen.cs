@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using static UnityEngine.CullingGroup;
 
 public class LoadingScreen : MonoBehaviour
-{ 
+{  
     public static LoadingScreen Instance;
     [SerializeField] private Slider loadingSlider;
 
@@ -15,7 +15,7 @@ public class LoadingScreen : MonoBehaviour
 
     public async Task BootProcess()
     {
-        BootStrap_Loader.Instance.Init_BootStrap();
+        await BootStrap_Loader.Instance.Init_BootStrap();
 
         //Données chargées donc Token Valide -> Redirection MainScreen
         if(BootStrap_Loader.Instance.isLoaded)

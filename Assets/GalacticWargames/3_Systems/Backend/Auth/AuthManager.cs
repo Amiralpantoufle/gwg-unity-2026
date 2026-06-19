@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// gérer login / register / refresh
 /// </summary>
-public class AuthManager : MonoBehaviour
+public class AuthManager : MonoBehaviour 
 {
     public static AuthManager Instance;
     [SerializeField] private Auth_ResetPassword_Popup popup_ForgotPassword;
@@ -43,6 +43,13 @@ public class AuthManager : MonoBehaviour
         {
             string token = response.output.token;
             string refreshToken = response.output.refresh_token;
+            UserData user = new UserData()
+            {
+                name = response.output.user.name,
+                level = response.output.user.level
+            };
+            GameDataStorage.Instance.SetUserStartData(user);
+
             API_Client.Instance.SetTokens(token, refreshToken);
 
             UIStateManager.Instance.SetState(UIState.Loggedin);

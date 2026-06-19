@@ -11,6 +11,7 @@ public class LoginOutput
 {
     public string token;
     public string refresh_token;
+    public UserData user;
 }
 
 [System.Serializable]
@@ -19,6 +20,16 @@ public class LoginResponse
     public bool error;
     public string error_msg;
     public LoginOutput output;
+}
+
+[System.Serializable]
+public class UserData
+{
+    public string name;
+
+    public float experience;
+
+    public int level;
 }
 //Reset Password
 [System.Serializable]

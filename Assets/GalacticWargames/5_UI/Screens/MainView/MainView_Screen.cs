@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -19,9 +20,11 @@ public class MainView_Screen : UIScreen
     [SerializeField] private TextMeshProUGUI stockCapacity,stockCurrent;
 
     public static event Action OnMainViewLoaded;
-    public override void Show()
+    public async override void Show()
     {
         base.Show();
+
+        await LoadUserInfo();
 
         gameView.SetActive(true);
         OnMainViewLoaded?.Invoke();
@@ -30,6 +33,25 @@ public class MainView_Screen : UIScreen
     {
         base.Hide();
         gameView.SetActive(false);
+    }
+
+    private async Task LoadUserInfo()
+    {
+        GameDataStorage storage = GameDataStorage.Instance;
+
+        if (storage != null)
+        {
+            username.text = storage._Username;
+            level.text = storage._Level;
+            Debug.Log("Info Loaded");
+        }
+
+        if(storage.CurrentBase == null)
+        {
+            await BootStrap_Loader.Instance.Init_BootStrap();
+
+            if (storage.CurrentBase == null) Debug.LogError("Couldn't load player base");
+        }
     }
 
     public void SwitchLevel()

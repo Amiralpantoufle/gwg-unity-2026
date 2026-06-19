@@ -11,6 +11,12 @@ public class GameDataStorage : MonoBehaviour
     public GlobalDataOutput GlobalData { get; private set; }
     public UserDataOutput UserData { get; private set; }
 
+    //User Data
+    private string username;
+    private int level;
+    public string _Username {  get; private set; }
+    public string _Level {  get; private set; }
+
     //Base Data
     private const string LAST_BASE_KEY = "LAST_ACTIVE_BASE";
     /// <summary>
@@ -30,40 +36,7 @@ public class GameDataStorage : MonoBehaviour
             Destroy(gameObject);
         }
     }
- 
-    public void SetGlobalData(GlobalDataOutput data)
-    {
-        GlobalData = data;
-    }
-    public void SetUserData(UserDataOutput data)
-    {
-        UserData = data;
-    }
-
-    //Launch Data Process
-    public void SetBaseIndexData(List<BaseIndexOutput> dataList)
-    {
-        //Protection
-        if (dataList[0] == null || dataList.Count <= 0)
-        {
-            Debug.Log("No data found in list");
-            return;
-        }
-
-        BaseIndexOutput firstData;
-
-        //Si le joueur à plusieur bases
-        if (dataList.Count > 1)
-        {
-            firstData = dataList.LastOrDefault();
-        }
-        else
-        {
-            firstData = dataList[0];
-        }
-        BaseDataLoader(firstData);
-    }
-    private void BaseDataLoader(BaseIndexOutput data)
+    public void LoadCurrentBaseData(BaseIndexOutput data)
     {
         if(data== null)
         {
@@ -83,14 +56,29 @@ public class GameDataStorage : MonoBehaviour
         };
 
         //si base chargée
-        if (CurrentBase != null)
+        if (CurrentBase.BaseId != 0 && CurrentBase != null)
         {
-           /* SaveLastBaseId(CurrentBase.BaseId);
+           SaveLastBaseId(CurrentBase.BaseId);
             Debug.Log($"Base chargée :" + CurrentBase.BaseId);
 
-            BootStrapLoader.Instance.TryLoadingPlanet();*/
+            //BootStrapLoader.Instance.TryLoadingPlanet();*/
         }
         else Debug.LogWarning("no base loaded");
+    }
+    
+    //Data
+    public void SetUserStartData(UserData user)
+    {
+        level = user.level;
+        username = user.name;
+    }
+    public void SetGlobalData(GlobalDataOutput data)
+    {
+        GlobalData = data;
+    }
+    public void SetUserData(UserDataOutput data)
+    {
+        UserData = data;
     }
 
     /// <summary>

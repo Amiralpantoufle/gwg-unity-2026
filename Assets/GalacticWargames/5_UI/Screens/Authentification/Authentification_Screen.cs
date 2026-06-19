@@ -11,7 +11,6 @@ public class Authentification_Screen : UIScreen
     public override void Show()
     {
         base.Show();
-
         userEmail.text = PlayerPrefs.GetString(ACCESS_KEY, "");
     }
     public override void Hide()
