@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 54_Tilemap__0004_ruines-2
   m_EditorClassIdentifier: Assembly-CSharp::VisualDefinition
   image_id: 54
-  category: 2
+  category: 1
   imageSprite: {fileID: 21300000, guid: d48d3b6d6f6db03498419f3601657c3b, type: 3}
   renderScale: 2
   offset: {x: 0, y: 0}

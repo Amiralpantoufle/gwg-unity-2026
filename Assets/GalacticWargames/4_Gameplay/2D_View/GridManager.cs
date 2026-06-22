@@ -34,7 +34,6 @@ public class GridManager : MonoBehaviour
         if (GameDataStorage.Instance.CurrentBase == null)
         {
             Debug.LogError("GameDataStorage hasn't stored any base");
-            //return;
         }
         int planetId = GameDataStorage.Instance.CurrentBase.PlanetId;
         await Load(GridLevel.Planet, planetId);
@@ -157,24 +156,27 @@ public class GridManager : MonoBehaviour
         //analyse entity actuelle pour remonter au parent lié
         if (currentLevel == GridLevel.Planet)//Switch To system
         {
-            id = GameDataStorage.Instance.CurrentBase.PlanetId;
+            id = GameDataStorage.Instance.CurrentBase.SystemId;
 
-            json = await API_Client.Instance.GetAsync($"/entity/show/{id}");
+            //json = await API_Client.Instance.GetAsync($"/entity/show/{id}");
+            json = await API_Client.Instance.GetAsync($"/map/system/{id}");
             level = GridLevel.SolarSystem;
         }
         else if (currentLevel == GridLevel.Galaxy)//Switch To Galaxy
         {
-           // json = await API_Client.Instance.GetAsync($"/map/system/{id}");
+            //id = GameDataStorage.Instance.CurrentBase.GalaxyID;
+            id = GameDataStorage.Instance.CurrentBase.SystemId;
+
+            json = await API_Client.Instance.GetAsync($"/map/galaxy/{id}");
+            level = GridLevel.Galaxy;
 
         }
         else if (currentLevel == GridLevel.Galaxy)//Switch To Planet
         {
-            //json = await API_Client.Instance.GetAsync($"/map/galaxy/{id}");
+            id = GameDataStorage.Instance.CurrentBase.PlanetId;
 
-        }
-        else //Base Level
-        {
-
+            json = await API_Client.Instance.GetAsync($"/map/planet/{id}");
+            level = GridLevel.Planet;
         }
 
         //Response build

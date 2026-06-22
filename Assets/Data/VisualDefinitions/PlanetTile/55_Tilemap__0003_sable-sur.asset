@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 55_Tilemap__0003_sable-sur
   m_EditorClassIdentifier: Assembly-CSharp::VisualDefinition
   image_id: 55
-  category: 2
+  category: 1
   imageSprite: {fileID: 21300000, guid: add6e530c79ef6d468acf32f8b38cb24, type: 3}
   renderScale: 1
   offset: {x: 0, y: 0}

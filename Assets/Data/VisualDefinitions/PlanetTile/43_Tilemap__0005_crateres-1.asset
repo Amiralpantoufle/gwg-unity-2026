@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 43_Tilemap__0005_crateres-1
   m_EditorClassIdentifier: Assembly-CSharp::VisualDefinition
   image_id: 43
-  category: 2
+  category: 1
   imageSprite: {fileID: 21300000, guid: 131fb9b0a0a2f9b4694e90e597b281bb, type: 3}
   renderScale: 1
   offset: {x: 0, y: 0}

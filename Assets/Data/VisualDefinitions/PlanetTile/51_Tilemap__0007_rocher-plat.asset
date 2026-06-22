@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 51_Tilemap__0007_rocher-plat
   m_EditorClassIdentifier: Assembly-CSharp::VisualDefinition
   image_id: 51
-  category: 2
+  category: 1
   imageSprite: {fileID: 21300000, guid: 32d31f843d052854eb975392b3c6fdd3, type: 3}
   renderScale: 1
   offset: {x: 0, y: 0}

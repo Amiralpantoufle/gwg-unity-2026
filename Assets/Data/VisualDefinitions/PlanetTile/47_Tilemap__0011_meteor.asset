@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 47_Tilemap__0011_meteor
   m_EditorClassIdentifier: Assembly-CSharp::VisualDefinition
   image_id: 47
-  category: 2
+  category: 1
   imageSprite: {fileID: 21300000, guid: 656def31b731e1440b2fd4176bce572e, type: 3}
   renderScale: 1
   offset: {x: 0, y: 0}

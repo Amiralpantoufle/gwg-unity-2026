@@ -14,17 +14,6 @@ public class GridRenderer : MonoBehaviour
 
     private Dictionary<Vector2Int, TileView> tileViews = new Dictionary<Vector2Int, TileView>();
 
-    private void Render(GridLevel level, GridMapResponse map)
-    {
-        Clear();
-
-        var ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y);
-
-        foreach (var tile in ordered)
-        {
-            //CreateTile(tile);
-        }
-    }
     public void RenderPlanet(GridPlanetModel map)
     {
         Clear();
@@ -59,22 +48,6 @@ public class GridRenderer : MonoBehaviour
         }
     }
 
-    private void CreateTestTile(GridTileDto tile)
-    {
-        GameObject go = new GameObject($"Tile_{tile.x}_{tile.y}");
-
-        go.transform.SetParent(gridRoot);
-        go.transform.position = IsoToWorld(tile.x, tile.y);
-
-        SpriteRenderer sr = go.AddComponent<SpriteRenderer>();
-        sr.sprite = defaultTileSprite;
-        sr.sortingOrder = 1000 -(tile.x + tile.y);
-
-        BoxCollider2D collider = go.AddComponent<BoxCollider2D>();
-        TileView tileView = go.AddComponent<TileView>();
-
-        //tileView.Init(tile);
-    }
     private void CreateTile(GridTile tile)
     {
         GameObject obj = Instantiate(tilePrefab);
@@ -135,6 +108,8 @@ public class GridRenderer : MonoBehaviour
     {
         foreach (Transform child in gridRoot)
             Destroy(child.gameObject);
+
+        tileViews.Clear();
     }
 
 }

@@ -24,13 +24,24 @@ public class GridVisualService : MonoBehaviour
 
         if (visual == null)
         {
-            Debug.LogError(
-                $"No VisualDefinition found for id={id}");
+            Debug.Log($"No VisualDefinition found for id={id}");
+            visual = EmptyModelCallback();
         }
 
         return visual;
     }
 
+    private VisualDefinition EmptyModelCallback()
+    {
+        VisualDefinition empty = new VisualDefinition
+        {
+            category = VisualCategory.SystemTile,
+            imageSprite = null,
+            renderScale = 1
+        };
+
+        return empty;
+    }
 }
 
 

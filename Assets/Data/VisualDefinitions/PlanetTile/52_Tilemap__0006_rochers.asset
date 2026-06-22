@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 52_Tilemap__0006_rochers
   m_EditorClassIdentifier: Assembly-CSharp::VisualDefinition
   image_id: 52
-  category: 2
+  category: 1
   imageSprite: {fileID: 21300000, guid: a0681fd92d0ce0e4696001342c8c7489, type: 3}
   renderScale: 2
   offset: {x: 0, y: 0}

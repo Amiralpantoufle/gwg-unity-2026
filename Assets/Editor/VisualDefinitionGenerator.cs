@@ -105,8 +105,7 @@ public class VisualDefinitionGenerator : EditorWindow
             string spritePath =
                 AssetDatabase.GUIDToAssetPath(guid);
 
-            Sprite sprite =
-                AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
+            Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
 
             if (sprite == null)
                 continue;
@@ -117,8 +116,7 @@ public class VisualDefinitionGenerator : EditorWindow
             if (File.Exists(assetPath))
                 continue;
 
-            VisualDefinition vd =
-                ScriptableObject.CreateInstance<VisualDefinition>();
+            VisualDefinition vd = ScriptableObject.CreateInstance<VisualDefinition>();
 
             //Parse Name -> ID Du sprite doit être écrit en préfixe séparé de '_'
             string[] parts = sprite.name.Split('_');

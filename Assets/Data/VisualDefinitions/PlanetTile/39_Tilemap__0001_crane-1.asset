@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 39_Tilemap__0001_crane-1
   m_EditorClassIdentifier: Assembly-CSharp::VisualDefinition
   image_id: 39
-  category: 2
+  category: 1
   imageSprite: {fileID: 21300000, guid: 3999762e26ebe6c4eb5fe26b0e3cc650, type: 3}
   renderScale: 1
   offset: {x: 0, y: 0}
