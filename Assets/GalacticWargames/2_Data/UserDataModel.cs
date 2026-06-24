@@ -62,8 +62,6 @@ public class OesRessource
     public int idoes_oer;
     public int idmtx_oer;
     public int nombre_oer;
-    public string created_at;
-    public string updated_at;
 }
 
 [Serializable]

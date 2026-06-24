@@ -1,19 +1,21 @@
-using System;
-using System.Collections;
+
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
 
 public class MapNavigationController : MonoBehaviour
 {
     private GWG_InputAction inputActions;
+    private GridManager gridManager;
 
     //Camera settings
     public Camera cam;
     public Transform movableZone;
     public float panSpeed = 1f;
     [SerializeField] private float centerSmoothTime = 1f;
-    private Vector3 targetPosition;
+    private Vector3 centeringTarget;
     private Vector3 velocity;
     private bool isCentering;
 
@@ -33,6 +35,9 @@ public class MapNavigationController : MonoBehaviour
     {
         inputActions = new GWG_InputAction();
         EnhancedTouchSupport.Enable();
+
+        gridManager = GetComponent<GridManager>();
+        if (gridManager == null) Debug.LogError("NoGridManager Attached to GameObject");
     }
     private void Update()
     {
@@ -42,9 +47,9 @@ public class MapNavigationController : MonoBehaviour
 #if UNITY_EDITOR || UNITY_STANDALONE
         HandlePCZoom();
 #else
-    HandleMobileZoom();
+        HandleMobileZoom();
 #endif
-        HandleZoom();
+
     }
     private void SetBoundariesFromMap()
     {
@@ -102,17 +107,27 @@ public class MapNavigationController : MonoBehaviour
 
         movableZone.position = Vector3.SmoothDamp(
             movableZone.position,
-            (-1)*targetPosition,//Multiplier par -1 pour obtenir valeurs transform Inverse et pan dans la bonne direction
+            centeringTarget,
             ref velocity,
             centerSmoothTime);
 
-        if (Vector3.Distance(movableZone.position, targetPosition) < 0.05f)
+        if (Vector3.Distance(movableZone.position, centeringTarget) < 0.05f)
         {
-            movableZone.position = targetPosition;
+            movableZone.position = centeringTarget;
             isCentering = false;
+
+            Debug.Log("Centered");
         }
     }
-    private void HandleZoom()
+
+    //Camera
+    public void CenterOnTile(Transform tile)
+    {
+        centeringTarget = -tile.localPosition;
+
+        isCentering = true;
+    }
+    private void HandleMobileZoom()
     {
         if (!isZooming) return;
 
@@ -169,18 +184,6 @@ public class MapNavigationController : MonoBehaviour
         );
     }
 
-    //Camera
-    public void CenterOnTile(Transform alignWith)
-    {
-        targetPosition = alignWith.position;
-
-        //Temp
-        alignWith.GetComponent<SpriteRenderer>().color = Color.black;
-
-        isCentering = true;
-    }
-
-
     //Inputs
     private void OnEnable()
     {
@@ -191,6 +194,8 @@ public class MapNavigationController : MonoBehaviour
 
         inputActions.Player.Pinch.started += OnPinchStarted;
         inputActions.Player.Pinch.canceled += OnPinchEnded;
+
+        inputActions.Player.QuickTouch.performed += OnQuickTouch;
     }
     private void OnDisable()
     {
@@ -220,5 +225,42 @@ public class MapNavigationController : MonoBehaviour
     private void OnPinchEnded(InputAction.CallbackContext context)
     {
         isZooming = false;
+    }
+
+    private void OnQuickTouch(InputAction.CallbackContext context)
+    {
+        if (gridManager._TileSelected)
+        {
+            gridManager.CancelSelect();
+            return;
+        }
+
+        Vector2 screenPos = inputActions.Player.TouchPosition.ReadValue<Vector2>();
+        Vector2 worldPos = cam.ScreenToWorldPoint(screenPos);
+
+        Collider2D[] hits = Physics2D.OverlapPointAll(worldPos);
+
+        if (hits == null || hits.Length == 0)
+            return;
+
+
+        // 1. UI override
+        foreach (var h in hits)
+        {
+            if (h.gameObject.layer == 5)//5:UI
+                return;
+
+        }
+
+        // 2. Tile priority
+        foreach (var h in hits)
+        {
+            if (h.TryGetComponent<TileView>(out var tile))
+            {
+                gridManager.SelectTile(tile);
+                CenterOnTile(tile.transform);
+                return;
+            }
+        }
     }
 }

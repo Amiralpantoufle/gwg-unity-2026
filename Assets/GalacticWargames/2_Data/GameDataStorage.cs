@@ -14,14 +14,13 @@ public class GameDataStorage : MonoBehaviour
     //User Data
     private string username;
     private int level;
-    public string _Username {  get; private set; }
-    public string _Level {  get; private set; }
+    private float experience;
+    public string _Username { get { return username; } set { username = value; } }
+    public int _Level { get { return level; } set { level = value; } }
+    public float _Experience { get { return experience; } set { experience = value; } }
 
     //Base Data
     private const string LAST_BASE_KEY = "LAST_ACTIVE_BASE";
-    /// <summary>
-    /// Infos metier de BaseIndexOutput Response
-    /// </summary>
     public PlayerBaseData CurrentBase { get; private set; }
 
     private void Awake()
@@ -36,6 +35,11 @@ public class GameDataStorage : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    /// <summary>
+    /// Charge les données bases en local
+    /// </summary>
+    /// <param name="data"></param>
     public void LoadCurrentBaseData(BaseIndexOutput data)
     {
         if(data== null)
@@ -59,27 +63,22 @@ public class GameDataStorage : MonoBehaviour
         if (CurrentBase.BaseId != 0 && CurrentBase != null)
         {
            SaveLastBaseId(CurrentBase.BaseId);
-            Debug.Log($"Base chargée :" + CurrentBase.BaseId);
-
-            //BootStrapLoader.Instance.TryLoadingPlanet();*/
+           Debug.Log($"Base chargée :" + CurrentBase.BaseId);
         }
         else Debug.LogWarning("no base loaded");
     }
     
     //Data
-    public void SetUserStartData(UserData user)
+    public void SetUserStartData(UserInfos user)
     {
         level = user.level;
         username = user.name;
+        experience = user.experience;
     }
-    public void SetGlobalData(GlobalDataOutput data)
+    /*public void SetGlobalData(GlobalDataOutput data)
     {
         GlobalData = data;
-    }
-    public void SetUserData(UserDataOutput data)
-    {
-        UserData = data;
-    }
+    }*/
 
     /// <summary>
     /// Sauvegarde localement la dernière base utilisée.

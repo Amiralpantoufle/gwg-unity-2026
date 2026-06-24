@@ -23,13 +23,13 @@ public class LoginResponse
 }
 
 [System.Serializable]
-public class UserData
+public class UserData 
 {
     public string name;
 
-    public float experience;
+    //public float experience;
 
-    public int level;
+    //public int level;
 }
 //Reset Password
 [System.Serializable]

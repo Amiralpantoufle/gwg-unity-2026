@@ -43,13 +43,6 @@ public class AuthManager : MonoBehaviour
         {
             string token = response.output.token;
             string refreshToken = response.output.refresh_token;
-            UserData user = new UserData()
-            {
-                name = response.output.user.name,
-                level = response.output.user.level
-            };
-            GameDataStorage.Instance.SetUserStartData(user);
-
             API_Client.Instance.SetTokens(token, refreshToken);
 
             UIStateManager.Instance.SetState(UIState.Loggedin);

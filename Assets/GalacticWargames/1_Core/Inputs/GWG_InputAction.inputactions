@@ -32,6 +32,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "QuickTouch",
+                    "type": "Button",
+                    "id": "b86ebc87-f2be-4485-9d79-fff4dcdd1b13",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Tap(pressPoint=0.35)",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -98,6 +107,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pinch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1df07d2a-10cb-4d4d-8f04-3727b5fbae03",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QuickTouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "498e8caf-3b44-463e-a021-32ad92974d55",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QuickTouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

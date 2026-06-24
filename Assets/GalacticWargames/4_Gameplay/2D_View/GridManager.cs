@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
+using static UnityEditor.Rendering.CameraUI;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public class GridManager : MonoBehaviour
@@ -12,8 +13,10 @@ public class GridManager : MonoBehaviour
     public static GridManager Instance;
     private MapNavigationController nav;
 
-    private GridLevel currentLevel;
-    private int currentLevelID;
+    [SerializeField] private GridLevel currentLevel;
+    [SerializeField] private MainView_TileAccess_Popup tileAccess_Popup;
+    private bool tileSelected;
+    public bool _TileSelected { get { return tileSelected; } }
 
     private void Awake()
     {
@@ -27,7 +30,6 @@ public class GridManager : MonoBehaviour
     {
         LaunchProcess();
     }
-    //Map Loading Process
     private async void LaunchProcess()
     {
         //Load Planete depuis id de la base
@@ -42,6 +44,13 @@ public class GridManager : MonoBehaviour
         CenterOnBase();
     }
     
+    //Map Loading Process
+    /// <summary>
+    /// Load map depuis le niveau selectionné et l'ID de la map
+    /// </summary>
+    /// <param name="level"></param>
+    /// <param name="id"></param>
+    /// <returns></returns>
     public async Task Load(GridLevel level, int id)
     {
 
@@ -81,7 +90,7 @@ public class GridManager : MonoBehaviour
     }
     private async Task<GridGalaxyModel> LoadGalaxyFromData(int id)
     {
-        var response = await LoadApiResponse<GridGalaxyModel>($"/map/system/{id}");
+        var response = await LoadApiResponse<GridGalaxyModel>($"/map/galaxy/{id}");
         return response.output;
     }
 
@@ -133,75 +142,75 @@ public class GridManager : MonoBehaviour
         return map;
     }
 
-    //Inputs
-    private void OnEnable()
-    {
-        MainView_Screen.OnMainViewLoaded += HandleMainViewLoaded;
-    }
-    private void OnDisable()
-    {
-        MainView_Screen.OnMainViewLoaded -= HandleMainViewLoaded;
-    }
-    private void HandleMainViewLoaded()
-    {
-        //Get Player and Global Data
-        //BootStrap_Loader.Instance.Init_BootStrap();
-    }
+    //Switch
+    /// <summary>
+    /// Appelé depuis MainScreen-> Button | Change de niveau par incrémentation
+    /// </summary>
     public async void SwitchLevel()
     {
-        GridLevel level=GridLevel.Planet;
-        int id = 0;
-        string json = null;
-
-        //analyse entity actuelle pour remonter au parent lié
-        if (currentLevel == GridLevel.Planet)//Switch To system
+        switch (currentLevel)
         {
-            id = GameDataStorage.Instance.CurrentBase.SystemId;
+            case GridLevel.Planet:
+                await SwitchToSystem();
+                break;
 
-            //json = await API_Client.Instance.GetAsync($"/entity/show/{id}");
-            json = await API_Client.Instance.GetAsync($"/map/system/{id}");
-            level = GridLevel.SolarSystem;
+            case GridLevel.SolarSystem:
+                await SwitchToGalaxy();
+                break;
+
+            case GridLevel.Galaxy:
+                await SwitchToPlanet();
+                break;
         }
-        else if (currentLevel == GridLevel.Galaxy)//Switch To Galaxy
+    }
+    private async Task SwitchToSystem()
+    {
+        int planetId = GameDataStorage.Instance.CurrentBase.PlanetId;
+
+        EntityModelOuput entity = await GetEntity(planetId);
+        if (entity == null) return;
+
+        currentLevel = GridLevel.SolarSystem;
+
+        await Load(currentLevel, entity.id_parent_esp);
+    }
+    private async Task SwitchToGalaxy()
+    {
+        int systemId = GameDataStorage.Instance.CurrentBase.SystemId;
+
+        EntityModelOuput entity = await GetEntity(systemId);
+        if (entity == null) return;
+
+        currentLevel = GridLevel.Galaxy;
+
+        await Load(currentLevel, entity.idglx_esp);
+    }
+    private async Task SwitchToPlanet()
+    {
+        currentLevel = GridLevel.Planet;
+        int planetId = GameDataStorage.Instance.CurrentBase.PlanetId;
+        await Load(currentLevel, planetId);
+    }
+
+    //Utility
+    public void SelectTile(TileView tile)
+    {
+        EventBus.Publish(new ShowPopupEvent
         {
-            //id = GameDataStorage.Instance.CurrentBase.GalaxyID;
-            id = GameDataStorage.Instance.CurrentBase.SystemId;
+            popup = tileAccess_Popup
+        });
+        tileAccess_Popup.LoadTileViewData(tile);
 
-            json = await API_Client.Instance.GetAsync($"/map/galaxy/{id}");
-            level = GridLevel.Galaxy;
-
-        }
-        else if (currentLevel == GridLevel.Galaxy)//Switch To Planet
+        tileSelected = true;
+    }
+    public void CancelSelect()
+    {
+        EventBus.Publish(new HidePopupEvent
         {
-            id = GameDataStorage.Instance.CurrentBase.PlanetId;
+            hidePopup = tileAccess_Popup
+        });
 
-            json = await API_Client.Instance.GetAsync($"/map/planet/{id}");
-            level = GridLevel.Planet;
-        }
-
-        //Response build
-        if (string.IsNullOrEmpty(json)) return;
-
-        Debug.Log(json);
-
-        ApiResponse<EntityModelOuput> response = JsonConvert.DeserializeObject<ApiResponse<EntityModelOuput>>(json);
-        if (response == null)
-        {
-            Debug.LogError("Impossible de parser EntityModelOuput");
-            return;
-        }
-        if (response.error)
-        {
-            Debug.LogError($"EntityModelOuput API ERROR : {response.error} - {response.error}");
-            return;
-        }
-        if (response.output == null)
-        {
-            Debug.LogError("EntityModelOuput output null");
-            return;
-        }
-
-        await Load(level, response.output.id_parent_esp);
+        tileSelected = false;
     }
     private void CenterOnBase()
     {
@@ -215,13 +224,41 @@ public class GridManager : MonoBehaviour
             Debug.LogError("No matching tile");
         else
         {
-            Debug.Log("Center on player selected base at :" + currentBase.TileId + " Transform =" + tView.transform.gameObject);
-
             //Center on tile
             nav.CenterOnTile(tView.transform);
         }
     }
-    //Utility
+    private async Task<EntityModelOuput> GetEntity(int entityId)
+    {
+        string json = await API_Client.Instance.GetAsync($"/entity/show/{entityId}");
+
+        if (string.IsNullOrEmpty(json))
+            return null;
+
+        Debug.Log(json);
+
+        ApiResponse<EntityModelOuput> response = JsonConvert.DeserializeObject<ApiResponse<EntityModelOuput>>(json);
+
+        if (response == null)
+        {
+            Debug.LogError("Impossible de parser EntityModelOuput");
+            return null;
+        }
+
+        if (response.error)
+        {
+            Debug.LogError($"EntityModelOuput API ERROR : {response.error}");
+            return null;
+        }
+
+        if (response.output == null)
+        {
+            Debug.LogError("EntityModelOuput output null");
+            return null;
+        }
+
+        return response.output;
+    }
     private GridMapResponse FakeMap(GridLevel level)
     {
         var map = new GridMapResponse();

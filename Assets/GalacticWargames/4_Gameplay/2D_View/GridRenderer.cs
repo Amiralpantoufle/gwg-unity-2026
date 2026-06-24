@@ -11,6 +11,7 @@ public class GridRenderer : MonoBehaviour
 
     [SerializeField] private float tileWidth = 100;
     [SerializeField] private float tileHeight = 50;
+    [SerializeField] private Vector2 mapOffset;
 
     private Dictionary<Vector2Int, TileView> tileViews = new Dictionary<Vector2Int, TileView>();
 
@@ -44,7 +45,7 @@ public class GridRenderer : MonoBehaviour
 
         foreach (var tile in ordered)
         {
-            //CreateTile(tile);
+            CreateTile(tile);
         }
     }
 
@@ -54,7 +55,7 @@ public class GridRenderer : MonoBehaviour
 
         obj.transform.SetParent(gridRoot);
         obj.transform.position = IsoToWorld(tile.x, tile.y);
-        obj.transform.name = tilePrefab.name + "_"+ tile.x+"x_" +tile.y + "y";
+        obj.transform.name = "_"+ tile.x+"x_" +tile.y + "y";
 
         SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
         if (sr == null) Debug.LogError("Couldn't load sprite renderer");
@@ -98,8 +99,8 @@ public class GridRenderer : MonoBehaviour
 
     private Vector3 IsoToWorld(int x, int y)
     {
-        float worldX = (x - y) * tileWidth * 0.5f;
-        float worldY = (x + y) * tileHeight * 0.5f;
+        float worldX = mapOffset.x + (x - y) * tileWidth * 0.5f;
+        float worldY = mapOffset.y + ((x + y) * tileHeight * 0.5f);
 
         return new Vector3(worldX, worldY,0);
     }

@@ -118,6 +118,15 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""QuickTouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""b86ebc87-f2be-4485-9d79-fff4dcdd1b13"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Tap(pressPoint=0.35)"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -186,6 +195,28 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
                     ""action"": ""Pinch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1df07d2a-10cb-4d4d-8f04-3727b5fbae03"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""QuickTouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""498e8caf-3b44-463e-a021-32ad92974d55"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""QuickTouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -197,6 +228,7 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
         m_Player_TouchPosition = m_Player.FindAction("TouchPosition", throwIfNotFound: true);
         m_Player_TouchPress = m_Player.FindAction("TouchPress", throwIfNotFound: true);
         m_Player_Pinch = m_Player.FindAction("Pinch", throwIfNotFound: true);
+        m_Player_QuickTouch = m_Player.FindAction("QuickTouch", throwIfNotFound: true);
     }
 
     ~@GWG_InputAction()
@@ -280,6 +312,7 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_TouchPosition;
     private readonly InputAction m_Player_TouchPress;
     private readonly InputAction m_Player_Pinch;
+    private readonly InputAction m_Player_QuickTouch;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -303,6 +336,10 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Pinch".
         /// </summary>
         public InputAction @Pinch => m_Wrapper.m_Player_Pinch;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/QuickTouch".
+        /// </summary>
+        public InputAction @QuickTouch => m_Wrapper.m_Player_QuickTouch;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -338,6 +375,9 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
             @Pinch.started += instance.OnPinch;
             @Pinch.performed += instance.OnPinch;
             @Pinch.canceled += instance.OnPinch;
+            @QuickTouch.started += instance.OnQuickTouch;
+            @QuickTouch.performed += instance.OnQuickTouch;
+            @QuickTouch.canceled += instance.OnQuickTouch;
         }
 
         /// <summary>
@@ -358,6 +398,9 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
             @Pinch.started -= instance.OnPinch;
             @Pinch.performed -= instance.OnPinch;
             @Pinch.canceled -= instance.OnPinch;
+            @QuickTouch.started -= instance.OnQuickTouch;
+            @QuickTouch.performed -= instance.OnQuickTouch;
+            @QuickTouch.canceled -= instance.OnQuickTouch;
         }
 
         /// <summary>
@@ -419,5 +462,12 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPinch(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "QuickTouch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnQuickTouch(InputAction.CallbackContext context);
     }
 }
