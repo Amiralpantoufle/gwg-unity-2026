@@ -200,7 +200,6 @@ public class GridManager : MonoBehaviour
             popup = tileAccess_Popup
         });
         tileAccess_Popup.LoadTileViewData(tile);
-
         tileSelected = true;
     }
     public void CancelSelect()
@@ -209,7 +208,7 @@ public class GridManager : MonoBehaviour
         {
             hidePopup = tileAccess_Popup
         });
-
+        tileAccess_Popup.HideCurrentTile();
         tileSelected = false;
     }
     private void CenterOnBase()
@@ -237,27 +236,33 @@ public class GridManager : MonoBehaviour
 
         Debug.Log(json);
 
-        ApiResponse<EntityModelOuput> response = JsonConvert.DeserializeObject<ApiResponse<EntityModelOuput>>(json);
-
-        if (response == null)
+        try
         {
-            Debug.LogError("Impossible de parser EntityModelOuput");
+
+            ApiResponse<EntityModelOuput> response = JsonConvert.DeserializeObject<ApiResponse<EntityModelOuput>>(json);
+            if (response == null)
+            {
+                Debug.LogError("Impossible de parser EntityModelOuput");
+                return null;
+            }
+
+            if (response.error)
+            {
+                Debug.LogError($"EntityModelOuput API ERROR : {response.error}");
+                return null;
+            }
+
+            if (response.output == null)
+            {
+                Debug.LogError("EntityModelOuput output null");
+                return null;
+            }
+            return response.output;
+        }
+        catch (Exception e)
+        {
             return null;
         }
-
-        if (response.error)
-        {
-            Debug.LogError($"EntityModelOuput API ERROR : {response.error}");
-            return null;
-        }
-
-        if (response.output == null)
-        {
-            Debug.LogError("EntityModelOuput output null");
-            return null;
-        }
-
-        return response.output;
     }
     private GridMapResponse FakeMap(GridLevel level)
     {

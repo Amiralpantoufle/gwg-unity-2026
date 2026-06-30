@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GridRenderer : MonoBehaviour
 {
     [SerializeField] private Transform gridRoot;
+    [SerializeField] private Transform poolRoot;
     [SerializeField] private Sprite defaultTileSprite;
     [SerializeField] private GameObject tilePrefab;
 
@@ -13,7 +14,9 @@ public class GridRenderer : MonoBehaviour
     [SerializeField] private float tileHeight = 50;
     [SerializeField] private Vector2 mapOffset;
 
+    //Components
     private Dictionary<Vector2Int, TileView> tileViews = new Dictionary<Vector2Int, TileView>();
+    [SerializeField] private EntityPool entityPool;
 
     public void RenderPlanet(GridPlanetModel map)
     {
@@ -32,6 +35,7 @@ public class GridRenderer : MonoBehaviour
 
         var ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y);
 
+        //Generate Tile and Entities
         foreach (var tile in ordered)
         {
             CreateTile(tile);
@@ -63,26 +67,31 @@ public class GridRenderer : MonoBehaviour
         VisualDefinition visual = GridVisualService.Instance.GetVisual(tile.image_id);
 
         //Define Tileview properties and offset
-        int autoOffset=0;
-        if(visual.renderScale > 1) autoOffset = 10;
-        sr.sortingOrder = (1000 - (tile.x + tile.y))+autoOffset;
+        int layerOffset=0;
+        if(visual.renderScale > 1) layerOffset = 10;
+        sr.sortingOrder = (8000 - (tile.x + tile.y))+ layerOffset;
+
         sr.sprite = visual.imageSprite;
         obj.transform.localScale = Vector3.one * visual.renderScale;
-        obj.transform.localPosition = new Vector2(obj.transform.localPosition.x + visual.offset.x, obj.transform.localPosition.y + visual.offset.y);
 
-        BoxCollider2D collider = obj.AddComponent<BoxCollider2D>();
+        Vector2 tilePosition = new Vector2(obj.transform.localPosition.x + visual.offset.x, obj.transform.localPosition.y + visual.offset.y);
+        obj.transform.localPosition = tilePosition;
 
         //Create Tileview
-        TileView tileView = obj.AddComponent<TileView>();
-        tileView.Init(tile);
-
-        //Register Tileview
+        TileView tileView = obj.GetComponent<TileView>();
+        tileView.Init(tile, visual.renderScale);
         Vector2Int coords = new Vector2Int(tile.x, tile.y);
         tileViews.Add(coords, tileView);
+
+
+        //Generate Entities
+        if (tile.entities.Count > 0)
+            entityPool.Spawn(tile.entities[0], tilePosition);
     }
 
+    //UTILITY
     /// <summary>
-    /// Recupere une tileview depuis son ID de tuile
+    /// Recupere une tileview depuis ses coordonnées X Y
     /// </summary>
     /// <param name="x"></param>
     /// <param name="y"></param>
@@ -96,7 +105,6 @@ public class GridRenderer : MonoBehaviour
 
         return null;
     }
-
     private Vector3 IsoToWorld(int x, int y)
     {
         float worldX = mapOffset.x + (x - y) * tileWidth * 0.5f;
@@ -104,9 +112,9 @@ public class GridRenderer : MonoBehaviour
 
         return new Vector3(worldX, worldY,0);
     }
-
     private void Clear()
     {
+
         foreach (Transform child in gridRoot)
             Destroy(child.gameObject);
 

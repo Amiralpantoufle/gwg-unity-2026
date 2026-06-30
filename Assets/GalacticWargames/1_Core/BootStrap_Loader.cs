@@ -34,29 +34,6 @@ public class BootStrap_Loader : MonoBehaviour
             Debug.Log("Couldn't Init BootStrap Process");
         }
     }
-    private BaseIndexOutput FindBaseToDisplay(List<BaseIndexOutput> dataList)
-    {
-        //Protection
-        if (dataList[0] == null || dataList.Count <= 0)
-        {
-            Debug.LogError("No data found in list");
-            return null;
-        }
-
-        //Selection d'une base
-        BaseIndexOutput firstData;
-
-        if (dataList.Count > 1)
-        {
-            firstData = dataList.LastOrDefault();
-        }
-        else
-        {
-            firstData = dataList[0];
-        }
-
-        return firstData;
-    }
     private async Task LoadBaseIndex()
     {
         string json = await API_Client.Instance.GetAsync("/base/index");
@@ -82,6 +59,29 @@ public class BootStrap_Loader : MonoBehaviour
         }
 
         GameDataStorage.Instance.LoadCurrentBaseData(FindBaseToDisplay(response.output));
+    }
+    private BaseIndexOutput FindBaseToDisplay(List<BaseIndexOutput> dataList)
+    {
+        //Protection
+        if (dataList.Count <= 0 || dataList[0] == null)
+        {
+            Debug.LogError("No data found in list");
+            return null;
+        }
+
+        //Selection d'une base
+        BaseIndexOutput firstData;
+
+        if (dataList.Count > 1)
+        {
+            firstData = dataList.LastOrDefault();
+        }
+        else
+        {
+            firstData = dataList[0];
+        }
+
+        return firstData;
     }
 
 }

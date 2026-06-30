@@ -34,9 +34,6 @@ public class GridGalaxyModel : GridApiModel
 }
 
 //Construct Tiles
-/// <summary>
-///  Modèle de l'API avec Construct Tuile
-/// </summary>
 [System.Serializable]
 public class GridTile
 {
@@ -47,6 +44,10 @@ public class GridTile
     public int entity_id;
     public string type;
 
+    //public List<EntityModel> entities;
+    public List<EntityDto> entities;
+
+
     //public VisibilityDto visibility;
     //public FogOverlayDto fog_overlay;
 }
@@ -55,16 +56,19 @@ public class PlanetGridTile : GridTile
 {
     public bool is_portal;
 
-    public List<EntityDto> entities;
+    //public List<EntityDto> entities;
 }
+
+[System.Serializable]
 public class SystemGridTile : GridTile
 {
     public string name;
-    
 }
+
+[System.Serializable]
 public class EntityDto
 {
     public int id;
     public string type;
-    public string image_id;
+    public int image_id;
 }

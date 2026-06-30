@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private SyncManager syncManager;
     private void Start()
     {
         DontDestroyOnLoad(transform);
@@ -77,5 +78,10 @@ public class GameManager : MonoBehaviour
                 Debug.Log("UIState LoggedIn");
                 break;
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        syncManager.StopRefresh();
     }
 }

@@ -124,7 +124,6 @@ public class MapNavigationController : MonoBehaviour
     public void CenterOnTile(Transform tile)
     {
         centeringTarget = -tile.localPosition;
-
         isCentering = true;
     }
     private void HandleMobileZoom()
@@ -235,24 +234,25 @@ public class MapNavigationController : MonoBehaviour
             return;
         }
 
+        /*if (EventSystem.current.IsPointerOverGameObject())
+             return;*/
+
         Vector2 screenPos = inputActions.Player.TouchPosition.ReadValue<Vector2>();
         Vector2 worldPos = cam.ScreenToWorldPoint(screenPos);
 
+        //UI SECURITY
+
+        if (UICheckInput(screenPos).Count > 0)
+            return;
+
+
+        //Collect Hit detected
         Collider2D[] hits = Physics2D.OverlapPointAll(worldPos);
 
         if (hits == null || hits.Length == 0)
             return;
 
 
-        // 1. UI override
-        foreach (var h in hits)
-        {
-            if (h.gameObject.layer == 5)//5:UI
-                return;
-
-        }
-
-        // 2. Tile priority
         foreach (var h in hits)
         {
             if (h.TryGetComponent<TileView>(out var tile))
@@ -262,5 +262,14 @@ public class MapNavigationController : MonoBehaviour
                 return;
             }
         }
+    }
+
+    private List<RaycastResult> UICheckInput(Vector2 screenPos)
+    {
+        PointerEventData eventData = new PointerEventData(EventSystem.current) { position = screenPos };
+        List<RaycastResult> results = new();
+        EventSystem.current.RaycastAll(eventData, results);
+
+        return results;
     }
 }

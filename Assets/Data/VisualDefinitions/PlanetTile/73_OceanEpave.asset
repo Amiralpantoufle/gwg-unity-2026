@@ -15,5 +15,5 @@ MonoBehaviour:
   image_id: 73
   category: 1
   imageSprite: {fileID: 21300000, guid: 92bf617d3720d9c4f8f3e7f5fca25c3f, type: 3}
-  renderScale: 1
+  renderScale: 1.1901
   offset: {x: 0, y: 0}

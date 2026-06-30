@@ -1,4 +1,7 @@
+using Newtonsoft.Json;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -78,6 +81,18 @@ public class API_Client : MonoBehaviour
     }
 
     //Async API
+    public async Task<TickResponse> GetTickAsync(string cursor=null, IEnumerable<string> scopes = null, int? planetId = null)
+    {
+        string endpoint = BuildTickEndpoint(cursor, scopes, planetId);
+
+        string json = await GetAsync(endpoint);
+
+        if (string.IsNullOrEmpty(json))
+            return null;
+
+        return JsonConvert.DeserializeObject<TickResponse>(json);
+    }
+
     public async Task<string> GetAsync(string endpoint)
     {
         return await SendRequestAsync("GET", endpoint, null);
@@ -178,6 +193,7 @@ public class API_Client : MonoBehaviour
         tcs.SetResult(true);
     }
 
+
     //REQUEST MANAGEMENT
     private UnityWebRequest CreateRequest(string method, string endpoint, string json="")
     {
@@ -209,5 +225,22 @@ public class API_Client : MonoBehaviour
         if (!string.IsNullOrEmpty(accessToken))
             req.SetRequestHeader("Authorization", "Bearer " + accessToken);
     }
+    private string BuildTickEndpoint(string cursor,IEnumerable<string> scopes,int? planetId)
+    {
+        List<string> query = new();
 
+        if (!string.IsNullOrEmpty(cursor))
+            query.Add($"cursor={UnityWebRequest.EscapeURL(cursor)}");
+
+        if (scopes != null && scopes.Any())
+            query.Add($"scope={string.Join(",", scopes)}");
+
+        if (planetId.HasValue)
+            query.Add($"planet_id={planetId.Value}");
+
+        if (query.Count == 0)
+            return "/sync/tick";
+
+        return "/sync/tick?" + string.Join("&", query);
+    }
 }
