@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System;
 using System.Net;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -6,6 +7,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private SyncManager syncManager;
+    [SerializeField] private LoadingScreen loading;
+    [SerializeField] private GridManager gridManager;
+
+
     private void Start()
     {
         DontDestroyOnLoad(transform);
@@ -22,10 +27,18 @@ public class GameManager : MonoBehaviour
         if (LoadingScreen.Instance != null)
         {
             LoadingScreen.Instance.gameObject.SetActive(true);
+
+            var bootProcess = new Progress<float>(p => { loading.loadingService.SetProgress(Mathf.Lerp(0f, 0.40f, p), "Boot Process"); });
             await LoadingScreen.Instance.BootProcess();
 
             Debug.Log("Boot Process Completed");
+
+            var mapProgress = new Progress<float>(p => { loading.loadingService.SetProgress(Mathf.Lerp(0.40f, 0.95f, p), "Génération de la carte"); });
+            await GridManager.Instance.LaunchProcess();
+
+            loading.CloseScreen();
         }
+
     }
     public async void Logout()
     {

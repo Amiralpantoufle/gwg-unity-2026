@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GridRenderer : MonoBehaviour
 {
@@ -18,18 +20,38 @@ public class GridRenderer : MonoBehaviour
     private Dictionary<Vector2Int,TileView> tileViews = new Dictionary<Vector2Int, TileView>();
     [SerializeField] private EntityPool entityPool;
 
-    public void RenderPlanet(GridPlanetModel map)
+    public async Task GenerateMap(GridPlanetModel map)
+    {
+        Clear();
+
+        List<GridTile> ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y).ToList<GridTile>();
+        int total = map.tiles.Count;
+
+        for (int i = 0; i < total; i++)
+        {
+            CreateTile(ordered[i]);
+
+            if (i % 100 == 0)
+            {
+                LoadingScreen.Instance.loadingService.SetProgress(0.40f + (float)i / total * 0.55f,"Génération de la carte");
+
+                await Task.Yield();
+            }
+        }
+
+    }
+    public async Task RenderPlanet(GridPlanetModel map)
     {
         Clear();
 
         var ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y);
 
-        foreach (var tile in ordered)
+        foreach (GridTile tile in ordered)
         {
             CreateTile(tile);
         }
     }
-    public void RenderSystem(GridSystemModel map)
+    public async Task RenderSystem(GridSystemModel map)
     {
         Clear();
 
@@ -41,7 +63,7 @@ public class GridRenderer : MonoBehaviour
             CreateTile(tile);
         }
     }
-    public void RenderGalaxy(GridGalaxyModel map)
+    public async Task RenderGalaxy(GridGalaxyModel map)
     {
         Clear();
 

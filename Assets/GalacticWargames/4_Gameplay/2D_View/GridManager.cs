@@ -1,12 +1,7 @@
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering;
-using static UnityEditor.Rendering.CameraUI;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class GridManager : MonoBehaviour
 {
@@ -26,11 +21,11 @@ public class GridManager : MonoBehaviour
         if (nav == null) Debug.LogError("Couldn't get MapNavigationController. Script is missing");
 
     }
-    private void Start()
+/*    private void Start()
     {
         LaunchProcess();
-    }
-    private async void LaunchProcess()
+    }*/
+    public async Task LaunchProcess()
     {
         //Load Planete depuis id de la base
         if (GameDataStorage.Instance.CurrentBase == null)
@@ -59,21 +54,22 @@ public class GridManager : MonoBehaviour
             GridPlanetModel planet = await LoadPlanetFromData(id);
             if(planet==null) Debug.LogError("Failed to load planet");
 
-            GetComponent<GridRenderer>().RenderPlanet(planet);
+            //await GetComponent<GridRenderer>().RenderPlanet(planet);
+            await GetComponent<GridRenderer>().GenerateMap(planet);
         }
         else if (level == GridLevel.SolarSystem)
         {
             GridSystemModel system = await LoadSystemFromData(id);
             if (system == null) Debug.LogError("Failed to load system");
 
-            GetComponent<GridRenderer>().RenderSystem(system);
+            await GetComponent<GridRenderer>().RenderSystem(system);
         }
         else if (level == GridLevel.Galaxy)
         {
             GridGalaxyModel galaxy = await LoadGalaxyFromData(id);
             if (galaxy == null) Debug.LogError("Failed to load system");
 
-            GetComponent<GridRenderer>().RenderGalaxy(galaxy);
+            await GetComponent<GridRenderer>().RenderGalaxy(galaxy);
         }
 
         currentLevel = level;
