@@ -15,7 +15,7 @@ public class GridRenderer : MonoBehaviour
     [SerializeField] private Vector2 mapOffset;
 
     //Components
-    private Dictionary<Vector2Int, TileView> tileViews = new Dictionary<Vector2Int, TileView>();
+    private Dictionary<Vector2Int,TileView> tileViews = new Dictionary<Vector2Int, TileView>();
     [SerializeField] private EntityPool entityPool;
 
     public void RenderPlanet(GridPlanetModel map)

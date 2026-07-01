@@ -56,7 +56,9 @@ public class GameDataStorage : MonoBehaviour
             PlanetId = data.planet_id,
             SystemId = data.id_parent_esp,
             PlanetX = data.x_p_esp,
-            PlanetY = data.y_p_esp
+            PlanetY = data.y_p_esp,
+            SystemX = data.x_p_esp,
+            SystemY = data.y_p_esp,
         };
 
         //si base chargée

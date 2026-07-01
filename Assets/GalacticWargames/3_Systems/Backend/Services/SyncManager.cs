@@ -14,17 +14,19 @@ public class SyncManager : MonoBehaviour
 
     private bool running;
 
-    private async void Start()
+    private void Start()
     {
         tickService = new TickService(API_Client.Instance);
         tickProcessor = new TickProcessor();
+    }
 
+    public async void StartLiveRefresh()
+    {
         running = true;
 
         await TickLoop();
         Debug.Log("Start  Live Refreshing");
     }
-
     private async Task TickLoop()
     {
         while (running)

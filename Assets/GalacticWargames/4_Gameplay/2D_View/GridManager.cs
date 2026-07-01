@@ -148,10 +148,14 @@ public class GridManager : MonoBehaviour
     /// </summary>
     public async void SwitchLevel()
     {
+        TileView tView = null;
+
         switch (currentLevel)
         {
             case GridLevel.Planet:
                 await SwitchToSystem();
+
+                tView = GetComponent<GridRenderer>().GetTile(GameDataStorage.Instance.CurrentBase.SystemX, GameDataStorage.Instance.CurrentBase.SystemY);
                 break;
 
             case GridLevel.SolarSystem:
@@ -160,7 +164,18 @@ public class GridManager : MonoBehaviour
 
             case GridLevel.Galaxy:
                 await SwitchToPlanet();
+
+                tView = GetComponent<GridRenderer>().GetTile(GameDataStorage.Instance.CurrentBase.PlanetX, GameDataStorage.Instance.CurrentBase.PlanetY);
                 break;
+        }
+
+        //Recenter on current
+        if (tView == null)
+            Debug.LogError("No matching tile");
+        else
+        {
+            //Center on tile
+            nav.CenterOnTile(tView.transform);
         }
     }
     private async Task SwitchToSystem()

@@ -75,6 +75,9 @@ public class GameManager : MonoBehaviour
                     screenID = ScreenID.Main
                 });
 
+                //Start Live Refresh Tick
+                syncManager.StartLiveRefresh();
+
                 Debug.Log("UIState LoggedIn");
                 break;
         }

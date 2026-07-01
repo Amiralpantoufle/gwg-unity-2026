@@ -12,10 +12,6 @@ public class TickService
         _api = api;
     }
 
-    [SerializeField] private DateTimeOffset next_Cursor;
-    [SerializeField] private DateTimeOffset server_Cursor;
-
-
     public async Task<TickResponse> GetTick(string cursor)
     {
         return await API_Client.Instance.GetTickAsync(cursor,null,null);

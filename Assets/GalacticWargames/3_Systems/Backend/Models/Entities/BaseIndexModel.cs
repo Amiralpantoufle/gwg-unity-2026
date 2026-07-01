@@ -42,4 +42,7 @@ public class PlayerBaseData
 
     public int PlanetX;
     public int PlanetY;
+
+    public int SystemX;
+    public int SystemY;
 }

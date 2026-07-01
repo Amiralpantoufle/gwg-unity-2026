@@ -123,6 +123,7 @@ public class MapNavigationController : MonoBehaviour
     //Camera
     public void CenterOnTile(Transform tile)
     {
+        Debug.Log(tile.gameObject.name);
         centeringTarget = -tile.localPosition;
         isCentering = true;
     }
