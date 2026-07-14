@@ -1,17 +1,19 @@
 using Newtonsoft.Json;
+using NUnit.Framework;
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
+    [SerializeField] private GridLevel currentLevel;
     public static GridManager Instance;
     private MapNavigationController nav;
+    private GridRenderer gridRenderer;
 
-    [SerializeField] private GridLevel currentLevel;
-    [SerializeField] private MainView_TileAccess_Popup tileAccess_Popup;
-    private bool tileSelected;
-    public bool _TileSelected { get { return tileSelected; } }
+    private int currentGalaxy;
+    private int currentSystem;
+    private int currentPlanet;
 
     private void Awake()
     {
@@ -20,11 +22,9 @@ public class GridManager : MonoBehaviour
         nav = GetComponent<MapNavigationController>();
         if (nav == null) Debug.LogError("Couldn't get MapNavigationController. Script is missing");
 
+        gridRenderer = GetComponent<GridRenderer>();
+
     }
-/*    private void Start()
-    {
-        LaunchProcess();
-    }*/
     public async Task LaunchProcess()
     {
         //Load Planete depuis id de la base
@@ -32,14 +32,21 @@ public class GridManager : MonoBehaviour
         {
             Debug.LogError("GameDataStorage hasn't stored any base");
         }
-        int planetId = GameDataStorage.Instance.CurrentBase.PlanetId;
+        int planetId = GameDataStorage.Instance.CurrentBase.position.planet_id;
         await Load(GridLevel.Planet, planetId);
 
         //Centrer sur la base
         CenterOnBase();
     }
-    
+
     //Map Loading Process
+    public async void LoadBase(int baseID)
+    {
+        GridBaseModel baseModel = await LoadBaseFromData(baseID);
+        if (baseModel == null) Debug.LogError("Failed to load planet");
+
+        gridRenderer.RenderBase(baseModel);
+    }
     /// <summary>
     /// Load map depuis le niveau selectionné et l'ID de la map
     /// </summary>
@@ -55,21 +62,21 @@ public class GridManager : MonoBehaviour
             if(planet==null) Debug.LogError("Failed to load planet");
 
             //await GetComponent<GridRenderer>().RenderPlanet(planet);
-            await GetComponent<GridRenderer>().GenerateMap(planet);
+            await gridRenderer.GenerateMap(planet);
         }
         else if (level == GridLevel.SolarSystem)
         {
             GridSystemModel system = await LoadSystemFromData(id);
             if (system == null) Debug.LogError("Failed to load system");
 
-            await GetComponent<GridRenderer>().RenderSystem(system);
+            gridRenderer.RenderSystem(system);
         }
         else if (level == GridLevel.Galaxy)
         {
             GridGalaxyModel galaxy = await LoadGalaxyFromData(id);
             if (galaxy == null) Debug.LogError("Failed to load system");
 
-            await GetComponent<GridRenderer>().RenderGalaxy(galaxy);
+            gridRenderer.RenderGalaxy(galaxy);
         }
 
         currentLevel = level;
@@ -87,6 +94,11 @@ public class GridManager : MonoBehaviour
     private async Task<GridGalaxyModel> LoadGalaxyFromData(int id)
     {
         var response = await LoadApiResponse<GridGalaxyModel>($"/map/galaxy/{id}");
+        return response.output;
+    }
+    private async Task<GridBaseModel> LoadBaseFromData(int id)
+    {
+        var response = await LoadApiResponse<GridBaseModel>($"/base/isometric/{id}");
         return response.output;
     }
 
@@ -116,27 +128,6 @@ public class GridManager : MonoBehaviour
 
         return response;
     }
-    private GridMapResponse ConvertModelToMap(GridLevel level, GridApiModel data)
-    {
-        GridMapResponse map = new GridMapResponse();
-
-        switch (data)
-        {
-            case GridPlanetModel planet:
-
-                break;
-
-            case GridSystemModel system:
-
-                break;
-
-            case GridGalaxyModel galaxy:
-
-                break;
-        }
-
-        return map;
-    }
 
     //Switch
     /// <summary>
@@ -151,7 +142,7 @@ public class GridManager : MonoBehaviour
             case GridLevel.Planet:
                 await SwitchToSystem();
 
-                tView = GetComponent<GridRenderer>().GetTile(GameDataStorage.Instance.CurrentBase.SystemX, GameDataStorage.Instance.CurrentBase.SystemY);
+                //tView = gridRenderer.GetTile(GameDataStorage.Instance.CurrentBase.position.x, GameDataStorage.Instance.CurrentBase.position.y);
                 break;
 
             case GridLevel.SolarSystem:
@@ -160,75 +151,52 @@ public class GridManager : MonoBehaviour
 
             case GridLevel.Galaxy:
                 await SwitchToPlanet();
-
-                tView = GetComponent<GridRenderer>().GetTile(GameDataStorage.Instance.CurrentBase.PlanetX, GameDataStorage.Instance.CurrentBase.PlanetY);
                 break;
         }
 
         //Recenter on current
         if (tView == null)
-            Debug.LogError("No matching tile");
+            Debug.LogError("No tile referene to center map on");
         else
-        {
-            //Center on tile
             nav.CenterOnTile(tView.transform);
-        }
     }
     private async Task SwitchToSystem()
     {
-        int planetId = GameDataStorage.Instance.CurrentBase.PlanetId;
+        int systemId = GameDataStorage.Instance.CurrentBase.position.system_id;
 
-        EntityModelOuput entity = await GetEntity(planetId);
-        if (entity == null) return;
+        /*EntityModelOuput entity = await GetEntity(planetId);
+        if (entity == null) return;*/
 
         currentLevel = GridLevel.SolarSystem;
-
-        await Load(currentLevel, entity.id_parent_esp);
+        await Load(currentLevel, systemId);
     }
     private async Task SwitchToGalaxy()
     {
-        int systemId = GameDataStorage.Instance.CurrentBase.SystemId;
+        int galaxyId = GameDataStorage.Instance.CurrentBase.position.galaxy_id;
 
-        EntityModelOuput entity = await GetEntity(systemId);
-        if (entity == null) return;
+        /*EntityModelOuput entity = await GetEntity(systemId);
+        if (entity == null) return;*/
 
         currentLevel = GridLevel.Galaxy;
-
-        await Load(currentLevel, entity.idglx_esp);
+        await Load(currentLevel, galaxyId);
     }
     private async Task SwitchToPlanet()
     {
+        int planetId = GameDataStorage.Instance.CurrentBase.position.planet_id;
+
         currentLevel = GridLevel.Planet;
-        int planetId = GameDataStorage.Instance.CurrentBase.PlanetId;
         await Load(currentLevel, planetId);
     }
 
     //Utility
-    public void SelectTile(TileView tile)
-    {
-        EventBus.Publish(new ShowPopupEvent
-        {
-            popup = tileAccess_Popup
-        });
-        tileAccess_Popup.LoadTileViewData(tile);
-        tileSelected = true;
-    }
-    public void CancelSelect()
-    {
-        EventBus.Publish(new HidePopupEvent
-        {
-            hidePopup = tileAccess_Popup
-        });
-        tileAccess_Popup.HideCurrentTile();
-        tileSelected = false;
-    }
     private void CenterOnBase()
     {
         //Center on Base
-        PlayerBaseData currentBase = GameDataStorage.Instance.CurrentBase;
+        BaseOutput currentBase = GameDataStorage.Instance.CurrentBase;
         if (currentBase == null) return;
 
-        TileView tView = GetComponent<GridRenderer>().GetTile(currentBase.PlanetX, currentBase.PlanetY);
+        TileView tView = gridRenderer.GetTile(currentBase.position.x, currentBase.position.y);
+        Debug.Log(currentBase.position.x +""+ currentBase.position.y);
 
         if (tView == null)
             Debug.LogError("No matching tile");
@@ -249,7 +217,6 @@ public class GridManager : MonoBehaviour
 
         try
         {
-
             ApiResponse<EntityModelOuput> response = JsonConvert.DeserializeObject<ApiResponse<EntityModelOuput>>(json);
             if (response == null)
             {
@@ -275,34 +242,5 @@ public class GridManager : MonoBehaviour
             return null;
         }
     }
-    private GridMapResponse FakeMap(GridLevel level)
-    {
-        var map = new GridMapResponse();
-        map.level = level.ToString().ToLower();
-        map.tiles = new System.Collections.Generic.List<GridTileDto>();
 
-        int size = level switch
-        {
-            GridLevel.Galaxy => 4,
-            GridLevel.SolarSystem => 6,
-            GridLevel.Planet => 8,
-            _ => 5
-        };
-
-        for (int x = 0; x < size; x++)
-        {
-            for (int y = 0; y < size; y++)
-            {
-                map.tiles.Add(new GridTileDto
-                {
-                    x = x,
-                    y = y,
-                    image_id = x * 100 + y,
-                    entities = new System.Collections.Generic.List<EntityDto>()
-                });
-            }
-        }
-
-        return map;
-    }
 }

@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9640734740487479d564c07cbdb1e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SyncManager
-  refreshEvery: 1
+  refreshEvery: 3
 --- !u!1 &150448098
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +951,6 @@ Transform:
   - {fileID: 1462055298}
   - {fileID: 1015477206}
   - {fileID: 1345955306}
-  - {fileID: 526262084}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &232383522
@@ -980,7 +979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   syncManager: {fileID: 115934931}
   loading: {fileID: 1210156713}
-  gridManager: {fileID: 0}
+  DEVOP_ForceConnexion: 0
 --- !u!114 &232383525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1780,12 +1779,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526262083}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 232383520}
+  m_Father: {fileID: 1015477206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &526262085
 MonoBehaviour:
@@ -1897,6 +1896,32 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 804b5bfbe944f0241bcf7d562680681e, type: 2}
   - {fileID: 11400000, guid: 3a9a7e432d7fc9d4591dafa2f05e57f3, type: 2}
   - {fileID: 11400000, guid: 1fdd64f3e1be5c644b94b258f129a909, type: 2}
+  - {fileID: 11400000, guid: b1f950498f1db314dba255af10ccff5a, type: 2}
+  - {fileID: 11400000, guid: ba19572879eb9174b9d36e4850a3ff12, type: 2}
+  - {fileID: 11400000, guid: 5dd90f30ad9c0214c8b372fd9c8f8c09, type: 2}
+  - {fileID: 11400000, guid: 067ed5f65c8baaa469c1a01293b9f684, type: 2}
+  - {fileID: 11400000, guid: fa2970ac459816d4c8534cdcd59f1f02, type: 2}
+  - {fileID: 11400000, guid: 48ba0852d42662348960af2935c3a82c, type: 2}
+  - {fileID: 11400000, guid: d9082c6ba6b7aeb4aac7a3c3679b50e1, type: 2}
+  - {fileID: 11400000, guid: e4f1bff24eb9c5f4e923915e66b1ce73, type: 2}
+  - {fileID: 11400000, guid: b60f31af3ad9f1c4388cf01e016a9052, type: 2}
+  - {fileID: 11400000, guid: 96ed5d50bc235994fb547bef487bb063, type: 2}
+  - {fileID: 11400000, guid: 59b7ec55e862390498538e784cee7bb0, type: 2}
+  - {fileID: 11400000, guid: 85b55b8ab17a5c740aaabf843693a5b7, type: 2}
+  - {fileID: 11400000, guid: 65ac922595818624bb90e8afd8e8beb1, type: 2}
+  - {fileID: 11400000, guid: e4efc2cc17c2e734883b94ec17aac37a, type: 2}
+  - {fileID: 11400000, guid: 4ef7e450ab2b3d04e9405e97500b2445, type: 2}
+  - {fileID: 11400000, guid: 72c9ab760206f3648a28c10d03caec2c, type: 2}
+  - {fileID: 11400000, guid: 6afb42c8260e1f34193d2ce87a9c2151, type: 2}
+  - {fileID: 11400000, guid: 881ca56a28e0627468973331987549c6, type: 2}
+  - {fileID: 11400000, guid: ee75fd19c01dce04fbd992698e9243c0, type: 2}
+  - {fileID: 11400000, guid: 172d1e7b2e1bf8842971feb85cb3035f, type: 2}
+  - {fileID: 11400000, guid: c31c6e183f3e9074ea21639197bdde6d, type: 2}
+  - {fileID: 11400000, guid: 9226dd91db8f69946abf5ce290d73785, type: 2}
+  - {fileID: 11400000, guid: 2eff99708f331024c9cf287c4d176e5a, type: 2}
+  - {fileID: 11400000, guid: 1ad09a7bd9f3b434fabe9ab05e24d32d, type: 2}
+  - {fileID: 11400000, guid: 12559357521d4684092b47a5a41780de, type: 2}
+  - {fileID: 11400000, guid: 6a9e38549bfe58648b5c7302241d7339, type: 2}
 --- !u!1 &546596118
 GameObject:
   m_ObjectHideFlags: 0
@@ -4152,6 +4177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b8d3e2a0ff34f4a8807660c0547254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNavigationController
+  tileAccess_Popup: {fileID: 847322286}
   cam: {fileID: 519420031}
   movableZone: {fileID: 433629088}
   panSpeed: 1
@@ -4174,9 +4200,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridRenderer
   gridRoot: {fileID: 189589315}
-  poolRoot: {fileID: 0}
+  poolRoot: {fileID: 1159481995}
   defaultTileSprite: {fileID: -1578826583, guid: 648cb4324626bd142b87812a483b1eec, type: 3}
   tilePrefab: {fileID: 4562061987265711563, guid: dc3c3ba244f640d479f0bb1082d2fc7f, type: 3}
+  tileLayerStart: 10000
   tileWidth: 10
   tileHeight: 5
   mapOffset: {x: 0, y: -50}
@@ -4194,7 +4221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridManager
   currentLevel: 0
-  tileAccess_Popup: {fileID: 847322286}
 --- !u!4 &962511956
 Transform:
   m_ObjectHideFlags: 0
@@ -4597,6 +4623,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 526262084}
   - {fileID: 115934929}
   m_Father: {fileID: 232383520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

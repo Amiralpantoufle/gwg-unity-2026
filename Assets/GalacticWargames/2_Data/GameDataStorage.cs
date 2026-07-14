@@ -21,7 +21,7 @@ public class GameDataStorage : MonoBehaviour
 
     //Base Data
     private const string LAST_BASE_KEY = "LAST_ACTIVE_BASE";
-    public PlayerBaseData CurrentBase { get; private set; }
+    public BaseOutput CurrentBase { get; private set; }
 
     private void Awake()
     {
@@ -40,14 +40,17 @@ public class GameDataStorage : MonoBehaviour
     /// Charge les données bases en local
     /// </summary>
     /// <param name="data"></param>
-    public void LoadCurrentBaseData(BaseIndexOutput data)
+    public void LoadCurrentBaseData(BaseOutput data)
     {
         if(data== null)
         {
-            Debug.LogError("Empty Data received from BaseIndex");
+            Debug.LogWarning("Empty Data received from BaseIndex");
             return;
         }
 
+        CurrentBase = data;
+
+        /*
         CurrentBase = new PlayerBaseData
         {
             BaseId = data.id_oes,
@@ -59,13 +62,13 @@ public class GameDataStorage : MonoBehaviour
             PlanetY = data.y_p_esp,
             SystemX = data.x_p_esp,
             SystemY = data.y_p_esp,
-        };
+        };*/
 
         //si base chargée
-        if (CurrentBase.BaseId != 0 && CurrentBase != null)
+        if (CurrentBase.base_id != 0 && CurrentBase != null)
         {
-           SaveLastBaseId(CurrentBase.BaseId);
-           Debug.Log($"Base chargée :" + CurrentBase.BaseId);
+           SaveLastBaseId(CurrentBase.base_id);
+           Debug.Log($"Base chargée :" + CurrentBase.base_id);
         }
         else Debug.LogWarning("no base loaded");
     }

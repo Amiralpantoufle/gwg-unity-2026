@@ -8,18 +8,25 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private SyncManager syncManager;
     [SerializeField] private LoadingScreen loading;
-    [SerializeField] private GridManager gridManager;
 
+    public bool DEVOP_ForceConnexion;
 
     private void Start()
     {
+        EventBus.Subscribe<UIStateChangedEvent>(onStateChanged);
         DontDestroyOnLoad(transform);
 
-        EventBus.Subscribe<UIStateChangedEvent>(onStateChanged);
+        if(DEVOP_ForceConnexion)
+        {
+            UIStateManager.Instance.SetState(UIState.Loggedin);
+            return;
+        }
+
+
         UIStateManager.Instance.SetState(UIState.Loading);
 
-        //STARTUP PROCESS
-        Invoke(nameof(Boot), 1f);
+/*        //STARTUP PROCESS
+        Invoke(nameof(Boot), 1f);*/
     }
 
     private async void Boot()
@@ -31,10 +38,17 @@ public class GameManager : MonoBehaviour
             var bootProcess = new Progress<float>(p => { loading.loadingService.SetProgress(Mathf.Lerp(0f, 0.40f, p), "Boot Process"); });
             await LoadingScreen.Instance.BootProcess();
 
-            Debug.Log("Boot Process Completed");
+            //Token Error
+            if (LoadingScreen.Instance.Progress < 1)
+            {
+                var mapProgress = new Progress<float>(p => { loading.loadingService.SetProgress(Mathf.Lerp(0.40f, 0.95f, p), "Génération de la carte"); });
+                await GridManager.Instance.LaunchProcess();
 
-            var mapProgress = new Progress<float>(p => { loading.loadingService.SetProgress(Mathf.Lerp(0.40f, 0.95f, p), "Génération de la carte"); });
-            await GridManager.Instance.LaunchProcess();
+                UIStateManager.Instance.SetState(UIState.Loggedin);
+                Debug.Log("Boot Process Completed");
+            }
+            else
+                UIStateManager.Instance.SetState(UIState.Loggedout);
 
             loading.CloseScreen();
         }
@@ -76,7 +90,8 @@ public class GameManager : MonoBehaviour
                     screenID = ScreenID.Auth
                 });
 
-                Debug.Log("UIState LoggedOut");
+                Debug.LogWarning("Switched to loggedout state");
+                ToastManager.Instance.GenerateToast("Logged out", 1, 10f);
                 break;
 
             case UIState.Loggedin:
@@ -91,7 +106,13 @@ public class GameManager : MonoBehaviour
                 //Start Live Refresh Tick
                 syncManager.StartLiveRefresh();
 
-                Debug.Log("UIState LoggedIn");
+                Debug.LogWarning("Switched to loggedin state");
+                ToastManager.Instance.GenerateToast("Logged in", 0, 10f);
+                break;
+
+            case UIState.Loading:
+                Invoke(nameof(Boot),1f);
+                Debug.LogWarning("Switched to Loading state");
                 break;
         }
     }

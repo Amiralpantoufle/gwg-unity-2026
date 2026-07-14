@@ -5,70 +5,78 @@ using UnityEngine;
 [System.Serializable]
 public abstract class GridApiModel
 {
-    public int id;
-    public string name;
+    public int id; // Id de la map
+    public string name; // Nom si dispo
 
     public int width;
     public int height;
+
+    public List<GridTile> tiles;
 }
 
-[System.Serializable]
+[System.Serializable] 
 public class GridPlanetModel : GridApiModel
 {
     public string server_cursor;
-    public List<GridTile> tiles;
 }
 
 [System.Serializable]
 public class GridSystemModel : GridApiModel
 {
-    public List<GridTile> tiles;
-    //public List<GridSystemTileModel> planets;
 }
 
 [System.Serializable]
 public class GridGalaxyModel : GridApiModel
 {
-    public List<GridTile> tiles;
+}
 
+[System.Serializable]
+public class GridBaseModel : GridApiModel
+{
+    public List<GridTile> tiles;
+    //Buildings
+    //Construct Queue
 }
 
 //Construct Tiles
 [System.Serializable]
 public class GridTile
 {
+    public int id;
+    public string name;
     public int x;
     public int y;
 
-    public int image_id;
-    public int entity_id;
+    public int v;
     public string type;
 
-    //public List<EntityModel> entities;
     public List<EntityDto> entities;
-
-
     //public VisibilityDto visibility;
     //public FogOverlayDto fog_overlay;
 }
+
 [System.Serializable]
 public class PlanetGridTile : GridTile
 {
-    public bool is_portal;
-
-    //public List<EntityDto> entities;
 }
 
 [System.Serializable]
 public class SystemGridTile : GridTile
 {
-    public string name;
 }
 
+[System.Serializable]
+public class GalaxyGridTile : GridTile
+{
+    //public List<EntityDto> systems;
+    public int planet_count;
+}
+//Entities
 [System.Serializable]
 public class EntityDto
 {
     public int id;
     public string type;
-    public int image_id;
+    public string name;
+    public int v;
 }

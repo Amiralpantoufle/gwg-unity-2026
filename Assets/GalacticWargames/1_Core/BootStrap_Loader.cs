@@ -41,7 +41,7 @@ public class BootStrap_Loader : MonoBehaviour
             return;
 
         //Construction d'une liste des bases du joueur
-        ApiResponse<List<BaseIndexOutput>> response = JsonConvert.DeserializeObject<ApiResponse<List<BaseIndexOutput>>>(json);
+        ApiResponse<BaseIndexOutput> response = JsonConvert.DeserializeObject<ApiResponse<BaseIndexOutput>>(json);
         if (response == null)
         {
             Debug.LogError("Impossible de parser BaseIndex");
@@ -58,28 +58,27 @@ public class BootStrap_Loader : MonoBehaviour
             return;
         }
 
-        GameDataStorage.Instance.LoadCurrentBaseData(FindBaseToDisplay(response.output));
+        GameDataStorage.Instance.LoadCurrentBaseData(FindBaseToDisplay(response.output.bases));
     }
-    private BaseIndexOutput FindBaseToDisplay(List<BaseIndexOutput> dataList)
+    private BaseOutput FindBaseToDisplay(List<BaseOutput> dataList)
     {
         //Protection
         if (dataList.Count <= 0 || dataList[0] == null)
         {
-            Debug.LogError("No data found in list");
+            Debug.LogWarning("No Base data found in list");
             return null;
         }
 
         //Selection d'une base
-        BaseIndexOutput firstData;
+        BaseOutput firstData;
 
         if (dataList.Count > 1)
         {
+            Debug.Log("Multiple bases found");
             firstData = dataList.LastOrDefault();
         }
         else
-        {
             firstData = dataList[0];
-        }
 
         return firstData;
     }

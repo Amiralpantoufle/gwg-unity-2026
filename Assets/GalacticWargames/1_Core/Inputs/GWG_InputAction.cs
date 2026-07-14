@@ -127,6 +127,15 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Tap(pressPoint=0.35)"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DoubleTap"",
+                    ""type"": ""Button"",
+                    ""id"": ""4a6a85ae-61e2-4fef-8635-9e52f9a0b6a9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -217,6 +226,28 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
                     ""action"": ""QuickTouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c451d0e2-f385-48a8-98b9-8a00be1f6101"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""MultiTap"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DoubleTap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f72e6d8f-c6b7-4828-b56d-dcd06ec72870"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": ""MultiTap"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DoubleTap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -229,6 +260,7 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
         m_Player_TouchPress = m_Player.FindAction("TouchPress", throwIfNotFound: true);
         m_Player_Pinch = m_Player.FindAction("Pinch", throwIfNotFound: true);
         m_Player_QuickTouch = m_Player.FindAction("QuickTouch", throwIfNotFound: true);
+        m_Player_DoubleTap = m_Player.FindAction("DoubleTap", throwIfNotFound: true);
     }
 
     ~@GWG_InputAction()
@@ -313,6 +345,7 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_TouchPress;
     private readonly InputAction m_Player_Pinch;
     private readonly InputAction m_Player_QuickTouch;
+    private readonly InputAction m_Player_DoubleTap;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -340,6 +373,10 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/QuickTouch".
         /// </summary>
         public InputAction @QuickTouch => m_Wrapper.m_Player_QuickTouch;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/DoubleTap".
+        /// </summary>
+        public InputAction @DoubleTap => m_Wrapper.m_Player_DoubleTap;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -378,6 +415,9 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
             @QuickTouch.started += instance.OnQuickTouch;
             @QuickTouch.performed += instance.OnQuickTouch;
             @QuickTouch.canceled += instance.OnQuickTouch;
+            @DoubleTap.started += instance.OnDoubleTap;
+            @DoubleTap.performed += instance.OnDoubleTap;
+            @DoubleTap.canceled += instance.OnDoubleTap;
         }
 
         /// <summary>
@@ -401,6 +441,9 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
             @QuickTouch.started -= instance.OnQuickTouch;
             @QuickTouch.performed -= instance.OnQuickTouch;
             @QuickTouch.canceled -= instance.OnQuickTouch;
+            @DoubleTap.started -= instance.OnDoubleTap;
+            @DoubleTap.performed -= instance.OnDoubleTap;
+            @DoubleTap.canceled -= instance.OnDoubleTap;
         }
 
         /// <summary>
@@ -469,5 +512,12 @@ public partial class @GWG_InputAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnQuickTouch(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "DoubleTap" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDoubleTap(InputAction.CallbackContext context);
     }
 }

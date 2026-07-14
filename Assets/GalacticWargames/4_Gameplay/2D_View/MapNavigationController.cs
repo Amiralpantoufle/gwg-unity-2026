@@ -10,7 +10,13 @@ public class MapNavigationController : MonoBehaviour
     private GWG_InputAction inputActions;
     private GridManager gridManager;
 
-    //Camera settings
+    //Grid Options
+    [SerializeField] private MainView_TileAccess_Popup tileAccess_Popup;
+    private TileView currentlySelectedTile;
+    private TileView previouslySelectedTile;
+    private bool tileSelected;
+
+    //Camera Navigation
     public Camera cam;
     public Transform movableZone;
     public float panSpeed = 1f;
@@ -29,7 +35,6 @@ public class MapNavigationController : MonoBehaviour
     private Vector2 lastTouchPosition;
     private float lastPinchDistance;
     private bool isPanning, isZooming;
-
 
     private void Awake()
     {
@@ -80,7 +85,7 @@ public class MapNavigationController : MonoBehaviour
         return targetPos;
     }
 
-    //Navigation
+    //Camera Navigation
     private void HandlePan()
     {
         if (!isPanning) return;
@@ -119,11 +124,8 @@ public class MapNavigationController : MonoBehaviour
             Debug.Log("Centered");
         }
     }
-
-    //Camera
     public void CenterOnTile(Transform tile)
     {
-        Debug.Log(tile.gameObject.name);
         centeringTarget = -tile.localPosition;
         isCentering = true;
     }
@@ -184,6 +186,58 @@ public class MapNavigationController : MonoBehaviour
         );
     }
 
+    //Selection
+    public void SelectTile(TileView tile)
+    {
+        EventBus.Publish(new ShowPopupEvent
+        {
+            popup = tileAccess_Popup
+        });
+        tileAccess_Popup.LoadTileViewData(tile);
+
+        currentlySelectedTile = tile;
+        tileSelected = true;
+    }
+    public void CancelSelect()
+    {
+        EventBus.Publish(new HidePopupEvent
+        {
+            hidePopup = tileAccess_Popup
+        });
+        tileAccess_Popup.HideCurrentTile();
+        tileSelected = false;
+
+        previouslySelectedTile = currentlySelectedTile;
+    }
+    private void TryNavigateToTile(string target)
+    {
+        switch(target)
+        {
+            case "Default":
+                break;
+
+            case "Base":
+                gridManager.LoadBase(GameDataStorage.Instance.CurrentBase.base_id);
+                break;
+        }
+
+    }
+    private string IdentifyTarget()
+    {
+        string target = "Default";
+
+        int selectedID = previouslySelectedTile.entity.id;
+
+        Debug.Log("identified target :" + target + "with id :"+ previouslySelectedTile.entity.id + ". Compared with player base id :"+ GameDataStorage.Instance.CurrentBase.base_id);
+
+        //Si ID correspond à une base joueur
+        if (selectedID == GameDataStorage.Instance.CurrentBase.base_id)
+        {
+            target = "Base";
+        }
+
+        return target;
+    }
     //Inputs
     private void OnEnable()
     {
@@ -196,14 +250,15 @@ public class MapNavigationController : MonoBehaviour
         inputActions.Player.Pinch.canceled += OnPinchEnded;
 
         inputActions.Player.QuickTouch.performed += OnQuickTouch;
+        inputActions.Player.DoubleTap.performed += OnDoubleTouch;
     }
     private void OnDisable()
     {
-        inputActions.Player.TouchPress.started -= OnTouchStarted;
+/*        inputActions.Player.TouchPress.started -= OnTouchStarted;
         inputActions.Player.TouchPress.canceled -= OnTouchEnded;
 
         inputActions.Player.Pinch.started -= OnPinchStarted;
-        inputActions.Player.Pinch.canceled -= OnPinchEnded;
+        inputActions.Player.Pinch.canceled -= OnPinchEnded;*/
 
         inputActions.Player.Disable();
     }
@@ -229,25 +284,21 @@ public class MapNavigationController : MonoBehaviour
 
     private void OnQuickTouch(InputAction.CallbackContext context)
     {
-        if (gridManager._TileSelected)
+        if (tileSelected)
         {
-            gridManager.CancelSelect();
+            CancelSelect();
             return;
         }
 
-        /*if (EventSystem.current.IsPointerOverGameObject())
-             return;*/
 
         Vector2 screenPos = inputActions.Player.TouchPosition.ReadValue<Vector2>();
         Vector2 worldPos = cam.ScreenToWorldPoint(screenPos);
 
         //UI SECURITY
-
         if (UICheckInput(screenPos).Count > 0)
             return;
 
 
-        //Collect Hit detected
         Collider2D[] hits = Physics2D.OverlapPointAll(worldPos);
 
         if (hits == null || hits.Length == 0)
@@ -258,11 +309,16 @@ public class MapNavigationController : MonoBehaviour
         {
             if (h.TryGetComponent<TileView>(out var tile))
             {
-                gridManager.SelectTile(tile);
+                SelectTile(tile);
                 CenterOnTile(tile.transform);
-                return;
+                break;
             }
         }
+    }
+    private void OnDoubleTouch(InputAction.CallbackContext context)
+    {
+        if (previouslySelectedTile != null)
+            TryNavigateToTile(IdentifyTarget());
     }
 
     private List<RaycastResult> UICheckInput(Vector2 screenPos)

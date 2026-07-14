@@ -40,7 +40,7 @@ public class EntityPool : MonoBehaviour
     {
         entity.gameObject.SetActive(false);
         available.Enqueue(entity);
-    }
+    } 
 
     public EntityView Spawn(EntityDto data, Vector2 tilePosition)
     {

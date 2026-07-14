@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EntityView : MonoBehaviour
 {
-    private int entitiesLayer = 8100;
+    private int entitiesLayer = 10001;
 
     [SerializeField] private EntityDto entity;
     private SpriteRenderer spriteR;
@@ -17,7 +17,7 @@ public class EntityView : MonoBehaviour
     }
     private void Refresh()
     {
-        VisualDefinition visual = GridVisualService.Instance.GetVisual(entity.image_id);
+        VisualDefinition visual = GridVisualService.Instance.GetVisual(entity.v);
         spriteR.sprite = visual.imageSprite;
 
         //SetSpriteOrder

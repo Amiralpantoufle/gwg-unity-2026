@@ -48,9 +48,4 @@ public class Authentification_Screen : UIScreen
     }
 
     //_________Utility
-    public void Debug_Loggin()
-    {
-        UIStateManager.Instance.SetState(UIState.Loading);
-    }
-
 }

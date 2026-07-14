@@ -3,15 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*[Serializable]
-public class BaseIndexOuput
-{
-    public List<BaseIndexData> baseIndexDatas;
-}*/
-
-[Serializable]
 public class BaseIndexOutput
 {
-    public int id_oes;
+    //public int id_oes;
     public int idesp_oes;
     public int id_parent_esp;
     public int planet_id;
@@ -45,4 +39,33 @@ public class PlayerBaseData
 
     public int SystemX;
     public int SystemY;
+}*/
+
+[Serializable]
+public class BaseIndexOutput
+{
+    public List<BaseOutput> bases;
+}
+
+[Serializable]
+public class BaseOutput
+{
+    //public int tile_id;
+    public int base_id;
+    public string name;
+    public PositionOutput position;
+}
+
+[Serializable]
+public class PositionOutput
+{
+    public int entity_id;
+    public string entity_name;
+    public string category;
+    public int planet_id;
+    public int system_id;
+    public int galaxy_id;
+
+    public int x;
+    public int y;
 }

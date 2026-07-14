@@ -145,7 +145,7 @@ public class UserInfos
 {
     public string name;
     public int id;
-    public int id_all;
+    public int? id_all;
     public int idciv_usr;
 
     public int level;

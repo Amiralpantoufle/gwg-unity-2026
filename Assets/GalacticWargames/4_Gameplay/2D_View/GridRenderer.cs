@@ -11,6 +11,7 @@ public class GridRenderer : MonoBehaviour
     [SerializeField] private Transform poolRoot;
     [SerializeField] private Sprite defaultTileSprite;
     [SerializeField] private GameObject tilePrefab;
+    [SerializeField] private int tileLayerStart=10000;
 
     [SerializeField] private float tileWidth = 100;
     [SerializeField] private float tileHeight = 50;
@@ -29,7 +30,7 @@ public class GridRenderer : MonoBehaviour
 
         for (int i = 0; i < total; i++)
         {
-            CreateTile(ordered[i]);
+            CreateTile(ordered[i]); 
 
             if (i % 100 == 0)
             {
@@ -40,7 +41,7 @@ public class GridRenderer : MonoBehaviour
         }
 
     }
-    public async Task RenderPlanet(GridPlanetModel map)
+    public void RenderPlanet(GridPlanetModel map)
     {
         Clear();
 
@@ -51,7 +52,7 @@ public class GridRenderer : MonoBehaviour
             CreateTile(tile);
         }
     }
-    public async Task RenderSystem(GridSystemModel map)
+    public void RenderSystem(GridSystemModel map)
     {
         Clear();
 
@@ -63,7 +64,18 @@ public class GridRenderer : MonoBehaviour
             CreateTile(tile);
         }
     }
-    public async Task RenderGalaxy(GridGalaxyModel map)
+    public void RenderGalaxy(GridGalaxyModel map)
+    {
+        Clear();
+
+        var ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y);
+
+        foreach (var tile in ordered)
+        {
+            CreateTile(tile);
+        }
+    }
+    public void RenderBase(GridBaseModel map)
     {
         Clear();
 
@@ -86,12 +98,12 @@ public class GridRenderer : MonoBehaviour
         SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
         if (sr == null) Debug.LogError("Couldn't load sprite renderer");
 
-        VisualDefinition visual = GridVisualService.Instance.GetVisual(tile.image_id);
+        VisualDefinition visual = GridVisualService.Instance.GetVisual(tile.v);
 
         //Define Tileview properties and offset
         int layerOffset=0;
         if(visual.renderScale > 1) layerOffset = 10;
-        sr.sortingOrder = (8000 - (tile.x + tile.y))+ layerOffset;
+        sr.sortingOrder = (tileLayerStart - (tile.x + tile.y))+ layerOffset;
 
         sr.sprite = visual.imageSprite;
         obj.transform.localScale = Vector3.one * visual.renderScale;
@@ -107,8 +119,11 @@ public class GridRenderer : MonoBehaviour
 
 
         //Generate Entities
-        if (tile.entities.Count > 0)
-            entityPool.Spawn(tile.entities[0], tilePosition);
+        if (tile.entities != null)
+        {
+            if (tile.entities.Count > 0)
+                entityPool.Spawn(tile.entities[0], tilePosition);
+        }
     }
 
     //UTILITY
@@ -136,11 +151,15 @@ public class GridRenderer : MonoBehaviour
     }
     private void Clear()
     {
-
+        //Clear Tiles
         foreach (Transform child in gridRoot)
             Destroy(child.gameObject);
 
         tileViews.Clear();
+
+        //Clear Entities
+        foreach (Transform child in entityPool.transform)
+            entityPool.Release(child.GetComponent<EntityView>());
     }
 
 }

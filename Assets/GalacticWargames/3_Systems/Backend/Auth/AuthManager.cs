@@ -45,8 +45,8 @@ public class AuthManager : MonoBehaviour
             string refreshToken = response.output.refresh_token;
             API_Client.Instance.SetTokens(token, refreshToken);
 
-            UIStateManager.Instance.SetState(UIState.Loggedin);
-            ToastManager.Instance.GenerateToast("Logged in", 0, 10f);
+            //UIStateManager.Instance.SetState(UIState.Loggedin);
+            UIStateManager.Instance.SetState(UIState.Loading);
         }
         else
         {

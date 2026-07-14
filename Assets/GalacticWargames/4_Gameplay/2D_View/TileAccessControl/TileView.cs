@@ -6,13 +6,22 @@ public class TileView : MonoBehaviour
     public int id_esp;
 
     private SpriteRenderer spriteRenderer;
+    public EntityDto entity;
     public void Init(GridTile data, float renderScale)
     {
         tile = data;
-        id_esp = data.entity_id;
+        id_esp = data.id;
 
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
         collider.size = collider.size / renderScale;
+
+
+        //TEMP !!! ATTENTION NE DOIT PAS ETRE FAIT ICI 
+        /*if (tile.entities == null) return;
+        if (tile.entities.Count > 0)
+            entity = tile.entities[0];*/
+
+
     }
 
 

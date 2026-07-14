@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.CullingGroup;
@@ -10,7 +11,7 @@ public class LoadingScreen : MonoBehaviour
     public static LoadingScreen Instance;
     public LoadingService loadingService;
     public float Progress { get; private set; }
-    public string Message { get; private set; }
+    public string Message { get; private set; } 
 
     //Components
     [SerializeField] private Slider loadingSlider;
@@ -26,6 +27,9 @@ public class LoadingScreen : MonoBehaviour
 
     private void UpdateUI(float progress, string message)
     {
+        Progress = progress;
+        Message = message;
+
         loadingSlider.value = progress;
         loadingMessage.text = message;  
 
@@ -39,18 +43,14 @@ public class LoadingScreen : MonoBehaviour
         if(BootStrap_Loader.Instance.isLoaded)
         {
             loadingService.SetProgress(0.4f, "Boot Process"); 
-
-            UIStateManager.Instance.SetState(UIState.Loggedin);
-            ToastManager.Instance.GenerateToast("Logged in", 0, 10f);
+            //UIStateManager.Instance.SetState(UIState.Loggedin);
         }
 
         //Données non chargées -> Force logout -> Redirection AuthScreen
         else
         {
             loadingService.SetProgress(1f, "Failed to connect"); 
-
-            UIStateManager.Instance.SetState(UIState.Loggedout);
-            ToastManager.Instance.GenerateToast("Logged out", 1, 10f);
+            //UIStateManager.Instance.SetState(UIState.Loggedout);
         }
 
         //CloseScreen();

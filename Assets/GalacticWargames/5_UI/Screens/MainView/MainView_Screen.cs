@@ -45,7 +45,8 @@ public class MainView_Screen : UIScreen
         if(storage.CurrentBase == null)
         {
             await BootStrap_Loader.Instance.Init_BootStrap();
-            if (storage.CurrentBase == null) Debug.LogError("Couldn't load player base");
+            if (storage.CurrentBase == null)
+                Debug.LogWarning("Couldn't load player base");
         }
 
         //Récupération API des infos
@@ -80,16 +81,25 @@ public class MainView_Screen : UIScreen
         level.text = storage._Level.ToString();
         xpGauge.value = storage._Experience;
 
-        energyStone_Quantity.text = userData.oes_ressources_oer[0].nombre_oer.ToString();
-        carbon_Quantity.text = userData.oes_ressources_oer[1].nombre_oer.ToString();
-        hydrogen_Quantity.text = userData.oes_ressources_oer[2].nombre_oer.ToString();
+        if (userData.oes_ressources_oer == null) return;
+        if (userData.oes_ressources_oer.Count > 0)
+        {
+            energyStone_Quantity.text = userData.oes_ressources_oer[0].nombre_oer.ToString();
+            carbon_Quantity.text = userData.oes_ressources_oer[1].nombre_oer.ToString();
+            hydrogen_Quantity.text = userData.oes_ressources_oer[2].nombre_oer.ToString();
+        }
+        else
+            Debug.LogWarning("No ressources detected from Get/Api/user/getUserData");
 
         Debug.Log("Infos user loaded");
     }
 
+    //UI Inputs
+    /// <summary>
+    /// Button UI to zoom out Level map
+    /// </summary>
     public void SwitchLevel()
     {
-        Debug.Log("Start Switch Level");
         GridManager.Instance.SwitchLevel();
     }
 }
