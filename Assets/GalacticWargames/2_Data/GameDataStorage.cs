@@ -8,16 +8,16 @@ using static UnityEngine.Audio.ProcessorInstance;
 public class GameDataStorage : MonoBehaviour
 {
     public static GameDataStorage Instance;
-    public GlobalDataOutput GlobalData { get; private set; }
-    public UserDataOutput UserData { get; private set; }
+    public GlobalDataOutput _GlobalData { get; private set; }
+    public UserDataOutput _UserData { get; private set; }
 
     //User Data
-    private string username;
+    /*private string username;
     private int level;
     private float experience;
     public string _Username { get { return username; } set { username = value; } }
     public int _Level { get { return level; } set { level = value; } }
-    public float _Experience { get { return experience; } set { experience = value; } }
+    public float _Experience { get { return experience; } set { experience = value; } }*/
 
     //Base Data
     private const string LAST_BASE_KEY = "LAST_ACTIVE_BASE";
@@ -74,11 +74,9 @@ public class GameDataStorage : MonoBehaviour
     }
     
     //Data
-    public void SetUserStartData(UserInfos user)
+    public void SetUserStartData(UserDataOutput user)
     {
-        level = user.level;
-        username = user.name;
-        experience = user.experience;
+        _UserData = user;
     }
     /*public void SetGlobalData(GlobalDataOutput data)
     {

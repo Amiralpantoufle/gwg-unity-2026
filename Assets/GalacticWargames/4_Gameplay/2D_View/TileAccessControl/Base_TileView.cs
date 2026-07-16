@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class TileView : MonoBehaviour
+public class Base_TileView : MonoBehaviour
 {
-    [SerializeField] private GridTile tile;
-    public GridTile _Tile {  get { return tile; } }
+    [SerializeField] private GridBaseTile tile;
+    public GridBaseTile _Tile { get { return tile; } }
 
     private SpriteRenderer spriteRenderer;
-    public EntityDto entity;
-    public void Init(GridTile data, float renderScale)
+    public BaseEntity entity;
+    public void Init(GridBaseTile data, float renderScale)
     {
         tile = data;
 
@@ -20,7 +20,7 @@ public class TileView : MonoBehaviour
     public void HighlightTile()
     {
         spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
-        if(spriteRenderer != null)
+        if (spriteRenderer != null)
         {
             spriteRenderer.enabled = true;
         }

@@ -226,12 +226,16 @@ public class MapNavigationController : MonoBehaviour
     {
         string target = "Default";
 
-        int selectedID = previouslySelectedTile.entity.id;
+        int selectedID = previouslySelectedTile.entity.entity_id;
 
-        Debug.Log("identified target :" + target + "with id :"+ previouslySelectedTile.entity.id + ". Compared with player base id :"+ GameDataStorage.Instance.CurrentBase.base_id);
+        Debug.Log("identified target :" + target + "with id :"+ previouslySelectedTile._Tile.entity_id + ". Compared with player base id :"+ GameDataStorage.Instance.CurrentBase.base_id);
 
         //Si ID correspond à une base joueur
         if (selectedID == GameDataStorage.Instance.CurrentBase.base_id)
+        {
+            target = "Base";
+        }
+        else
         {
             target = "Base";
         }

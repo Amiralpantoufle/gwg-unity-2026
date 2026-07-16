@@ -15,6 +15,9 @@ public class GridManager : MonoBehaviour
     private int currentSystem;
     private int currentPlanet;
 
+    public static event Action OnSwitchToBase;
+    public static event Action OnSwitchToWorld;
+
     private void Awake()
     {
         Instance = this;
@@ -40,13 +43,6 @@ public class GridManager : MonoBehaviour
     }
 
     //Map Loading Process
-    public async void LoadBase(int baseID)
-    {
-        GridBaseModel baseModel = await LoadBaseFromData(baseID);
-        if (baseModel == null) Debug.LogError("Failed to load planet");
-
-        gridRenderer.RenderBase(baseModel);
-    }
     /// <summary>
     /// Load map depuis le niveau selectionné et l'ID de la map
     /// </summary>
@@ -80,7 +76,18 @@ public class GridManager : MonoBehaviour
         }
 
         currentLevel = level;
+        OnSwitchToWorld?.Invoke();
     }
+    public async void LoadBase(int baseID)
+    {
+        GridBaseModel baseModel = await LoadBaseFromData(baseID);
+        if (baseModel == null) Debug.LogError("Failed to load planet");
+
+        gridRenderer.RenderBase(baseModel);
+
+        OnSwitchToBase?.Invoke();
+    }
+
     private async Task<GridPlanetModel> LoadPlanetFromData(int id)
     {
         var response = await LoadApiResponse<GridPlanetModel>($"/map/planet/{id}");
@@ -96,6 +103,7 @@ public class GridManager : MonoBehaviour
         var response = await LoadApiResponse<GridGalaxyModel>($"/map/galaxy/{id}");
         return response.output;
     }
+
     private async Task<GridBaseModel> LoadBaseFromData(int id)
     {
         var response = await LoadApiResponse<GridBaseModel>($"/base/isometric/{id}");

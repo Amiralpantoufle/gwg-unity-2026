@@ -4,7 +4,8 @@ using UnityEngine;
 public enum ScreenID
 {
     Auth,
-    Main
+    Main,
+    Base
 }
 /// <summary>
 /// Centralise la navigation avec des IDs au lieu de références directes.

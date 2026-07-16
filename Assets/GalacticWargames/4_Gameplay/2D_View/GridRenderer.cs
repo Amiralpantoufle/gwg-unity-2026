@@ -7,10 +7,18 @@ using UnityEngine;
 
 public class GridRenderer : MonoBehaviour
 {
-    [SerializeField] private Transform gridRoot;
-    [SerializeField] private Transform poolRoot;
     [SerializeField] private Sprite defaultTileSprite;
+
+    [Header("WorldMap")]
+    [SerializeField] private Transform gridRoot;
     [SerializeField] private GameObject tilePrefab;
+    [SerializeField] private EntityPool entityPool;
+
+    [Header("Base Map")]
+    [SerializeField] private Transform baseGridRoot;
+    [SerializeField] private GameObject baseTilePrefab;
+    [SerializeField] private EntityPool baseEntityPool;
+
     [SerializeField] private int tileLayerStart=10000;
 
     [SerializeField] private float tileWidth = 100;
@@ -19,7 +27,7 @@ public class GridRenderer : MonoBehaviour
 
     //Components
     private Dictionary<Vector2Int,TileView> tileViews = new Dictionary<Vector2Int, TileView>();
-    [SerializeField] private EntityPool entityPool;
+    private Dictionary<Vector2Int,Base_TileView> baseTileViews = new Dictionary<Vector2Int, Base_TileView>();
 
     public async Task GenerateMap(GridPlanetModel map)
     {
@@ -83,7 +91,7 @@ public class GridRenderer : MonoBehaviour
 
         foreach (var tile in ordered)
         {
-            CreateTile(tile);
+            CreateBaseTile(tile);
         }
     }
 
@@ -119,10 +127,48 @@ public class GridRenderer : MonoBehaviour
 
 
         //Generate Entities
-        if (tile.entities != null)
+        if (tile.entities != null && tile.entities.Count > 0)
         {
-            if (tile.entities.Count > 0)
-                entityPool.Spawn(tile.entities[0], tilePosition);
+            entityPool.Spawn(tile.entities[0], tilePosition);
+        }
+
+    }
+    private void CreateBaseTile(GridBaseTile tile)
+    {
+        GameObject obj = Instantiate(baseTilePrefab);
+
+        obj.transform.SetParent(baseGridRoot);
+        obj.transform.position = IsoToWorld(tile.x, tile.y);
+        obj.transform.name = "_" + tile.x + "x_" + tile.y + "y";
+
+        SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
+        if (sr == null) Debug.LogError("Couldn't load sprite renderer");
+
+        //VisualDefinition visual = GridVisualService.Instance.GetVisual(tile.v);
+        VisualDefinition visual = GridVisualService.Instance.GetVisual(175); // ATTENTION TEMPORARY -> Pas les bonnes id visuelles sur l'api pour l'instant
+
+        //Define Tileview properties and offset
+        int layerOffset = 0;
+        if (visual.renderScale > 1) layerOffset = 10;
+        sr.sortingOrder = (tileLayerStart - (tile.x + tile.y)) + layerOffset;
+
+        sr.sprite = visual.imageSprite;
+        obj.transform.localScale = Vector3.one * visual.renderScale;
+
+        Vector2 tilePosition = new Vector2(obj.transform.localPosition.x + visual.offset.x, obj.transform.localPosition.y + visual.offset.y);
+        obj.transform.localPosition = tilePosition;
+
+        //Create Tileview
+        Base_TileView tileview = obj.GetComponent<Base_TileView>();
+        tileview.Init(tile, visual.renderScale);
+        Vector2Int coords = new Vector2Int(tile.x, tile.y);
+        baseTileViews.Add(coords, tileview);
+
+        //Generate Entities
+        if (tile.entities != null && tile.entities.Count > 0)
+        {
+            Debug.Log(tile.entities[0].name);
+            baseEntityPool.SpawnBaseEntity(tile.entities[0], tilePosition);
         }
     }
 

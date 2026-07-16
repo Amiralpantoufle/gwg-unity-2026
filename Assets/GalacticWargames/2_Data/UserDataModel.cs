@@ -148,14 +148,21 @@ public class UserInfos
     public int? id_all;
     public int idciv_usr;
 
-    public int level;
-    public int experience;
+    public Level_Infos level_progress;
 
     public int BASE_STOCKAGE_DEFAULT;
     public int TYPE_NOMBRE_FLOTTE_MAX;
     public int TYPE_NOMBRE_OES_MAX;
 
     public OnboardingStatus onboarding;
+}
+[Serializable]
+public class Level_Infos
+{
+    public int current_level;
+    public int xp_total;
+    public int xp_in_level;
+    public int xp_for_next_level;
 }
 
 [Serializable]

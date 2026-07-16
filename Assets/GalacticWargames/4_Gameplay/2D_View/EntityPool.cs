@@ -44,10 +44,19 @@ public class EntityPool : MonoBehaviour
 
     public EntityView Spawn(EntityDto data, Vector2 tilePosition)
     {
-        EntityView view = Get();
+        EntityView view = Get(); 
 
         view.transform.localPosition = tilePosition;
         view.Init(data);
+
+        return view;
+    }
+    public EntityView SpawnBaseEntity(BaseEntity data, Vector2 tilePosition)
+    {
+        EntityView view = Get();
+
+        view.transform.localPosition = tilePosition;
+        //view.Init(data);
 
         return view;
     }

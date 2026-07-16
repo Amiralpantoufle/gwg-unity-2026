@@ -9,8 +9,7 @@ public class MainView_Screen : UIScreen
 {
     //System
     [SerializeField] private GameObject gameView;
-    //[SerializeField] private UIScreen tileAccess_Popup;
-    //Profile
+
     [SerializeField] private TextMeshProUGUI username;
     [SerializeField] private TextMeshProUGUI title;
     [SerializeField] private TextMeshProUGUI level;
@@ -21,15 +20,16 @@ public class MainView_Screen : UIScreen
     [SerializeField] private TextMeshProUGUI hydrogen_Quantity;
     [SerializeField] private TextMeshProUGUI stockCapacity,stockCurrent;
 
-    public static event Action OnMainViewLoaded;
+
     public async override void Show()
     {
         base.Show();
 
         await LoadUserInfo();
-
+        
         gameView.SetActive(true);
-        OnMainViewLoaded?.Invoke();
+
+        GridManager.OnSwitchToBase += OpenBaseScreen;
     }
     public override void Hide()
     {
@@ -75,23 +75,43 @@ public class MainView_Screen : UIScreen
     }
     private void ParseUserInfo(UserDataOutput userData, GameDataStorage storage)
     {
-        storage.SetUserStartData(userData.infos_user);
+        storage.SetUserStartData(userData);
 
-        username.text = storage._Username;
-        level.text = storage._Level.ToString();
-        xpGauge.value = storage._Experience;
+        username.text = userData.infos_user.name;
 
-        if (userData.oes_ressources_oer == null) return;
-        if (userData.oes_ressources_oer.Count > 0)
+       //Asign Experience
+        level.text = userData.infos_user.level_progress.current_level.ToString();
+        xpGauge.maxValue = userData.infos_user.level_progress.xp_for_next_level;
+        xpGauge.value = userData.infos_user.level_progress.xp_in_level;
+
+        //Asign Ressources
+        string current = "0";
+        if (userData.oes_ressources_oer != null && userData.oes_ressources_oer.Count > 0)
         {
             energyStone_Quantity.text = userData.oes_ressources_oer[0].nombre_oer.ToString();
             carbon_Quantity.text = userData.oes_ressources_oer[1].nombre_oer.ToString();
             hydrogen_Quantity.text = userData.oes_ressources_oer[2].nombre_oer.ToString();
+
+            //Additionne toutes les ressources
+            current = (userData.oes_ressources_oer[0].nombre_oer + userData.oes_ressources_oer[1].nombre_oer + userData.oes_ressources_oer[2].nombre_oer).ToString();
         }
         else
+        {
             Debug.LogWarning("No ressources detected from Get/Api/user/getUserData");
+        }
+
+        stockCurrent.text = current;
+        stockCapacity.text = "/" + userData.infos_user.BASE_STOCKAGE_DEFAULT.ToString();
 
         Debug.Log("Infos user loaded");
+    }
+
+    private void OpenBaseScreen()
+    {
+        EventBus.Publish(new ReplaceScreenEvent
+        {
+            screenID = ScreenID.Base
+        });
     }
 
     //UI Inputs
