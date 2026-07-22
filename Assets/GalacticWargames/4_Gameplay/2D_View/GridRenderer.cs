@@ -144,8 +144,8 @@ public class GridRenderer : MonoBehaviour
         SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
         if (sr == null) Debug.LogError("Couldn't load sprite renderer");
 
-        //VisualDefinition visual = GridVisualService.Instance.GetVisual(tile.v);
-        VisualDefinition visual = GridVisualService.Instance.GetVisual(175); // ATTENTION TEMPORARY -> Pas les bonnes id visuelles sur l'api pour l'instant
+        VisualDefinition visual = GridVisualService.Instance.GetVisual(tile.v);
+        //VisualDefinition visual = GridVisualService.Instance.GetVisual(175); // ATTENTION TEMPORARY -> Pas les bonnes id visuelles sur l'api pour l'instant
 
         //Define Tileview properties and offset
         int layerOffset = 0;

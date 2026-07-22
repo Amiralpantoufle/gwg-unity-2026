@@ -1,0 +1,947 @@
+fileFormatVersion: 2
+guid: 21f58960d6988114a85bcd2ebf06b61b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -742503092136408051
+    second: GWG_Atlas_BaseBuildings_0
+  - first:
+      213: -6503384953507721152
+    second: GWG_Atlas_BaseBuildings_1
+  - first:
+      213: 2924089959923574254
+    second: GWG_Atlas_BaseBuildings_2
+  - first:
+      213: -139536975615366638
+    second: GWG_Atlas_BaseBuildings_3
+  - first:
+      213: 8053563371728919198
+    second: GWG_Atlas_BaseBuildings_4
+  - first:
+      213: 3481750774185297719
+    second: GWG_Atlas_BaseBuildings_5
+  - first:
+      213: 2849294755826487274
+    second: GWG_Atlas_BaseBuildings_6
+  - first:
+      213: -858758398208595748
+    second: GWG_Atlas_BaseBuildings_7
+  - first:
+      213: -2360507248495408725
+    second: GWG_Atlas_BaseBuildings_8
+  - first:
+      213: -9183432228736498932
+    second: GWG_Atlas_BaseBuildings_9
+  - first:
+      213: 4341969343199884668
+    second: GWG_Atlas_BaseBuildings_10
+  - first:
+      213: 224046903014065817
+    second: GWG_Atlas_BaseBuildings_11
+  - first:
+      213: -1055758500017991869
+    second: GWG_Atlas_BaseBuildings_12
+  - first:
+      213: 714762959363584874
+    second: GWG_Atlas_BaseBuildings_13
+  - first:
+      213: 9096424932704782223
+    second: GWG_Atlas_BaseBuildings_14
+  - first:
+      213: -8200186870676758170
+    second: GWG_Atlas_BaseBuildings_15
+  - first:
+      213: -715104886739166810
+    second: GWG_Atlas_BaseBuildings_16
+  - first:
+      213: -5380172675974189333
+    second: GWG_Atlas_BaseBuildings_17
+  - first:
+      213: -4762916336196191595
+    second: GWG_Atlas_BaseBuildings_18
+  - first:
+      213: -5930423192740487503
+    second: GWG_Atlas_BaseBuildings_19
+  - first:
+      213: -470354672668160791
+    second: GWG_Atlas_BaseBuildings_20
+  - first:
+      213: 7121903318749724517
+    second: GWG_Atlas_BaseBuildings_21
+  - first:
+      213: 7010990561457856895
+    second: GWG_Atlas_BaseBuildings_22
+  - first:
+      213: 4929300219964973355
+    second: GWG_Atlas_BaseBuildings_23
+  - first:
+      213: 564106283987090135
+    second: GWG_Atlas_BaseBuildings_24
+  - first:
+      213: -1092086320465869449
+    second: GWG_Atlas_BaseBuildings_25
+  - first:
+      213: 333153134372630141
+    second: GWG_Atlas_BaseBuildings_26
+  - first:
+      213: 2236232555716935132
+    second: GWG_Atlas_BaseBuildings_27
+  - first:
+      213: -3309596372478568323
+    second: GWG_Atlas_BaseBuildings_28
+  - first:
+      213: 1077217342937751798
+    second: GWG_Atlas_BaseBuildings_29
+  - first:
+      213: -5340662369277932680
+    second: GWG_Atlas_BaseBuildings_30
+  - first:
+      213: 2482088057496299243
+    second: GWG_Atlas_BaseBuildings_31
+  - first:
+      213: -3986347299280937903
+    second: GWG_Atlas_BaseBuildings_32
+  - first:
+      213: -842608639483260159
+    second: GWG_Atlas_BaseBuildings_33
+  - first:
+      213: -6980816858969767505
+    second: GWG_Atlas_BaseBuildings_34
+  - first:
+      213: 1466424443410129528
+    second: GWG_Atlas_BaseBuildings_35
+  - first:
+      213: -4447483660763245625
+    second: GWG_Atlas_BaseBuildings_36
+  - first:
+      213: 1642575664450224248
+    second: GWG_Atlas_BaseBuildings_37
+  - first:
+      213: -5530808245412178961
+    second: GWG_Atlas_BaseBuildings_38
+  - first:
+      213: 7154341203106504744
+    second: GWG_Atlas_BaseBuildings_39
+  - first:
+      213: 7202052312171299734
+    second: GWG_Atlas_BaseBuildings_40
+  - first:
+      213: -1430190003841463596
+    second: GWG_Atlas_BaseBuildings_41
+  - first:
+      213: -8400633864232643313
+    second: GWG_Atlas_BaseBuildings_42
+  - first:
+      213: -1523970880145417026
+    second: GWG_Atlas_BaseBuildings_43
+  - first:
+      213: -7473329916170233806
+    second: GWG_Atlas_BaseBuildings_44
+  - first:
+      213: -5259347213603239601
+    second: GWG_Atlas_BaseBuildings_45
+  - first:
+      213: 4719638823400009375
+    second: GWG_Atlas_BaseBuildings_46
+  - first:
+      213: -8246601389116104311
+    second: GWG_Atlas_BaseBuildings_47
+  - first:
+      213: -4588224364021687237
+    second: GWG_Atlas_BaseBuildings_48
+  - first:
+      213: 2859852514700103297
+    second: GWG_Atlas_BaseBuildings_49
+  - first:
+      213: -6926003985106460373
+    second: GWG_Atlas_BaseBuildings_50
+  - first:
+      213: 2649068254936272270
+    second: GWG_Atlas_BaseBuildings_51
+  - first:
+      213: 1760758986652856432
+    second: GWG_Atlas_BaseBuildings_52
+  - first:
+      213: 9172365929872177387
+    second: GWG_Atlas_BaseBuildings_53
+  - first:
+      213: 7125806103737911700
+    second: GWG_Atlas_BaseBuildings_54
+  - first:
+      213: -5546403495916647778
+    second: GWG_Atlas_BaseBuildings_55
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c84942f5912b5f0800000000000000
+      internalID: -742503092136408051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0405d8857d55fb5a0800000000000000
+      internalID: -6503384953507721152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee5e7887354749820800000000000000
+      internalID: 2924089959923574254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21ae9672cd3401ef0800000000000000
+      internalID: -139536975615366638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9adffb873104cf60800000000000000
+      internalID: 8053563371728919198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73781cbc1e9a15030800000000000000
+      internalID: 3481750774185297719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aefcb65fb7aba8720800000000000000
+      internalID: 2849294755826487274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_7
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd8a4e669c31514f0800000000000000
+      internalID: -858758398208595748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba942bbf92bcd3fd0800000000000000
+      internalID: -2360507248495408725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03894b3b05ed8080800000000000000
+      internalID: -9183432228736498932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c75b017ec16c14c30800000000000000
+      internalID: 4341969343199884668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_11
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9960e23a879fb1300800000000000000
+      internalID: 224046903014065817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_12
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34f04d5ec313951f0800000000000000
+      internalID: -1055758500017991869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_13
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a633973ef195be900800000000000000
+      internalID: 714762959363584874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_14
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8700e7084efc3e70800000000000000
+      internalID: 9096424932704782223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_15
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6616d71dc75133e80800000000000000
+      internalID: -8200186870676758170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a914c0f4ef6316f0800000000000000
+      internalID: -715104886739166810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beeab42e479c555b0800000000000000
+      internalID: -5380172675974189333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_18
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59afe16c3d8b6edb0800000000000000
+      internalID: -4762916336196191595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_19
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be17f4e687e2bda0800000000000000
+      internalID: -5930423192740487503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_20
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ec4b21dae6f879f0800000000000000
+      internalID: -470354672668160791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_21
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56fb0ceb55516d260800000000000000
+      internalID: 7121903318749724517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_22
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f71ef4315ca0c4160800000000000000
+      internalID: 7010990561457856895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_23
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b21644afe64686440800000000000000
+      internalID: 4929300219964973355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dabd903dab14d700800000000000000
+      internalID: 564106283987090135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_25
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7758194174128d0f0800000000000000
+      internalID: -1092086320465869449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_BaseBuildings_26
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7ea616b2099f9400800000000000000
+      internalID: 333153134372630141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1b9761ed9e1c33440bddf79e56b35445
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      GWG_Atlas_BaseBuildings_0: -742503092136408051
+      GWG_Atlas_BaseBuildings_1: -6503384953507721152
+      GWG_Atlas_BaseBuildings_10: 4341969343199884668
+      GWG_Atlas_BaseBuildings_11: 224046903014065817
+      GWG_Atlas_BaseBuildings_12: -1055758500017991869
+      GWG_Atlas_BaseBuildings_13: 714762959363584874
+      GWG_Atlas_BaseBuildings_14: 9096424932704782223
+      GWG_Atlas_BaseBuildings_15: -8200186870676758170
+      GWG_Atlas_BaseBuildings_16: -715104886739166810
+      GWG_Atlas_BaseBuildings_17: -5380172675974189333
+      GWG_Atlas_BaseBuildings_18: -4762916336196191595
+      GWG_Atlas_BaseBuildings_19: -5930423192740487503
+      GWG_Atlas_BaseBuildings_2: 2924089959923574254
+      GWG_Atlas_BaseBuildings_20: -470354672668160791
+      GWG_Atlas_BaseBuildings_21: 7121903318749724517
+      GWG_Atlas_BaseBuildings_22: 7010990561457856895
+      GWG_Atlas_BaseBuildings_23: 4929300219964973355
+      GWG_Atlas_BaseBuildings_24: 564106283987090135
+      GWG_Atlas_BaseBuildings_25: -1092086320465869449
+      GWG_Atlas_BaseBuildings_26: 333153134372630141
+      GWG_Atlas_BaseBuildings_3: -139536975615366638
+      GWG_Atlas_BaseBuildings_4: 8053563371728919198
+      GWG_Atlas_BaseBuildings_5: 3481750774185297719
+      GWG_Atlas_BaseBuildings_6: 2849294755826487274
+      GWG_Atlas_BaseBuildings_7: -858758398208595748
+      GWG_Atlas_BaseBuildings_8: -2360507248495408725
+      GWG_Atlas_BaseBuildings_9: -9183432228736498932
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

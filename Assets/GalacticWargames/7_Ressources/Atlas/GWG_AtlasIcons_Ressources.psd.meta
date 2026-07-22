@@ -194,7 +194,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 21
-        y: 0
+        y: 256
         width: 290
         height: 256
       alignment: 0
@@ -216,7 +216,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 311
-        y: 0
+        y: 256
         width: 245
         height: 256
       alignment: 0
@@ -237,12 +237,12 @@ TextureImporter:
       name: GWG_AtlasIcons_Ressources_2
       rect:
         serializedVersion: 2
-        x: 563
-        y: 1
+        x: 557
+        y: 257
         width: 364
         height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -251,6 +251,72 @@ TextureImporter:
       bones: []
       spriteID: 1e90875045d82ba4898ad61b73ed3238
       internalID: 557326781874314905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasIcons_Ressources_3
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 28
+        width: 232
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d27281a8c6e94ee4998bb40a2fcd739a
+      internalID: -543014533560531594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasIcons_Ressources_4
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 12
+        width: 214
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4eb36b9a4c91df4fb3ed0f8ae93a67c
+      internalID: 4011464543650658534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_AtlasIcons_Ressources_5
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 7
+        width: 250
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45a9bf4611dcbc8418142a16b91e2676
+      internalID: -1736482744550264111
       vertices: []
       indices: 
       edges: []
@@ -289,7 +355,7 @@ TextureImporter:
       GWG_AtlasIcons_Ressources_8: -5171845711763005954
       GWG_AtlasIcons_Ressources_9: 8442222167693316960
   mipmapLimitGroupName: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
