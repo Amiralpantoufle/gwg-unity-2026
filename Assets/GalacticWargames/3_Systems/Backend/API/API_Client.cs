@@ -156,7 +156,7 @@ public class API_Client : MonoBehaviour
         {
             string errorBody = req.downloadHandler.text;
 
-            Debug.LogError(errorBody);
+            Debug.LogWarning(errorBody);
 
             req.Dispose();
 

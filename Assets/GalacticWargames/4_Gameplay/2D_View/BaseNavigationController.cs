@@ -1,19 +1,19 @@
-
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
 
-public class MapNavigationController : IsoNavigation
+public class BaseNavigationController : IsoNavigation
 {
     private GridManager gridManager;
 
     //Grid Options
-    [SerializeField] private MainView_TileAccess_Popup tileAccess_Popup;
+    [SerializeField] private BaseView_Popup mainPopup;
 
-    private TileView currentlySelectedTile;
-    private TileView previouslySelectedTile;
+    private Base_TileView currentlySelectedTile;
+    private Base_TileView previouslySelectedTile;
+
     private bool tileSelected;
 
     protected override void Awake()
@@ -22,32 +22,56 @@ public class MapNavigationController : IsoNavigation
         gridManager = GetComponent<GridManager>();
     }
 
-    //Selection
-    public void SelectTile(TileView tile)
+    private void SetBoundariesFromMap()
     {
-        EventBus.Publish(new ShowPopupEvent
-        {
-            popup = tileAccess_Popup
-        });
-        tileAccess_Popup.LoadTileViewData(tile);
+        /* mapMinBounds = new Vector2(0, 0);
+         mapMaxBounds = new Vector2(mapWidth, mapHeight);
+
+         float worldWidth = gridWidth * tileWidth;
+ float worldHeight = gridHeight * tileHeight;
+
+ mapMaxBounds = new Vector2(worldWidth, worldHeight);
+
+         */
+    }
+    Vector3 ClampPosition(Vector3 targetPos)
+    {
+        float camHeight = cam.orthographicSize;
+        float camWidth = cam.aspect * camHeight;
+
+        float minX = mapMinBounds.x + camWidth;
+        float maxX = mapMaxBounds.x - camWidth;
+
+        float minY = mapMinBounds.y + camHeight;
+        float maxY = mapMaxBounds.y - camHeight;
+
+        targetPos.x = Mathf.Clamp(targetPos.x, minX, maxX);
+        targetPos.y = Mathf.Clamp(targetPos.y, minY, maxY);
+
+        return targetPos;
+    }
+
+    //Selection
+    public void SelectTile(Base_TileView tile)
+    {
+        mainPopup.Load_TileData(tile);
+        tile.HighlightTile();
 
         currentlySelectedTile = tile;
         tileSelected = true;
     }
     public void CancelSelect()
     {
-        EventBus.Publish(new HidePopupEvent
-        {
-            hidePopup = tileAccess_Popup
-        });
-        tileAccess_Popup.HideCurrentTile();
-        tileSelected = false;
+        mainPopup.Close_SelecPannel();
+        currentlySelectedTile.HideTile();
 
         previouslySelectedTile = currentlySelectedTile;
+        currentlySelectedTile = null;
+        tileSelected = false;
     }
     private void TryNavigateToTile(string target)
     {
-        switch(target)
+        switch (target)
         {
             case "Default":
                 break;
@@ -58,13 +82,13 @@ public class MapNavigationController : IsoNavigation
         }
 
     }
-    private string IdentifyTarget()
+/*    private string IdentifyTarget()
     {
         string target = "Default";
 
         int selectedID = previouslySelectedTile.entity.entity_id;
 
-        Debug.Log("identified target :" + target + "with id :"+ previouslySelectedTile._Tile.entity_id + ". Compared with player base id :"+ GameDataStorage.Instance.CurrentBase.base_id);
+        Debug.Log("identified target :" + target + "with id :" + previouslySelectedTile._Tile.entity_id + ". Compared with player base id :" + GameDataStorage.Instance.CurrentBase.base_id);
 
         //Si ID correspond à une base joueur
         if (selectedID == GameDataStorage.Instance.CurrentBase.base_id)
@@ -77,19 +101,12 @@ public class MapNavigationController : IsoNavigation
         }
 
         return target;
-    }
+    }*/
 
     //Inputs
-    protected override void OnQuickTouch(InputAction.CallbackContext context)
+    protected override void OnQuickTouch(InputAction.CallbackContext ctx)
     {
-        base.OnQuickTouch(context);
-
-        if (tileSelected)
-        {
-            CancelSelect();
-            return;
-        }
-
+        base.OnQuickTouch(ctx);
 
         Vector2 screenPos = base.inputActions.Player.TouchPosition.ReadValue<Vector2>();
         Vector2 worldPos = cam.ScreenToWorldPoint(screenPos);
@@ -97,7 +114,6 @@ public class MapNavigationController : IsoNavigation
         //UI SECURITY
         if (UICheckInput(screenPos).Count > 0)
             return;
-
 
         Collider2D[] hits = Physics2D.OverlapPointAll(worldPos);
 
@@ -107,20 +123,19 @@ public class MapNavigationController : IsoNavigation
 
         foreach (var h in hits)
         {
-            if (h.TryGetComponent<TileView>(out var tile))
+            if (h.TryGetComponent<Base_TileView>(out var tile))
             {
                 SelectTile(tile);
                 CenterOnTile(tile.transform);
                 break;
             }
         }
+        // Sélection d'une tuile
     }
-    protected override void OnDoubleTouch(InputAction.CallbackContext context)
+    protected override void OnDoubleTouch(InputAction.CallbackContext ctx)
     {
-        base.OnDoubleTouch(context);
-
-        if (previouslySelectedTile != null)
-            TryNavigateToTile(IdentifyTarget());
+        base.OnDoubleTouch(ctx);
+        // Entrer dans une base
     }
 
     private List<RaycastResult> UICheckInput(Vector2 screenPos)

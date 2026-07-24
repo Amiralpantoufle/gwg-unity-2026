@@ -34,8 +34,6 @@ public class BaseView_Screen : UIScreen
     }
     public async void LeaveBaseView()
     {
-        GridLevel level = GridLevel.Planet;
-
-        await GridManager.Instance.Load(level, GameDataStorage.Instance.CurrentBase.position.entity_id);
+        await GridManager.Instance.Load(GridLevel.Planet, GameDataStorage.Instance.CurrentBase.position.entity_id);
     }
 }

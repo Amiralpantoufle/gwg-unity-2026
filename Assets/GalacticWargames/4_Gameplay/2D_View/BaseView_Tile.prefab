@@ -155,7 +155,7 @@ MonoBehaviour:
   tile:
     x: 0
     y: 0
-    constructible: 
+    constructible: 0
     v: 0
     entities: []
   entity:

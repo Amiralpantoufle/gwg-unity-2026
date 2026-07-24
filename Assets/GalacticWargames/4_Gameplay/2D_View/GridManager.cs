@@ -51,7 +51,6 @@ public class GridManager : MonoBehaviour
     /// <returns></returns>
     public async Task Load(GridLevel level, int id)
     {
-
         if (level == GridLevel.Planet)
         {
             GridPlanetModel planet = await LoadPlanetFromData(id);
@@ -75,6 +74,10 @@ public class GridManager : MonoBehaviour
             gridRenderer.RenderGalaxy(galaxy);
         }
 
+        //Map Nav Controller Update
+        if (currentLevel == GridLevel.Base)
+            ResetIsoNavigation();
+
         currentLevel = level;
         OnSwitchToWorld?.Invoke();
     }
@@ -84,8 +87,7 @@ public class GridManager : MonoBehaviour
         if (baseModel == null) Debug.LogError("Failed to load planet");
 
         gridRenderer.RenderBase(baseModel);
-
-        OnSwitchToBase?.Invoke();
+        SwitchToBase();
     }
 
     private async Task<GridPlanetModel> LoadPlanetFromData(int id)
@@ -175,8 +177,8 @@ public class GridManager : MonoBehaviour
         /*EntityModelOuput entity = await GetEntity(planetId);
         if (entity == null) return;*/
 
-        currentLevel = GridLevel.SolarSystem;
-        await Load(currentLevel, systemId);
+        //currentLevel = GridLevel.SolarSystem;
+        await Load(GridLevel.SolarSystem, systemId);
     }
     private async Task SwitchToGalaxy()
     {
@@ -185,18 +187,33 @@ public class GridManager : MonoBehaviour
         /*EntityModelOuput entity = await GetEntity(systemId);
         if (entity == null) return;*/
 
-        currentLevel = GridLevel.Galaxy;
-        await Load(currentLevel, galaxyId);
+        //currentLevel = GridLevel.Galaxy;
+        await Load(GridLevel.Galaxy, galaxyId);
     }
     private async Task SwitchToPlanet()
     {
         int planetId = GameDataStorage.Instance.CurrentBase.position.planet_id;
 
-        currentLevel = GridLevel.Planet;
-        await Load(currentLevel, planetId);
+        //currentLevel = GridLevel.Planet;
+        await Load(GridLevel.Planet, planetId);
+    }
+    private void SwitchToBase()
+    {
+        currentLevel = GridLevel.Base;
+        OnSwitchToBase?.Invoke();
+
+        ResetIsoNavigation();
     }
 
     //Utility
+    private void ResetIsoNavigation()
+    {
+        MapNavigationController mapNav = GetComponent<MapNavigationController>();
+        BaseNavigationController baseNav = GetComponent<BaseNavigationController>();
+
+        mapNav.enabled = !mapNav.isActiveAndEnabled;
+        baseNav.enabled = !mapNav.isActiveAndEnabled;
+    }
     private void CenterOnBase()
     {
         //Center on Base
