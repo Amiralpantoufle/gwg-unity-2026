@@ -30,6 +30,8 @@ public class IsoNavigation : MonoBehaviour
     private float lastPinchDistance;
 
     private bool isPanning, isZooming;
+    public bool freezed;
+
 
     protected virtual void Awake()
     {
@@ -174,6 +176,8 @@ public class IsoNavigation : MonoBehaviour
     }
     private void OnTouchStarted(InputAction.CallbackContext ctx)
     {
+        if (freezed) return;
+
         isPanning = true;
         lastTouchPosition = inputActions.Player.TouchPosition.ReadValue<Vector2>();
     }
@@ -183,6 +187,8 @@ public class IsoNavigation : MonoBehaviour
     }
     private void OnPinchStarted(InputAction.CallbackContext context)
     {
+        if (freezed) return;
+
         isZooming = true;
     }
     private void OnPinchEnded(InputAction.CallbackContext context)

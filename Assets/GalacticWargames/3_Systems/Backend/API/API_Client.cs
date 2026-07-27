@@ -195,6 +195,33 @@ public class API_Client : MonoBehaviour
 
 
     //REQUEST MANAGEMENT
+
+    public async Task<ApiResponse<T>> LoadApiResponse<T>(string endpoint)
+    {
+        string json = await GetAsync(endpoint);
+
+        if (string.IsNullOrEmpty(json))
+            return null;
+
+        var response = JsonConvert.DeserializeObject<ApiResponse<T>>(json);
+        if (response == null)
+        {
+            Debug.LogError($"Impossible de parser {typeof(T).Name}");
+            return null;
+        }
+        if (response.error)
+        {
+            Debug.LogError($"API Error : {response.error}");
+            return null;
+        }
+        if (response.output == null)
+        {
+            Debug.LogError("Output null");
+            return null;
+        }
+
+        return response;
+    }
     private UnityWebRequest CreateRequest(string method, string endpoint, string json="")
     {
         UnityWebRequest req;

@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Base_TileView : MonoBehaviour
+public class Base_TileView : MonoBehaviour 
 {
     [SerializeField] private GridBaseTile tile;
     public GridBaseTile _Tile { get { return tile; } }
 
     private SpriteRenderer spriteRenderer;
-    public BaseEntity entity;
+    //public BaseEntity entity;
     public void Init(GridBaseTile data, float renderScale)
     {
         tile = data;
@@ -16,7 +16,7 @@ public class Base_TileView : MonoBehaviour
     }
 
 
-    //Accessor
+/*    //Accessor
     public void HighlightTile()
     {
         spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
@@ -31,5 +31,5 @@ public class Base_TileView : MonoBehaviour
         {
             spriteRenderer.enabled = false;
         }
-    }
+    }*/
 }

@@ -108,10 +108,9 @@ public class GridManager : MonoBehaviour
 
     private async Task<GridBaseModel> LoadBaseFromData(int id)
     {
-        var response = await LoadApiResponse<GridBaseModel>($"/base/isometric/{id}");
+        var response = await API_Client.Instance.LoadApiResponse<GridBaseModel>($"/base/isometric/{id}");
         return response.output;
     }
-
     private async Task<ApiResponse<T>> LoadApiResponse<T>(string endpoint)
     {
         string json = await API_Client.Instance.GetAsync(endpoint);

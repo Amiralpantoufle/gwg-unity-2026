@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class GridBaseModel
+public class GridBaseModel 
 {
     public int id; // Id de la map
     public string name; // Nom si dispo

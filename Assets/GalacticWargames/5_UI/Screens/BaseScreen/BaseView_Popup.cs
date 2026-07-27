@@ -1,28 +1,26 @@
+using Newtonsoft.Json;
+using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BaseView_Popup : UIScreen
 {
-    [SerializeField] private GameObject selectionPannel;
+    [SerializeField] private TileSelection_Pannel selectionPannel;
+    public TileSelection_Pannel _SelectionPannel { get { return selectionPannel; }}
+
     [SerializeField] private GameObject upgradePannel;
 
     [SerializeField] private GameObject[] buildingsPannels;
     private buildingList selectedBuilding;
-
+     
     [SerializeField] private GameObject infoPannel;
 
-    //Selection
-    Base_TileView loadedTile;
+    private BaseView_Screen _baseScreen;
+    public BaseView_Screen BaseScreen { set { _baseScreen = value; } }
 
-    public void Load_TileData(Base_TileView tile)
-    {
-        selectionPannel.SetActive(true);
-        loadedTile = tile;
-    }
-    public void Close_SelecPannel()
-    {
-        selectionPannel.SetActive(false);
-        loadedTile = null;
-    }
+
     private void Open_BuildingPannel(buildingList selection)
     {
         foreach (GameObject pannel in buildingsPannels)
@@ -54,6 +52,7 @@ public class BaseView_Popup : UIScreen
 /// </summary>
 public enum buildingList
 {
+    EmptySlot,
     ChantierSpatial,
     EspaceStockage,
     MineCarbon,

@@ -15,10 +15,10 @@ public class Base_BuildingAsset : MonoBehaviour
     [SerializeField] private CanvasGroup[] greyedOut;
     public Image _SelectionBorder { get { return selectionBorder; } }
 
-    public void Load_buildingInfo()
+    public void Load_buildingInfo(building_Construct construct)
     {
-        //assetName.text = 
-        //buildTime.text = 
+        assetName.text = construct.nom_bat;
+        buildTime.text = construct.vitesse_construction_bat.ToString();
         
     }
 

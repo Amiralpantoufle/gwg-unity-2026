@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UIScreen : MonoBehaviour
 {
-    [SerializeField] private GameObject popupMaster;
+    public GameObject popupMaster;
 
     /// <summary>
     /// Fonction d'initialisation du Gameobject UI

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -22,91 +23,35 @@ public class BaseNavigationController : IsoNavigation
         gridManager = GetComponent<GridManager>();
     }
 
-    private void SetBoundariesFromMap()
-    {
-        /* mapMinBounds = new Vector2(0, 0);
-         mapMaxBounds = new Vector2(mapWidth, mapHeight);
-
-         float worldWidth = gridWidth * tileWidth;
- float worldHeight = gridHeight * tileHeight;
-
- mapMaxBounds = new Vector2(worldWidth, worldHeight);
-
-         */
-    }
-    Vector3 ClampPosition(Vector3 targetPos)
-    {
-        float camHeight = cam.orthographicSize;
-        float camWidth = cam.aspect * camHeight;
-
-        float minX = mapMinBounds.x + camWidth;
-        float maxX = mapMaxBounds.x - camWidth;
-
-        float minY = mapMinBounds.y + camHeight;
-        float maxY = mapMaxBounds.y - camHeight;
-
-        targetPos.x = Mathf.Clamp(targetPos.x, minX, maxX);
-        targetPos.y = Mathf.Clamp(targetPos.y, minY, maxY);
-
-        return targetPos;
-    }
-
     //Selection
-    public void SelectTile(Base_TileView tile)
+    private void SelectTile(Base_TileView tile)
     {
-        mainPopup.Load_TileData(tile);
-        tile.HighlightTile();
+        freezed = true;
+
+        mainPopup._SelectionPannel.Load_TileData(tile);
+        mainPopup._SelectionPannel.OnClosePannel += CancelSelect;
 
         currentlySelectedTile = tile;
         tileSelected = true;
     }
-    public void CancelSelect()
+    private void CancelSelect()
     {
-        mainPopup.Close_SelecPannel();
-        currentlySelectedTile.HideTile();
+        freezed = false;
 
         previouslySelectedTile = currentlySelectedTile;
         currentlySelectedTile = null;
         tileSelected = false;
+
+        mainPopup._SelectionPannel.OnClosePannel -= CancelSelect;
     }
-    private void TryNavigateToTile(string target)
-    {
-        switch (target)
-        {
-            case "Default":
-                break;
 
-            case "Base":
-                gridManager.LoadBase(GameDataStorage.Instance.CurrentBase.base_id);
-                break;
-        }
-
-    }
-/*    private string IdentifyTarget()
-    {
-        string target = "Default";
-
-        int selectedID = previouslySelectedTile.entity.entity_id;
-
-        Debug.Log("identified target :" + target + "with id :" + previouslySelectedTile._Tile.entity_id + ". Compared with player base id :" + GameDataStorage.Instance.CurrentBase.base_id);
-
-        //Si ID correspond à une base joueur
-        if (selectedID == GameDataStorage.Instance.CurrentBase.base_id)
-        {
-            target = "Base";
-        }
-        else
-        {
-            target = "Base";
-        }
-
-        return target;
-    }*/
 
     //Inputs
     protected override void OnQuickTouch(InputAction.CallbackContext ctx)
     {
         base.OnQuickTouch(ctx);
+
+        if (freezed) return;
 
         Vector2 screenPos = base.inputActions.Player.TouchPosition.ReadValue<Vector2>();
         Vector2 worldPos = cam.ScreenToWorldPoint(screenPos);
@@ -135,6 +80,9 @@ public class BaseNavigationController : IsoNavigation
     protected override void OnDoubleTouch(InputAction.CallbackContext ctx)
     {
         base.OnDoubleTouch(ctx);
+
+        if (freezed) return;
+
         // Entrer dans une base
     }
 
