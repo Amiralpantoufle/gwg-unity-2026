@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.UI;
 
 public class TileSelection_Pannel : MonoBehaviour
 { 
@@ -12,6 +11,8 @@ public class TileSelection_Pannel : MonoBehaviour
     private List<Base_BuildingAsset> buildList = new List<Base_BuildingAsset>();
     [SerializeField] private Transform buildingAsset_Root;
     [SerializeField] private GameObject buildingAsset_Prefab;
+
+    [SerializeField] private Base_BuildingAssetInfo contextPannel;
 
     //Selection
     [SerializeField] private SpriteRenderer selector;
@@ -37,6 +38,7 @@ public class TileSelection_Pannel : MonoBehaviour
         loadedTile = null;
         selector.enabled = false;
 
+        contextPannel.gameObject.SetActive(false);
 
         OnClosePannel?.Invoke();
     }
@@ -81,8 +83,11 @@ public class TileSelection_Pannel : MonoBehaviour
             Base_BuildingAsset asset = Instantiate(buildingAsset_Prefab, buildingAsset_Root).GetComponent<Base_BuildingAsset>();
             buildList.Add(asset);
 
+            //Add Callback
+            //Button listener = asset.GetComponent<Button>();
+
             //Init Values
-            asset.Load_buildingInfo(building);
+            asset.Load_buildingInfo(building, contextPannel);
         }
     }
 }

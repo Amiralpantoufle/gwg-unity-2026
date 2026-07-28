@@ -13,6 +13,7 @@ public class building_Construct
     public int id_bat;
     public string nom_bat;
     public string desc_bat;
+    public int idiet_bat;//Visual id
 
     public int vitesse_construction_bat;
     public int stockage_bat;

@@ -1,10 +1,14 @@
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
 public class VisualDefinitionGenerator : EditorWindow
 {
     private DefaultAsset sourceFolder;
+    private Texture2D atlasTexture;
+    private int startImageId = 0;
 
     private string manualAssetName = "NewVisualDefinition";
 
@@ -22,19 +26,28 @@ public class VisualDefinitionGenerator : EditorWindow
     {
         GUILayout.Space(10);
 
-        EditorGUILayout.LabelField(
-            "Batch Generation",
-            EditorStyles.boldLabel);
+        EditorGUILayout.LabelField("Batch Generation",EditorStyles.boldLabel);
 
-        sourceFolder = (DefaultAsset)EditorGUILayout.ObjectField(
-            "Source Folder",
-            sourceFolder,
-            typeof(DefaultAsset),
-            false);
+        sourceFolder = (DefaultAsset)EditorGUILayout.ObjectField("Source Folder",sourceFolder,typeof(DefaultAsset),false);
+
+        atlasTexture = (Texture2D)EditorGUILayout.ObjectField("Atlas Texture",atlasTexture,typeof(Texture2D),false);
+
+        startImageId = EditorGUILayout.IntField("Start Image ID",startImageId);
 
         if (GUILayout.Button("Generate VisualDefinitions"))
         {
-            GenerateFolder();
+            if (sourceFolder != null)
+            {
+                GenerateFolder();
+            }
+            else if (atlasTexture != null)
+            {
+                GenerateAtlas();
+            }
+            else
+            {
+                Debug.LogError("Select either a Source Folder or an Atlas Texture.");
+            }
         }
 
         GUILayout.Space(20);
@@ -77,8 +90,7 @@ public class VisualDefinitionGenerator : EditorWindow
         string folderName =
             Path.GetFileName(folderPath);
 
-        if (!System.Enum.TryParse(folderName,
-            out VisualCategory category))
+        if (!System.Enum.TryParse(folderName, out VisualCategory category))
         {
             Debug.LogError(
                 $"Folder name '{folderName}' does not match any VisualCategory.");
@@ -93,61 +105,113 @@ public class VisualDefinitionGenerator : EditorWindow
             CreateFolderRecursive(outputFolder);
         }
 
-        string[] guids =
-            AssetDatabase.FindAssets(
-                "t:Sprite",
-                new[] { folderPath });
+        string[] guids = AssetDatabase.FindAssets(
+            "t:Sprite",
+            new[] { folderPath });
 
+
+        int currentId = startImageId;
         int createdCount = 0;
+
 
         foreach (string guid in guids)
         {
             string spritePath =
                 AssetDatabase.GUIDToAssetPath(guid);
 
-            Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
+            Sprite sprite =
+                AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
 
-            if (sprite == null)
-                continue;
 
-            string assetPath =
-                $"{outputFolder}/{sprite.name}.asset";
-
-            if (File.Exists(assetPath))
-                continue;
-
-            VisualDefinition vd = ScriptableObject.CreateInstance<VisualDefinition>();
-
-            //Parse Name -> ID Du sprite doit être écrit en préfixe séparé de '_'
-            string[] parts = sprite.name.Split('_');
-            if (!int.TryParse(parts[0], out int imageId))
+            if (CreateVisualDefinition(
+                sprite,
+                category,
+                outputFolder,
+                currentId))
             {
-                Debug.LogWarning(
-                    $"Cannot extract ID from sprite '{sprite.name}'");
-                continue;
+                createdCount++;
+                currentId++;
             }
-            vd.image_id = imageId;
-             
-            vd.category = category;
-
-            vd.imageSprite = sprite;
-
-            vd.renderScale = 1f;
-
-            vd.offset = Vector2.zero;
-
-            AssetDatabase.CreateAsset(vd, assetPath);
-
-            createdCount++;
         }
+
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 
-        Debug.Log(
-            $"Created {createdCount} VisualDefinitions.");
+        Debug.Log($"Created {createdCount} VisualDefinitions.");
     }
+    private void GenerateAtlas()
+    {
+        if (atlasTexture == null)
+        {
+            Debug.LogError("No atlas selected.");
+            return;
+        }
 
+        string atlasPath =
+            AssetDatabase.GetAssetPath(atlasTexture);
+
+
+        string folderPath =
+            Path.GetDirectoryName(atlasPath)
+            .Replace("\\", "/");
+
+
+        string folderName =
+            Path.GetFileName(folderPath);
+
+
+        if (!System.Enum.TryParse(folderName, out VisualCategory category))
+        {
+            Debug.LogError(
+                $"Folder name '{folderName}' does not match any VisualCategory.");
+            return;
+        }
+
+
+        string outputFolder =
+            $"Assets/Data/VisualDefinitions/{folderName}";
+
+
+        if (!AssetDatabase.IsValidFolder(outputFolder))
+        {
+            CreateFolderRecursive(outputFolder);
+        }
+
+        Object[] assets =
+            AssetDatabase.LoadAllAssetsAtPath(atlasPath);
+
+
+        List<Sprite> sprites =
+            assets
+            .OfType<Sprite>()
+            .ToList();
+
+        int currentId = startImageId;
+        int createdCount = 0;
+
+
+        foreach (Sprite sprite in sprites)
+        {
+            if (CreateVisualDefinition(
+                sprite,
+                category,
+                outputFolder,
+                currentId))
+            {
+                createdCount++;
+                currentId++;
+            }
+        }
+
+
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+
+
+        Debug.Log(
+            $"Created {createdCount} VisualDefinitions from atlas.");
+    }
     private void CreateManualAsset()
     {
         string savePath =
@@ -180,6 +244,42 @@ public class VisualDefinitionGenerator : EditorWindow
         Selection.activeObject = vd;
     }
 
+    private bool CreateVisualDefinition(
+      Sprite sprite,
+      VisualCategory category,
+      string outputFolder,
+      int imageId)
+    {
+        if (sprite == null)
+            return false;
+
+
+        string assetPath =
+            $"{outputFolder}/{sprite.name}.asset";
+
+
+        if (File.Exists(assetPath))
+            return false;
+
+
+        VisualDefinition vd =
+            ScriptableObject.CreateInstance<VisualDefinition>();
+
+
+        vd.image_id = imageId;
+        vd.category = category;
+        vd.imageSprite = sprite;
+        vd.renderScale = 1f;
+        vd.offset = Vector2.zero;
+
+
+        AssetDatabase.CreateAsset(
+            vd,
+            assetPath);
+
+
+        return true;
+    }
     private static void CreateFolderRecursive(string folderPath)
     {
         string[] parts = folderPath.Split('/');

@@ -1,0 +1,556 @@
+fileFormatVersion: 2
+guid: f7ce311e0d61bf245aae8fd43f2c8410
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 408530714829080757
+    second: GWG_Atlas_Spaceships_0
+  - first:
+      213: 6490816163426146115
+    second: GWG_Atlas_Spaceships_1
+  - first:
+      213: -5704223342317398326
+    second: GWG_Atlas_Spaceships_2
+  - first:
+      213: -6909623131612583391
+    second: GWG_Atlas_Spaceships_3
+  - first:
+      213: -6022525757258101912
+    second: GWG_Atlas_Spaceships_4
+  - first:
+      213: -7781299256845608324
+    second: GWG_Atlas_Spaceships_5
+  - first:
+      213: 836804420072447191
+    second: GWG_Atlas_Spaceships_6
+  - first:
+      213: 1250493140074936448
+    second: GWG_Atlas_Spaceships_7
+  - first:
+      213: -1364982339248618537
+    second: GWG_Atlas_Spaceships_8
+  - first:
+      213: 5333031356245562897
+    second: GWG_Atlas_Spaceships_9
+  - first:
+      213: 4246469577802848289
+    second: GWG_Atlas_Spaceships_10
+  - first:
+      213: -5267193693624725641
+    second: GWG_Atlas_Spaceships_11
+  - first:
+      213: 2657869806605285928
+    second: GWG_Atlas_Spaceships_12
+  - first:
+      213: -5087176830458477109
+    second: GWG_Atlas_Spaceships_13
+  - first:
+      213: -2035271283621803308
+    second: GWG_Atlas_Spaceships_14
+  - first:
+      213: 7721047536150097815
+    second: GWG_Atlas_Spaceships_15
+  - first:
+      213: -573791840171411501
+    second: GWG_Atlas_Spaceships_16
+  - first:
+      213: 599682853293121727
+    second: GWG_Atlas_Spaceships_17
+  - first:
+      213: -6774649330034503766
+    second: GWG_Atlas_Spaceships_18
+  - first:
+      213: -836579764766015965
+    second: GWG_Atlas_Spaceships_19
+  - first:
+      213: -1692276171215195342
+    second: GWG_Atlas_Spaceships_20
+  - first:
+      213: 2548230631142416801
+    second: GWG_Atlas_Spaceships_21
+  - first:
+      213: 7131726390160169652
+    second: GWG_Atlas_Spaceships_22
+  - first:
+      213: -1230390323246340391
+    second: GWG_Atlas_Spaceships_23
+  - first:
+      213: 8179325206545447999
+    second: GWG_Atlas_Spaceships_24
+  - first:
+      213: -8049522497876918368
+    second: GWG_Atlas_Spaceships_25
+  - first:
+      213: -4474253756298476603
+    second: GWG_Atlas_Spaceships_26
+  - first:
+      213: 7162691074886003775
+    second: GWG_Atlas_Spaceships_27
+  - first:
+      213: 762449823843623381
+    second: GWG_Atlas_Spaceships_28
+  - first:
+      213: 4004277252465652991
+    second: GWG_Atlas_Spaceships_29
+  - first:
+      213: -3117144418274361638
+    second: GWG_Atlas_Spaceships_30
+  - first:
+      213: -9146494957348995050
+    second: GWG_Atlas_Spaceships_31
+  - first:
+      213: 6024841448761464287
+    second: GWG_Atlas_Spaceships_32
+  - first:
+      213: 6714070872760889860
+    second: GWG_Atlas_Spaceships_33
+  - first:
+      213: -7530646337262754693
+    second: GWG_Atlas_Spaceships_34
+  - first:
+      213: 579629954355397005
+    second: GWG_Atlas_Spaceships_35
+  - first:
+      213: -9059807564701985297
+    second: GWG_Atlas_Spaceships_36
+  - first:
+      213: -3564756391397092828
+    second: GWG_Atlas_Spaceships_37
+  - first:
+      213: 111587751431083627
+    second: GWG_Atlas_Spaceships_38
+  - first:
+      213: 5797516001887213615
+    second: GWG_Atlas_Spaceships_39
+  - first:
+      213: -5310866343061470103
+    second: GWG_Atlas_Spaceships_40
+  - first:
+      213: -2250711960774206544
+    second: GWG_Atlas_Spaceships_41
+  - first:
+      213: 6341091114235523104
+    second: GWG_Atlas_Spaceships_42
+  - first:
+      213: 3777700631464752695
+    second: GWG_Atlas_Spaceships_43
+  - first:
+      213: -4311135279032156942
+    second: GWG_Atlas_Spaceships_44
+  - first:
+      213: -7200082574268280169
+    second: GWG_Atlas_Spaceships_45
+  - first:
+      213: 4120541022248211244
+    second: GWG_Atlas_Spaceships_46
+  - first:
+      213: 6328362895660218629
+    second: GWG_Atlas_Spaceships_47
+  - first:
+      213: 3318646336573785548
+    second: GWG_Atlas_Spaceships_48
+  - first:
+      213: -2870398750353406669
+    second: GWG_Atlas_Spaceships_49
+  - first:
+      213: -5738520942658054116
+    second: GWG_Atlas_Spaceships_50
+  - first:
+      213: -6969077122341564445
+    second: GWG_Atlas_Spaceships_51
+  - first:
+      213: 6870834940584204832
+    second: GWG_Atlas_Spaceships_52
+  - first:
+      213: -3868510905649497463
+    second: GWG_Atlas_Spaceships_53
+  - first:
+      213: 9197792929783037203
+    second: GWG_Atlas_Spaceships_54
+  - first:
+      213: -4874982770206133121
+    second: GWG_Atlas_Spaceships_55
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GWG_Atlas_Spaceships_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8493945846ba500800000000000000
+      internalID: 408530714829080757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_Spaceships_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 347116b29e2041a50800000000000000
+      internalID: 6490816163426146115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_Spaceships_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac61ea9a71786d0b0800000000000000
+      internalID: -5704223342317398326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_Spaceships_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ae86cde561c10a0800000000000000
+      internalID: -6909623131612583391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_Spaceships_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b8df38bb0bb6ca0800000000000000
+      internalID: -6022525757258101912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_Spaceships_5
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7ad4b09d85430490800000000000000
+      internalID: -7781299256845608324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_Spaceships_6
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dc15ecbf2dec9b00800000000000000
+      internalID: 836804420072447191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_Spaceships_7
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 088ba30b2e4aa5110800000000000000
+      internalID: 1250493140074936448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_Spaceships_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d387606bcb9e0de0800000000000000
+      internalID: -1364982339248618537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_Spaceships_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 116590d43cbb20a40800000000000000
+      internalID: 5333031356245562897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: dfabfab44808d7540abb77fbe43a2144
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      GWG_Atlas_Spaceships_0: 408530714829080757
+      GWG_Atlas_Spaceships_1: 6490816163426146115
+      GWG_Atlas_Spaceships_2: -5704223342317398326
+      GWG_Atlas_Spaceships_3: -6909623131612583391
+      GWG_Atlas_Spaceships_4: -6022525757258101912
+      GWG_Atlas_Spaceships_5: -7781299256845608324
+      GWG_Atlas_Spaceships_6: 836804420072447191
+      GWG_Atlas_Spaceships_7: 1250493140074936448
+      GWG_Atlas_Spaceships_8: -1364982339248618537
+      GWG_Atlas_Spaceships_9: 5333031356245562897
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

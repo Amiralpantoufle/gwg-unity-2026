@@ -8182,6 +8182,40 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1ad09a7bd9f3b434fabe9ab05e24d32d, type: 2}
   - {fileID: 11400000, guid: 12559357521d4684092b47a5a41780de, type: 2}
   - {fileID: 11400000, guid: 6a9e38549bfe58648b5c7302241d7339, type: 2}
+  - {fileID: 11400000, guid: 3edca2dd50ec8324fa08eb1e3116e9fb, type: 2}
+  - {fileID: 11400000, guid: 86d152ccd38825a4eb569a8844bb0f3d, type: 2}
+  - {fileID: 11400000, guid: 5bc3f009422f399478cf4e1766be3d63, type: 2}
+  - {fileID: 11400000, guid: 981303ddeb58b4d4aa2584dc94a5a5c6, type: 2}
+  - {fileID: 11400000, guid: 1e91edfcf8176fb4da5f76be9f8e7f95, type: 2}
+  - {fileID: 11400000, guid: 89b2e1bbd0e2ca841a50f9bf3e006b58, type: 2}
+  - {fileID: 11400000, guid: f32191dd67b3ce342b25610bd393cf80, type: 2}
+  - {fileID: 11400000, guid: 81a6f8b695fe36449940fc931278c884, type: 2}
+  - {fileID: 11400000, guid: e8d4c0eed6fef2147bc10dcf35d99986, type: 2}
+  - {fileID: 11400000, guid: 2cb07188af9eb424a843fbd429b9e62f, type: 2}
+  - {fileID: 11400000, guid: eb84dcf2476345b4984dc6e77c654267, type: 2}
+  - {fileID: 11400000, guid: a4817016a29dc2f43b2a33a617d58158, type: 2}
+  - {fileID: 11400000, guid: db06cc39ea81f8d439d4c2d587d6891c, type: 2}
+  - {fileID: 11400000, guid: 7a87ff7f8da036b41b56d67eb2ee6eed, type: 2}
+  - {fileID: 11400000, guid: 0c127e7879d30af4daed41e85df4ec68, type: 2}
+  - {fileID: 11400000, guid: 3974c09a2db58434f904d986fed02f37, type: 2}
+  - {fileID: 11400000, guid: 61b6188feacf0ca44af20cf3587ae7bb, type: 2}
+  - {fileID: 11400000, guid: d0e976da8ecfcfb409a70efcaa34a190, type: 2}
+  - {fileID: 11400000, guid: c684ef7a85d3e2047ad177862bc14269, type: 2}
+  - {fileID: 11400000, guid: bdbcf567cfcb418429b074d64f3ab171, type: 2}
+  - {fileID: 11400000, guid: 5c9784a4586b4ad4ba2aa7ef3f02e316, type: 2}
+  - {fileID: 11400000, guid: cecad004723f31944b4008942133b441, type: 2}
+  - {fileID: 11400000, guid: 9852e0df61ef50044b09dda53d5e9b0f, type: 2}
+  - {fileID: 11400000, guid: c0753da423cfe4b4e81df0e95b1a9f70, type: 2}
+  - {fileID: 11400000, guid: ed501f3a0592abb41b1cd6c511338231, type: 2}
+  - {fileID: 11400000, guid: 02156da027c894c40b1224b1f0f331ce, type: 2}
+  - {fileID: 11400000, guid: 92a2f7eeefe70ff40bc63e4fe0cbcdcd, type: 2}
+  - {fileID: 11400000, guid: 9c6535c0869367f489888605df9caf7b, type: 2}
+  - {fileID: 11400000, guid: 3981ea33d18d12b448b7d856943367f6, type: 2}
+  - {fileID: 11400000, guid: aafa84f6d244ff84482fe4d8de9fdd8f, type: 2}
+  - {fileID: 11400000, guid: aa0eec6cb20fc2f4980099b65fde609b, type: 2}
+  - {fileID: 11400000, guid: eba58ba9b85cef348b5413ac4dcdb9e7, type: 2}
+  - {fileID: 11400000, guid: 9eeb340db2f2a6e48a3664c3c537b184, type: 2}
+  - {fileID: 11400000, guid: b94eb3a27a2114a4687b2e2dd905386b, type: 2}
 --- !u!1 &543522073
 GameObject:
   m_ObjectHideFlags: 0
@@ -14158,6 +14192,7 @@ MonoBehaviour:
   gui_slotName: {fileID: 1806816020}
   buildingAsset_Root: {fileID: 1932452364}
   buildingAsset_Prefab: {fileID: 6355186890325752608, guid: 1b0c24753a11b784abf11ec7e3896807, type: 3}
+  contextPannel: {fileID: 1849223949}
   selector: {fileID: 965298649}
   selectorVariants:
   - {fileID: 3834751309035399570, guid: 80bf9f5173f096f43bd4d9089aae3134, type: 3}
@@ -31433,7 +31468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1aa1640c5a30ad4d880992a7de517e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Base_BuildingAssetInfo
-  description: {fileID: 2054903116}
+  GUI_Name: {fileID: 2054903116}
+  GUI_description: {fileID: 1978839522}
   costs:
   - {fileID: 297644360}
   - {fileID: 2085434757}
