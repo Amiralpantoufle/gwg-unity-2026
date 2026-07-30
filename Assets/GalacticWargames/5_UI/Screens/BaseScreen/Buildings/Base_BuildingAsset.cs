@@ -1,3 +1,5 @@
+using System;
+using System.Diagnostics.Contracts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,8 +14,9 @@ public class Base_BuildingAsset : MonoBehaviour
     [SerializeField] private Image buildingIcon;
 
     //Context Info
-    private string desc;
+    private building_Construct loadedConstruct;
     private int[] cost = new int[3];
+    Vector2Int tilePos;
 
     //Extra components
     [SerializeField] private Image lockedIcon;
@@ -28,7 +31,6 @@ public class Base_BuildingAsset : MonoBehaviour
     {
         //Load Info
         assetName.text = construct.nom_bat.Substring(0, construct.nom_bat.Length - 2);
-        desc = construct.desc_bat;
 
         //Define Day Build Time
         buildTime.text = GetBuildTime(construct.vitesse_construction_bat);
@@ -38,22 +40,27 @@ public class Base_BuildingAsset : MonoBehaviour
         buildingIcon.sprite = v.imageSprite;
 
         //Display Ressources
-        for(int i = 0; i< construct.couts.Length; i++)
+        for (int i = 0; i < construct.couts.Length; i++)
         {
             cost[i] = construct.couts[i].nombre_bre;
             NeedsRessources(construct.couts[i].nombre_bre, i);
         }
 
         //Callback
+        loadedConstruct = construct;
         contextPannel = context;
         GetComponent<Button>().onClick.AddListener(Display_ContextPannel);
     }
-    public void Display_ContextPannel()
-    {
-        contextPannel.Load_Info(assetName.text, desc, cost);
-        contextPannel.gameObject.SetActive(true);
-    }
 
+    private bool HasRessources()
+    {
+        BaseView_Screen baseScreen = FindAnyObjectByType<BaseView_Screen>();
+
+        if (baseScreen._AvailableRessources.CanBuild(cost))
+            return true;
+        else
+            return false;
+    }
     private void NeedsRessources(int quantity, int ressourceIndex)
     {
         if (quantity > 0)
@@ -63,22 +70,39 @@ public class Base_BuildingAsset : MonoBehaviour
     }
     private string GetBuildTime(int seconds)
     {
-        string bTime = "none";
+        TimeSpan time = TimeSpan.FromSeconds(seconds);
 
-        int dTime = (int)(seconds / 86400f);
-
-        if(dTime > 1)
+        // Plus d'un jour
+        if (time.TotalDays >= 1)
         {
-            bTime = dTime + " D";
+            return $"{time.Days}j{time.Hours:00}h";
         }
+
+        // Plus d'une heure
+        if (time.TotalHours >= 1)
+        {
+            return $"{time.Hours}h{time.Minutes:00}";
+        }
+
+        // Moins d'une heure
+        return $"{time.Minutes:00}m";
+    }
+
+    //Display
+    public void Display_ContextPannel()
+    {
+        GridBaseTile tile = FindAnyObjectByType<TileSelection_Pannel>()._LoadedTile._Tile;
+
+        if (tile != null)
+            tilePos = new Vector2Int(tile.x, tile.y);
         else
-        {
-            int hTime = (int)(seconds / 1440);
+            Debug.LogError("No tile Position referenced");
 
-            bTime = hTime + " H";
-        }
+        contextPannel.Load_Info(loadedConstruct, tilePos);
+        contextPannel.gameObject.SetActive(true);
 
-        return bTime;
+        //Check if can build
+        contextPannel.AvailableConstruct(HasRessources());
     }
     private void HideConstruct()
     {

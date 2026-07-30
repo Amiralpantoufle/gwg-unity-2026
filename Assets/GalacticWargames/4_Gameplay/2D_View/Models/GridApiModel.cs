@@ -8,9 +8,6 @@ public abstract class GridApiModel
     public int id; // Id de la map
     public string name; // Nom si dispo
 
-    public int width;
-    public int height;
-
     public List<GridTile> tiles;
 }
 
@@ -18,16 +15,24 @@ public abstract class GridApiModel
 public class GridPlanetModel : GridApiModel
 {
     public string server_cursor;
+    public int tile_count;
 }
 
 [System.Serializable]
 public class GridSystemModel : GridApiModel
 {
+    public int width;
+    public int height;
+
+    public int center_x;
+    public int center_y;
 }
 
 [System.Serializable]
 public class GridGalaxyModel : GridApiModel
 {
+    public int width;
+    public int height;
 }
 
 

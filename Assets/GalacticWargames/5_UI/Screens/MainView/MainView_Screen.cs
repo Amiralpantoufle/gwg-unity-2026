@@ -42,10 +42,10 @@ public class MainView_Screen : UIScreen
         GameDataStorage storage = GameDataStorage.Instance;
 
         //Vérifie si bootstrap est bien initialisé
-        if(storage.CurrentBase == null)
+        if(storage._CurrentBase == null)
         {
             await BootStrap_Loader.Instance.Init_BootStrap();
-            if (storage.CurrentBase == null)
+            if (storage._CurrentBase == null)
                 Debug.LogWarning("Couldn't load player base");
         }
 

@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
             var bootProcess = new Progress<float>(p => { loading.loadingService.SetProgress(Mathf.Lerp(0f, 0.40f, p), "Boot Process"); });
             await LoadingScreen.Instance.BootProcess();
 
-            //Token Error
+            //Token Redirection
             if (LoadingScreen.Instance.Progress < 1)
             {
                 var mapProgress = new Progress<float>(p => { loading.loadingService.SetProgress(Mathf.Lerp(0.40f, 0.95f, p), "Génération de la carte"); });
@@ -50,9 +50,9 @@ public class GameManager : MonoBehaviour
             else
                 UIStateManager.Instance.SetState(UIState.Loggedout);
 
-            loading.CloseScreen();
+            loading.gameObject.SetActive(false);
         }
-
+        
     }
     public async void Logout()
     {

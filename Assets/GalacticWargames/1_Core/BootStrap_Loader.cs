@@ -1,8 +1,9 @@
 using Newtonsoft.Json;
+using System.Buffers.Text;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
-using System.Linq;
 using static UnityEngine.Analytics.IAnalytic;
 using static UnityEngine.Audio.ProcessorInstance;
 
@@ -14,7 +15,7 @@ public class BootStrap_Loader : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-    }
+    } 
      
     /// <summary>
     /// Initialise le chargement auto a l'affichage de l'écran MainView
@@ -23,7 +24,7 @@ public class BootStrap_Loader : MonoBehaviour
     {
         await LoadBaseIndex();
 
-        if (GameDataStorage.Instance.CurrentBase != null)
+        if (GameDataStorage.Instance._CurrentBase != null)
         {
             isLoaded = true;
             Debug.Log("Bootstrap Process Ended correctly");
@@ -36,7 +37,9 @@ public class BootStrap_Loader : MonoBehaviour
     }
     private async Task LoadBaseIndex()
     {
-        string json = await API_Client.Instance.GetAsync("/base/index");
+        var response = await API_Client.Instance.LoadApiResponse<BaseIndexOutput>("/base/index");
+        GameDataStorage.Instance.LoadCurrentBaseData(FindBaseToDisplay(response.output.bases));
+/*        string json = await API_Client.Instance.GetAsync("/base/index");
         if (string.IsNullOrEmpty(json))
             return;
 
@@ -56,9 +59,7 @@ public class BootStrap_Loader : MonoBehaviour
         {
             Debug.Log("BaseIndex output null");
             return;
-        }
-
-        GameDataStorage.Instance.LoadCurrentBaseData(FindBaseToDisplay(response.output.bases));
+        }*/
     }
     private BaseOutput FindBaseToDisplay(List<BaseOutput> dataList)
     {

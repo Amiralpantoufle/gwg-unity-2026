@@ -18,6 +18,7 @@ public class TileSelection_Pannel : MonoBehaviour
     [SerializeField] private SpriteRenderer selector;
     [SerializeField] private Sprite[] selectorVariants;
     private Base_TileView loadedTile;
+    public Base_TileView _LoadedTile { get { return loadedTile; } }
 
     public event Action OnClosePannel;
 
@@ -61,14 +62,6 @@ public class TileSelection_Pannel : MonoBehaviour
         else
             HighlightTile(1);
 
-
-/*        if (loadedTile != null && loadedTile._Tile.entities != null)
-        {
-        }
-        else
-        {
-        }*/
-
         return typeOf;
     }
 
@@ -82,9 +75,6 @@ public class TileSelection_Pannel : MonoBehaviour
         {
             Base_BuildingAsset asset = Instantiate(buildingAsset_Prefab, buildingAsset_Root).GetComponent<Base_BuildingAsset>();
             buildList.Add(asset);
-
-            //Add Callback
-            //Button listener = asset.GetComponent<Button>();
 
             //Init Values
             asset.Load_buildingInfo(building, contextPannel);

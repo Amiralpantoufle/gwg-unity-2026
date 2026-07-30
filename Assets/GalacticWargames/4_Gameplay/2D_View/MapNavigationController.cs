@@ -53,7 +53,7 @@ public class MapNavigationController : IsoNavigation
                 break;
 
             case "Base":
-                gridManager.LoadBase(GameDataStorage.Instance.CurrentBase.base_id);
+                gridManager.LoadBase(GameDataStorage.Instance._CurrentBase.base_id);
                 break;
         }
 
@@ -64,10 +64,10 @@ public class MapNavigationController : IsoNavigation
 
         int selectedID = previouslySelectedTile.entity.entity_id;
 
-        Debug.Log("identified target :" + target + "with id :"+ previouslySelectedTile._Tile.entity_id + ". Compared with player base id :"+ GameDataStorage.Instance.CurrentBase.base_id);
+        Debug.Log("identified target :" + target + "with id :"+ previouslySelectedTile._Tile.entity_id + ". Compared with player base id :"+ GameDataStorage.Instance._CurrentBase.base_id);
 
         //Si ID correspond à une base joueur
-        if (selectedID == GameDataStorage.Instance.CurrentBase.base_id)
+        if (selectedID == GameDataStorage.Instance._CurrentBase.base_id)
         {
             target = "Base";
         }

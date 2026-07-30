@@ -43,22 +43,13 @@ public class LoadingScreen : MonoBehaviour
         if(BootStrap_Loader.Instance.isLoaded)
         {
             loadingService.SetProgress(0.4f, "Boot Process"); 
-            //UIStateManager.Instance.SetState(UIState.Loggedin);
         }
 
         //Données non chargées -> Force logout -> Redirection AuthScreen
         else
         {
             loadingService.SetProgress(1f, "Failed to connect"); 
-            //UIStateManager.Instance.SetState(UIState.Loggedout);
         }
-
-        //CloseScreen();
-    }
-
-    public void CloseScreen()
-    {
-        gameObject.SetActive(false);
     }
 }
 

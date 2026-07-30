@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
@@ -25,6 +26,9 @@ public class GridRenderer : MonoBehaviour
     [SerializeField] private float tileHeight = 50;
     [SerializeField] private Vector2 mapOffset;
 
+    //Grid settings
+    private Vector2Int gridCenter;
+
     //Components
     private Dictionary<Vector2Int,TileView> tileViews = new Dictionary<Vector2Int, TileView>();
     private Dictionary<Vector2Int,Base_TileView> baseTileViews = new Dictionary<Vector2Int, Base_TileView>();
@@ -33,36 +37,28 @@ public class GridRenderer : MonoBehaviour
     {
         Clear();
 
-        List<GridTile> ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y).ToList<GridTile>();
-        int total = map.tiles.Count;
+        int gridSize = map.tile_count;
+        int mapWidth = (int)(Mathf.Sqrt(gridSize));
+        gridCenter = new Vector2Int(mapWidth / 2, mapWidth / 2);
 
-        for (int i = 0; i < total; i++)
+        for (int i = 0; i < gridSize; i++)
         {
-            CreateTile(ordered[i]); 
+            CreateTile(map.tiles[i]);
 
             if (i % 100 == 0)
             {
-                LoadingScreen.Instance.loadingService.SetProgress(0.40f + (float)i / total * 0.55f,"Génération de la carte");
+                LoadingScreen.Instance.loadingService.SetProgress(0.40f + (float)i / gridSize * 0.55f,"Génération de la carte");
 
                 await Task.Yield();
             }
         }
 
     }
-    public void RenderPlanet(GridPlanetModel map)
-    {
-        Clear();
-
-        var ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y);
-
-        foreach (GridTile tile in ordered)
-        {
-            CreateTile(tile);
-        }
-    }
     public void RenderSystem(GridSystemModel map)
     {
         Clear();
+
+        gridCenter = new Vector2Int(map.center_x, map.center_y);
 
         var ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y);
 
@@ -76,6 +72,8 @@ public class GridRenderer : MonoBehaviour
     {
         Clear();
 
+        gridCenter = new Vector2Int(map.height/2, map.width/2);
+
         var ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y);
 
         foreach (var tile in ordered)
@@ -83,9 +81,11 @@ public class GridRenderer : MonoBehaviour
             CreateTile(tile);
         }
     }
-    public void RenderBase(GridBaseModel map)
+    public async Task GenerateBase(GridBaseModel map)
     {
         Clear();
+
+        gridCenter = new Vector2Int(map.width / 2, map.height / 2);
 
         var ordered = map.tiles.OrderBy(t => t.x + t.y).ThenBy(t => t.y);
 
@@ -101,14 +101,13 @@ public class GridRenderer : MonoBehaviour
 
         obj.transform.SetParent(gridRoot);
         obj.transform.position = IsoToWorld(tile.x, tile.y);
-        obj.transform.name = "_"+ tile.x+"x_" +tile.y + "y";
-
-        SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
-        if (sr == null) Debug.LogError("Couldn't load sprite renderer");
-
-        VisualDefinition visual = GridVisualService.Instance.GetVisual(tile.v);
+        obj.transform.name = + tile.x+"x_" +tile.y + "y";
 
         //Define Tileview properties and offset
+        SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
+        if (sr == null) Debug.LogError("Couldn't load sprite renderer");
+        VisualDefinition visual = GridVisualService.Instance.GetVisual(tile.v);
+
         int layerOffset=0;
         if(visual.renderScale > 1) layerOffset = 10;
         sr.sortingOrder = (tileLayerStart - (tile.x + tile.y))+ layerOffset;
@@ -129,7 +128,8 @@ public class GridRenderer : MonoBehaviour
         //Generate Entities
         if (tile.entities != null && tile.entities.Count > 0)
         {
-            entityPool.Spawn(tile.entities[0], tilePosition);
+            Debug.Log($"Entity {tile.entities[0].type} on ({tile.x},{tile.y})");
+            entityPool.Spawn(tile.entities[0], obj.transform.position);
         }
 
     }
@@ -173,12 +173,6 @@ public class GridRenderer : MonoBehaviour
     }
 
     //UTILITY
-    /// <summary>
-    /// Recupere une tileview depuis ses coordonnées X Y
-    /// </summary>
-    /// <param name="x"></param>
-    /// <param name="y"></param>
-    /// <returns></returns>
     public TileView GetTile(int x, int y)
     {
         Vector2Int coords = new Vector2Int(x, y);
@@ -187,6 +181,37 @@ public class GridRenderer : MonoBehaviour
             return tile;
 
         return null;
+    }
+    public Transform GetCenterTile(bool globalMap)
+    {
+        if(globalMap)
+        {
+            if (tileViews.TryGetValue(gridCenter, out TileView tile))
+            {
+
+                return tile.transform;
+            }
+            else
+            {
+                Debug.LogWarning("No tile referene to center map on");
+
+                return null;
+            }
+        }
+        else
+        {
+            if (baseTileViews.TryGetValue(gridCenter, out Base_TileView tile))
+            {
+
+                return tile.transform;
+            }
+            else
+            {
+                Debug.LogWarning("No tile referene to center map on");
+
+                return null;
+            }
+        }
     }
     private Vector3 IsoToWorld(int x, int y)
     {
@@ -207,5 +232,4 @@ public class GridRenderer : MonoBehaviour
         foreach (Transform child in entityPool.transform)
             entityPool.Release(child.GetComponent<EntityView>());
     }
-
 }

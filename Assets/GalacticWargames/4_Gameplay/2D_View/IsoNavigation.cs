@@ -197,11 +197,9 @@ public class IsoNavigation : MonoBehaviour
     }
     protected virtual void OnQuickTouch(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Quick Touch");
     }
     protected virtual void OnDoubleTouch(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Deouble Touch");
     }
     #endregion
 

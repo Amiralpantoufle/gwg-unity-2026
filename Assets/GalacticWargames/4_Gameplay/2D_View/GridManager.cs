@@ -9,6 +9,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private GridLevel currentLevel;
     public static GridManager Instance;
     private MapNavigationController nav;
+    private BaseNavigationController navBase;
     private GridRenderer gridRenderer;
 
     private int currentGalaxy;
@@ -25,17 +26,20 @@ public class GridManager : MonoBehaviour
         nav = GetComponent<MapNavigationController>();
         if (nav == null) Debug.LogError("Couldn't get MapNavigationController. Script is missing");
 
+        navBase = GetComponent<BaseNavigationController>();
+        if (nav == null) Debug.LogError("Couldn't get BaseNavigationController. Script is missing");
+
         gridRenderer = GetComponent<GridRenderer>();
 
     }
     public async Task LaunchProcess()
     {
         //Load Planete depuis id de la base
-        if (GameDataStorage.Instance.CurrentBase == null)
+        if (GameDataStorage.Instance._CurrentBase == null)
         {
             Debug.LogError("GameDataStorage hasn't stored any base");
         }
-        int planetId = GameDataStorage.Instance.CurrentBase.position.planet_id;
+        int planetId = GameDataStorage.Instance._CurrentBase.position.planet_id;
         await Load(GridLevel.Planet, planetId);
 
         //Centrer sur la base
@@ -86,7 +90,8 @@ public class GridManager : MonoBehaviour
         GridBaseModel baseModel = await LoadBaseFromData(baseID);
         if (baseModel == null) Debug.LogError("Failed to load planet");
 
-        gridRenderer.RenderBase(baseModel);
+        //gridRenderer.RenderBase(baseModel);
+        await gridRenderer.GenerateBase(baseModel);
         SwitchToBase();
     }
 
@@ -151,7 +156,7 @@ public class GridManager : MonoBehaviour
             case GridLevel.Planet:
                 await SwitchToSystem();
 
-                //tView = gridRenderer.GetTile(GameDataStorage.Instance.CurrentBase.position.x, GameDataStorage.Instance.CurrentBase.position.y);
+                //tView = gridRenderer.GetTile(GameDataStorage.Instance._CurrentBase.position.x, GameDataStorage.Instance._CurrentBase.position.y);
                 break;
 
             case GridLevel.SolarSystem:
@@ -165,13 +170,15 @@ public class GridManager : MonoBehaviour
 
         //Recenter on current
         if (tView == null)
-            Debug.LogError("No tile referene to center map on");
+        {
+            nav.CenterOnTile(gridRenderer.GetCenterTile(true).transform);
+        }
         else
             nav.CenterOnTile(tView.transform);
     }
     private async Task SwitchToSystem()
     {
-        int systemId = GameDataStorage.Instance.CurrentBase.position.system_id;
+        int systemId = GameDataStorage.Instance._CurrentBase.position.system_id;
 
         /*EntityModelOuput entity = await GetEntity(planetId);
         if (entity == null) return;*/
@@ -181,7 +188,7 @@ public class GridManager : MonoBehaviour
     }
     private async Task SwitchToGalaxy()
     {
-        int galaxyId = GameDataStorage.Instance.CurrentBase.position.galaxy_id;
+        int galaxyId = GameDataStorage.Instance._CurrentBase.position.galaxy_id;
 
         /*EntityModelOuput entity = await GetEntity(systemId);
         if (entity == null) return;*/
@@ -191,7 +198,7 @@ public class GridManager : MonoBehaviour
     }
     private async Task SwitchToPlanet()
     {
-        int planetId = GameDataStorage.Instance.CurrentBase.position.planet_id;
+        int planetId = GameDataStorage.Instance._CurrentBase.position.planet_id;
 
         //currentLevel = GridLevel.Planet;
         await Load(GridLevel.Planet, planetId);
@@ -200,8 +207,14 @@ public class GridManager : MonoBehaviour
     {
         currentLevel = GridLevel.Base;
         OnSwitchToBase?.Invoke();
-
         ResetIsoNavigation();
+
+
+        Transform center = gridRenderer.GetCenterTile(false);
+        if (center != null)
+            navBase.CenterOnTile(center);
+        else
+            Debug.LogWarning("No center detected");
     }
 
     //Utility
@@ -216,7 +229,7 @@ public class GridManager : MonoBehaviour
     private void CenterOnBase()
     {
         //Center on Base
-        BaseOutput currentBase = GameDataStorage.Instance.CurrentBase;
+        BaseOutput currentBase = GameDataStorage.Instance._CurrentBase;
         if (currentBase == null) return;
 
         TileView tView = gridRenderer.GetTile(currentBase.position.x, currentBase.position.y);

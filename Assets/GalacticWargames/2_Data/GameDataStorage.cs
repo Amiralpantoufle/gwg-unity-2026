@@ -1,9 +1,4 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using static BaseIndexOutput;
-using static UnityEditor.Rendering.CameraUI;
-using static UnityEngine.Audio.ProcessorInstance;
 
 public class GameDataStorage : MonoBehaviour
 {
@@ -11,17 +6,10 @@ public class GameDataStorage : MonoBehaviour
     public GlobalDataOutput _GlobalData { get; private set; }
     public UserDataOutput _UserData { get; private set; }
 
-    //User Data
-    /*private string username;
-    private int level;
-    private float experience;
-    public string _Username { get { return username; } set { username = value; } }
-    public int _Level { get { return level; } set { level = value; } }
-    public float _Experience { get { return experience; } set { experience = value; } }*/
-
     //Base Data
     private const string LAST_BASE_KEY = "LAST_ACTIVE_BASE";
-    public BaseOutput CurrentBase { get; private set; }
+    private BaseOutput currentBase;
+    public BaseOutput _CurrentBase { get { return currentBase; }}
 
     private void Awake()
     {
@@ -42,33 +30,19 @@ public class GameDataStorage : MonoBehaviour
     /// <param name="data"></param>
     public void LoadCurrentBaseData(BaseOutput data)
     {
-        if(data== null)
+        if(data == null)
         {
             Debug.LogWarning("Empty Data received from BaseIndex");
             return;
         }
 
-        CurrentBase = data;
-
-        /*
-        CurrentBase = new PlayerBaseData
-        {
-            BaseId = data.id_oes,
-            TileId = data.idesp_oes,
-            LocationEntityId = data.idesp_oes,
-            PlanetId = data.planet_id,
-            SystemId = data.id_parent_esp,
-            PlanetX = data.x_p_esp,
-            PlanetY = data.y_p_esp,
-            SystemX = data.x_p_esp,
-            SystemY = data.y_p_esp,
-        };*/
+        currentBase = data;
 
         //si base chargée
-        if (CurrentBase.base_id != 0 && CurrentBase != null)
+        if (currentBase.base_id != 0)
         {
-           SaveLastBaseId(CurrentBase.base_id);
-           Debug.Log($"Base chargée :" + CurrentBase.base_id);
+           SaveLastBaseId(currentBase.base_id);
+           Debug.Log($"Base chargée :" + currentBase.base_id);
         }
         else Debug.LogWarning("no base loaded");
     }
@@ -78,11 +52,6 @@ public class GameDataStorage : MonoBehaviour
     {
         _UserData = user;
     }
-    /*public void SetGlobalData(GlobalDataOutput data)
-    {
-        GlobalData = data;
-    }*/
-
     /// <summary>
     /// Sauvegarde localement la dernière base utilisée.
     /// </summary>
@@ -96,6 +65,7 @@ public class GameDataStorage : MonoBehaviour
     /// </summary>
     public int GetLastBaseId()
     {
-        return PlayerPrefs.GetInt(LAST_BASE_KEY, -1);
+        Debug.Log(PlayerPrefs.GetInt(LAST_BASE_KEY, 0));
+        return PlayerPrefs.GetInt(LAST_BASE_KEY, 0);
     }
 }

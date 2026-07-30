@@ -10,6 +10,9 @@ public class BaseView_Screen : UIScreen
     private int baseId;
 
     //Ressources
+    private RessourceModule availableRessources;
+    public RessourceModule _AvailableRessources { get { return availableRessources; } }
+
     [SerializeField] private TextMeshProUGUI carbon_Quantity;
     [SerializeField] private TextMeshProUGUI hydrogen_Quantity;
     [SerializeField] private TextMeshProUGUI energyStone_Quantity;
@@ -22,6 +25,7 @@ public class BaseView_Screen : UIScreen
     {
         base.Show();
         gameView.SetActive(true);
+        availableRessources = GetComponent<RessourceModule>();
 
         GridManager.OnSwitchToWorld += OpenWorldScreen;
 
@@ -40,21 +44,25 @@ public class BaseView_Screen : UIScreen
 
     private async Task Display_BaseInfos()
     {
-        baseId = GameDataStorage.Instance.CurrentBase.base_id;
+        baseId = GameDataStorage.Instance.GetLastBaseId();
         if (baseId == 0) Debug.LogError("NO BASE ID LOADED");
 
         //Load Info
         baseData = await Load_BaseInfos(baseId);
 
-        int carbon = (int)baseData.ressources[0].nombre_oer;
-        int hydro = (int)baseData.ressources[1].nombre_oer;
-        int stone = (int)baseData.ressources[2].nombre_oer;
+        int[] r = new int[3];
 
-        carbon_Quantity.text = carbon.ToString();
-        hydrogen_Quantity.text = hydro.ToString();
-        energyStone_Quantity.text = stone.ToString();
+        r[0] = (int)baseData.ressources[0].nombre_oer;
+        r[1] = (int)baseData.ressources[1].nombre_oer;
+        r[2] = (int)baseData.ressources[2].nombre_oer;
 
-        stockCurrent.text = (carbon + hydro + stone).ToString();
+        availableRessources.RefreshRessources(r);
+
+        carbon_Quantity.text = r[0].ToString();
+        hydrogen_Quantity.text = r[1].ToString();
+        energyStone_Quantity.text = r[2].ToString();
+
+        stockCurrent.text = (r[0] + r[1] + r[2]).ToString();
     }
     private async Task<BaseInfo_Model> Load_BaseInfos(int id)
     {
@@ -81,6 +89,6 @@ public class BaseView_Screen : UIScreen
     }
     public async void LeaveBaseView()
     {
-        await GridManager.Instance.Load(GridLevel.Planet, GameDataStorage.Instance.CurrentBase.position.entity_id);
+        await GridManager.Instance.Load(GridLevel.Planet, GameDataStorage.Instance._CurrentBase.position.entity_id);
     }
 }

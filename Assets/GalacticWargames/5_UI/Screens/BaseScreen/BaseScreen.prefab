@@ -182,6 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4317242586405362855}
   - component: {fileID: 9220504651636798164}
+  - component: {fileID: 2542614124752316681}
   m_Layer: 5
   m_Name: BaseScreen
   m_TagString: Untagged
@@ -224,11 +225,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BaseView_Screen
   popupMaster: {fileID: 0}
   gameView: {fileID: 0}
-  energyStone_Quantity: {fileID: 8330142532496433415}
   carbon_Quantity: {fileID: 6237920697270174682}
   hydrogen_Quantity: {fileID: 480986487906605385}
+  energyStone_Quantity: {fileID: 8330142532496433415}
   stockCapacity: {fileID: 2647733118604583336}
   stockCurrent: {fileID: 4849513811246972005}
+--- !u!114 &2542614124752316681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678107454255730764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ea869c66c63094491ad403aa730d25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RessourceModule
 --- !u!1 &709001396009874541
 GameObject:
   m_ObjectHideFlags: 0
