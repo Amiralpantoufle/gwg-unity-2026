@@ -29,8 +29,8 @@ public class GridBaseTile
     //public FogOverlayDto fog_overlay;
 }
 
-[System.Serializable]
-public class BaseEntity
+/*[System.Serializable]
+public class BaseEntity 
 {
     public string type;
     public int id;
@@ -45,4 +45,4 @@ public class BaseEntity
     public int hp_max;
 
     public int v;
-}
+}*/

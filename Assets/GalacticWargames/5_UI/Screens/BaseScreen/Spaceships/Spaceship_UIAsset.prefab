@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 5321956672686901803}
   - component: {fileID: 2542408179564722144}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ConstructTime_Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1001,7 +1001,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7671477496610338793}
   - component: {fileID: 7169868621796397409}
-  - component: {fileID: 9137146989941897481}
+  - component: {fileID: -5636869354750354371}
   m_Layer: 5
   m_Name: Spaceship_UIAsset
   m_TagString: Untagged
@@ -1038,7 +1038,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6929222503983974288}
   m_CullTransparentMesh: 1
---- !u!114 &9137146989941897481
+--- !u!114 &-5636869354750354371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1047,19 +1047,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6929222503983974288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33a5080f5886107479ae7722cbff9587, type: 3}
+  m_Script: {fileID: 11500000, guid: f4495deb097ae294b99006bf677456b3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Base_BuildingAsset
+  m_EditorClassIdentifier: Assembly-CSharp::Base_SpaceShipAsset
   assetName: {fileID: 2413172302720080354}
   buildTime: {fileID: 2542408179564722144}
   ressourceIcons:
   - {fileID: 4995391396704235112}
   - {fileID: 5516665676919790785}
   - {fileID: 3287431736264923682}
-  buildingIcon: {fileID: 6767979344553517352}
-  selectionBorder: {fileID: 8349021192543071539}
-  lockedIcon: {fileID: 0}
-  greyedOut: []
+  ressourceTxt:
+  - {fileID: 188490964921806996}
+  - {fileID: 5599732996864443359}
+  - {fileID: 7663915795307468019}
+  spaceShipIcon: {fileID: 6767979344553517352}
+  lockedIcon: {fileID: 5647916029513914330}
 --- !u!1 &7239171884350185442
 GameObject:
   m_ObjectHideFlags: 0

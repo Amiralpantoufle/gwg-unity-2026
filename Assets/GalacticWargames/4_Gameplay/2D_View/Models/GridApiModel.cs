@@ -35,6 +35,9 @@ public class GridGalaxyModel : GridApiModel
     public int height;
 }
 
+/// <summary>
+/// ///////////////////////////////////////////////////////////////////////////////////////////
+/// </summary>
 
 //Construct Tiles
 [System.Serializable]
@@ -46,7 +49,7 @@ public class GridTile
     public int v;
     public int entity_id;
 
-    public List<EntityDto> entities;
+    public List<GridEntityModel> entities;
 
     //public string name;
     //public VisibilityDto visibility;
@@ -59,7 +62,7 @@ public class PlanetGridTile : GridTile
 }
 
 [System.Serializable]
-public class SystemGridTile : GridTile
+public class SystemGridTile : GridTile 
 {
 }
 
@@ -70,11 +73,11 @@ public class GalaxyGridTile : GridTile
     public int planet_count;
 }
 //Entities
-[System.Serializable]
+/*[System.Serializable]
 public class EntityDto
 {
     public int entity_id;
     public string type;
     public string name;
     public int v;
-}
+}*/

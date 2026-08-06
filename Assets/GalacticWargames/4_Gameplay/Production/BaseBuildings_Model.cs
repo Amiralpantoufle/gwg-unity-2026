@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class BaseBuildings_Model
+public class BaseBuildings_Model 
 {
     public int base_id;
     public building_Construct[] buildings;
@@ -25,11 +25,4 @@ public class building_Construct
     public int level_required_bat;
 
     public construct_Cost[] couts;
-}
-
-[System.Serializable]
-public class construct_Cost
-{
-    public int idmtx_bre;
-    public int nombre_bre;
 }

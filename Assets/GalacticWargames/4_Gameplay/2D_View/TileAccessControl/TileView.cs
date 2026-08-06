@@ -6,30 +6,12 @@ public class TileView : MonoBehaviour
     public GridTile _Tile {  get { return tile; } }
 
     private SpriteRenderer spriteRenderer;
-    public EntityDto entity;
+    //public GridEntityModel entity;
     public void Init(GridTile data, float renderScale)
     {
         tile = data;
 
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
         collider.size = collider.size / renderScale;
-    }
-
-
-    //Accessor
-    public void HighlightTile()
-    {
-        spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
-        if(spriteRenderer != null)
-        {
-            spriteRenderer.enabled = true;
-        }
-    }
-    public void HideTile()
-    {
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.enabled = false;
-        }
     }
 }

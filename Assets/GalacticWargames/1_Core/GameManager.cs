@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (!loading.gameObject.activeSelf)
+            loading.gameObject.SetActive(true);
+
         EventBus.Subscribe<UIStateChangedEvent>(onStateChanged);
         DontDestroyOnLoad(transform);
 

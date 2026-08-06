@@ -25,8 +25,10 @@ public class Base_BuildingAssetInfo : MonoBehaviour
 
         for (int i = 0; i < costs.Length; i++)
         {
-            costs[i].text = construct.couts[i].ToString();
+            costs[i].text = construct.couts[i].nombre_bre.ToString();
         }
+
+        gameObject.SetActive(true);
     }
 
     public void AvailableConstruct(bool isAvailable)
@@ -76,5 +78,6 @@ public class Base_BuildingAssetInfo : MonoBehaviour
     private void OnConstructionQueued(string response)
     {
         Debug.Log(response);
+        gameObject.SetActive(false);
     }
 }

@@ -1,33 +1,32 @@
-using Newtonsoft.Json;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using System;
+
 
 public class BaseView_Popup : UIScreen
 {
     [SerializeField] private TileSelection_Pannel selectionPannel;
     public TileSelection_Pannel _SelectionPannel { get { return selectionPannel; }}
 
-    [SerializeField] private GameObject upgradePannel;
 
+    public Base_BuildingLevelUp upgradePannel;
     [SerializeField] private GameObject[] buildingsPannels;
-    private buildingList selectedBuilding;
+    private buildingList lastSelectedBuilding;
      
     [SerializeField] private GameObject infoPannel;
 
-    private BaseView_Screen _baseScreen;
-    public BaseView_Screen BaseScreen { set { _baseScreen = value; } }
+    //Actions
+    public event Action OnClosePannel;
 
-
-    private void Open_BuildingPannel(buildingList selection)
+    public void Open_BuildingPannel(buildingList selection, Base_TileView tile)
     {
-        foreach (GameObject pannel in buildingsPannels)
-            pannel.SetActive(false);
+        lastSelectedBuilding = selection;
 
-        switch(selection)
+        switch (selection)
         {
+            case buildingList.EmptySlot:
+                selectionPannel.Load_TileData(tile);
+                break;
             case buildingList.ChantierSpatial:
                 buildingsPannels[0].SetActive(true);
                 break;
@@ -45,12 +44,28 @@ public class BaseView_Popup : UIScreen
                 break;
         }
     }
+    public void UpgradeBuilding(buildingList building)
+    {
+        Debug.Log("Open Upgrade Building");
+        upgradePannel.Load_UpgradePannel(building);
+    }
 
+    //Utility
+    public void Close_AllPannels()
+    {
+        foreach (GameObject obj in buildingsPannels)
+            obj.SetActive(false);
+
+        upgradePannel.gameObject.SetActive(false);
+        selectionPannel.gameObject.SetActive(false);
+
+        OnClosePannel?.Invoke();
+    }
 }
 /// <summary>
 /// 0=chantierSpatial 1=EspaceStockage 2=MineCarbon 3=Hydrogen 4=PierreEnerg 
 /// </summary>
-public enum buildingList
+public enum buildingList 
 {
     EmptySlot,
     ChantierSpatial,

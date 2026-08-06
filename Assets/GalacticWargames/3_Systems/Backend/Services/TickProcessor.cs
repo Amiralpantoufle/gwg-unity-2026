@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TickProcessor
+public class TickProcessor 
 {
     public void Apply(TickOutput tick)
     {

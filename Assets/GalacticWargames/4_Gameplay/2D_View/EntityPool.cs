@@ -42,11 +42,11 @@ public class EntityPool : MonoBehaviour
         available.Enqueue(entity);
     } 
 
-    public EntityView Spawn(EntityDto data, Vector2 tilePosition)
+    public EntityView SpawnMapEntity(GridEntityModel data, Vector2 tilePosition)
     {
         EntityView view = Get(); 
 
-        view.transform.localPosition = tilePosition;
+        view.transform.position = tilePosition;
         view.Init(data);
 
         return view;
@@ -55,8 +55,8 @@ public class EntityPool : MonoBehaviour
     {
         EntityView view = Get();
 
-        view.transform.localPosition = tilePosition;
-        //view.Init(data);
+        view.transform.position = tilePosition;
+        view.Init(data);
 
         return view;
     }

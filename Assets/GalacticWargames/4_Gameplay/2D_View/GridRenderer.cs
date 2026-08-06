@@ -108,15 +108,16 @@ public class GridRenderer : MonoBehaviour
         if (sr == null) Debug.LogError("Couldn't load sprite renderer");
         VisualDefinition visual = GridVisualService.Instance.GetVisual(tile.v);
 
-        int layerOffset=0;
+        //Define Tileview properties and offset
+        int layerOffset =0;
         if(visual.renderScale > 1) layerOffset = 10;
         sr.sortingOrder = (tileLayerStart - (tile.x + tile.y))+ layerOffset;
 
         sr.sprite = visual.imageSprite;
         obj.transform.localScale = Vector3.one * visual.renderScale;
 
-        Vector2 tilePosition = new Vector2(obj.transform.localPosition.x + visual.offset.x, obj.transform.localPosition.y + visual.offset.y);
-        obj.transform.localPosition = tilePosition;
+        Vector2 tilePosition = new Vector2(obj.transform.position.x + visual.offset.x, obj.transform.position.y + visual.offset.y);
+        obj.transform.position = tilePosition;
 
         //Create Tileview
         TileView tileView = obj.GetComponent<TileView>();
@@ -129,7 +130,7 @@ public class GridRenderer : MonoBehaviour
         if (tile.entities != null && tile.entities.Count > 0)
         {
             Debug.Log($"Entity {tile.entities[0].type} on ({tile.x},{tile.y})");
-            entityPool.Spawn(tile.entities[0], obj.transform.position);
+            entityPool.SpawnMapEntity(tile.entities[0], obj.transform.position);
         }
 
     }
@@ -143,9 +144,7 @@ public class GridRenderer : MonoBehaviour
 
         SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
         if (sr == null) Debug.LogError("Couldn't load sprite renderer");
-
         VisualDefinition visual = GridVisualService.Instance.GetVisual(tile.v);
-        //VisualDefinition visual = GridVisualService.Instance.GetVisual(175); // ATTENTION TEMPORARY -> Pas les bonnes id visuelles sur l'api pour l'instant
 
         //Define Tileview properties and offset
         int layerOffset = 0;
@@ -155,8 +154,8 @@ public class GridRenderer : MonoBehaviour
         sr.sprite = visual.imageSprite;
         obj.transform.localScale = Vector3.one * visual.renderScale;
 
-        Vector2 tilePosition = new Vector2(obj.transform.localPosition.x + visual.offset.x, obj.transform.localPosition.y + visual.offset.y);
-        obj.transform.localPosition = tilePosition;
+        Vector2 tilePosition = new Vector2(obj.transform.position.x + visual.offset.x, obj.transform.position.y + visual.offset.y);
+        obj.transform.position = tilePosition;
 
         //Create Tileview
         Base_TileView tileview = obj.GetComponent<Base_TileView>();

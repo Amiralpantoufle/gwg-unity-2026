@@ -22,9 +22,6 @@ public class Base_BuildingAsset : MonoBehaviour
     [SerializeField] private Image lockedIcon;
     [SerializeField] private CanvasGroup[] greyedOut;
 
-    [SerializeField] private Image selectionBorder;
-    public Image _SelectionBorder { get { return selectionBorder; } }
-
     private Base_BuildingAssetInfo contextPannel;
 
     public void Load_buildingInfo(building_Construct construct, Base_BuildingAssetInfo context)
@@ -99,7 +96,6 @@ public class Base_BuildingAsset : MonoBehaviour
             Debug.LogError("No tile Position referenced");
 
         contextPannel.Load_Info(loadedConstruct, tilePos);
-        contextPannel.gameObject.SetActive(true);
 
         //Check if can build
         contextPannel.AvailableConstruct(HasRessources());

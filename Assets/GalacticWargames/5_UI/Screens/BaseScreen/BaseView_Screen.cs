@@ -32,8 +32,8 @@ public class BaseView_Screen : UIScreen
         await Display_BaseInfos();
 
         //Load Building List
-        BaseBuildings_Model model = await Load_BuildingList(baseId);
-        buildings = model.buildings;
+        BaseBuildings_Model buildingModel = await Load_BuildingList(baseId);
+        buildings = buildingModel.buildings;
         popupMaster.GetComponent<BaseView_Popup>()._SelectionPannel.Load_AvailableBuildings(buildings);
     }
     public override void Hide()
@@ -66,18 +66,19 @@ public class BaseView_Screen : UIScreen
     }
     private async Task<BaseInfo_Model> Load_BaseInfos(int id)
     {
-        string endpoint = $"/base/show/{baseId}";
+        string endpoint = $"/base/show/{id}";
         var response = await API_Client.Instance.LoadApiResponse<BaseInfo_Model>(endpoint);
 
         return response.output;
     }
     private async Task<BaseBuildings_Model> Load_BuildingList(int id)
     {
-        string endpoint = $"/base/buildings/{baseId}";
+        string endpoint = $"/base/buildings/{id}";
         var response = await API_Client.Instance.LoadApiResponse<BaseBuildings_Model>(endpoint);
 
         return response.output;
     }
+
 
     //Utility
     private void OpenWorldScreen()

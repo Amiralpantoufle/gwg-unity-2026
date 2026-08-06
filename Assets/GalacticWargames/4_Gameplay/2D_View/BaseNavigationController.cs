@@ -1,50 +1,94 @@
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.EnhancedTouch;
+using System;
 
 public class BaseNavigationController : IsoNavigation
 {
-    private GridManager gridManager;
+    public static BaseNavigationController Instance;
 
     //Grid Options
     [SerializeField] private BaseView_Popup mainPopup;
-
-    private Base_TileView currentlySelectedTile;
-    private Base_TileView previouslySelectedTile;
-
-    private bool tileSelected;
+    [SerializeField] private Tile_Selector tileSelector;
 
     protected override void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
         base.Awake();
-        gridManager = GetComponent<GridManager>();
     }
 
     //Selection
     private void SelectTile(Base_TileView tile)
     {
         freezed = true;
+        mainPopup.OnClosePannel += CancelSelect;
 
-        mainPopup._SelectionPannel.Load_TileData(tile);
-        mainPopup._SelectionPannel.OnClosePannel += CancelSelect;
+        buildingList building = buildingList.EmptySlot;
 
-        currentlySelectedTile = tile;
-        tileSelected = true;
+        //Load Entity
+        if (tile._Tile.entities != null)
+            building = GetTileStatus(tile._Tile.entities[0]);
+
+
+        mainPopup.Open_BuildingPannel(building, tile);
+
+        //Display Tile Selector
+        if (tile._Tile.constructible)
+            tileSelector.HighlightTile(0, tile.transform.position);
+        else
+            tileSelector.HighlightTile(1, tile.transform.position);
     }
     private void CancelSelect()
     {
         freezed = false;
+        tileSelector.Disable_Selector();
 
-        previouslySelectedTile = currentlySelectedTile;
-        currentlySelectedTile = null;
-        tileSelected = false;
-
-        mainPopup._SelectionPannel.OnClosePannel -= CancelSelect;
+        mainPopup.OnClosePannel -= CancelSelect;
     }
 
+    //Utility
+    private buildingList GetTileStatus(BaseEntity entity)
+    {
+
+        //Return tile entity
+        buildingList typeOf = buildingList.EmptySlot;
+
+        int id = entity.building_id;
+        name = entity.name;
+
+        //Chantier Spatial
+        if (id >= 1 && id <= 3)
+        {
+            typeOf = buildingList.ChantierSpatial;
+        }
+        //Stockage
+        else if (id >= 4 && id <= 6)
+        {
+            typeOf = buildingList.EspaceStockage;
+        }
+        //Mine Carbone
+        else if (id >= 25 && id <= 27)
+        {
+            typeOf = buildingList.MineCarbon;
+        }
+        //Mine Hydrogen
+        else if (id >= 28 && id <= 30)
+        {
+            typeOf = buildingList.MineHydrogen;
+        }
+        //Mine Pierre energetique
+        else if (id >= 31 && id <= 33)
+        {
+            typeOf = buildingList.MinePierre;
+        }
+
+        return typeOf;
+    }
 
     //Inputs
     protected override void OnQuickTouch(InputAction.CallbackContext ctx)

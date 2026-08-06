@@ -11,6 +11,7 @@ public class MapNavigationController : IsoNavigation
 
     //Grid Options
     [SerializeField] private MainView_TileAccess_Popup tileAccess_Popup;
+    [SerializeField] private Tile_Selector tileSelector;
 
     private TileView currentlySelectedTile;
     private TileView previouslySelectedTile;
@@ -33,6 +34,8 @@ public class MapNavigationController : IsoNavigation
 
         currentlySelectedTile = tile;
         tileSelected = true;
+
+        tileSelector.HighlightTile(0, tile.transform.position);
     }
     public void CancelSelect()
     {
@@ -40,7 +43,8 @@ public class MapNavigationController : IsoNavigation
         {
             hidePopup = tileAccess_Popup
         });
-        tileAccess_Popup.HideCurrentTile();
+        tileSelector.Disable_Selector();
+
         tileSelected = false;
 
         previouslySelectedTile = currentlySelectedTile;
@@ -62,22 +66,28 @@ public class MapNavigationController : IsoNavigation
     {
         string target = "Default";
 
-        int selectedID = previouslySelectedTile.entity.entity_id;
-
-        Debug.Log("identified target :" + target + "with id :"+ previouslySelectedTile._Tile.entity_id + ". Compared with player base id :"+ GameDataStorage.Instance._CurrentBase.base_id);
-
-        //Si ID correspond à une base joueur
-        if (selectedID == GameDataStorage.Instance._CurrentBase.base_id)
+        //Entity found
+        if (previouslySelectedTile._Tile.entities != null)
         {
-            target = "Base";
+            int selectedID = previouslySelectedTile._Tile.entities[0].entity_id;
+
+            //Si ID correspond à une base joueur
+            if (selectedID == GameDataStorage.Instance._CurrentBase.base_id)
+            {
+                Debug.Log("identified target :" + target + "with id :"+ previouslySelectedTile._Tile.entity_id + ". Compared with player base id :"+ GameDataStorage.Instance._CurrentBase.base_id);
+                target = "Base";
+            }
         }
+        //Empty Tile found
         else
         {
-            target = "Base";
+            target = "Base";//TEMP
         }
+
 
         return target;
     }
+
 
     //Inputs
     protected override void OnQuickTouch(InputAction.CallbackContext context)

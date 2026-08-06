@@ -6,3 +6,11 @@ public class BuildingConstructionRequest
     public int x;
     public int y;
 }
+
+[System.Serializable]
+public class SpaceShipConstructionRequest
+{
+    public int id_oes;
+    public int id_vas;
+    public int nombre;
+}

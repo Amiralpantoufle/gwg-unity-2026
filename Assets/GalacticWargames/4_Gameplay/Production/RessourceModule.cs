@@ -36,3 +36,10 @@ public class RessourceModule : MonoBehaviour
             return true;
     }
 }
+
+[System.Serializable]
+public class construct_Cost
+{
+    public int idmtx_bre;
+    public int nombre_bre;
+}

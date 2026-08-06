@@ -4,10 +4,10 @@ public class EntityView : MonoBehaviour
 {
     private int entitiesLayer = 10001;
 
-    [SerializeField] private EntityDto entity;
+    [SerializeField] private GridEntityModel entity;
     private SpriteRenderer spriteR;
 
-    public void Init(EntityDto data)
+    public void Init(GridEntityModel data)
     {
         if(spriteR==null)
             spriteR = GetComponent<SpriteRenderer>();
@@ -19,6 +19,11 @@ public class EntityView : MonoBehaviour
     {
         VisualDefinition visual = GridVisualService.Instance.GetVisual(entity.v);
         spriteR.sprite = visual.imageSprite;
+
+        //offset & Scale
+        transform.localScale = Vector3.one * visual.renderScale;
+        Vector2 tilePosition = new Vector2(transform.localPosition.x + visual.offset.x, transform.localPosition.y + visual.offset.y);
+        transform.localPosition = tilePosition;
 
         //SetSpriteOrder
         spriteR.sortingOrder = entitiesLayer;

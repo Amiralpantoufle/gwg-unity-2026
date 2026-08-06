@@ -24,16 +24,10 @@ public class MainView_TileAccess_Popup : UIScreen
         //tileName.text = selectedTileView._Tile.entity_id.ToString();
         string tileName = tile._Tile.x.ToString() + " - " + tile._Tile.y.ToString();
 
-        selectedTileView.HighlightTile();
-
         TileActions_Model actionsList = await GetTileActions(selectedTileView._Tile.entity_id);
         if (actionsList.actions.Count != 0) tileAccessor.PopulateActions(actionsList);
     }
-    public void HideCurrentTile()
-    {
-        if (selectedTileView != null)
-            selectedTileView.HideTile();
-    }
+
     public void OnClose()
     {
         EventBus.Publish(new HidePopupEvent

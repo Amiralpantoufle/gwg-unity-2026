@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class TickService
+public class TickService 
 {
     private readonly API_Client _api;
     public TickService(API_Client api)
