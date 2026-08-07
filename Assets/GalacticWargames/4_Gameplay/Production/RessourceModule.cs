@@ -1,4 +1,7 @@
+using TMPro;
 using UnityEngine;
+using System;
+using UnityEngine.UI;
 
 public class RessourceModule : MonoBehaviour
 {
@@ -11,6 +14,19 @@ public class RessourceModule : MonoBehaviour
     [SerializeField] private int availableStone;
     public int _AvailableStone { get { return availableStone; } }
 
+    private int available_Storage;
+    private int current_Storage;
+
+    //GUI Elements
+    [SerializeField] private TextMeshProUGUI energyStone_Quantity;
+    [SerializeField] private TextMeshProUGUI carbon_Quantity;
+    [SerializeField] private TextMeshProUGUI hydrogen_Quantity;
+    [SerializeField] private TextMeshProUGUI stockCapacity, stockCurrent;
+
+    [SerializeField] private RectTransform carbonFill;
+    [SerializeField] private RectTransform hydrogenFill;
+    [SerializeField] private RectTransform stoneFill;
+
     public void RefreshRessources(int[] r)
     {
         if (r.Length > 3 || r.Length < 3)
@@ -22,6 +38,58 @@ public class RessourceModule : MonoBehaviour
         availableCarbon = r[0];
         availableHydrogen = r[1];
         availableStone = r[2];
+
+        Refresh_StorageCapacity(5000);
+        Display_Amounts();
+    }
+    public void Refresh_StorageCapacity(int capacity)
+    {
+        //Additionne toutes les ressources
+        available_Storage = capacity;
+        current_Storage = (availableCarbon + availableHydrogen + availableStone);
+
+        stockCurrent.text = available_Storage.ToString();
+        stockCapacity.text = "/" + capacity.ToString();
+
+        RefreshStorageGauge();
+    }
+    public void RefreshStorageGauge()
+    {
+        if (available_Storage <= 0)
+            return;
+
+        float carbon = (float)availableCarbon / available_Storage;
+        float hydrogen = (float)availableHydrogen / available_Storage;
+        float stone = (float)availableStone / available_Storage;
+
+        float start = 0f;
+
+        SetFill(carbonFill, start, start + carbon);
+        start += carbon;
+
+        SetFill(hydrogenFill, start, start + hydrogen);
+        start += hydrogen;
+
+        SetFill(stoneFill, start, start + stone);
+
+        carbonFill.gameObject.SetActive(availableCarbon > 0);
+        hydrogenFill.gameObject.SetActive(availableHydrogen > 0);
+        stoneFill.gameObject.SetActive(availableStone > 0);
+    }
+    private void SetFill(RectTransform fill, float start, float end)
+    {
+        fill.anchorMin = new Vector2(start, 0);
+        fill.anchorMax = new Vector2(end, 1);
+
+        fill.offsetMin = Vector2.zero;
+        fill.offsetMax = Vector2.zero;
+    }
+
+    private void Display_Amounts()
+    {
+        carbon_Quantity.text = availableCarbon.ToString();
+        hydrogen_Quantity.text = availableHydrogen.ToString();
+        energyStone_Quantity.text = availableStone.ToString();
     }
 
     public bool CanBuild(int[] costs)

@@ -59,6 +59,8 @@ public class BaseView_Popup : UIScreen
         upgradePannel.gameObject.SetActive(false);
         selectionPannel.gameObject.SetActive(false);
 
+
+        popupMaster.GetComponent<BaseView_Screen>().Reload_BaseView();
         OnClosePannel?.Invoke();
     }
 }

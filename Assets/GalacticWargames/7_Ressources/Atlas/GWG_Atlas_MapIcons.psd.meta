@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 94b2f0b93b5a0ff4c831a4b0383a4891
+guid: f91dba1e0698a264a893aba46fd31ee6
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7341182159526821159
+    second: GWG_Atlas_MapIcons_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -136,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_0
+      name: GWG_Atlas_MapIcons_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,21 +147,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 407d45de7a08db34fa235bc8b72aca1a
-      internalID: -569290749
+      spriteID: 9d208fd98b1ee1a90800000000000000
+      internalID: -7341182159526821159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_1
+      name: GWG_Atlas_MapIcons_1
       rect:
         serializedVersion: 2
         x: 256
@@ -166,21 +169,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f7a66205fb4482498bf86dd0f08c57c
-      internalID: -91956505
+      spriteID: 4d4903a1ca88b9f48b366afd912d285c
+      internalID: 36413481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_2
+      name: GWG_Atlas_MapIcons_2
       rect:
         serializedVersion: 2
         x: 512
@@ -188,21 +191,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca92b13d5df4f064183f3064fdcc605f
-      internalID: -1510145125
+      spriteID: e89f80576e025e2468d66d81d4cd1d55
+      internalID: -1747001261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_3
+      name: GWG_Atlas_MapIcons_3
       rect:
         serializedVersion: 2
         x: 768
@@ -210,21 +213,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6400b5bc7a9ae843b0f1dc195e900d5
-      internalID: -903721532
+      spriteID: f78a7bd5371f8a34ba1b87f738bd3d67
+      internalID: -1351089364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_4
+      name: GWG_Atlas_MapIcons_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -232,21 +235,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7856490cc618b341916b08cf7aa5b26
-      internalID: 1045715234
+      spriteID: 1474e40cfd781d44b95cd34324b7f422
+      internalID: -1944267137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_5
+      name: GWG_Atlas_MapIcons_5
       rect:
         serializedVersion: 2
         x: 1280
@@ -254,21 +257,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6577d69475d975d4b9386d987f32fe03
-      internalID: 2030368865
+      spriteID: fdbcb8d18b4a2e443b105dc58713ac81
+      internalID: 1424195540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_6
+      name: GWG_Atlas_MapIcons_6
       rect:
         serializedVersion: 2
         x: 1536
@@ -276,21 +279,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5409b48952328743b4f4431b6027dcd
-      internalID: 1486788913
+      spriteID: 452f36de15ddcca4688cf96d1105ade8
+      internalID: 1313703098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_7
+      name: GWG_Atlas_MapIcons_7
       rect:
         serializedVersion: 2
         x: 1792
@@ -298,21 +301,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d95276c736bbed41b67594f50237fc2
-      internalID: -512323598
+      spriteID: 70678b3687545de418281f317eef8149
+      internalID: -29533847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_8
+      name: GWG_Atlas_MapIcons_8
       rect:
         serializedVersion: 2
         x: 0
@@ -320,21 +323,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f04d78a618ce2047bbf40f9b208827b
-      internalID: 1363714969
+      spriteID: 7d1ee109111442f4bb90e8c14be5deff
+      internalID: -1147266111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_9
+      name: GWG_Atlas_MapIcons_9
       rect:
         serializedVersion: 2
         x: 256
@@ -342,21 +345,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4504f2f034af416419cdf0cc7451f841
-      internalID: 330075525
+      spriteID: b323d86c7c234494e912f99b22ae1123
+      internalID: -961306068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_10
+      name: GWG_Atlas_MapIcons_10
       rect:
         serializedVersion: 2
         x: 512
@@ -364,21 +367,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 939472cdc7726a044a10313b5ac96655
-      internalID: 774690760
+      spriteID: 3aeeb02215d4689459cddae2a86791c6
+      internalID: 1146698373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_11
+      name: GWG_Atlas_MapIcons_11
       rect:
         serializedVersion: 2
         x: 768
@@ -386,21 +389,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2cbdd3b9dbb99f42b4220c5ab78be18
-      internalID: -331039865
+      spriteID: e2829808b17df864e8fe1ad38e197b8b
+      internalID: 92780499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_12
+      name: GWG_Atlas_MapIcons_12
       rect:
         serializedVersion: 2
         x: 1024
@@ -408,21 +411,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6771d7a03bf08a344b93ff67d1a646f9
-      internalID: -1977839452
+      spriteID: bbd0cfad12bc7694fa906723b99cfc3b
+      internalID: -2091242290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_13
+      name: GWG_Atlas_MapIcons_13
       rect:
         serializedVersion: 2
         x: 1280
@@ -430,21 +433,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c600587129c7d21438474437b3017096
-      internalID: -676598998
+      spriteID: 23c799e0a4eaa9a4ba29aa9a2bb7a770
+      internalID: 1295394909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_14
+      name: GWG_Atlas_MapIcons_14
       rect:
         serializedVersion: 2
         x: 1536
@@ -452,21 +455,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b6418b382e8d354699045491ab5c61c
-      internalID: -1097936516
+      spriteID: f0f5c92ca54392442af87f01ebca134b
+      internalID: 1256425989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_15
+      name: GWG_Atlas_MapIcons_15
       rect:
         serializedVersion: 2
         x: 1792
@@ -474,21 +477,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbcc602c09175fa4ba8b91984c53d36b
-      internalID: -558363553
+      spriteID: c75214d2af209ce42bc1ac8e2aeecda0
+      internalID: -1583260482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_16
+      name: GWG_Atlas_MapIcons_16
       rect:
         serializedVersion: 2
         x: 0
@@ -496,21 +499,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95fdbb4ccbabbc540b8d698177c28857
-      internalID: -1972650842
+      spriteID: add5682701e5a7c45bcc52d9691354cb
+      internalID: -1570244875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_17
+      name: GWG_Atlas_MapIcons_17
       rect:
         serializedVersion: 2
         x: 256
@@ -518,21 +521,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35e45a62c2d737941a01053153e67695
-      internalID: 1251295955
+      spriteID: 557be989c82390c439e40da89f9fb688
+      internalID: -58881957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_18
+      name: GWG_Atlas_MapIcons_18
       rect:
         serializedVersion: 2
         x: 512
@@ -540,21 +543,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8f133331b90139439cd040cdb724cd9
-      internalID: -711181175
+      spriteID: b41f92ce2c9b5304fbdd47a84bce23f8
+      internalID: -18097750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_19
+      name: GWG_Atlas_MapIcons_19
       rect:
         serializedVersion: 2
         x: 768
@@ -562,21 +565,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ceca85e5e3cce3d42ae9a163611c80b0
-      internalID: 1839935502
+      spriteID: 266ef795ce6d93446b419961b65ef0af
+      internalID: -399324957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_20
+      name: GWG_Atlas_MapIcons_20
       rect:
         serializedVersion: 2
         x: 1024
@@ -584,21 +587,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a775fae5efe190469ae2d1f4ed59fd3
-      internalID: -1893787871
+      spriteID: b7c5a84ba4c36004db0641a8831afd0c
+      internalID: 534772708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_21
+      name: GWG_Atlas_MapIcons_21
       rect:
         serializedVersion: 2
         x: 1280
@@ -606,21 +609,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 860b600a93cb3e74cb14ab0cc7b5b0cf
-      internalID: 1638561393
+      spriteID: 8215676a01fb5674a836a51d0abb16ef
+      internalID: -1456857686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_22
+      name: GWG_Atlas_MapIcons_22
       rect:
         serializedVersion: 2
         x: 1536
@@ -628,21 +631,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0eeb5b121c961394c9bac5a6951284ff
-      internalID: 1566641316
+      spriteID: 5ec12689dab6efc4491f7c58fcfe26cf
+      internalID: -1918430937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_23
+      name: GWG_Atlas_MapIcons_23
       rect:
         serializedVersion: 2
         x: 1792
@@ -650,21 +653,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0090306824e341439264c94cc101237
-      internalID: -1199874511
+      spriteID: 5c4299f8ff343b44bbde3eee90cd6ced
+      internalID: 722681520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_24
+      name: GWG_Atlas_MapIcons_24
       rect:
         serializedVersion: 2
         x: 0
@@ -672,21 +675,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daa0cb6293360384ca8cdf0fb73bd661
-      internalID: 617259543
+      spriteID: a190bd43e3905404189122c7c9f1fa98
+      internalID: -1590063675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_25
+      name: GWG_Atlas_MapIcons_25
       rect:
         serializedVersion: 2
         x: 256
@@ -694,21 +697,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaacbb15b1f5490448779293222e3ab8
-      internalID: -1344521941
+      spriteID: 1c4e3467dc9d33e4086dbf5158174515
+      internalID: 213371781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_26
+      name: GWG_Atlas_MapIcons_26
       rect:
         serializedVersion: 2
         x: 512
@@ -716,21 +719,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed9f96d3048cd424db61af7b8106dbac
-      internalID: -2105649969
+      spriteID: d3728a710cf58a2418d75e06e0d24f4d
+      internalID: 2008744122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_27
+      name: GWG_Atlas_MapIcons_27
       rect:
         serializedVersion: 2
         x: 768
@@ -738,21 +741,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62854e578642ffa4fb8c058316f54f9d
-      internalID: -1412116644
+      spriteID: 0d767c2fea0a78b4eb9fcb61dea304ed
+      internalID: -520752811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_28
+      name: GWG_Atlas_MapIcons_28
       rect:
         serializedVersion: 2
         x: 1024
@@ -760,21 +763,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d9a941dcf477064fbc04b162150de21
-      internalID: 1578542754
+      spriteID: 6f77d3740391cd04c84c58f3444a5eb4
+      internalID: -210321802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_29
+      name: GWG_Atlas_MapIcons_29
       rect:
         serializedVersion: 2
         x: 1280
@@ -782,21 +785,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4336e06fb05f84740843a6e12b79bfbf
-      internalID: -1858064715
+      spriteID: 67680f121e491eb4192136e82a36558e
+      internalID: 1088999480
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_30
+      name: GWG_Atlas_MapIcons_30
       rect:
         serializedVersion: 2
         x: 1536
@@ -804,21 +807,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33bf65b535efc924c8b6f244933b4b45
-      internalID: 73202081
+      spriteID: 6654fc323098788479de751d055ded57
+      internalID: -1079897450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_31
+      name: GWG_Atlas_MapIcons_31
       rect:
         serializedVersion: 2
         x: 1792
@@ -826,21 +829,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cec7f90c21465f64db4c39c16fb70d3a
-      internalID: -1648335655
+      spriteID: cc2b04b9f38bfb140a2e68856dd3e67c
+      internalID: -155481939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_32
+      name: GWG_Atlas_MapIcons_32
       rect:
         serializedVersion: 2
         x: 0
@@ -848,21 +851,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a480e0d578b0d54a887f51c18358485
-      internalID: 1522645114
+      spriteID: 9366bceaad2ab1b4085a2492e61cdca8
+      internalID: 513989625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_33
+      name: GWG_Atlas_MapIcons_33
       rect:
         serializedVersion: 2
         x: 256
@@ -870,21 +873,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d21f305a5300b3343afa58bbf501f9f8
-      internalID: 1715339132
+      spriteID: 6ba40aba176c2df4495e739976513ee5
+      internalID: 16428492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_34
+      name: GWG_Atlas_MapIcons_34
       rect:
         serializedVersion: 2
         x: 512
@@ -892,21 +895,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d24065afe71761d45add1af010938a06
-      internalID: 540559767
+      spriteID: ed697f31e7134834988d79a09002bc53
+      internalID: -1235471724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_35
+      name: GWG_Atlas_MapIcons_35
       rect:
         serializedVersion: 2
         x: 768
@@ -914,21 +917,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 830734aef3325d54290269c355fdef11
-      internalID: 1352506944
+      spriteID: eb00ad2fbaaeaa8498889fff7724807c
+      internalID: -395193769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_36
+      name: GWG_Atlas_MapIcons_36
       rect:
         serializedVersion: 2
         x: 1024
@@ -936,21 +939,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d4f148e32b316b4099c15f8b6391ea0
-      internalID: -628965137
+      spriteID: b02f96b485460604c8de58ea71707adc
+      internalID: 1368351916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_37
+      name: GWG_Atlas_MapIcons_37
       rect:
         serializedVersion: 2
         x: 1280
@@ -958,21 +961,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d33d197cf7beda4e87779937a0dada9
-      internalID: 1108183801
+      spriteID: 08bd984919f96a04a8ce99f53fe31b8a
+      internalID: -2108370024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_38
+      name: GWG_Atlas_MapIcons_38
       rect:
         serializedVersion: 2
         x: 1536
@@ -980,21 +983,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 764d1ec7829fee14eb39839d2d307838
-      internalID: -1769382681
+      spriteID: 9078850427a9ac64b992e1c15c10f157
+      internalID: -901467643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_39
+      name: GWG_Atlas_MapIcons_39
       rect:
         serializedVersion: 2
         x: 1792
@@ -1002,21 +1005,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a3860e35ec81ef4bb8dcf7a7f58f25a
-      internalID: 860032005
+      spriteID: 4a8cb3c514d2b534981c0c6f0684ba89
+      internalID: -1381469352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_40
+      name: GWG_Atlas_MapIcons_40
       rect:
         serializedVersion: 2
         x: 0
@@ -1024,21 +1027,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a07622bbaf2a15e4c8ab70dea1e3d5af
-      internalID: 1159332766
+      spriteID: c1cb09fd5d8cc824aad12e9e78ddc167
+      internalID: 95341316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_41
+      name: GWG_Atlas_MapIcons_41
       rect:
         serializedVersion: 2
         x: 256
@@ -1046,21 +1049,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6aa4c249787dcc4a91cc3665ceb637d
-      internalID: 1854848231
+      spriteID: 55b0c330e44d27943bcd906c1328b6fa
+      internalID: -1952044143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_42
+      name: GWG_Atlas_MapIcons_42
       rect:
         serializedVersion: 2
         x: 512
@@ -1068,21 +1071,21 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99d425490dda11440b618d0bfde5c64b
-      internalID: 2141206386
+      spriteID: 1862e79563d07c54d833a568d1f1c8f6
+      internalID: -374713513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GWG_Atlas_MapIcons_clean_43
+      name: GWG_Atlas_MapIcons_43
       rect:
         serializedVersion: 2
         x: 768
@@ -1090,15 +1093,59 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25a007c23b923f24da1e6fbf17e0c58c
-      internalID: -172268103
+      spriteID: 33cf00f34b3f6d548b8b27443bb6d7be
+      internalID: 976321344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_MapIcons_44
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fedef2946e7690b42b3347d84b73827b
+      internalID: 988028451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GWG_Atlas_MapIcons_45
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 578a08c91e7e93846a56e07bc0dedf54
+      internalID: 1116400754
       vertices: []
       indices: 
       edges: []
@@ -1107,7 +1154,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: c9d588e9f1208c54c864374ae8798f6f
     internalID: 0
     vertices: []
     indices: 
@@ -1115,54 +1162,69 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      GWG_Atlas_MapIcons_clean_0: -569290749
-      GWG_Atlas_MapIcons_clean_1: -91956505
-      GWG_Atlas_MapIcons_clean_10: 774690760
-      GWG_Atlas_MapIcons_clean_11: -331039865
-      GWG_Atlas_MapIcons_clean_12: -1977839452
-      GWG_Atlas_MapIcons_clean_13: -676598998
-      GWG_Atlas_MapIcons_clean_14: -1097936516
-      GWG_Atlas_MapIcons_clean_15: -558363553
-      GWG_Atlas_MapIcons_clean_16: -1972650842
-      GWG_Atlas_MapIcons_clean_17: 1251295955
-      GWG_Atlas_MapIcons_clean_18: -711181175
-      GWG_Atlas_MapIcons_clean_19: 1839935502
-      GWG_Atlas_MapIcons_clean_2: -1510145125
-      GWG_Atlas_MapIcons_clean_20: -1893787871
-      GWG_Atlas_MapIcons_clean_21: 1638561393
-      GWG_Atlas_MapIcons_clean_22: 1566641316
-      GWG_Atlas_MapIcons_clean_23: -1199874511
-      GWG_Atlas_MapIcons_clean_24: 617259543
-      GWG_Atlas_MapIcons_clean_25: -1344521941
-      GWG_Atlas_MapIcons_clean_26: -2105649969
-      GWG_Atlas_MapIcons_clean_27: -1412116644
-      GWG_Atlas_MapIcons_clean_28: 1578542754
-      GWG_Atlas_MapIcons_clean_29: -1858064715
-      GWG_Atlas_MapIcons_clean_3: -903721532
-      GWG_Atlas_MapIcons_clean_30: 73202081
-      GWG_Atlas_MapIcons_clean_31: -1648335655
-      GWG_Atlas_MapIcons_clean_32: 1522645114
-      GWG_Atlas_MapIcons_clean_33: 1715339132
-      GWG_Atlas_MapIcons_clean_34: 540559767
-      GWG_Atlas_MapIcons_clean_35: 1352506944
-      GWG_Atlas_MapIcons_clean_36: -628965137
-      GWG_Atlas_MapIcons_clean_37: 1108183801
-      GWG_Atlas_MapIcons_clean_38: -1769382681
-      GWG_Atlas_MapIcons_clean_39: 860032005
-      GWG_Atlas_MapIcons_clean_4: 1045715234
-      GWG_Atlas_MapIcons_clean_40: 1159332766
-      GWG_Atlas_MapIcons_clean_41: 1854848231
-      GWG_Atlas_MapIcons_clean_42: 2141206386
-      GWG_Atlas_MapIcons_clean_43: -172268103
-      GWG_Atlas_MapIcons_clean_5: 2030368865
-      GWG_Atlas_MapIcons_clean_6: 1486788913
-      GWG_Atlas_MapIcons_clean_7: -512323598
-      GWG_Atlas_MapIcons_clean_8: 1363714969
-      GWG_Atlas_MapIcons_clean_9: 330075525
+      GWG_Atlas_MapIcons_0: -7341182159526821159
+      GWG_Atlas_MapIcons_1: 36413481
+      GWG_Atlas_MapIcons_10: 1146698373
+      GWG_Atlas_MapIcons_11: 92780499
+      GWG_Atlas_MapIcons_12: -2091242290
+      GWG_Atlas_MapIcons_13: 1295394909
+      GWG_Atlas_MapIcons_14: 1256425989
+      GWG_Atlas_MapIcons_15: -1583260482
+      GWG_Atlas_MapIcons_16: -1570244875
+      GWG_Atlas_MapIcons_17: -58881957
+      GWG_Atlas_MapIcons_18: -18097750
+      GWG_Atlas_MapIcons_19: -399324957
+      GWG_Atlas_MapIcons_2: -1747001261
+      GWG_Atlas_MapIcons_20: 534772708
+      GWG_Atlas_MapIcons_21: -1456857686
+      GWG_Atlas_MapIcons_22: -1918430937
+      GWG_Atlas_MapIcons_23: 722681520
+      GWG_Atlas_MapIcons_24: -1590063675
+      GWG_Atlas_MapIcons_25: 213371781
+      GWG_Atlas_MapIcons_26: 2008744122
+      GWG_Atlas_MapIcons_27: -520752811
+      GWG_Atlas_MapIcons_28: -210321802
+      GWG_Atlas_MapIcons_29: 1088999480
+      GWG_Atlas_MapIcons_3: -1351089364
+      GWG_Atlas_MapIcons_30: -1079897450
+      GWG_Atlas_MapIcons_31: -155481939
+      GWG_Atlas_MapIcons_32: 513989625
+      GWG_Atlas_MapIcons_33: 16428492
+      GWG_Atlas_MapIcons_34: -1235471724
+      GWG_Atlas_MapIcons_35: -395193769
+      GWG_Atlas_MapIcons_36: 1368351916
+      GWG_Atlas_MapIcons_37: -2108370024
+      GWG_Atlas_MapIcons_38: -901467643
+      GWG_Atlas_MapIcons_39: -1381469352
+      GWG_Atlas_MapIcons_4: -1944267137
+      GWG_Atlas_MapIcons_40: 95341316
+      GWG_Atlas_MapIcons_41: -1952044143
+      GWG_Atlas_MapIcons_42: -374713513
+      GWG_Atlas_MapIcons_43: 976321344
+      GWG_Atlas_MapIcons_44: 988028451
+      GWG_Atlas_MapIcons_45: 1116400754
+      GWG_Atlas_MapIcons_46: -1044188113
+      GWG_Atlas_MapIcons_47: -604420441
+      GWG_Atlas_MapIcons_48: -1437587740
+      GWG_Atlas_MapIcons_49: -1183010596
+      GWG_Atlas_MapIcons_5: 1424195540
+      GWG_Atlas_MapIcons_50: 1519426542
+      GWG_Atlas_MapIcons_51: -1392708319
+      GWG_Atlas_MapIcons_52: -1615635420
+      GWG_Atlas_MapIcons_53: -1809545164
+      GWG_Atlas_MapIcons_54: 1731787046
+      GWG_Atlas_MapIcons_55: -484391566
+      GWG_Atlas_MapIcons_56: -279220053
+      GWG_Atlas_MapIcons_6: 1313703098
+      GWG_Atlas_MapIcons_7: -29533847
+      GWG_Atlas_MapIcons_8: -1147266111
+      GWG_Atlas_MapIcons_9: -961306068
   mipmapLimitGroupName: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

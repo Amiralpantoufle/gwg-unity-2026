@@ -81,7 +81,7 @@ public class GridRenderer : MonoBehaviour
             CreateTile(tile);
         }
     }
-    public async Task GenerateBase(GridBaseModel map)
+    public void GenerateBase(GridBaseModel map)
     {
         Clear();
 
@@ -177,6 +177,15 @@ public class GridRenderer : MonoBehaviour
         Vector2Int coords = new Vector2Int(x, y);
 
         if (tileViews.TryGetValue(coords, out TileView tile))
+            return tile;
+
+        return null;
+    }
+    public Base_TileView GetBaseTile(int x, int y)
+    {
+        Vector2Int coords = new Vector2Int(x, y);
+
+        if (baseTileViews.TryGetValue(coords, out Base_TileView tile))
             return tile;
 
         return null;

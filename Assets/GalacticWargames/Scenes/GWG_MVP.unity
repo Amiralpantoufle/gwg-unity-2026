@@ -3248,6 +3248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464a7c3234e92834794d190707c76bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameDataStorage
+  current_RessourceModule: {fileID: 0}
 --- !u!114 &232383526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12613,6 +12614,7 @@ Transform:
   - {fileID: 195630579}
   - {fileID: 1164954632}
   - {fileID: 473474239}
+  - {fileID: 1735381831}
   m_Father: {fileID: 962511956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &670501809
@@ -19700,7 +19702,6 @@ Transform:
   m_Children:
   - {fileID: 24531372}
   - {fileID: 1734592382}
-  - {fileID: 965298650}
   - {fileID: 433629088}
   - {fileID: 659999585}
   m_Father: {fileID: 0}
@@ -19729,72 +19730,6 @@ MonoBehaviour:
   freezed: 0
   mainPopup: {fileID: 1189871353}
   tileSelector: {fileID: 195630578}
---- !u!1001 &965298648
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 962511956}
-    m_Modifications:
-    - target: {fileID: 4562061987265711563, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-      propertyPath: m_Name
-      value: Tile_Selector
-      objectReference: {fileID: 0}
-    - target: {fileID: 8105938005999714106, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722268223928189137, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722268223928189137, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722268223928189137, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722268223928189137, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722268223928189137, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722268223928189137, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722268223928189137, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722268223928189137, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722268223928189137, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722268223928189137, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
---- !u!4 &965298650 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8722268223928189137, guid: 55f76ed184428cf4699fb34b8fa3a907, type: 3}
-  m_PrefabInstance: {fileID: 965298648}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &966595477
 GameObject:
   m_ObjectHideFlags: 0
@@ -24006,7 +23941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1189871352
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34950,6 +34885,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1735381830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1735381831}
+  - component: {fileID: 1735381832}
+  m_Layer: 0
+  m_Name: Vignettes_Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1735381831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735381830}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 659999585}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1735381832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735381830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ca2cf231c819044a06d42563bb18d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuilderQueue_Displayer
+  entityPrefab: {fileID: 7991352286970738026, guid: 27e3ee0858fd99a48ab2e7abe6f68b11, type: 3}
+  initialSize: 5
 --- !u!1 &1745398002
 GameObject:
   m_ObjectHideFlags: 0
@@ -44004,6 +43985,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2542614124752316681, guid: 912cfa241494e594ca4259901f02859e, type: 3}
+      propertyPath: stoneGauge
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542614124752316681, guid: 912cfa241494e594ca4259901f02859e, type: 3}
+      propertyPath: carbonGauge
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542614124752316681, guid: 912cfa241494e594ca4259901f02859e, type: 3}
+      propertyPath: hydrogenGauge
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3198051098857172250, guid: 912cfa241494e594ca4259901f02859e, type: 3}
+      propertyPath: m_Value
+      value: 0.475
+      objectReference: {fileID: 0}
     - target: {fileID: 3584842336745267288, guid: 912cfa241494e594ca4259901f02859e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -44106,7 +44103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4940386170261404043, guid: 912cfa241494e594ca4259901f02859e, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.208
+      value: 0.525
       objectReference: {fileID: 0}
     - target: {fileID: 5123229887681680639, guid: 912cfa241494e594ca4259901f02859e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -44882,7 +44879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 785495205610741348, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1665833852524067716, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
       propertyPath: m_Color.a
@@ -44904,6 +44901,26 @@ PrefabInstance:
       propertyPath: m_ShowMaskGraphic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2142747509518832819, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
+      propertyPath: stockCurrent
+      value: 
+      objectReference: {fileID: 1001726109}
+    - target: {fileID: 2142747509518832819, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
+      propertyPath: stockCapacity
+      value: 
+      objectReference: {fileID: 31065250}
+    - target: {fileID: 2142747509518832819, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
+      propertyPath: carbon_Quantity
+      value: 
+      objectReference: {fileID: 1243745886}
+    - target: {fileID: 2142747509518832819, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
+      propertyPath: hydrogen_Quantity
+      value: 
+      objectReference: {fileID: 2014028314}
+    - target: {fileID: 2142747509518832819, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
+      propertyPath: energyStone_Quantity
+      value: 
+      objectReference: {fileID: 624710371}
     - target: {fileID: 2843887351476403339, guid: bf332f3d1bf34d24f89a29568c57e993, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -38.01355

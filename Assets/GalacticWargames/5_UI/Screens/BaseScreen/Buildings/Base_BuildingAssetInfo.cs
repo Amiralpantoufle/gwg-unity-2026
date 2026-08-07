@@ -79,5 +79,7 @@ public class Base_BuildingAssetInfo : MonoBehaviour
     {
         Debug.Log(response);
         gameObject.SetActive(false);
+
+        BuilderQueue_Displayer.Instance.SpawnVignette(0, tilePos);
     }
 }

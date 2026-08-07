@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    [SerializeField] private GridLevel currentLevel;
     public static GridManager Instance;
+    [SerializeField] private GridLevel currentLevel;
     private MapNavigationController nav;
     private BaseNavigationController navBase;
     private GridRenderer gridRenderer;
@@ -91,7 +91,7 @@ public class GridManager : MonoBehaviour
         if (baseModel == null) Debug.LogError("Failed to load planet");
 
         //gridRenderer.RenderBase(baseModel);
-        await gridRenderer.GenerateBase(baseModel);
+        gridRenderer.GenerateBase(baseModel);
         SwitchToBase();
     }
 

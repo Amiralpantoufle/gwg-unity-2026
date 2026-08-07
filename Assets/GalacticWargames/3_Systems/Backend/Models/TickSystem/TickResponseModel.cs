@@ -7,7 +7,7 @@ public class TickResponse
     public bool error;
     public string error_code;
     public string error_msg;
-
+     
     public TickOutput output;
 }
 

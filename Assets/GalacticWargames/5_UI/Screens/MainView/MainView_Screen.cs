@@ -14,12 +14,6 @@ public class MainView_Screen : UIScreen
     [SerializeField] private TextMeshProUGUI title;
     [SerializeField] private TextMeshProUGUI level;
     [SerializeField] public Slider xpGauge;
-    //Ressources
-    [SerializeField] private TextMeshProUGUI energyStone_Quantity;
-    [SerializeField] private TextMeshProUGUI carbon_Quantity;
-    [SerializeField] private TextMeshProUGUI hydrogen_Quantity;
-    [SerializeField] private TextMeshProUGUI stockCapacity,stockCurrent;
-
 
     public async override void Show()
     {
@@ -30,6 +24,7 @@ public class MainView_Screen : UIScreen
         gameView.SetActive(true);
 
         GridManager.OnSwitchToBase += OpenBaseScreen;
+        GameDataStorage.Instance._Current_RessourceModule = GetComponent<RessourceModule>();
     }
     public override void Hide()
     {
@@ -71,7 +66,6 @@ public class MainView_Screen : UIScreen
         }
 
         ParseUserInfo(response.output, storage);
-        Debug.Log("Info Loaded");
     }
     private void ParseUserInfo(UserDataOutput userData, GameDataStorage storage)
     {
@@ -85,25 +79,22 @@ public class MainView_Screen : UIScreen
         xpGauge.value = userData.infos_user.level_progress.xp_in_level;
 
         //Asign Ressources
-        string current = "0";
         if (userData.oes_ressources_oer != null && userData.oes_ressources_oer.Count > 0)
         {
-            energyStone_Quantity.text = userData.oes_ressources_oer[0].nombre_oer.ToString();
-            carbon_Quantity.text = userData.oes_ressources_oer[1].nombre_oer.ToString();
-            hydrogen_Quantity.text = userData.oes_ressources_oer[2].nombre_oer.ToString();
+            int[] r = new int[3];
+            for(int i=0; i< userData.oes_ressources_oer.Count; i++)
+            {
+                r[i] = userData.oes_ressources_oer[i].nombre_oer;
+            }
 
-            //Additionne toutes les ressources
-            current = (userData.oes_ressources_oer[0].nombre_oer + userData.oes_ressources_oer[1].nombre_oer + userData.oes_ressources_oer[2].nombre_oer).ToString();
+            RessourceModule rModule = GetComponent<RessourceModule>();
+            if(rModule!=null)
+            {
+                rModule.RefreshRessources(r);
+            }
         }
         else
-        {
             Debug.LogWarning("No ressources detected from Get/Api/user/getUserData");
-        }
-
-        stockCurrent.text = current;
-        stockCapacity.text = "/" + userData.infos_user.BASE_STOCKAGE_DEFAULT.ToString();
-
-        Debug.Log("Infos user loaded");
     }
 
     private void OpenBaseScreen()

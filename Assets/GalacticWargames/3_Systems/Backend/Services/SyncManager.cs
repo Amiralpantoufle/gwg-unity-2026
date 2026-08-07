@@ -48,6 +48,9 @@ public class SyncManager : MonoBehaviour
         currentCursor = response.output.next_cursor;
 
         tickProcessor.Apply(response.output);
+
+        //TEMP security stop thread
+        //running = false;
     }
 
     //Actions

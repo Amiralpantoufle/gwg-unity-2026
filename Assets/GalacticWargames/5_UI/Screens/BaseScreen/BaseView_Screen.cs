@@ -13,28 +13,14 @@ public class BaseView_Screen : UIScreen
     private RessourceModule availableRessources;
     public RessourceModule _AvailableRessources { get { return availableRessources; } }
 
-    [SerializeField] private TextMeshProUGUI carbon_Quantity;
-    [SerializeField] private TextMeshProUGUI hydrogen_Quantity;
-    [SerializeField] private TextMeshProUGUI energyStone_Quantity;
-    [SerializeField] private TextMeshProUGUI stockCapacity, stockCurrent;
-
     BaseInfo_Model baseData;
-    building_Construct[] buildings;
 
-    public async override void Show()
+    public override void Show()
     {
         base.Show();
         gameView.SetActive(true);
-        availableRessources = GetComponent<RessourceModule>();
 
-        GridManager.OnSwitchToWorld += OpenWorldScreen;
-
-        await Display_BaseInfos();
-
-        //Load Building List
-        BaseBuildings_Model buildingModel = await Load_BuildingList(baseId);
-        buildings = buildingModel.buildings;
-        popupMaster.GetComponent<BaseView_Popup>()._SelectionPannel.Load_AvailableBuildings(buildings);
+        Reload_BaseView();
     }
     public override void Hide()
     {
@@ -42,11 +28,30 @@ public class BaseView_Screen : UIScreen
         gameView.SetActive(false);
     }
 
-    private async Task Display_BaseInfos()
+    public async void Reload_BaseView()
     {
         baseId = GameDataStorage.Instance.GetLastBaseId();
         if (baseId == 0) Debug.LogError("NO BASE ID LOADED");
 
+
+        //Load Ressource Component
+        availableRessources = GetComponent<RessourceModule>();
+        GameDataStorage.Instance._Current_RessourceModule = availableRessources;
+        await Display_BaseInfos();
+
+        //Load Building List
+        BaseBuildings_Model buildingModel = await Load_BuildingList(baseId);
+        popupMaster.GetComponent<BaseView_Popup>()._SelectionPannel.Load_AvailableBuildings(buildingModel.buildings);
+
+        //Load Construction Queue
+        ConstructQueue_Model queue =  await Load_ConstructQueue(baseId);
+        Display_Vignettes(queue.buildings, queue.ships);
+
+        GridManager.OnSwitchToWorld += OpenWorldScreen;
+    }
+
+    private async Task Display_BaseInfos()
+    {
         //Load Info
         baseData = await Load_BaseInfos(baseId);
 
@@ -57,13 +62,26 @@ public class BaseView_Screen : UIScreen
         r[2] = (int)baseData.ressources[2].nombre_oer;
 
         availableRessources.RefreshRessources(r);
-
-        carbon_Quantity.text = r[0].ToString();
-        hydrogen_Quantity.text = r[1].ToString();
-        energyStone_Quantity.text = r[2].ToString();
-
-        stockCurrent.text = (r[0] + r[1] + r[2]).ToString();
+        //availableRessources.Refresh_StorageCapacity(userData.infos_user.BASE_STOCKAGE_DEFAULT);
     }
+    private void Display_Vignettes(ConstructQueue_Building[] buildings, ConstructQueue_Building[] ships)
+    {
+        foreach(ConstructQueue_Building b in buildings)
+        {
+            Transform pos = FindAnyObjectByType<GridRenderer>().GetBaseTile(b.x, b.y).transform;
+
+            BuilderQueue_Displayer.Instance.SpawnVignette(0,pos.position);
+        }
+    }
+
+    private async Task<RessourceOverview> Load_RessourceInfos()
+    {
+        string endpoint = $"/resources/overview";
+        var response = await API_Client.Instance.LoadApiResponse<RessourceOverview>(endpoint);
+
+        return response.output;
+    }
+
     private async Task<BaseInfo_Model> Load_BaseInfos(int id)
     {
         string endpoint = $"/base/show/{id}";
@@ -71,6 +89,7 @@ public class BaseView_Screen : UIScreen
 
         return response.output;
     }
+
     private async Task<BaseBuildings_Model> Load_BuildingList(int id)
     {
         string endpoint = $"/base/buildings/{id}";
@@ -79,6 +98,13 @@ public class BaseView_Screen : UIScreen
         return response.output;
     }
 
+    private async Task<ConstructQueue_Model> Load_ConstructQueue(int id)
+    {
+        string endpoint = $"/construction/queue/{id}";
+        var response = await API_Client.Instance.LoadApiResponse<ConstructQueue_Model>(endpoint);
+
+        return response.output;
+    }
 
     //Utility
     private void OpenWorldScreen()

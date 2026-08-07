@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EntityView : MonoBehaviour
+public class EntityView : MonoBehaviour 
 {
     private int entitiesLayer = 10001;
 

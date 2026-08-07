@@ -6,6 +6,10 @@ public class GameDataStorage : MonoBehaviour
     public GlobalDataOutput _GlobalData { get; private set; }
     public UserDataOutput _UserData { get; private set; }
 
+    //RessourceData
+    [SerializeField] private RessourceModule current_RessourceModule;
+    public RessourceModule _Current_RessourceModule { get { return current_RessourceModule; } set { current_RessourceModule = value; } }
+
     //Base Data
     private const string LAST_BASE_KEY = "LAST_ACTIVE_BASE";
     private BaseOutput currentBase;
@@ -24,6 +28,7 @@ public class GameDataStorage : MonoBehaviour
         }
     }
 
+    //BASE Data
     /// <summary>
     /// Charge les données bases en local
     /// </summary>
@@ -46,8 +51,6 @@ public class GameDataStorage : MonoBehaviour
         }
         else Debug.LogWarning("no base loaded");
     }
-    
-    //Data
     public void SetUserStartData(UserDataOutput user)
     {
         _UserData = user;
@@ -68,4 +71,5 @@ public class GameDataStorage : MonoBehaviour
         Debug.Log(PlayerPrefs.GetInt(LAST_BASE_KEY, 0));
         return PlayerPrefs.GetInt(LAST_BASE_KEY, 0);
     }
+
 }
