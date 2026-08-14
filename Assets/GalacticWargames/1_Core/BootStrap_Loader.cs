@@ -38,13 +38,7 @@ public class BootStrap_Loader : MonoBehaviour
     private async Task LoadBaseIndex()
     {
         var response = await API_Client.Instance.LoadApiResponse<BaseIndexOutput>("/base/index");
-        GameDataStorage.Instance.LoadCurrentBaseData(FindBaseToDisplay(response.output.bases));
-/*        string json = await API_Client.Instance.GetAsync("/base/index");
-        if (string.IsNullOrEmpty(json))
-            return;
 
-        //Construction d'une liste des bases du joueur
-        ApiResponse<BaseIndexOutput> response = JsonConvert.DeserializeObject<ApiResponse<BaseIndexOutput>>(json);
         if (response == null)
         {
             Debug.LogError("Impossible de parser BaseIndex");
@@ -59,7 +53,10 @@ public class BootStrap_Loader : MonoBehaviour
         {
             Debug.Log("BaseIndex output null");
             return;
-        }*/
+        }
+
+        GameDataStorage.Instance.LoadCurrentBaseData(FindBaseToDisplay(response.output.bases));
+
     }
     private BaseOutput FindBaseToDisplay(List<BaseOutput> dataList)
     {

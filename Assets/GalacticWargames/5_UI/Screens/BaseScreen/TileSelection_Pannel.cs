@@ -13,8 +13,6 @@ public class TileSelection_Pannel : MonoBehaviour
 
     [SerializeField] private Base_BuildingAssetInfo contextPannel;
 
-
-
     private Base_TileView loadedTile;
     public Base_TileView _LoadedTile { get { return loadedTile; } }
 
@@ -27,13 +25,9 @@ public class TileSelection_Pannel : MonoBehaviour
 
         string name = "Empty Slot";
         gui_slotName.text = name;
-
-        //BaseNavigationController.Instance.OnCloseAction += Close_SelecPannel;
     }
     private void Close_SelecPannel()
     {
-        //BaseNavigationController.Instance.OnCloseAction -= Close_SelecPannel;
-
         gameObject.SetActive(false);
         loadedTile = null;
 
@@ -57,7 +51,7 @@ public class TileSelection_Pannel : MonoBehaviour
     }
     private void Clear_AvailableBuildings()
     {
-        foreach (GameObject child in buildingAsset_Root)
-            Destroy(child);
+        foreach (Transform child in buildingAsset_Root)
+            Destroy(child.gameObject);
     }
 }

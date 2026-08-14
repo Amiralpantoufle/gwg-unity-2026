@@ -8,12 +8,12 @@ public class ResourceData
 }
 
 [System.Serializable]
-public class RessourceOverview
+public class ResourceOverview
 {
-    public BaseRessource base_storage;
+    public BaseResource[] base_storage;
 }
 [System.Serializable]
-public class BaseRessource
+public class BaseResource
 {
     public int base_id;
     public int storage_total;

@@ -7,6 +7,8 @@ public class Builder_QueueSelector : MonoBehaviour
     public Base_SpaceShipAsset _Asset { get { return asset; } }
 
     //Selector
+    [SerializeField] private Base_QueueDisplayer queue;
+    public Base_QueueDisplayer _Queue { get { return queue; } }
     private int selectedAmount;
     private int maxAvailable;
 

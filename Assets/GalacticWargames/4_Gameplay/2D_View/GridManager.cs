@@ -233,7 +233,7 @@ public class GridManager : MonoBehaviour
         if (currentBase == null) return;
 
         TileView tView = gridRenderer.GetTile(currentBase.position.x, currentBase.position.y);
-        Debug.Log(currentBase.position.x +""+ currentBase.position.y);
+        Debug.Log(tView.name);
 
         if (tView == null)
             Debug.LogError("No matching tile");

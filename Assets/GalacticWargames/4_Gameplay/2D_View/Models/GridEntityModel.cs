@@ -1,14 +1,14 @@
 using UnityEngine;
 
 [System.Serializable]
-public class GridEntityModel
+public class GridEntityModel 
 {
     public string type;
     public string name;
     public int v;
 
     public int id; // ???
-    public int entity_id; // ???
+    //public int entity_id; // ???
 }
 
 [System.Serializable]

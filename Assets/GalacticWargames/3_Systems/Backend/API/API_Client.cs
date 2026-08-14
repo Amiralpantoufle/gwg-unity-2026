@@ -75,9 +75,7 @@ public class API_Client : MonoBehaviour
         }
 
         callback?.Invoke(req.downloadHandler.text);
-
         req.Dispose();
-
     }
 
     //Async API
@@ -192,7 +190,6 @@ public class API_Client : MonoBehaviour
 
         tcs.SetResult(true);
     }
-
 
     //REQUEST MANAGEMENT
 

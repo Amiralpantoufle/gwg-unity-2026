@@ -17,6 +17,8 @@ public class RessourceModule : MonoBehaviour
     private int available_Storage;
     private int current_Storage;
 
+    public bool hasGauges;
+
     //GUI Elements
     [SerializeField] private TextMeshProUGUI energyStone_Quantity;
     [SerializeField] private TextMeshProUGUI carbon_Quantity;
@@ -29,18 +31,25 @@ public class RessourceModule : MonoBehaviour
 
     public void RefreshRessources(int[] r)
     {
-        if (r.Length > 3 || r.Length < 3)
+        if (r == null || r.Length > 3)
         {
-            Debug.LogError("Uncomplete ressource package");
+            Debug.LogError("Invalid resource package.");
             return;
         }
 
-        availableCarbon = r[0];
-        availableHydrogen = r[1];
-        availableStone = r[2];
+        if (r.Length > 0)
+            availableCarbon = r[0];
 
-        Refresh_StorageCapacity(5000);
+        if (r.Length > 1)
+            availableHydrogen = r[1];
+
+        if (r.Length > 2)
+            availableStone = r[2];
+
         Display_Amounts();
+
+        if (hasGauges)
+            RefreshStorageGauge();
     }
     public void Refresh_StorageCapacity(int capacity)
     {
@@ -53,10 +62,13 @@ public class RessourceModule : MonoBehaviour
 
         RefreshStorageGauge();
     }
-    public void RefreshStorageGauge()
+    private void RefreshStorageGauge()
     {
         if (available_Storage <= 0)
             return;
+
+        current_Storage = availableCarbon + availableHydrogen + availableStone;
+        stockCurrent.text = current_Storage.ToString();
 
         float carbon = (float)availableCarbon / available_Storage;
         float hydrogen = (float)availableHydrogen / available_Storage;

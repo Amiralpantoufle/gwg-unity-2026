@@ -2192,11 +2192,6 @@ MonoBehaviour:
   title: {fileID: 0}
   level: {fileID: 0}
   xpGauge: {fileID: 0}
-  energyStone_Quantity: {fileID: 0}
-  carbon_Quantity: {fileID: 0}
-  hydrogen_Quantity: {fileID: 0}
-  stockCapacity: {fileID: 0}
-  stockCurrent: {fileID: 0}
 --- !u!114 &2142747509518832819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2212,6 +2207,15 @@ MonoBehaviour:
   availableCarbon: 0
   availableHydrogen: 0
   availableStone: 0
+  hasGauges: 0
+  energyStone_Quantity: {fileID: 5852813940103669981}
+  carbon_Quantity: {fileID: 425044130117838015}
+  hydrogen_Quantity: {fileID: 6499164899883665649}
+  stockCapacity: {fileID: 0}
+  stockCurrent: {fileID: 0}
+  carbonFill: {fileID: 0}
+  hydrogenFill: {fileID: 0}
+  stoneFill: {fileID: 0}
 --- !u!1 &6221693264159833524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2983,7 +2987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1035953664626777355
 RectTransform:
   m_ObjectHideFlags: 0

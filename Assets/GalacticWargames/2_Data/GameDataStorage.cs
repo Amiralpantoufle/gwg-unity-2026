@@ -68,7 +68,6 @@ public class GameDataStorage : MonoBehaviour
     /// </summary>
     public int GetLastBaseId()
     {
-        Debug.Log(PlayerPrefs.GetInt(LAST_BASE_KEY, 0));
         return PlayerPrefs.GetInt(LAST_BASE_KEY, 0);
     }
 

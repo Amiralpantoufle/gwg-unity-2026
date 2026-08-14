@@ -54,7 +54,6 @@ public class BaseNavigationController : IsoNavigation
     //Utility
     private buildingList GetTileStatus(BaseEntity entity)
     {
-
         //Return tile entity
         buildingList typeOf = buildingList.EmptySlot;
 

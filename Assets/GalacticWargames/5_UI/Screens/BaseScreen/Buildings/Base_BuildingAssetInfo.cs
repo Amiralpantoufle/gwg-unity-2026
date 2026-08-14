@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,7 +40,7 @@ public class Base_BuildingAssetInfo : MonoBehaviour
         //Add Callbacks
         buttonConstruct.enabled = isAvailable;
 
-        if(isAvailable)
+        if (isAvailable)
         {
             alpha = 1f;
             buttonConstruct.onClick.AddListener(ClickOnBuild);
@@ -60,26 +61,40 @@ public class Base_BuildingAssetInfo : MonoBehaviour
 
     public void ClickOnBuild()
     {
-        Debug.Log("Building asset !");
-
         BuildingConstructionRequest request = new BuildingConstructionRequest
         {
             id_oes = GameDataStorage.Instance.GetLastBaseId(),
             id_bat = loadedConstruct.id_bat,
             x = tilePos.x,
             y = tilePos.y,
+            operation_key = OperationKeyGenerator.Generate("build")
         };
 
         string json = JsonUtility.ToJson(request);
-
-        StartCoroutine(API_Client.Instance.Post("/construction/building",json,OnConstructionQueued));
+        StartCoroutine(API_Client.Instance.Post("/construction/building", json, OnConstructionQueued));
     }
 
     private void OnConstructionQueued(string response)
     {
-        Debug.Log(response);
-        gameObject.SetActive(false);
+        //Treat errors
+        ApiResponse<string> result = JsonUtility.FromJson<ApiResponse<string>>(response);
 
-        BuilderQueue_Displayer.Instance.SpawnVignette(0, tilePos);
+        if (result == null)
+        {
+            Debug.LogError("Réponse de construction invalide.");
+            return;
+        }
+
+        if (result.error)
+        {
+            Debug.LogWarning($"Construction impossible : {result.error_code} - {result.error_msg}");
+            ToastManager.Instance.GenerateToast("Construction Impossible", 0, 2f);
+
+            return;
+        }
+
+        //Success construction
+        Debug.Log("Building asset !");
+        gameObject.SetActive(false);
     }
 }

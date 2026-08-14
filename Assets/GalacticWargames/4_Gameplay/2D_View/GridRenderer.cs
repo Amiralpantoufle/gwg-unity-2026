@@ -97,9 +97,9 @@ public class GridRenderer : MonoBehaviour
 
     private void CreateTile(GridTile tile)
     {
-        GameObject obj = Instantiate(tilePrefab);
+        GameObject obj = Instantiate(tilePrefab, gridRoot);
 
-        obj.transform.SetParent(gridRoot);
+        //obj.transform.SetParent(gridRoot);
         obj.transform.position = IsoToWorld(tile.x, tile.y);
         obj.transform.name = + tile.x+"x_" +tile.y + "y";
 
@@ -136,9 +136,9 @@ public class GridRenderer : MonoBehaviour
     }
     private void CreateBaseTile(GridBaseTile tile)
     {
-        GameObject obj = Instantiate(baseTilePrefab);
+        GameObject obj = Instantiate(baseTilePrefab, baseGridRoot);
 
-        obj.transform.SetParent(baseGridRoot);
+        //obj.transform.SetParent(baseGridRoot);
         obj.transform.position = IsoToWorld(tile.x, tile.y);
         obj.transform.name = "_" + tile.x + "x_" + tile.y + "y";
 
@@ -239,5 +239,7 @@ public class GridRenderer : MonoBehaviour
         //Clear Entities
         foreach (Transform child in entityPool.transform)
             entityPool.Release(child.GetComponent<EntityView>());
+
+        baseTileViews.Clear();
     }
 }

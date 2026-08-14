@@ -24,6 +24,8 @@ public class MainView_Screen : UIScreen
         gameView.SetActive(true);
 
         GridManager.OnSwitchToBase += OpenBaseScreen;
+
+        //Load Ressources module
         GameDataStorage.Instance._Current_RessourceModule = GetComponent<RessourceModule>();
     }
     public override void Hide()

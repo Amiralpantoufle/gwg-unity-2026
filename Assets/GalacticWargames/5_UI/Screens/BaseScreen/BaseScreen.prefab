@@ -143,14 +143,15 @@ MonoBehaviour:
   availableCarbon: 0
   availableHydrogen: 0
   availableStone: 0
+  hasGauges: 0
   energyStone_Quantity: {fileID: 8330142532496433415}
   carbon_Quantity: {fileID: 6237920697270174682}
   hydrogen_Quantity: {fileID: 480986487906605385}
   stockCapacity: {fileID: 2647733118604583336}
   stockCurrent: {fileID: 4849513811246972005}
-  carbonFill: {fileID: 3584842336745267288}
+  carbonFill: {fileID: 4940386170261404043}
   hydrogenFill: {fileID: 5123229887681680639}
-  stoneFill: {fileID: 4940386170261404043}
+  stoneFill: {fileID: 3584842336745267288}
 --- !u!1 &709001396009874541
 GameObject:
   m_ObjectHideFlags: 0

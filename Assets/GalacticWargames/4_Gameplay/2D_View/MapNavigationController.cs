@@ -69,7 +69,7 @@ public class MapNavigationController : IsoNavigation
         //Entity found
         if (previouslySelectedTile._Tile.entities != null)
         {
-            int selectedID = previouslySelectedTile._Tile.entities[0].entity_id;
+            int selectedID = previouslySelectedTile._Tile.entities[0].id;//Preivously .entity_id
 
             //Si ID correspond à une base joueur
             if (selectedID == GameDataStorage.Instance._CurrentBase.base_id)

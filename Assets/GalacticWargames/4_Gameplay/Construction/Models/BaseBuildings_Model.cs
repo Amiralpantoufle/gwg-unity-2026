@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class BaseBuildings_Model 
+public class BaseBuildings_Model  
 {
     public int base_id;
     public building_Construct[] buildings;

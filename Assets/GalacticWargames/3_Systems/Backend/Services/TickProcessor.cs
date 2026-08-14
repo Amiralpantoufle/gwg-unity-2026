@@ -15,16 +15,16 @@ public class TickProcessor
 
         if (tick.changes.resources.Count > 0)
         {
-            int[] r = new int[3];
+            int count = tick.changes.resources.Count;
 
-            for (int i=0; i< tick.changes.resources.Count; i++)
+            int[] r = new int[count];
+
+            for (int i=0; i < count; i++)
                 r[i] = tick.changes.resources[i].nombre_oer;
 
             GameDataStorage.Instance._Current_RessourceModule.RefreshRessources(r);
             Debug.Log($"Tick : {tick.changes.resources.Count} resources");
         }
-
-
 
         if (tick.changes.bases.Count > 0)
             Debug.Log($"Tick : {tick.changes.bases.Count} bases");

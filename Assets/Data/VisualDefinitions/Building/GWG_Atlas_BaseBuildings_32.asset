@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VisualDefinition
   image_id: 33
   category: 5
-  imageSprite: {fileID: 536163856, guid: 21f58960d6988114a85bcd2ebf06b61b, type: 3}
-  renderScale: 1.5
-  offset: {x: 0, y: 0}
+  imageSprite: {fileID: -2396810555239852077, guid: 301002279487b9c428e9038ca16b13ed, type: 3}
+  renderScale: 0.75
+  offset: {x: 0, y: -0.28}

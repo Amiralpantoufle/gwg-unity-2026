@@ -16,7 +16,8 @@ public class Base_SpaceShipAsset : MonoBehaviour
     //Context Info
     private spaceShip_Construct loadedConstruct;
     private int[] cost = new int[3];
-    Vector2Int tilePos;
+    protected int targetAmount;
+    protected float targetBuildTime;
 
     //Extra components
     [SerializeField] private Image lockedIcon;
@@ -25,13 +26,13 @@ public class Base_SpaceShipAsset : MonoBehaviour
     {
         //Load Info
         assetName.text = construct.nom_vas;
+        targetBuildTime = construct.vitesse_construction_vas;
 
-        //Define Day Build Time
-        buildTime.text = GetBuildTime(construct.vitesse_construction_vas);
+        //Defini nombre vaisseau déjà possédés
 
         //Swap Icon
-/*        VisualDefinition v = GridVisualService.Instance.GetVisual(construct.idiet_bat);
-        buildingIcon.sprite = v.imageSprite;*/
+        /*        VisualDefinition v = GridVisualService.Instance.GetVisual(construct.idiet_bat);
+                buildingIcon.sprite = v.imageSprite;*/
 
         //Display Ressources
         for (int i = 0; i < construct.couts.Length; i++)
@@ -51,26 +52,47 @@ public class Base_SpaceShipAsset : MonoBehaviour
     {
         Debug.Log("Building asset !");
 
-        int nombre = transform.GetComponentInParent<Builder_QueueSelector>()._SelectedAmount;
+        Builder_QueueSelector queue = transform.GetComponentInParent<Builder_QueueSelector>();
+        targetAmount = queue._SelectedAmount;
 
-        if(nombre > 0)
+        if(targetAmount > 0)
         {
             SpaceShipConstructionRequest request = new SpaceShipConstructionRequest
             {
                 id_oes = GameDataStorage.Instance.GetLastBaseId(),
                 id_vas = loadedConstruct.id_vas,
-                nombre = nombre
+                nombre = targetAmount,
+                operation_key = OperationKeyGenerator.Generate("build")
             };
 
             string json = JsonUtility.ToJson(request);
-
             StartCoroutine(API_Client.Instance.Post("/construction/ship", json, OnConstructionQueued));
         }
     }
     private void OnConstructionQueued(string response)
     {
         Debug.Log(response);
-        gameObject.SetActive(false);
+
+        //Treat errors
+        ApiResponse<string> result = JsonUtility.FromJson<ApiResponse<string>>(response);
+
+        if (result == null)
+        {
+            Debug.LogError("Réponse de construction invalide.");
+            return;
+        }
+        if (result.error)
+        {
+            Debug.LogWarning($"Construction impossible : {result.error_code} - {result.error_msg}");
+            ToastManager.Instance.GenerateToast("Construction Impossible", 0, 2f);
+
+            return;
+        }
+
+        if (targetAmount > 0)
+        {
+            transform.GetComponentInParent<Builder_QueueSelector>()._Queue.Start_NewQueue(targetAmount, targetBuildTime);
+        }
     }
 
     //Utility

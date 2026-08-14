@@ -6,15 +6,39 @@ using UnityEngine;
 
 public class BaseView_Screen : UIScreen
 {
+    public static BaseView_Screen Instance;
+
     [SerializeField] private GameObject gameView;
     private int baseId;
+
+    //Buildings
+    private BaseBuildings_Model availableBuildings;
+    public BaseBuildings_Model _AvailableBuildings { get { return availableBuildings; } }
+
+    //SpaceShips
+    ConstructQueue_Building[] ship_Queue;
 
     //Ressources
     private RessourceModule availableRessources;
     public RessourceModule _AvailableRessources { get { return availableRessources; } }
 
-    BaseInfo_Model baseData;
+    private BaseInfo_Model baseData;
+    public BaseInfo_Model _BaseData { get { return baseData; } }
 
+    private BaseResource resourceview;
+    public BaseResource _ResourceView { get { return resourceview;} }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     public override void Show()
     {
         base.Show();
@@ -40,12 +64,14 @@ public class BaseView_Screen : UIScreen
         await Display_BaseInfos();
 
         //Load Building List
-        BaseBuildings_Model buildingModel = await Load_BuildingList(baseId);
-        popupMaster.GetComponent<BaseView_Popup>()._SelectionPannel.Load_AvailableBuildings(buildingModel.buildings);
+        availableBuildings = await Load_BuildingList(baseId);
+        if(availableBuildings != null)
+            popupMaster.GetComponent<BaseView_Popup>()._SelectionPannel.Load_AvailableBuildings(availableBuildings.buildings);
 
         //Load Construction Queue
         ConstructQueue_Model queue =  await Load_ConstructQueue(baseId);
-        Display_Vignettes(queue.buildings, queue.ships);
+        Display_Vignettes(queue.buildings);
+        ship_Queue = queue.ships;
 
         GridManager.OnSwitchToWorld += OpenWorldScreen;
     }
@@ -54,6 +80,7 @@ public class BaseView_Screen : UIScreen
     {
         //Load Info
         baseData = await Load_BaseInfos(baseId);
+        resourceview = await Load_RessourceInfos();
 
         int[] r = new int[3];
 
@@ -62,9 +89,10 @@ public class BaseView_Screen : UIScreen
         r[2] = (int)baseData.ressources[2].nombre_oer;
 
         availableRessources.RefreshRessources(r);
-        //availableRessources.Refresh_StorageCapacity(userData.infos_user.BASE_STOCKAGE_DEFAULT);
+        //Attention ! Renvoi pour l'instant que la première base de la liste (a traiter pour récupérer la base actuelle chargée)
+        availableRessources.Refresh_StorageCapacity(resourceview.storage_total);
     }
-    private void Display_Vignettes(ConstructQueue_Building[] buildings, ConstructQueue_Building[] ships)
+    private void Display_Vignettes(ConstructQueue_Building[] buildings)
     {
         foreach(ConstructQueue_Building b in buildings)
         {
@@ -74,12 +102,15 @@ public class BaseView_Screen : UIScreen
         }
     }
 
-    private async Task<RessourceOverview> Load_RessourceInfos()
+    private async Task<BaseResource> Load_RessourceInfos()
     {
         string endpoint = $"/resources/overview";
-        var response = await API_Client.Instance.LoadApiResponse<RessourceOverview>(endpoint);
+        var response = await API_Client.Instance.LoadApiResponse<ResourceOverview>(endpoint);
 
-        return response.output;
+        //Choisir la bonne base dans la liste !!
+        BaseResource r = response.output.base_storage[0];
+
+        return r;
     }
 
     private async Task<BaseInfo_Model> Load_BaseInfos(int id)
