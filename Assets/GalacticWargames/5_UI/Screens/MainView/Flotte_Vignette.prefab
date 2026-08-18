@@ -297,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4752589607322891331}
   - component: {fileID: 6969185938504713701}
+  - component: {fileID: -2858251720020978847}
   m_Layer: 5
   m_Name: Flotte_Vignette
   m_TagString: Untagged
@@ -334,3 +335,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8123364700985367408}
   m_CullTransparentMesh: 1
+--- !u!114 &-2858251720020978847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123364700985367408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1031343e1863a8345a0a95b8f963a6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fleet_Instance
+  txt_fleetName: {fileID: 6297415323020864322}
+  icon_fleetStatus: {fileID: 5456088957287198211}
+  icons_Status:
+  - {fileID: 1290533489, guid: 52d498b2ce5e7c84bbb27bd868ccf76f, type: 3}
+  - {fileID: 1240159089, guid: 52d498b2ce5e7c84bbb27bd868ccf76f, type: 3}

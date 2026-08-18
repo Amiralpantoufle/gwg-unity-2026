@@ -15,6 +15,7 @@ public class RessourceModule : MonoBehaviour
     public int _AvailableStone { get { return availableStone; } }
 
     private int available_Storage;
+    public int _Available_Storage { get { return available_Storage; } }
     private int current_Storage;
 
     public bool hasGauges;

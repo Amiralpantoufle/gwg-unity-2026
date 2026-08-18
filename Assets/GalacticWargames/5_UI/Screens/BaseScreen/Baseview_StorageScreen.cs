@@ -13,10 +13,20 @@ public class Baseview_StorageScreen : BaseView_BuildingScreen
 
     private void OnEnable()
     {
+        BaseInfo_Model baseR = BaseView_Screen.Instance._BaseData;
+
         int[] r = new int[3];
-        r[0] = 20;
-        r[2] = 20;
-        RefreshStorageGauge(r,10,200);
+        for(int i=0; i<3;i++)
+        {
+            r[i] = baseR.ressources[i].nombre_oer;
+        }
+
+        //Ressources edit
+        int secured = baseR.local_economy.safe.protected_volume;
+        int capacity = baseR.local_economy.storage.max;
+
+        RefreshStorageGauge(r, secured, capacity);
+
     }
     public void RefreshStorageGauge(int[] resourcesStored, int securedStored, int availableStorage)
     {
@@ -25,9 +35,9 @@ public class Baseview_StorageScreen : BaseView_BuildingScreen
 
         float start = 0f;
 
+
         float securedRatio = (float)securedStored / availableStorage;
         SetFill(protected_resourceStored, start, start + securedRatio);
-        protected_resourceStored.gameObject.SetActive(securedStored > 0);
 
         start += securedRatio;
 

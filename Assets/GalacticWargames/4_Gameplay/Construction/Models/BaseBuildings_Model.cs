@@ -11,6 +11,7 @@ public class BaseBuildings_Model
 public class building_Construct
 {
     public int id_bat;
+    public int tier_bat;
     public string nom_bat;
     public string desc_bat;
     public int idiet_bat;//Visual id

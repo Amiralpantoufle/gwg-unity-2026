@@ -21,7 +21,16 @@ public class Baseview_ProductionScreen : BaseView_BuildingScreen
     private void Load_Production()
     {
         //set main values
-        int prodM = BaseView_Screen.Instance._BaseData.production[prodBuildingIndex].production_pep;
+        int prodM = 0;
+
+        Production_Model prod = BaseView_Screen.Instance._BaseData.local_economy.production_projection;
+        if (prodBuildingIndex == 0)
+            prodM = prod.by_resource.carbon;
+        else if (prodBuildingIndex == 1)
+            prodM = prod.by_resource.hydrogene;
+        else
+            prodM = prod.by_resource.energie;
+
         int prodH = prodM * 60;
         int prodD = prodH * 24;
 

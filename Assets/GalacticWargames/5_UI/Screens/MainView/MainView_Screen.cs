@@ -81,6 +81,7 @@ public class MainView_Screen : UIScreen
         xpGauge.value = userData.infos_user.level_progress.xp_in_level;
 
         //Asign Ressources
+        //OBSOLETE ??
         if (userData.oes_ressources_oer != null && userData.oes_ressources_oer.Count > 0)
         {
             int[] r = new int[3];

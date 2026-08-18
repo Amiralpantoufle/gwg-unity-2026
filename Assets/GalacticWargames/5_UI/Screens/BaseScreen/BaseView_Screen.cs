@@ -3,10 +3,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.Audio.ProcessorInstance;
 
 public class BaseView_Screen : UIScreen
 {
-    public static BaseView_Screen Instance;
+    public static BaseView_Screen Instance; 
 
     [SerializeField] private GameObject gameView;
     private int baseId;
@@ -23,7 +24,7 @@ public class BaseView_Screen : UIScreen
     public RessourceModule _AvailableRessources { get { return availableRessources; } }
 
     private BaseInfo_Model baseData;
-    public BaseInfo_Model _BaseData { get { return baseData; } }
+    public BaseInfo_Model _BaseData { get {return baseData; } }
 
     private BaseResource resourceview;
     public BaseResource _ResourceView { get { return resourceview;} }
@@ -108,7 +109,10 @@ public class BaseView_Screen : UIScreen
         var response = await API_Client.Instance.LoadApiResponse<ResourceOverview>(endpoint);
 
         //Choisir la bonne base dans la liste !!
+        if (response.output == null) Debug.LogWarning("No Base Data Loaded");
+
         BaseResource r = response.output.base_storage[0];
+
 
         return r;
     }
@@ -117,6 +121,8 @@ public class BaseView_Screen : UIScreen
     {
         string endpoint = $"/base/show/{id}";
         var response = await API_Client.Instance.LoadApiResponse<BaseInfo_Model>(endpoint);
+
+        if (response.output==null) Debug.LogWarning("No Base Data Loaded");
 
         return response.output;
     }

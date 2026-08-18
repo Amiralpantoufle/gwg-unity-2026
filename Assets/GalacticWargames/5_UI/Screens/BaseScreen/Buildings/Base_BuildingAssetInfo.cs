@@ -16,7 +16,7 @@ public class Base_BuildingAssetInfo : MonoBehaviour
     private building_Construct loadedConstruct;
     private Vector2Int tilePos;
 
-    public void Load_Info(building_Construct construct, Vector2Int newTilePos)
+    public void Load_Info(building_Construct construct, Vector2Int newTilePos) 
     {
         loadedConstruct = construct;
         tilePos = newTilePos;

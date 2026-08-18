@@ -5,7 +5,8 @@ public enum ScreenID
 {
     Auth,
     Main,
-    Base
+    Base,
+    fleetScreen
 }
 /// <summary>
 /// Centralise la navigation avec des IDs au lieu de références directes.

@@ -15,6 +15,17 @@ public class TileSelection_Pannel : MonoBehaviour
 
     private Base_TileView loadedTile;
     public Base_TileView _LoadedTile { get { return loadedTile; } }
+    private Image activeSelector;
+    public Image _ActiveSelector 
+    { 
+        set 
+        {
+            if (activeSelector != null)
+                activeSelector.enabled = false;
+
+            activeSelector = value; 
+        }  
+    }
 
 
     //Tile Selection
@@ -26,13 +37,7 @@ public class TileSelection_Pannel : MonoBehaviour
         string name = "Empty Slot";
         gui_slotName.text = name;
     }
-    private void Close_SelecPannel()
-    {
-        gameObject.SetActive(false);
-        loadedTile = null;
 
-        contextPannel.gameObject.SetActive(false);
-    }
 
     //Utility
     public void Load_AvailableBuildings(building_Construct[] list)
@@ -43,6 +48,9 @@ public class TileSelection_Pannel : MonoBehaviour
 
         foreach(building_Construct building in list)
         {
+            if (building.tier_bat > 1)
+                continue;
+
             Base_BuildingAsset asset = Instantiate(buildingAsset_Prefab, buildingAsset_Root).GetComponent<Base_BuildingAsset>();
 
             //Init Values

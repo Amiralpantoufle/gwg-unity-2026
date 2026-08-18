@@ -9,6 +9,7 @@ public class Base_BuildingAsset : MonoBehaviour
     //Main Info
     [SerializeField] private TextMeshProUGUI assetName;
     [SerializeField] private TextMeshProUGUI buildTime;
+    [SerializeField] private Image frameSelector;
 
     [SerializeField] private Image[] ressourceIcons;
     [SerializeField] private Image buildingIcon;
@@ -88,7 +89,11 @@ public class Base_BuildingAsset : MonoBehaviour
     //Display
     public void Display_ContextPannel()
     {
-        GridBaseTile tile = FindAnyObjectByType<TileSelection_Pannel>()._LoadedTile._Tile;
+        TileSelection_Pannel pannel = FindAnyObjectByType<TileSelection_Pannel>();
+        pannel._ActiveSelector = frameSelector;
+        frameSelector.enabled = true;
+
+        GridBaseTile tile = pannel._LoadedTile._Tile;
 
         if (tile != null)
             tilePos = new Vector2Int(tile.x, tile.y);
@@ -96,6 +101,7 @@ public class Base_BuildingAsset : MonoBehaviour
             Debug.LogError("No tile Position referenced");
 
         contextPannel.Load_Info(loadedConstruct, tilePos);
+
 
         //Check if can build
         contextPannel.AvailableConstruct(HasRessources());

@@ -8,6 +8,7 @@ public class Base_SpaceShipAsset : MonoBehaviour
     //Main Info
     [SerializeField] private TextMeshProUGUI assetName;
     [SerializeField] private TextMeshProUGUI buildTime;
+    [SerializeField] private Image frameSelector;
 
     [SerializeField] private Image[] ressourceIcons;
     [SerializeField] private TextMeshProUGUI[] ressourceTxt;

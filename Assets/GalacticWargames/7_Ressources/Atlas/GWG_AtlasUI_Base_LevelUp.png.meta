@@ -233,7 +233,7 @@ TextureImporter:
         width: 636
         height: 865
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -318,7 +318,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1095
         y: 744
-        width: 708
+        width: 778
         height: 415
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -330,72 +330,6 @@ TextureImporter:
       bones: []
       spriteID: 8f718826064f08d50800000000000000
       internalID: 6737653737353385976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GWG_AtlasUI_Base_LevelUp_9
-      rect:
-        serializedVersion: 2
-        x: 1814
-        y: 805
-        width: 11
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 956bb27c11f6883c0800000000000000
-      internalID: -4357110517334296999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GWG_AtlasUI_Base_LevelUp_10
-      rect:
-        serializedVersion: 2
-        x: 1836
-        y: 830
-        width: 10
-        height: 214
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dd2cdf72c640d8c30800000000000000
-      internalID: 4363148476565799645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GWG_AtlasUI_Base_LevelUp_11
-      rect:
-        serializedVersion: 2
-        x: 1860
-        y: 871
-        width: 10
-        height: 132
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 593beb9905270f010800000000000000
-      internalID: 1220601189519766421
       vertices: []
       indices: 
       edges: []
