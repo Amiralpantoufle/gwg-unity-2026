@@ -10,16 +10,16 @@ public class Base_BuildingLevelUp : MonoBehaviour
     [SerializeField] private Base_BuildingLevelAsset[] levelAssets;
 
     private int building_ID;
-    private Vector2Int newTilePos;
     public void Load_UpgradePannel(BaseBuildings_Model availableBuildings, buildingList building, int id, Vector2Int tilePos)
     {
         txt_Header.text = building.ToString();
+        building_ID = id;
 
         List<building_Construct> bList = GetBuildingsData(availableBuildings, building);
         if(bList != null && bList.Count > 0)
         {
             for(int i =0; i<bList.Count; i++)
-                levelAssets[i].Load_LevelAsset(bList[i], newTilePos, building_ID);
+                levelAssets[i].Load_LevelAsset(bList[i], tilePos, building_ID);
         }
 
         gameObject.SetActive(true);
@@ -64,11 +64,23 @@ public class Base_BuildingLevelUp : MonoBehaviour
             return null;
         }
 
-        for (int i = targetID_FromList; i < targetID_FromList + 2; i++)
-            if (targetID_FromList == availableBuildings.buildings[i].id_bat)
+        int targetID_Max = targetID_FromList + 2;
+
+        for (int i = 0; i < availableBuildings.buildings.Length; i++)
+        {
+            int buildingID = availableBuildings.buildings[i].id_bat;
+
+            if (buildingID >= targetID_FromList && buildingID <= targetID_Max)
+            {
                 bList.Add(availableBuildings.buildings[i]);
-            else
-                Debug.Log("Couldn't find tier 3 building");
+            }
+        }
+
+        if (bList.Count == 0)
+        {
+            Debug.LogWarning(
+                $"Couldn't find any building for range {targetID_FromList}-{targetID_Max}");
+        }
 
         return bList;
     }

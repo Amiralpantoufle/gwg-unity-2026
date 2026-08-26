@@ -10,6 +10,8 @@ public class BaseView_Screen : UIScreen
     public static BaseView_Screen Instance; 
 
     [SerializeField] private GameObject gameView;
+    [SerializeField] private EntityPool entities_Pool;
+    public EntityPool _Entities_Pool {  get { return entities_Pool; } }
     private int baseId;
 
     //Buildings
@@ -17,7 +19,7 @@ public class BaseView_Screen : UIScreen
     public BaseBuildings_Model _AvailableBuildings { get { return availableBuildings; } }
 
     //SpaceShips
-    ConstructQueue_Building[] ship_Queue;
+    ConstructQueue_SpaceShip[] ship_Queue;
 
     //Ressources
     private RessourceModule availableRessources;

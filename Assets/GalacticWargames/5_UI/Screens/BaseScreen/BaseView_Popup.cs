@@ -7,7 +7,7 @@ public class BaseView_Popup : UIScreen
 {
     //Selection
     [SerializeField] private TileSelection_Pannel selectionPannel;
-    public TileSelection_Pannel _SelectionPannel { get { return selectionPannel; }}
+    public TileSelection_Pannel _SelectionPannel { get { return selectionPannel; } }
     private buildingList lastSelectedBuilding;
     private Base_TileView loadedTile;
     public Base_BuildingLevelUp upgradePannel;
@@ -18,44 +18,35 @@ public class BaseView_Popup : UIScreen
     //Actions
     public event Action OnClosePannel;
 
-    public void Open_BuildingPannel(buildingList selection, Base_TileView tile) 
+    public void Open_BuildingPannel(buildingList selection, Base_TileView tile)
     {
         lastSelectedBuilding = selection;
         loadedTile = tile;
 
-        if(selection!= buildingList.EmptySlot)
+        if (selection != buildingList.EmptySlot)
         {
-            int idToLoad = tile._Tile.entities[0].id;
+            BaseEntity selectedEntity = tile._Tile.entities[0];
 
+            int idToLoad = selectedEntity.id;
             if (idToLoad != 0)
             {
-                buildingsPannels[(int)selection].GetComponent<BaseView_BuildingScreen>()._Building_id = idToLoad;
+                BaseView_BuildingScreen building = buildingsPannels[(int)selection].GetComponent<BaseView_BuildingScreen>();
+                building._Entity_id = idToLoad;
+                building._Building_id = selectedEntity.building_id;
+                building._Instance_id = selectedEntity.id;
+
+                //Set Name and Levels on template Building
+                string result = StringUtils.AddSpaces(selection.ToString());
+                building.Load_BaseInfos(result, selectedEntity.level);
             }
             else
                 Debug.LogError("no ID set on selected entity");
         }
 
-        switch (selection)
-        {
-            case buildingList.EmptySlot:
-                selectionPannel.Load_TileData(tile);
-                break;
-            case buildingList.ChantierSpatial:
-                buildingsPannels[0].SetActive(true);
-                break;
-            case buildingList.EspaceStockage:
-                buildingsPannels[1].SetActive(true);
-                break;
-            case buildingList.MineCarbon:
-                buildingsPannels[2].SetActive(true);
-                break;
-            case buildingList.MineHydrogen:
-                buildingsPannels[3].SetActive(true);
-                break;
-            case buildingList.MinePierre:
-                buildingsPannels[4].SetActive(true);
-                break;
-        }
+        if (selection != 0)
+            buildingsPannels[(int)selection].SetActive(true);
+        else
+            selectionPannel.Load_TileData(tile);
     }
     public void UpgradeBuilding(buildingList building, int id)
     {
@@ -68,7 +59,10 @@ public class BaseView_Popup : UIScreen
     public void Close_AllPannels()
     {
         foreach (GameObject obj in buildingsPannels)
-            obj.SetActive(false);
+        {
+            if (obj != null)
+                obj.SetActive(false);
+        }
 
         upgradePannel.gameObject.SetActive(false);
         selectionPannel.gameObject.SetActive(false);
@@ -81,7 +75,7 @@ public class BaseView_Popup : UIScreen
 /// <summary>
 /// 0=chantierSpatial 1=EspaceStockage 2=MineCarbon 3=Hydrogen 4=PierreEnerg 
 /// </summary>
-public enum buildingList 
+public enum buildingList
 {
     EmptySlot,
     ChantierSpatial,

@@ -26,7 +26,6 @@ public class Baseview_StorageScreen : BaseView_BuildingScreen
         int capacity = baseR.local_economy.storage.max;
 
         RefreshStorageGauge(r, secured, capacity);
-
     }
     public void RefreshStorageGauge(int[] resourcesStored, int securedStored, int availableStorage)
     {
@@ -48,7 +47,7 @@ public class Baseview_StorageScreen : BaseView_BuildingScreen
             txt_Resources[i].text = resourcesStored[i].ToString();
         }
 
-        float storedRatio = (float)stored / availableStorage;
+        float storedRatio = ((float)stored-securedStored) / availableStorage;
         SetFill(resourceStored, start, start + storedRatio);
         resourceStored.gameObject.SetActive(stored > 0);
 

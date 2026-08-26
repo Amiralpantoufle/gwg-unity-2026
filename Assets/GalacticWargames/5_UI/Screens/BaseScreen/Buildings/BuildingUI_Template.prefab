@@ -771,7 +771,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Chantier Spatial :'
+  m_text: buildingType
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 43f288274ddcbb34eb256b67307b7481, type: 2}
   m_sharedMaterial: {fileID: 1919810208991047421, guid: 43f288274ddcbb34eb256b67307b7481, type: 2}

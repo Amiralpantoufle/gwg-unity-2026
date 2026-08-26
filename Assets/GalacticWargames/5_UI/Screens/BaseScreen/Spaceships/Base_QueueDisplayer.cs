@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Base_QueueDisplayer : MonoBehaviour
+public class Base_QueueDisplayer : MonoBehaviour 
 {
     [SerializeField] private Image fillerGauge;
     [SerializeField] private TextMeshProUGUI txt_QAmount;
@@ -20,16 +20,35 @@ public class Base_QueueDisplayer : MonoBehaviour
 
         prodAmount = amount;
         prodTime = time;
+
         txt_QAmount.text = amount.ToString();
         txt_QTime.text = GetBuildTime(time);
 
-        //Gauge
-        fillerGauge.fillAmount = 0;
         if (timerCoroutine != null)
             StopCoroutine(timerCoroutine);
 
-        timerCoroutine = StartCoroutine(ProductionTimer(time));
+        fillerGauge.fillAmount = 0f;
 
+        timerCoroutine = StartCoroutine(ProductionTimer(time, time));
+
+    }
+    public void Reload_Queue(int amount, float batchTime, float timeLeft)
+    {
+        gameObject.SetActive(true);
+
+        prodAmount = amount;
+        prodTime = batchTime;
+
+        txt_QAmount.text = amount.ToString();
+        txt_QTime.text = GetBuildTime(timeLeft);
+
+        if (timerCoroutine != null)
+            StopCoroutine(timerCoroutine);
+
+        fillerGauge.fillAmount =
+            Mathf.Clamp01(1f - (timeLeft / batchTime));
+
+        timerCoroutine = StartCoroutine(ProductionTimer(timeLeft, batchTime));
     }
 
     private void End_ActiveQueue()
@@ -61,14 +80,12 @@ public class Base_QueueDisplayer : MonoBehaviour
 
         return $"{time.Seconds:00}s";
     }
-    private IEnumerator ProductionTimer(float totalTime)
+    private IEnumerator ProductionTimer(float remainingTime, float totalTime)
     {
-        float remainingTime = totalTime;
-
         while (remainingTime > 0f)
         {
-            // Pourcentage restant : 1 -> 0
-            fillerGauge.fillAmount = 1f - (remainingTime / totalTime);
+            fillerGauge.fillAmount =
+                Mathf.Clamp01(1f - (remainingTime / totalTime));
 
             txt_QTime.text = GetBuildTime(remainingTime);
 
@@ -77,9 +94,8 @@ public class Base_QueueDisplayer : MonoBehaviour
             remainingTime -= Time.deltaTime;
         }
 
-        // On force les valeurs finales
         fillerGauge.fillAmount = 1f;
-        txt_QTime.text = "0m";
+        txt_QTime.text = "0s";
 
         End_ActiveQueue();
 

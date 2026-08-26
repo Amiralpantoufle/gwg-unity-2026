@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.PlayerSettings;
 
-public class Base_BuildingAssetInfo : MonoBehaviour
+public class Base_BuildingAssetInfo : MonoBehaviour  
 {
     //Components
     [SerializeField] private TextMeshProUGUI GUI_Name;
@@ -95,6 +95,23 @@ public class Base_BuildingAssetInfo : MonoBehaviour
 
         //Success construction
         Debug.Log("Building asset !");
-        gameObject.SetActive(false);
+        BaseView_Screen.Instance.popupMaster.GetComponent<BaseView_Popup>().Close_AllPannels();
+        Display_TempBuilding();
+    }
+
+    private void Display_TempBuilding()
+    {
+        BaseEntity newEntity = new BaseEntity
+        {
+            building_id = loadedConstruct.id_bat,
+            level = 1,
+            building_type = "",
+            status = "",
+            hp=0,
+            hp_max=0
+        };
+
+        if(newEntity!= null)
+            BaseView_Screen.Instance._Entities_Pool.SpawnBaseEntity(newEntity, tilePos);
     }
 }

@@ -8,6 +8,7 @@ public class BuilderQueue_Displayer : MonoBehaviour
 
     [SerializeField] private VignetteView entityPrefab;
     [SerializeField] private int initialSize = 5;
+    [SerializeField] private Vector2 vignette_Offset;
 
     private readonly Queue<VignetteView> available = new();
 
@@ -52,7 +53,7 @@ public class BuilderQueue_Displayer : MonoBehaviour
     {
         VignetteView view = Get();
 
-        view.transform.position = tilePosition;
+        view.transform.position = tilePosition+vignette_Offset;
         view.Init(id);
 
         return view;

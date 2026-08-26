@@ -14,7 +14,7 @@ public class Base_SpaceShipAsset : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] ressourceTxt;
     [SerializeField] private Image spaceShipIcon;
 
-    //Context Info
+    //Context Info 
     private spaceShip_Construct loadedConstruct;
     private int[] cost = new int[3];
     protected int targetAmount;
@@ -23,7 +23,7 @@ public class Base_SpaceShipAsset : MonoBehaviour
     //Extra components
     [SerializeField] private Image lockedIcon;
 
-    public void Load_spaceShipInfo(spaceShip_Construct construct)
+    public void Load_spaceShipInfo(spaceShip_Construct construct, int owned)
     {
         //Load Info
         assetName.text = construct.nom_vas;
@@ -45,7 +45,6 @@ public class Base_SpaceShipAsset : MonoBehaviour
 
         //Callback
         loadedConstruct = construct;
-        
         //Display Helper Pannel
         //GetComponent<Button>().onClick.AddListener(Display_ContextPannel);
     }

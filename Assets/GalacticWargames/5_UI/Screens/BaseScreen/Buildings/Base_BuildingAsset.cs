@@ -23,7 +23,7 @@ public class Base_BuildingAsset : MonoBehaviour
     [SerializeField] private Image lockedIcon;
     [SerializeField] private CanvasGroup[] greyedOut;
 
-    private Base_BuildingAssetInfo contextPannel;
+    private Base_BuildingAssetInfo contextPannel;  
 
     public void Load_buildingInfo(building_Construct construct, Base_BuildingAssetInfo context)
     {

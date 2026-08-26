@@ -8,6 +8,7 @@ public enum VisualCategory
     PlanetStructure,
     Star,
     Building,
+    SpaceShips,
     Resource,
     FogOfWar
 }

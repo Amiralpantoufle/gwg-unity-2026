@@ -2,10 +2,10 @@ using NUnit.Framework;
 using System;
 using UnityEngine;
 
-public class ConstructQueue_Model : MonoBehaviour
+public class ConstructQueue_Model
 {
     public ConstructQueue_Building[] buildings;
-    public ConstructQueue_Building[] ships;
+    public ConstructQueue_SpaceShip[] ships;
 }
 [Serializable]
 public class ConstructQueue_Building
@@ -40,10 +40,9 @@ public class ConstructQueue_Building
 [Serializable]
 public class ConstructQueue_SpaceShip
 {
-    public int base_id;
     public int id;
-
-    public int building_id;
-    public int x;
-    public int y;
+    public int ship_id;
+    public int quantity;
+    public int remaining;
+    public int remaining_batch_seconds;
 }
