@@ -48,11 +48,13 @@ public class BaseView_Screen : UIScreen
         gameView.SetActive(true);
 
         Reload_BaseView();
+        GridManager.OnSwitchToWorld += OpenWorldScreen;
     }
     public override void Hide()
     {
         base.Hide();
         gameView.SetActive(false);
+        GridManager.OnSwitchToWorld -= OpenWorldScreen;
     }
 
     public async void Reload_BaseView()
@@ -75,8 +77,6 @@ public class BaseView_Screen : UIScreen
         ConstructQueue_Model queue =  await Load_ConstructQueue(baseId);
         Display_Vignettes(queue.buildings);
         ship_Queue = queue.ships;
-
-        GridManager.OnSwitchToWorld += OpenWorldScreen;
     }
 
     private async Task Display_BaseInfos()
@@ -114,7 +114,6 @@ public class BaseView_Screen : UIScreen
         if (response.output == null) Debug.LogWarning("No Base Data Loaded");
 
         BaseResource r = response.output.base_storage[0];
-
 
         return r;
     }

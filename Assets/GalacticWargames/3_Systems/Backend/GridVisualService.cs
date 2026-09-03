@@ -18,29 +18,14 @@ public class GridVisualService : MonoBehaviour
 
     public VisualDefinition GetVisual(int id)
     {
-        var visual = visuals.FirstOrDefault(v =>
-
-        v.image_id == id);
+        var visual = visuals.FirstOrDefault(v => v.image_id == id);
 
         if (visual == null)
         {
             Debug.Log($"No VisualDefinition found for id={id}");
-            visual = EmptyModelCallback();
         }
 
         return visual;
-    }
-
-    private VisualDefinition EmptyModelCallback()
-    {
-        VisualDefinition empty = new VisualDefinition
-        {
-            category = VisualCategory.SystemTile,
-            imageSprite = null,
-            renderScale = 1
-        };
-
-        return empty;
     }
 }
 

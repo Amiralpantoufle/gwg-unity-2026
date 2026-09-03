@@ -34,7 +34,6 @@ public class BaseNavigationController : IsoNavigation
         if (tile._Tile.entities != null)
             building = GetTileStatus(tile._Tile.entities[0]);
 
-
         mainPopup.Open_BuildingPannel(building, tile);
 
         //Display Tile Selector
@@ -84,6 +83,10 @@ public class BaseNavigationController : IsoNavigation
         else if (id >= 31 && id <= 33)
         {
             typeOf = buildingList.MinePierre;
+        }
+        else if(id >= 13 && id <=15)
+        {
+            typeOf = buildingList.Undefined;
         }
 
         return typeOf;

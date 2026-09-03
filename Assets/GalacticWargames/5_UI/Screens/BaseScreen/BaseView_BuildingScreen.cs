@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// Composant héritage pour les écrans de base avec les fonctions génériques
 /// </summary>
-public class BaseView_BuildingScreen : MonoBehaviour
+public class BaseView_BuildingScreen : MonoBehaviour 
 {
     [SerializeField] private TextMeshProUGUI gui_slotName;
     [SerializeField] private TextMeshProUGUI gui_level;
@@ -60,6 +60,7 @@ public class BaseView_BuildingScreen : MonoBehaviour
                 ToastManager.Instance.GenerateToast( "Building Destroyed",1,2f);
 
                 //Destroy Entity Visual
+                GridManager.Instance.Reload_CurrentMap();
 
                 BaseView_Popup popup= BaseView_Screen.Instance.popupMaster.GetComponent<BaseView_Popup>();
                 if(popup != null)
@@ -70,8 +71,5 @@ public class BaseView_BuildingScreen : MonoBehaviour
         }
         else
             ToastManager.Instance.GenerateToast("Invalid building data", 0, 2f);
-
     }
-
-
 }

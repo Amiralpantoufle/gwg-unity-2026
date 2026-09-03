@@ -21,22 +21,22 @@ public class Baseview_ProductionScreen : BaseView_BuildingScreen
     private void Load_Production()
     {
         //set main values
-        int prodH = 0;
+        int prodM = 0;
 
         Production_Model prod = BaseView_Screen.Instance._BaseData.local_economy.production_projection;
         if (prodBuildingIndex == 0)
-            prodH = prod.by_resource.carbon;
+            prodM = prod.by_resource.carbon;
         else if (prodBuildingIndex == 1)
-            prodH = prod.by_resource.hydrogene;
+            prodM = prod.by_resource.hydrogene;
         else
-            prodH = prod.by_resource.energie;
+            prodM = prod.by_resource.energie;
 
-        int prodM = prodH / 60;
+        int prodH = prodM * 60;
         int prodD = prodH * 24;
 
         int bonusM = 0;
-        int bonusH = prodM * 60;
-        int bonusD = prodH * 24;
+        int bonusH = bonusM * 60;
+        int bonusD = bonusH * 24;
 
         int totalM = prodM + bonusM;
         int totalH = prodH + bonusH;

@@ -11,6 +11,7 @@ public class GridManager : MonoBehaviour
     private MapNavigationController nav;
     private BaseNavigationController navBase;
     private GridRenderer gridRenderer;
+    public GridRenderer _GridRenderer { get { return _GridRenderer; } }
 
     private int currentGalaxy;
     private int currentSystem;
@@ -80,7 +81,10 @@ public class GridManager : MonoBehaviour
 
         //Map Nav Controller Update
         if (currentLevel == GridLevel.Base)
-            ResetIsoNavigation();
+        {
+            nav.enabled = true;
+            navBase.enabled = false;
+        }
 
         currentLevel = level;
         OnSwitchToWorld?.Invoke();
@@ -93,6 +97,13 @@ public class GridManager : MonoBehaviour
         //gridRenderer.RenderBase(baseModel);
         gridRenderer.GenerateBase(baseModel);
         SwitchToBase();
+    }
+    public void Reload_CurrentMap()
+    {
+        if (currentLevel == GridLevel.Base)
+        {
+            LoadBase(GameDataStorage.Instance._CurrentBase.base_id);
+        }
     }
 
     private async Task<GridPlanetModel> LoadPlanetFromData(int id)
@@ -207,7 +218,8 @@ public class GridManager : MonoBehaviour
     {
         currentLevel = GridLevel.Base;
         OnSwitchToBase?.Invoke();
-        ResetIsoNavigation();
+        nav.enabled = false;
+        navBase.enabled = true;
 
 
         Transform center = gridRenderer.GetCenterTile(false);
@@ -218,14 +230,6 @@ public class GridManager : MonoBehaviour
     }
 
     //Utility
-    private void ResetIsoNavigation()
-    {
-        MapNavigationController mapNav = GetComponent<MapNavigationController>();
-        BaseNavigationController baseNav = GetComponent<BaseNavigationController>();
-
-        mapNav.enabled = !mapNav.isActiveAndEnabled;
-        baseNav.enabled = !mapNav.isActiveAndEnabled;
-    }
     private void CenterOnBase()
     {
         //Center on Base

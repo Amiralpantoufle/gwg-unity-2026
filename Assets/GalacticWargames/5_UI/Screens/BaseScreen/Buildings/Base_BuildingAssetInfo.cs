@@ -104,14 +104,18 @@ public class Base_BuildingAssetInfo : MonoBehaviour
         BaseEntity newEntity = new BaseEntity
         {
             building_id = loadedConstruct.id_bat,
+            v = loadedConstruct.idiet_bat,
             level = 1,
             building_type = "",
             status = "",
             hp=0,
             hp_max=0
         };
-
-        if(newEntity!= null)
+        Debug.Log(newEntity);
+        if(newEntity!= null && tilePos!=null)
+        {
             BaseView_Screen.Instance._Entities_Pool.SpawnBaseEntity(newEntity, tilePos);
+            Debug.Log(tilePos);
+        }
     }
 }

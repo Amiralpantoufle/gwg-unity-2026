@@ -82,5 +82,6 @@ public enum buildingList
     EspaceStockage,
     MineCarbon,
     MineHydrogen,
-    MinePierre
+    MinePierre,
+    Undefined
 }

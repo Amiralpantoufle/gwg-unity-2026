@@ -233,13 +233,15 @@ public class GridRenderer : MonoBehaviour
         //Clear Tiles
         foreach (Transform child in gridRoot)
             Destroy(child.gameObject);
-
         tileViews.Clear();
 
-        //Clear Entities
-        foreach (Transform child in entityPool.transform)
-            entityPool.Release(child.GetComponent<EntityView>());
-
+        foreach (Transform child in baseGridRoot)
+            Destroy(child.gameObject);
         baseTileViews.Clear();
+
+
+        //Clear Entities
+        entityPool.ResetAllEntities();
+        baseEntityPool.ResetAllEntities();
     }
 }

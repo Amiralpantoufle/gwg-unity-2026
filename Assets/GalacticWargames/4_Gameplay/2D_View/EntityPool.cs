@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class EntityPool : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class EntityPool : MonoBehaviour
     [SerializeField] private int initialSize = 100;
 
     private readonly Queue<EntityView> available = new();
+    private readonly Dictionary<int, EntityView> activeEntities = new();
 
 
     private void Awake()
@@ -48,6 +50,13 @@ public class EntityPool : MonoBehaviour
 
         view.transform.position = tilePosition;
         view.Init(data);
+        
+        if(data.id == 0)
+        {
+            Debug.Log("No Id On entity found");
+            return view;
+        }
+        activeEntities.Add(data.id, view);
 
         return view;
     }
@@ -58,6 +67,32 @@ public class EntityPool : MonoBehaviour
         view.transform.position = tilePosition;
         view.Init(data);
 
+        Debug.Log("new Entity with ID : " + data.building_id);
+        if(data.id != 0)
+            activeEntities.Add(data.id, view);
+
         return view;
+    }
+
+    public void Delete_EntityFromID(int id)
+    {
+        if (activeEntities.TryGetValue(id, out EntityView entity))
+        {
+            activeEntities.Remove(id);
+            Release(entity);
+        }
+        else
+        {
+            Debug.LogWarning($"Aucune Entity trouvée avec l'ID : {id}");
+        }
+    }
+    public void ResetAllEntities()
+    {
+        foreach (EntityView entity in activeEntities.Values)
+        {
+            Release(entity);
+        }
+
+        activeEntities.Clear();
     }
 }

@@ -32,6 +32,7 @@ public class MainView_Screen : UIScreen
     {
         base.Hide();
         gameView.SetActive(false);
+        GridManager.OnSwitchToBase -= OpenBaseScreen;
     }
 
     private async Task LoadUserInfo()

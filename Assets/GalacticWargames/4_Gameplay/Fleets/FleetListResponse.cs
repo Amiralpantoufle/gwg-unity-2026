@@ -37,16 +37,16 @@ public class Fleet
     public int? garrison_base_id;
 
     public string formation_code;
-    /*
+    
     public FleetShip[] composition;
 
-    public FleetStatistics statistics;
+    //public FleetStatistics statistics;
 
-    public FleetCargo cargo;
+    //public FleetCargo cargo;
 
-    public FleetLoadout loadout;
+    //public FleetLoadout loadout;
 
-    public FleetState state;*/
+    //public FleetState state;
 }
 
 [Serializable]
