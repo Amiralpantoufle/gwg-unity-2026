@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EntityView : MonoBehaviour 
+public class EntityView : MonoBehaviour
 {
     private int entitiesLayer = 10001;
 
@@ -15,6 +15,7 @@ public class EntityView : MonoBehaviour
         entity = data;
         Refresh();
     }
+
     private void Refresh()
     {
         VisualDefinition visual = GridVisualService.Instance.GetVisual(entity.v);

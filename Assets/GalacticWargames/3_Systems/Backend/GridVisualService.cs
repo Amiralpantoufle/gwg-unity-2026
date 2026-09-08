@@ -27,6 +27,18 @@ public class GridVisualService : MonoBehaviour
 
         return visual;
     }
+    public Sprite GetSprite(int id)
+    {
+        var visual = visuals.FirstOrDefault(v => v.image_id == id);
+
+        if (visual == null)
+        {
+            Debug.Log($"No VisualDefinition found for id={id}");
+        }
+
+        Sprite s = visual.imageSprite;
+        return s;
+    }
 }
 
 

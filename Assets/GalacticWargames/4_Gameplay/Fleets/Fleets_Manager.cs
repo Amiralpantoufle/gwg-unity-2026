@@ -42,6 +42,7 @@ public class Fleets_Manager : MonoBehaviour
         }
     }
 
+    //Utility
     private async Task<FleetListResponse> Load_PlayerFleets()
     {
 
@@ -56,14 +57,6 @@ public class Fleets_Manager : MonoBehaviour
 
         return response.output;
     }
-    private void Clear_Fleets()
-    {
-        displayedFleets.Clear();
-
-        foreach (Transform child in fleetsRoot)
-            Destroy(child);
-    }
-
     private void Create_FleetInstance(Fleet fleet)
     {
         GameObject obj = Instantiate(fleetPrefab, fleetsRoot);
@@ -76,5 +69,12 @@ public class Fleets_Manager : MonoBehaviour
 
             Debug.Log("Adding fleet instance");
         }
+    }
+    private void Clear_Fleets()
+    {
+        displayedFleets.Clear();
+
+        foreach (Transform child in fleetsRoot)
+            Destroy(child);
     }
 }

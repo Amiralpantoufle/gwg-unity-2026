@@ -54,7 +54,7 @@ public class IsoNavigation : MonoBehaviour
     //Camera Navigation
     private void HandlePan()
     {
-        if (!isPanning) return;
+        if (!isPanning || freezed) return;
 
         //Annuler le centrage quand panning detecte
         isCentering = false;
@@ -174,21 +174,20 @@ public class IsoNavigation : MonoBehaviour
 
         inputActions.Player.Disable();
     }
-    private void OnTouchStarted(InputAction.CallbackContext ctx)
+    protected virtual void OnTouchStarted(InputAction.CallbackContext ctx)
     {
         if (freezed) return;
 
         isPanning = true;
         lastTouchPosition = inputActions.Player.TouchPosition.ReadValue<Vector2>();
     }
-    private void OnTouchEnded(InputAction.CallbackContext ctx)
+    protected virtual void OnTouchEnded(InputAction.CallbackContext ctx)
     {
         isPanning = false;
     }
     private void OnPinchStarted(InputAction.CallbackContext context)
     {
         if (freezed) return;
-
         isZooming = true;
     }
     private void OnPinchEnded(InputAction.CallbackContext context)

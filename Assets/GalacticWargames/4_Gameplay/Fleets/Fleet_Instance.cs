@@ -18,7 +18,6 @@ public class Fleet_Instance : MonoBehaviour
 
         txt_fleetName.text = loadedFleet.name;
         Set_AttackMode = loadedFleet.active;
-
     }
 
     public void Try_OpenFleetScreen()

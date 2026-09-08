@@ -1,15 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Fleet_GridManager : MonoBehaviour
 {
     [Header("Grid")]
     [SerializeField] private int gridWidth = 10;
     [SerializeField] private int gridHeight = 10;
+    private int spaceShipsLayer = 10001;
 
     [Header("Tile")]
     [SerializeField] private GameObject tilePrefab;
     [SerializeField] private Transform gridRoot;
+
+    [SerializeField] private GameObject shipPrefab;
+    [SerializeField] private Transform shipsRoot;
 
     [Header("Isometric")]
     [SerializeField] private int tileLayerStart = 10000;
@@ -18,10 +23,14 @@ public class Fleet_GridManager : MonoBehaviour
     [SerializeField] private Vector2 mapOffset;
 
     private readonly Dictionary<Vector2Int, TileView> tileViews = new();
+    private readonly Dictionary<Vector2Int, GameObject> spaceships_Instances = new();
+    private readonly Dictionary<Vector2Int, Fleet_ShipView> spaceshipViews = new();
 
+    //Grid Building
     public void Generate_EmptyGrid(int v)
     {
-        Clear();
+        Clear(gridRoot);
+        tileViews.Clear();
 
         for (int x = 0; x < gridWidth; x++)
         {
@@ -74,10 +83,7 @@ public class Fleet_GridManager : MonoBehaviour
 
         obj.transform.position += (Vector3)visual.offset;
 
-        // --------------------------------------------------
         // TileView
-        // --------------------------------------------------
-
         TileView tileView = obj.GetComponent<TileView>();
 
         if (tileView == null)
@@ -87,11 +93,94 @@ public class Fleet_GridManager : MonoBehaviour
         }
 
         tileView.Init(tile, visual.renderScale);
-
         Vector2Int coords = new Vector2Int(tile.x, tile.y);
-
         tileViews.Add(coords, tileView);
     }
+
+    //Ships
+    public void Load_FleetShips_OnGrid(FleetShip[] composition)
+    {
+        Clear(shipsRoot);
+
+        foreach (FleetShip ship in composition)
+        {
+            Vector2Int pos = new Vector2Int(ship.x, ship.y);
+            Add_SpaceShip(ship, pos);
+        }
+    }
+    private void Add_SpaceShip(FleetShip ship, Vector2Int coord)
+    {
+        VisualDefinition visual = GridVisualService.Instance.GetVisual(ship.ship_id);
+
+        Quaternion rot = Quaternion.identity;
+        if(!tileViews.TryGetValue(coord, out TileView tile))
+        {
+            Debug.LogError($"Impossible de placer le vaisseau : aucune tuile trouvée en {coord}");
+            return;
+        }
+
+        GameObject newShip = Instantiate(shipPrefab,tile.transform.position,rot,shipsRoot);
+        SpriteRenderer sr = newShip.GetComponent<SpriteRenderer>();
+        sr.sprite = visual.imageSprite;
+        sr.sortingOrder = spaceShipsLayer;
+        newShip.transform.localScale =Vector3.one * visual.renderScale;
+
+        // Offset visuel
+        Fleet_ShipView shipView =newShip.GetComponent<Fleet_ShipView>();
+        shipView.Init(ship, coord, visual.offset);
+        shipView.transform.position = tile.transform.position + (Vector3)shipView.VisualOffset;
+        spaceshipViews.Add(coord, shipView);
+    }
+    public bool PositionShipOnTile(Fleet_ShipView ship,Vector2Int coords)
+    {
+        if (!tileViews.TryGetValue(coords,out TileView tile))
+        {
+            Debug.LogError( $"Impossible de trouver la tile {coords}" );
+            return false;
+        }
+
+        ship.transform.position =tile.transform.position + (Vector3)ship.VisualOffset;
+        return true;
+    }
+    public bool TryMoveShip(Fleet_ShipView ship, Vector2Int targetCoords)
+    {
+        // Vérifie que la Tile existe
+        if (!tileViews.TryGetValue(targetCoords,out TileView targetTile))
+        {
+            Debug.LogWarning( $"Impossible de déplacer le vaisseau : Tile {targetCoords} inexistante.");
+            return false;
+        }
+
+        Vector2Int currentCoords = ship.CurrentCoords;
+
+        // Pas besoin de bouger si c'est la même Tile
+        if (currentCoords == targetCoords)
+        {
+            PositionShipOnTile(ship, currentCoords);
+            return true;
+        }
+
+        // Vérifie si la destination est occupée
+        if (spaceshipViews.ContainsKey(targetCoords))
+        {
+            Debug.Log( $"Impossible : Tile {targetCoords} déjà occupée.");
+            return false;
+        }
+
+        spaceshipViews.Remove(currentCoords);
+        spaceshipViews.Add(targetCoords,ship);
+
+        // Met à jour les coordonnées du ShipView
+        ship.SetCoords(targetCoords);
+
+        // Positionne visuellement
+        PositionShipOnTile(ship,targetCoords);
+
+        return true;
+    }
+
+
+    //Utility
     private Vector3 IsoToWorld(int x, int y)
     {
         float worldX =mapOffset.x + (x - y) * tileWidth * 0.5f;
@@ -104,20 +193,41 @@ public class Fleet_GridManager : MonoBehaviour
     {
         return GetTile(new Vector2Int(x, y));
     }
-
     public TileView GetTile(Vector2Int coords)
     {
         tileViews.TryGetValue(coords, out TileView tileView);
         return tileView;
     }
-
-    public void Clear()
+    public bool TryGetTileAtWorldPosition(Vector2 worldPosition,out TileView tileView)
     {
-        foreach (Transform child in gridRoot)
+        Collider2D hit =Physics2D.OverlapPoint(worldPosition);
+
+        if (hit == null)
         {
-            Destroy(child.gameObject);
+            tileView = null;
+            return false;
         }
 
-        tileViews.Clear();
+        tileView = hit.GetComponent<TileView>();
+
+        return tileView != null;
+    }
+    public bool TryGetShipAtTile(Vector2Int coords,out Fleet_ShipView shipView)
+    {
+        return spaceshipViews.TryGetValue(coords,out shipView );
+    }
+    public bool IsTileOccupied(Vector2Int coords)
+    {
+        return spaceshipViews.ContainsKey(coords);
+    }
+    private void Clear(Transform root)
+    {
+        foreach (Transform child in root)
+            Destroy(child.gameObject);
+
+        if (root == gridRoot)
+            tileViews.Clear();
+        else if (root == shipsRoot)
+            spaceships_Instances.Clear();
     }
 }
