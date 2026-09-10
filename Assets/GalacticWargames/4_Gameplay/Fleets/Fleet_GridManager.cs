@@ -7,14 +7,18 @@ public class Fleet_GridManager : MonoBehaviour
     [Header("Grid")]
     [SerializeField] private int gridWidth = 10;
     [SerializeField] private int gridHeight = 10;
+    [SerializeField] private LineRenderer frontLine;
     private int spaceShipsLayer = 10001;
 
     [Header("Tile")]
     [SerializeField] private GameObject tilePrefab;
     [SerializeField] private Transform gridRoot;
+    [SerializeField] private GameObject offTilePrefab;
+    [SerializeField] private Transform offGridRoot;
 
     [SerializeField] private GameObject shipPrefab;
     [SerializeField] private Transform shipsRoot;
+    private int tileV_ID;
 
     [Header("Isometric")]
     [SerializeField] private int tileLayerStart = 10000;
@@ -23,35 +27,76 @@ public class Fleet_GridManager : MonoBehaviour
     [SerializeField] private Vector2 mapOffset;
 
     private readonly Dictionary<Vector2Int, TileView> tileViews = new();
-    private readonly Dictionary<Vector2Int, GameObject> spaceships_Instances = new();
     private readonly Dictionary<Vector2Int, Fleet_ShipView> spaceshipViews = new();
 
     //Grid Building
     public void Generate_EmptyGrid(int v)
     {
-        Clear(gridRoot);
-        tileViews.Clear();
+        tileV_ID = v;
 
+        ClearGrid();
+        ClearShips();
+
+        Generate_PlayGrid();
+        Generate_OffGrid();
+        Add_FrontLine();
+    }
+    private void Generate_PlayGrid()
+    {
         for (int x = 0; x < gridWidth; x++)
         {
             for (int y = 0; y < gridHeight; y++)
             {
-                GridTile tile = CreateEmptyTile(x, y, v);
+                GridTile tile = CreateEmptyTile(x, y);
                 CreateTile(tile);
             }
         }
     }
-    private GridTile CreateEmptyTile(int x, int y, int v)
+    private void Generate_OffGrid()
+    {
+        for (int x = 0; x < gridWidth; x++)
+        {
+            for (int y = -1; y >= -gridHeight; y--)
+            {
+                CreateOffGridTile(x, y);
+            }
+        }
+    }
+    private GridTile CreateEmptyTile(int x, int y)
     {
         return new GridTile
         {
             x = x,
             y = y,
-            v= v
+            v= tileV_ID
 
             // À adapter selon modèle GridTile
             // entities = ...
         };
+    }
+    private void CreateOffGridTile(int x, int y)
+    {
+        GameObject obj = Instantiate(offTilePrefab, offGridRoot);
+
+        obj.name = $"OffGrid_{x}x_{y}y";
+
+        obj.transform.position = IsoToWorld(x, y);
+
+        VisualDefinition visual = GridVisualService.Instance.GetVisual(tileV_ID);
+
+        SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
+
+        if (sr == null)
+        {
+            Debug.LogError($"Couldn't find SpriteRenderer on {obj.name}");
+            return;
+        }
+
+        sr.sprite = visual.imageSprite;
+
+        obj.transform.localScale =Vector3.one * visual.renderScale;
+        obj.transform.position +=(Vector3)visual.offset;
+        sr.sortingOrder = 200;
     }
     private void CreateTile(GridTile tile)
     {
@@ -95,6 +140,28 @@ public class Fleet_GridManager : MonoBehaviour
         tileView.Init(tile, visual.renderScale);
         Vector2Int coords = new Vector2Int(tile.x, tile.y);
         tileViews.Add(coords, tileView);
+    }
+    private void Add_FrontLine()
+    {
+        if (frontLine == null)
+        {
+            Debug.LogWarning("FrontLine LineRenderer is not assigned.");
+
+            return;
+        }
+
+        float frontY = -0.5f;
+
+        float startX = -0.5f;
+        float endX = gridWidth - 0.5f;
+
+        Vector3 start = IsoToWorld(startX, frontY);
+        Vector3 end = IsoToWorld(endX, frontY);
+
+        frontLine.positionCount = 2;
+
+        frontLine.SetPosition(0, start);
+        frontLine.SetPosition(1, end);
     }
 
     //Ships
@@ -181,13 +248,20 @@ public class Fleet_GridManager : MonoBehaviour
 
 
     //Utility
-    private Vector3 IsoToWorld(int x, int y)
+    /*private Vector3 IsoToWorld(int x, int y)
     {
         float worldX =mapOffset.x + (x - y) * tileWidth * 0.5f;
-
         float worldY =mapOffset.y +(x + y) * tileHeight * 0.5f;
 
         return new Vector3(worldX, worldY, 0f);
+    }*/
+    private Vector3 IsoToWorld(float x, float y)
+    {
+        float worldX =mapOffset.x +(x - y) * tileWidth * 0.5f;
+
+        float worldY =mapOffset.y + (x + y) * tileHeight * 0.5f;
+
+        return new Vector3(worldX,worldY,0f);
     }
     public TileView GetTile(int x, int y)
     {
@@ -220,14 +294,21 @@ public class Fleet_GridManager : MonoBehaviour
     {
         return spaceshipViews.ContainsKey(coords);
     }
+    private void ClearGrid()
+    {
+        Clear(gridRoot);
+        Clear(offGridRoot);
+
+        tileViews.Clear();
+    }
+    private void ClearShips()
+    {
+        Clear(shipsRoot);
+        spaceshipViews.Clear();
+    }
     private void Clear(Transform root)
     {
         foreach (Transform child in root)
             Destroy(child.gameObject);
-
-        if (root == gridRoot)
-            tileViews.Clear();
-        else if (root == shipsRoot)
-            spaceships_Instances.Clear();
     }
 }
