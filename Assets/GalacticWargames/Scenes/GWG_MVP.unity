@@ -39191,7 +39191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &961686961
 Transform:
   m_ObjectHideFlags: 0
@@ -39201,7 +39201,7 @@ Transform:
   m_GameObject: {fileID: 961686960}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1017.1345, y: 637.5081, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -68471,13 +68471,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Fleet_GridManager
   gridWidth: 5
   gridHeight: 5
-  frontLine: {fileID: 1619313381}
   tilePrefab: {fileID: 4562061987265711563, guid: 37e51015eb647684bac0f06a3dcd6a13, type: 3}
   gridRoot: {fileID: 1238414498}
   offTilePrefab: {fileID: 4562061987265711563, guid: dd77fca0a1a2a0d4e9fa55dfb92de633, type: 3}
   offGridRoot: {fileID: 2001090171}
   shipPrefab: {fileID: 232165373122829117, guid: 56603d978c584874090d3ffdf032ef8c, type: 3}
   shipsRoot: {fileID: 404909074}
+  fronteerIcon: {fileID: 3794677188114490812, guid: eb1ccb5cfbe36a14e8358171b010b8be, type: 3}
+  fronteerLine: {fileID: 1619313382}
   tileLayerStart: 200
   tileWidth: 10
   tileHeight: 5

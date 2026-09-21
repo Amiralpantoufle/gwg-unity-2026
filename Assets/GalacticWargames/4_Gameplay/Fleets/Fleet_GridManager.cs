@@ -7,7 +7,6 @@ public class Fleet_GridManager : MonoBehaviour
     [Header("Grid")]
     [SerializeField] private int gridWidth = 10;
     [SerializeField] private int gridHeight = 10;
-    [SerializeField] private LineRenderer frontLine;
     private int spaceShipsLayer = 10001;
 
     [Header("Tile")]
@@ -18,6 +17,8 @@ public class Fleet_GridManager : MonoBehaviour
 
     [SerializeField] private GameObject shipPrefab;
     [SerializeField] private Transform shipsRoot;
+    [SerializeField] private GameObject fronteerIcon;
+    [SerializeField] private Transform fronteerLine;
     private int tileV_ID;
 
     [Header("Isometric")]
@@ -143,25 +144,19 @@ public class Fleet_GridManager : MonoBehaviour
     }
     private void Add_FrontLine()
     {
-        if (frontLine == null)
-        {
-            Debug.LogWarning("FrontLine LineRenderer is not assigned.");
-
-            return;
-        }
+        Clear(fronteerLine);
 
         float frontY = -0.5f;
+        Vector2 frontIconOffset = new Vector2(0,-3f);
 
-        float startX = -0.5f;
-        float endX = gridWidth - 0.5f;
+        for (int x = 0; x < gridWidth; x += 1)
+        {
+            GameObject icon = Instantiate(fronteerIcon, fronteerLine);
 
-        Vector3 start = IsoToWorld(startX, frontY);
-        Vector3 end = IsoToWorld(endX, frontY);
+            icon.name = $"FrontIcon_{x}";
 
-        frontLine.positionCount = 2;
-
-        frontLine.SetPosition(0, start);
-        frontLine.SetPosition(1, end);
+            icon.transform.position = IsoToWorld(x, frontY) + (Vector3)frontIconOffset;
+        }
     }
 
     //Ships
