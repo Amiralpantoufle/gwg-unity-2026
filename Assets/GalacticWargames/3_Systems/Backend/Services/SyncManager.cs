@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.Threading.Tasks;
 
-public class SyncManager : MonoBehaviour
+public class SyncManager : MonoBehaviour 
 {
     [SerializeField] private float refreshEvery= 1f;
 

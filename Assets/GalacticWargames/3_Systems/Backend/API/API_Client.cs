@@ -113,16 +113,12 @@ public class API_Client : MonoBehaviour
         {
             string body = req.downloadHandler.text;
 
-            Debug.Log("401 BODY: " + body);
-
             //--------------------------------------------
             // TOKEN EXPIRED
             //--------------------------------------------
 
             if (body.Contains("token_expired"))
             {
-                Debug.Log("TOKEN EXPIRED → refresh");
-
                 // Refresh token
                 await CoroutineToTask(
                     AuthManager.Instance.RefreshTokenCoroutine()

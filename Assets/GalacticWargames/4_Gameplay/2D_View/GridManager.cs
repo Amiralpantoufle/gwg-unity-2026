@@ -94,7 +94,6 @@ public class GridManager : MonoBehaviour
         GridBaseModel baseModel = await LoadBaseFromData(baseID);
         if (baseModel == null) Debug.LogError("Failed to load planet");
 
-        //gridRenderer.RenderBase(baseModel);
         gridRenderer.GenerateBase(baseModel);
         SwitchToBase();
     }

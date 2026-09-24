@@ -8735,7 +8735,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   syncManager: {fileID: 115934931}
   loading: {fileID: 1210156713}
-  DEVOP_ForceConnexion: 0
 --- !u!114 &232383525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39191,7 +39190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &961686961
 Transform:
   m_ObjectHideFlags: 0

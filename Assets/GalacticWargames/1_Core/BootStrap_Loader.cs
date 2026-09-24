@@ -1,11 +1,7 @@
-using Newtonsoft.Json;
-using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
-using static UnityEngine.Analytics.IAnalytic;
-using static UnityEngine.Audio.ProcessorInstance;
 
 public class BootStrap_Loader : MonoBehaviour
 {
@@ -39,21 +35,8 @@ public class BootStrap_Loader : MonoBehaviour
     {
         var response = await API_Client.Instance.LoadApiResponse<BaseIndexOutput>("/base/index");
 
-        if (response == null)
-        {
-            Debug.LogError("Impossible de parser BaseIndex");
+        if (response == null || response.error || response.output == null)
             return;
-        }
-        if (response.error)
-        {
-            Debug.LogError($"API ERROR : {response.error_code} - {response.error_msg}");
-            return;
-        }
-        if (response.output == null)
-        {
-            Debug.Log("BaseIndex output null");
-            return;
-        }
 
         GameDataStorage.Instance.LoadCurrentBaseData(FindBaseToDisplay(response.output.bases));
 

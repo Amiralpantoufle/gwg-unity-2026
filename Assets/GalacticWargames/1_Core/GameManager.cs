@@ -9,27 +9,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SyncManager syncManager;
     [SerializeField] private LoadingScreen loading;
 
-    public bool DEVOP_ForceConnexion;
 
     private void Start()
     {
+        //Init singleton
+        DontDestroyOnLoad(transform);
         if (!loading.gameObject.activeSelf)
             loading.gameObject.SetActive(true);
 
         EventBus.Subscribe<UIStateChangedEvent>(onStateChanged);
-        DontDestroyOnLoad(transform);
-
-        if(DEVOP_ForceConnexion)
-        {
-            UIStateManager.Instance.SetState(UIState.Loggedin);
-            return;
-        }
-
-
         UIStateManager.Instance.SetState(UIState.Loading);
-
-/*        //STARTUP PROCESS
-        Invoke(nameof(Boot), 1f);*/
     }
 
     private async void Boot()
@@ -93,13 +82,11 @@ public class GameManager : MonoBehaviour
                     screenID = ScreenID.Auth
                 });
 
-                Debug.LogWarning("Switched to loggedout state");
+                syncManager.StopRefresh();
                 ToastManager.Instance.GenerateToast("Logged out", 1, 10f);
                 break;
 
             case UIState.Loggedin:
-
-                //BootStrap_Loader.Instance.Init_BootStrap();
 
                 EventBus.Publish(new ReplaceScreenEvent
                 {
@@ -109,13 +96,11 @@ public class GameManager : MonoBehaviour
                 //Start Live Refresh Tick
                 syncManager.StartLiveRefresh();
 
-                Debug.LogWarning("Switched to loggedin state");
                 ToastManager.Instance.GenerateToast("Logged in", 0, 10f);
                 break;
 
             case UIState.Loading:
                 Invoke(nameof(Boot),1f);
-                Debug.LogWarning("Switched to Loading state");
                 break;
         }
     }

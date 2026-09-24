@@ -13,7 +13,7 @@ public class GameDataStorage : MonoBehaviour
     //Base Data
     private const string LAST_BASE_KEY = "LAST_ACTIVE_BASE";
     private BaseOutput currentBase;
-    public BaseOutput _CurrentBase { get { return currentBase; }}
+    public BaseOutput _CurrentBase { get { return currentBase; } }
 
     private void Awake()
     {
@@ -29,13 +29,9 @@ public class GameDataStorage : MonoBehaviour
     }
 
     //BASE Data
-    /// <summary>
-    /// Charge les données bases en local
-    /// </summary>
-    /// <param name="data"></param>
     public void LoadCurrentBaseData(BaseOutput data)
     {
-        if(data == null)
+        if (data == null)
         {
             Debug.LogWarning("Empty Data received from BaseIndex");
             return;
@@ -46,8 +42,8 @@ public class GameDataStorage : MonoBehaviour
         //si base chargée
         if (currentBase.base_id != 0)
         {
-           SaveLastBaseId(currentBase.base_id);
-           Debug.Log($"Base chargée :" + currentBase.base_id);
+            SaveLastBaseId(currentBase.base_id);
+            Debug.Log($"Base chargée :" + currentBase.base_id);
         }
         else Debug.LogWarning("no base loaded");
     }
