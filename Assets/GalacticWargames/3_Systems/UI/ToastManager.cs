@@ -43,9 +43,9 @@ public class ToastManager : MonoBehaviour
 
         //Play Audio Feedback
         if(type==0)
-            AudioManager.Instance.PlaySound("Toast_Error");
+            AudioManager.Instance.Play("toast_error");
         else
-            AudioManager.Instance.PlaySound("Toast_Warning");
+            AudioManager.Instance.Play("toast_warning");
 
     }
     private void OnShowToast(ShowToastEvent e)

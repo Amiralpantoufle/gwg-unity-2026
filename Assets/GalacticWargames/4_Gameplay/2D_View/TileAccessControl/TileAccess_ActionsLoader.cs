@@ -19,11 +19,19 @@ public class TileAccess_ActionsLoader : MonoBehaviour
             GameObject buttonGO = Instantiate(actionButtonPrefab, content);
 
             // Exemple texte
-            TMP_Text label = buttonGO.GetComponentInChildren<TMP_Text>();
-            label.text = action.label;
+            //TMP_Text label = buttonGO.GetComponentInChildren<TMP_Text>();
+            TextMeshProUGUI label = buttonGO.GetComponentInChildren<TextMeshProUGUI>();
 
-            // Ajout du composant placeholder
+            string actionLabel = LocalizationManager.Instance.Get("tile_action_" + action.label);
+            Debug.Log(actionLabel);
 
+            if (actionLabel != "error")
+                label.text = actionLabel;
+            else
+            {
+                Debug.LogWarning("No label found for action :"+action.label);
+                label.text = action.label;
+            }
         }
     }
 }

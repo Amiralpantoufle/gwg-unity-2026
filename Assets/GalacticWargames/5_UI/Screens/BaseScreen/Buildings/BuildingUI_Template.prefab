@@ -717,6 +717,7 @@ GameObject:
   - component: {fileID: 2036744032857869473}
   - component: {fileID: 1585531457145480747}
   - component: {fileID: 3468470036347895678}
+  - component: {fileID: 7696346413290728625}
   m_Layer: 5
   m_Name: Text BuildingName
   m_TagString: Untagged
@@ -843,6 +844,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7696346413290728625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835755981079690418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415b813a500f16344aa57d5004b9bb57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: 
 --- !u!1 &8475469958163284965
 GameObject:
   m_ObjectHideFlags: 0

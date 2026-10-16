@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
-using TMPro;
+using TMPro; 
 using UnityEngine;
 
 /// <summary>
@@ -18,9 +18,9 @@ public class BaseView_BuildingScreen : MonoBehaviour
     [SerializeField] private int instance_id;
     public int _Instance_id{ get {  return (instance_id); } set { instance_id = value; }  }
 
-    public void Load_BaseInfos(string name, int level)
+    public void Load_BaseInfos(/*string name,*/ int level)
     {
-        gui_slotName.text = name;
+        //gui_slotName.text = name;
         gui_level.text = level.ToString() + "/3";
     }
     public void Upgrade_Building()
@@ -30,6 +30,7 @@ public class BaseView_BuildingScreen : MonoBehaviour
         if (baseView != null && building_id != 0)
         {
             baseView.UpgradeBuilding(buildingType, building_id);
+            AudioManager.Instance.Play("UI_button");
         }
     }
     public void Destroy_Building()
@@ -57,7 +58,8 @@ public class BaseView_BuildingScreen : MonoBehaviour
 
             if (!request.error)
             {
-                ToastManager.Instance.GenerateToast( "Building Destroyed",1,2f);
+                ToastManager.Instance.GenerateToast("Building Destroyed",1,2f);
+                AudioManager.Instance.Play("UI_destroy_building");
 
                 //Destroy Entity Visual
                 GridManager.Instance.Reload_CurrentMap();

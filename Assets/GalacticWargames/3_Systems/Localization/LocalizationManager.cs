@@ -60,6 +60,6 @@ public class LocalizationManager : MonoBehaviour
         if (localizedDict.TryGetValue(key, out var value))
             return value;
 
-        return $"[{key}]"; // fallback debug
+        return "error"; // fallback debug
     }
 }

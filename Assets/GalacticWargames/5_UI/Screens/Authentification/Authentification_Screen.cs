@@ -33,7 +33,7 @@ public class Authentification_Screen : UIScreen
         //Save Email 
         PlayerPrefs.SetString(ACCESS_KEY, email);
         //Play Audio Feedback
-        AudioManager.Instance.PlaySound("ButtonInput_Login");
+        AudioManager.Instance.Play("UI_login");
     }
     public void Try_ForgotPassword()
     {

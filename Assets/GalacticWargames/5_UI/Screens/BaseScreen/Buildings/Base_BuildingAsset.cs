@@ -28,7 +28,16 @@ public class Base_BuildingAsset : MonoBehaviour
     public void Load_buildingInfo(building_Construct construct, Base_BuildingAssetInfo context)
     {
         //Load Info
-        assetName.text = construct.nom_bat.Substring(0, construct.nom_bat.Length - 2);
+        string label = construct.nom_bat.Substring(0, construct.nom_bat.Length - 2);
+        Debug.Log(label);
+        string tradName = LocalizationManager.Instance.Get("base_building_" + label);
+        if (tradName != "error")
+            assetName.text = tradName;
+        else
+        {
+            Debug.LogWarning("No label found for action :" + label);
+            assetName.text = label;
+        }
 
         //Define Day Build Time
         buildTime.text = GetBuildTime(construct.vitesse_construction_bat);
@@ -102,6 +111,7 @@ public class Base_BuildingAsset : MonoBehaviour
 
         contextPannel.Load_Info(loadedConstruct, tilePos);
 
+        AudioManager.Instance.Play("UI_button");
 
         //Check if can build
         contextPannel.AvailableConstruct(HasRessources());

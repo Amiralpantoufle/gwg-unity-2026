@@ -791,6 +791,7 @@ GameObject:
   - component: {fileID: 525948639185149171}
   - component: {fileID: 7951897287648414378}
   - component: {fileID: 2548625848746530216}
+  - component: {fileID: 8373003769378726935}
   m_Layer: 5
   m_Name: Text TravellingToward (2)
   m_TagString: Untagged
@@ -917,6 +918,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8373003769378726935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742000666818735772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415b813a500f16344aa57d5004b9bb57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: travel_arrival
 --- !u!1 &7446478915709619951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1095,7 @@ GameObject:
   - component: {fileID: 710679657201419854}
   - component: {fileID: 8358760134207208475}
   - component: {fileID: 6743396061534475063}
+  - component: {fileID: 5096358261804620927}
   m_Layer: 5
   m_Name: Text TravellingToward
   m_TagString: Untagged
@@ -1208,6 +1223,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5096358261804620927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900361282024657380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415b813a500f16344aa57d5004b9bb57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: travel_departure
 --- !u!1 &8325992354085040495
 GameObject:
   m_ObjectHideFlags: 0

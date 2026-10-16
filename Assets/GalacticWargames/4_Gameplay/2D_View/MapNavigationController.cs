@@ -36,6 +36,7 @@ public class MapNavigationController : IsoNavigation
         tileSelected = true;
 
         tileSelector.HighlightTile(0, tile.transform.position);
+        AudioManager.Instance.Play("UI_selec_tile");
     }
     public void CancelSelect()
     {

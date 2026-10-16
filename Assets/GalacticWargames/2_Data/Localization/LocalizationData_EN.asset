@@ -38,9 +38,57 @@ MonoBehaviour:
     value: Define a password
   - key: ui_button_confirm
     value: Confirm
+  - key: ui_button_Save
+    value: Save
   - key: ui_button_choose
     value: Choose
   - key: auth_resetpassword_code_header
     value: Add your email verification code
   - key: auth_resetpassword_code
     value: confirmation code
+  - key: main_ressourceinfo_header
+    value: Production de Ressources
+  - key: tile_action_Coloniser
+    value: Colonize
+  - key: tile_action_Explorer
+    value: Explore
+  - key: tile_action_Fouiller
+    value: Search
+  - key: tile_action_Attaquer
+    value: Attack
+  - key: tile_action_Construire
+    value: Build
+  - key: res_hydro
+    value: Hydrogen Crystal
+  - key: res_carbon
+    value: Carbon
+  - key: res_stone
+    value: Energetic Stone
+  - key: travel_departure
+    value: 'Travelling towards :'
+  - key: travel_arrival
+    value: 'Landing in :'
+  - key: base_tile_empty
+    value: Empty Tile
+  - key: base_tile_buildings
+    value: Buildings
+  - key: base_building_Mine de carbone
+    value: Carbon Mine
+  - key: base_building_Extracteur d'hydrogene
+    value: Hydrogen Extractor
+  - key: base_building_Generateur d'energie
+    value: Power Generator
+  - key: base_building_Centre de commandement
+    value: Command Center
+  - key: base_building_Batiment de defense
+    value: Defense Building
+  - key: 'base_building_Centre d''espionnage '
+    value: Spying Center
+  - key: base_building_Chantier spatial
+    value: Spatial Center
+  - key: base_building_Entrepot de stockage
+    value: Storage
+  - key: base_building_Spatioport de commerce
+    value: Trading Center
+  - key: fleet_listing_header
+    value: Available Spaceships

@@ -92,6 +92,7 @@ public class Base_SpaceShipAsset : MonoBehaviour
         if (targetAmount > 0)
         {
             transform.GetComponentInParent<Builder_QueueSelector>()._Queue.Start_NewQueue(targetAmount, targetBuildTime);
+            AudioManager.Instance.Play("UI_build_spaceship");
         }
     }
 

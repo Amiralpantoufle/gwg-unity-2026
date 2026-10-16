@@ -37,16 +37,22 @@ public class BaseView_Popup : UIScreen
 
                 //Set Name and Levels on template Building
                 string result = StringUtils.AddSpaces(selection.ToString());
-                building.Load_BaseInfos(result, selectedEntity.level);
+                building.Load_BaseInfos(/*result,*/ selectedEntity.level);
             }
             else
                 Debug.LogError("no ID set on selected entity");
         }
 
         if (selection != 0)
+        {
             buildingsPannels[(int)selection].SetActive(true);
+            AudioManager.Instance.Play("UI_selec_building");
+        }
         else
+        {
             selectionPannel.Load_TileData(tile);
+            AudioManager.Instance.Play("UI_selec_tile");
+        }
     }
     public void UpgradeBuilding(buildingList building, int id)
     {
@@ -67,7 +73,7 @@ public class BaseView_Popup : UIScreen
         upgradePannel.gameObject.SetActive(false);
         selectionPannel.gameObject.SetActive(false);
 
-
+        AudioManager.Instance.Play("UI_close_popup");
         popupMaster.GetComponent<BaseView_Screen>().Reload_BaseView();
         OnClosePannel?.Invoke();
     }

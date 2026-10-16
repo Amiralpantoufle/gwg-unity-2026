@@ -66,8 +66,6 @@ public class Fleets_Manager : MonoBehaviour
         {
             displayedFleets.Add(inst);
             inst.Load_FleetInstance(fleet);
-
-            Debug.Log("Adding fleet instance");
         }
     }
     private void Clear_Fleets()
@@ -75,6 +73,6 @@ public class Fleets_Manager : MonoBehaviour
         displayedFleets.Clear();
 
         foreach (Transform child in fleetsRoot)
-            Destroy(child);
+            Destroy(child.gameObject);
     }
 }

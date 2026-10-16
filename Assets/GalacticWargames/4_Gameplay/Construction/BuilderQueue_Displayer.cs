@@ -53,7 +53,7 @@ public class BuilderQueue_Displayer : MonoBehaviour
     {
         VignetteView view = Get();
 
-        view.transform.position = tilePosition+vignette_Offset;
+        view.transform.position = tilePosition/*+vignette_Offset*/;
         view.Init(id);
 
         return view;

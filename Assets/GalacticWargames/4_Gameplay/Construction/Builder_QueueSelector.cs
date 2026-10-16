@@ -23,9 +23,15 @@ public class Builder_QueueSelector : MonoBehaviour
         int amount = 1;
 
         if (add)
+        {
             amount += selectedAmount;
+            AudioManager.Instance.Play("UI_ressource_up"); 
+        }
         else
+        {
             amount = (selectedAmount - amount);
+            AudioManager.Instance.Play("UI_ressource_down"); 
+        }
 
         if(amount <= maxAvailable)
             Display_SelectedAmount(amount);
@@ -38,9 +44,16 @@ public class Builder_QueueSelector : MonoBehaviour
         int amount = maxAvailable;
 
         if (!add)
+        {
             amount = 0;
+            AudioManager.Instance.Play("UI_ressource_down"); 
+        }
+        else
+            AudioManager.Instance.Play("UI_button");
 
-        Display_SelectedAmount(amount);
+
+            Display_SelectedAmount(amount);
+
     }
 
     private void Display_SelectedAmount(int newAmount)

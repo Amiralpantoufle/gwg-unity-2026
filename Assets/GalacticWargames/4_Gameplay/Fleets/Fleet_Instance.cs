@@ -29,6 +29,7 @@ public class Fleet_Instance : MonoBehaviour
                 screenID = ScreenID.fleetScreen,
             });
             FleetManagement_Screen.Instance.Load_Fleet(loadedFleet);
+            AudioManager.Instance.Play("UI_button");
         }
     }
 

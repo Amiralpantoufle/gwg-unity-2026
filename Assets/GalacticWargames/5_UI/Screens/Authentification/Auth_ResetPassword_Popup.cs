@@ -36,7 +36,7 @@ public class Auth_ResetPassword_Popup : UIScreen
         popup_reset.SetActive(true);
 
         //Play Audio Feedback
-        AudioManager.Instance.PlaySound("ButtonInput_Confirm");
+        AudioManager.Instance.Play("ButtonInput_Confirm");
     }
     /// <summary>
     /// Récupère les données inputs field et traite les erreurs
@@ -64,7 +64,7 @@ public class Auth_ResetPassword_Popup : UIScreen
         AuthManager.Instance.ResetPassword(newPasswordData);
 
         //Play Audio Feedback
-        AudioManager.Instance.PlaySound("ButtonInput_Confirm");
+        AudioManager.Instance.Play("ButtonInput_Confirm");
     }
     public void ConfirmResetPassword()
     {

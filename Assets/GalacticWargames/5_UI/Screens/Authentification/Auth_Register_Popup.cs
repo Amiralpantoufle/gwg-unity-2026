@@ -51,7 +51,7 @@ public class Auth_Register_Popup : UIScreen
         civChoicePopup.SetActive(true);
 
         //Play Audio Feedback
-        AudioManager.Instance.PlaySound("ButtonInput_Confirm");
+        AudioManager.Instance.Play("UI_register");
     }
     public void RegisterCivilization(int civ)
     {
@@ -64,7 +64,7 @@ public class Auth_Register_Popup : UIScreen
         //Close Register Popup
         civChoicePopup.SetActive(false);
         //Play Audio Feedback
-        AudioManager.Instance.PlaySound("ButtonInput_Confirm");
+        AudioManager.Instance.Play("UI_valid");
     }
 
     private void TreatRegisterErrors(int error)

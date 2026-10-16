@@ -94,7 +94,7 @@ public class Base_BuildingAssetInfo : MonoBehaviour
         }
 
         //Success construction
-        Debug.Log("Building asset !");
+        AudioManager.Instance.Play("UI_build_building");
         BaseView_Screen.Instance.popupMaster.GetComponent<BaseView_Popup>().Close_AllPannels();
         Display_TempBuilding();
     }
